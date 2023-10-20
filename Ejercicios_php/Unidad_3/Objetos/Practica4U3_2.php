@@ -1,28 +1,37 @@
 <?php
 abstract class Vehiculo{
-    private $peso;
-    private $color;
+    protected $peso;
+    protected $color;
+    protected static $numero_cambio_color=0;
+    const SDL ='<br/>';
 
     public function __construct($peso,$color){
         $this->peso = $peso;
         $this->color = $color;
     }
-    public static function ver_atributo(Object $obj){
-        foreach ($obj as $key => $value) {
-            echo $key.": ".$value."<br>";
-        }
+    public static function ver_atributo($obj){
+        foreach($obj as $n=>$v){
+            echo $n.": ".$v,self::SDL;        
+     }
     }
+ 
     public function getPeso(){
         return $this->peso;
     }
     public function setPeso($peso){
-        $this->peso = $peso;
+        
+        if($peso>2100){
+            $this->peso=2100;
+        }else{
+            $this->peso = $peso;
+        }
     }
     public function getColor(){
         return $this->color;
     }
     public function setColor($color){
         $this->color = $color;
+        self::$numero_cambio_color++;   
     }
      public function circula(){
         echo "El vehiculo circula";
@@ -35,7 +44,11 @@ abstract class Vehiculo{
 }
 
 class Cuatro_ruedas extends Vehiculo{
-    private $numero_ruedas=4;
+    protected $numero_puertas=4;
+    public function __construct($peso,$color,$numero_puertas){
+        parent::__construct($peso,$color);
+        $this->numero_puertas = $numero_puertas;
+    }
     public function repintar($color){
         parent::setColor($color);
         echo "El colores es: $color";
@@ -43,21 +56,22 @@ class Cuatro_ruedas extends Vehiculo{
     public function añadir_persona($peso_persona){
         parent::setPeso(parent::getPeso() + $peso_persona);
     }
-    public function getNumero_ruedas(){
-        return $this->numero_ruedas;
+    public function getNumero_puertas(){
+        return $this->numero_puertas;
     }
-    public function setNumero_ruedas($numero_ruedas){
-        $this->numero_ruedas = $numero_ruedas;
+    public function setNumero_puertas($numero_puertas){
+        $this->numero_puertas = $numero_puertas;
     }
 
     public function __toString()
     {
-        return parent::__toString()."  Numero de ruedas: $this->numero_ruedas";
+        return parent::__toString()."  Numero de puertas: $this->numero_puertas";
     }
+    
 }
 
 class Coche extends Cuatro_ruedas{
-    private $numero_cadenas_nieve=0;
+    protected $numero_cadenas_nieve=0;
     public function añadir_cadenas_nieve($n){
         $this->numero_cadenas_nieve+= $n;
     }
@@ -74,10 +88,17 @@ class Coche extends Cuatro_ruedas{
     {
         return parent::__toString(). " Numero de cadenas nieve: $this->numero_cadenas_nieve";
     }
+    public function añadir_persona($peso_persona){
+        parent::añadir_persona($peso_persona);
+        if($this->peso>=1500&&$this->numero_cadenas_nieve<=2){
+            echo "Atención, ponga 4 cadenas para la nieve.";
+        }
+    }
+
 }
 
 class Camion extends Cuatro_ruedas{
-    private $longitud=0;
+    protected $longitud;
     public function añadir_longitud($l){
         $this->longitud+= $l;
     }
@@ -93,10 +114,11 @@ class Camion extends Cuatro_ruedas{
     public function __toString()
     {
         return parent::__toString(). " Longitud: $this->longitud";}
+       
 }
 
 class Dos_ruedas extends Vehiculo{
-    private $cilindrada=125;
+    protected $cilindrada=125;
     public function añadir_persona($peso_persona){
         parent::setPeso(parent::getPeso() + $peso_persona+2);
     }
@@ -113,5 +135,6 @@ class Dos_ruedas extends Vehiculo{
     {
         return parent::__toString(). " Cilindrada: $this->cilindrada";
     }
+     
     }
 ?>
