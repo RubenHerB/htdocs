@@ -13,6 +13,7 @@ abstract class Vehiculo{
         foreach($obj as $n=>$v){
             echo $n.": ".$v,self::SDL;        
      }
+     echo "Numero de cambios de color ",self::$numero_cambio_color,self::SDL;
     }
  
     public function getPeso(){
@@ -76,7 +77,10 @@ class Coche extends Cuatro_ruedas{
         $this->numero_cadenas_nieve+= $n;
     }
     public function quitar_cadenas_nieve($n){
-        $this->numero_cadenas_nieve-= $n;
+        if($this->numero_cadenas_nieve<$n){
+            $this->numero_cadenas_nieve=0;
+        }else{
+        $this->numero_cadenas_nieve-= $n;}
     }
     public function getNumero_cadenas_nieve(){
         return $this->numero_cadenas_nieve;
@@ -91,7 +95,7 @@ class Coche extends Cuatro_ruedas{
     public function añadir_persona($peso_persona){
         parent::añadir_persona($peso_persona);
         if($this->peso>=1500&&$this->numero_cadenas_nieve<=2){
-            echo "Atención, ponga 4 cadenas para la nieve.";
+            echo "Atención, ponga 4 cadenas para la nieve.<br>";
         }
     }
 
