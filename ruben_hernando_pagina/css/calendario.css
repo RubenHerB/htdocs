@@ -1,0 +1,6 @@
+table{border-collapse: collapse;border: 5px solid white;padding: 10px;margin-top:120px;margin-bottom:20px;margin-right:10px; margin-left: 10px;}
+tr{border-collapse: collapse;border: 2px solid #595959;}
+td{border-collapse: collapse;border: 1px solid #adadad;text-align: center;padding:5px}
+th{border-collapse: collapse;border: 1px solid #adadad;text-align: center;padding: 10px}
+iframe { border: none; }
+td a{color: white;}

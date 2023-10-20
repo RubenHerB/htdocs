@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pintar</title>
+  <style>
+    input[type=text] {
+      width: 40%;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      float: none;
+      text-align: center;
+    }
+    form{  margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    input{
+      margin-top: 20px;
+    border-radius: 25px;  
+    }
+    body{background-color: black;color: white;}
+    input[type=submit] { padding: 15px 20px;background-color: aqua;}
+    input[type=submit]:hover { box-shadow: 0 0 10px white;}
+  </style>  
+</head>
+<body>
+  <form action="pintar.php" method="post">
+    Tipo: 
+    <select name="tipe" id="tipe">
+        <option value="rectangulo">Rectangulo</option>
+        <option value="circulo">Circulo</option>
+        <option value="ovalo">Ovalo</option>
+    </select><br>
+    Numero de veces: 
+    <input type="text" name="numero" placeholder="Numero"><br/>
+    Color: 
+    <input type="text" name="color" placeholder="Color"><br/>
+    <input type="submit" name="submit" value="submit">
+  </form>    
+</body>
+</html>
