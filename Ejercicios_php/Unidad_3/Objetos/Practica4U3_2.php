@@ -95,7 +95,7 @@ class Coche extends Cuatro_ruedas{
         return parent::__toString(). " Numero de cadenas nieve: $this->numero_cadenas_nieve";
     }
     public function añadir_persona($peso_persona){
-        $this->peso+= $peso_persona;
+        
         if($this->peso>=1500&&$this->numero_cadenas_nieve<=2){
             echo "Atención, ponga 4 cadenas para la nieve.<br>";
         }
