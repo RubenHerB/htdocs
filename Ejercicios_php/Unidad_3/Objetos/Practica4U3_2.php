@@ -6,7 +6,11 @@ abstract class Vehiculo{
     const SDL ='<br/>';
 
     public function __construct($peso,$color){
+        if($peso<=2100){
         $this->peso = $peso;
+        }else{
+        $this->peso = 2100;
+        }
         $this->color = $color;
     }
     public static function ver_atributo($obj){
