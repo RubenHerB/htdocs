@@ -13,7 +13,7 @@ abstract class Vehiculo{
         foreach($obj as $n=>$v){
             echo $n.": ".$v,self::SDL;        
      }
-     echo "Numero de cambios de color ",self::$numero_cambio_color,self::SDL;
+     echo "Numero de cambios de color: ",self::$numero_cambio_color,self::SDL;
     }
  
     public function getPeso(){
@@ -44,7 +44,7 @@ abstract class Vehiculo{
     }
 }
 
-class Cuatro_ruedas extends Vehiculo{
+abstract class Cuatro_ruedas extends Vehiculo{
     protected $numero_puertas=4;
     public function __construct($peso,$color,$numero_puertas){
         parent::__construct($peso,$color);
@@ -54,9 +54,7 @@ class Cuatro_ruedas extends Vehiculo{
         parent::setColor($color);
         echo "El colores es: $color";
     }
-    public function añadir_persona($peso_persona){
-        parent::setPeso(parent::getPeso() + $peso_persona);
-    }
+    abstract protected function añadir_persona($peso_persona);
     public function getNumero_puertas(){
         return $this->numero_puertas;
     }
@@ -93,7 +91,7 @@ class Coche extends Cuatro_ruedas{
         return parent::__toString(). " Numero de cadenas nieve: $this->numero_cadenas_nieve";
     }
     public function añadir_persona($peso_persona){
-        parent::añadir_persona($peso_persona);
+        $this->peso+= $peso_persona;
         if($this->peso>=1500&&$this->numero_cadenas_nieve<=2){
             echo "Atención, ponga 4 cadenas para la nieve.<br>";
         }
@@ -114,6 +112,9 @@ class Camion extends Cuatro_ruedas{
     }
     public function añadir_remolque($longitud_remolque){
         $this->longitud+= $longitud_remolque;
+    }
+    public function añadir_persona($peso_persona){
+        $this->peso+= $peso_persona;
     }
     public function __toString()
     {
