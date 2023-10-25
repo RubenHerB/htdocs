@@ -4,7 +4,9 @@
     </head>
     <body>
     <?php
-   if(isset($_POST['a']) && isset($_POST['B'])){
+   if(isset($_POST['a']) && isset($_POST['b'])){
+    $a=$_POST['a']; 
+    $b=$_POST['b']; 
     echo "La suma de $a + $b es ",$a+$b;
    }else{
    echo <<<_END
