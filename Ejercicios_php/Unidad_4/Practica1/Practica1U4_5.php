@@ -8,8 +8,6 @@
         <?php
         const num=9;//Numero de elementos en el formulario
         unset($_POST["submit"]);
-        var_dump($_POST);
-        echo(count($_POST));
         if(in_array("",$_POST)){
             $c=0;
         echo "el vector tiene ".num." elementos<br>";
