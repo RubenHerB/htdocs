@@ -7,7 +7,7 @@
         
         $t=false;
         $ar=array();
-        if(in_array("",$_POST)){   
+        if($_POST['n']==""){   
         $ar=$_POST;
         $t=true;
         }

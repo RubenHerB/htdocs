@@ -18,7 +18,7 @@
     </form>
     <br><br>
     <?php
-    if($_POST['a']!=null && $_POST['m']!=null) {
+    if(isset($_POST['a']) && isset($_POST['m'])) {
         $y=$_POST['a'];
         $m=$_POST['m'];
         $nd=cal_days_in_month(CAL_GREGORIAN,$m,$y)+1;

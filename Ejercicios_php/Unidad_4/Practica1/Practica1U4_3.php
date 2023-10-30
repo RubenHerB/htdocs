@@ -4,9 +4,13 @@
     </head>
     <body>
         <?php
-        if($_POST['a']!=null && $_POST['b']!=null) {
-            $a=$_POST['a'];
-            $b=$_POST['b'];
+        $a=0;
+        $b=0;
+        if(isset($_POST['a']) && isset($_POST['b'])) {
+            if($_POST['a']!=null){
+            $a=$_POST['a'];}
+            if($_POST['b']!=null){
+            $b=$_POST['b'];}
             switch($_POST['boton']){
             case "Suma":
                 echo "$a + $b = ".$a+$b;
@@ -18,7 +22,15 @@
                 echo "$a * $b = ".$a*$b;
                 break;
             case "Dividir":
+                if($b!=0){
                 echo "$a / $b = ".$a/$b;
+                }else{
+                    if($a==0){
+                        echo "$a / $b = !Error";
+                    }else{
+                    echo "$a / $b = ∞";
+                }
+                }
                 break;
             }
         }
