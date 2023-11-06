@@ -22,8 +22,6 @@
             echo "la suma es $c<br>";
         }else{
             echo"Rellena todos los campos en el formulario<br><br>";}
-            var_dump($_POST);
-            var_dump($ar);
         ?>
 
             <!--Formulario para aceptar-->
