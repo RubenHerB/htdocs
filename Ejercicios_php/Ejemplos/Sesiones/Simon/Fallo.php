@@ -37,15 +37,19 @@ body{background-color: aquamarine;text-align: center;}
         foreach($c as $p)
         echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
       }
+      session_start();
 ?> 
 </head>
 <body>
+    <script>
+        console.log(<?php var_dump($_SESSION); ?>);
+    </script>
     <h1>SIMÓN</h1><br><br>
     <h2>Has fallado</h2>
     <br>
     <h4>DEBIAS PINTAR:</h4>
     <?php
-    session_start();
+    
     pintar($_SESSION["ran"]);
     ?>
     <br>
