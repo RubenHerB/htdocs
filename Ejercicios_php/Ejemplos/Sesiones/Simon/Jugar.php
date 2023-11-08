@@ -19,7 +19,8 @@ form{
   text-align: center;
 }
 input[type="submit"] {
-  padding: 5px;
+  padding: 10px;
+  border-radius: 10px;
 }
 body{background-color: aquamarine;}
   </style>

@@ -13,6 +13,15 @@
   margin-top: 100px;
   
 }
+form{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+input[type="submit"] {
+  padding: 10px;
+  border-radius: 10px;
+}
 body{background-color: aquamarine;}
   </style>
 
