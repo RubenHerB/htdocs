@@ -66,8 +66,6 @@ body{background-color: aquamarine;}
     <br>
     <?php
     pintar($_SESSION["adi"]);
-    echo"<br><br>";
-    var_dump($_SESSION);
     ?>
     <br>
     <?php

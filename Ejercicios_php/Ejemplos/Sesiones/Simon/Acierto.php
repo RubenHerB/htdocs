@@ -31,8 +31,6 @@ body{background-color: aquamarine;}
     <?php
     session_start();
     pintar($_SESSION["ran"]);
-    echo"<br><br>";
-    var_dump($_SESSION);
     session_destroy();
     ?>
     <br>
