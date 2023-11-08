@@ -30,7 +30,9 @@ input[type="submit"]:hover{
 }
 body{background-color: aquamarine;text-align: center;}
   </style>
-
+<script type="text/javascript">
+    console.log(document.getElementsByTagName('</span>').length);
+</script>
 <?php
     function pintar($c){
         $col=["black","red","#4772ff","yellow","green"];
