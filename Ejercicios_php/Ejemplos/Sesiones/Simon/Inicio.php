@@ -24,11 +24,13 @@ body{background-color: aquamarine;}
       }
       session_start();
       $ci=[0,0,0,0];
-      $_SESSION=[$ci,$ci,0];
+      $_SESSION=["ran"=>$ci,
+      "adi"=>$ci,
+      "count"=>0];
       for ($i=0;$i<count($ci);$i++){
         $ci[$i]=rand(1,4);
       }
-    $_SESSION[0]=$ci;
+    $_SESSION["ran"]=$ci;
 ?> 
 </head>
 <body>
@@ -37,6 +39,8 @@ body{background-color: aquamarine;}
     <br>
     <?php
     pintar($ci);
+    echo"<br><br>";
+    var_dump($_SESSION);
     ?>
 </body>
 </html>
