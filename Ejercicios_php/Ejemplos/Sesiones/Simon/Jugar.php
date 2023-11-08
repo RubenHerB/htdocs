@@ -13,6 +13,10 @@
   margin-top: 100px;
   
 }
+input[type="submit"] {
+  padding: 5px;
+  color:white;
+}
 body{background-color: aquamarine;}
   </style>
 
