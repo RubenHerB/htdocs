@@ -31,7 +31,7 @@ input[type="submit"]:hover{
 body{background-color: aquamarine;text-align: center;}
   </style>
 <script type="text/javascript">
-    console.log(document.getElementsByTagName('</span>').length);
+    console.log(document.getElementsByClass('span').length);
 </script>
 <?php
     function pintar($c){
