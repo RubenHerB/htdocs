@@ -22,6 +22,9 @@ input[type="submit"] {
   padding: 10px;
   border-radius: 10px;
 }
+input[type="submit"]:hover{
+    box-shadow: 0px 15px 20px black;
+}
 body{background-color: aquamarine;}
   </style>
 
