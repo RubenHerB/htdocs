@@ -62,7 +62,7 @@ body{background-color: aquamarine;}
 </head>
 <body>
     <h1>SIMÓN</h1><br><br>
-    <h2>Hola, memoriza los siguientes colores</h2>
+    <h2>Introduce los colores correctamente</h2>
     <br>
     <?php
     pintar($_SESSION["adi"]);
