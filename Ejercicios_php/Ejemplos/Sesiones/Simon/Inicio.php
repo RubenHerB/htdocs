@@ -11,20 +11,32 @@
   display: inline-block;
   margin-left: 4%;
   margin-top: 100px;
+  
 }
 body{background-color: aquamarine;}
   </style>
-</head>
-<body>
+
 <?php
-    function pintar($c1,$c2,$c3,$c4)     {
-        $c=array($c1,$c2,$c3,$c4);
-        shuffle($c);
+    function pintar($c){
+        $col=["black","red","blue","yellow","green"];
         foreach($c as $p)
-        echo "<span class=\"dot\" style=\"background-color:$p\"></span>";
+        echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
       }
       session_start();
-      const col=["red","blue","yellow","green"];
-?>   
+      $ci=[0,0,0,0];
+      $_SESSION=[$ci,$ci,0];
+      for ($i=0;$i<count($ci);$i++){
+        $ci[$i]=rand(1,4);
+      }
+    $_SESSION[0]=$ci;
+?> 
+</head>
+<body>
+    <h1>SIMÓN</h1><br><br>
+    <h2>Hola, memoriza los siguientes colores</h2>
+    <br>
+    <?php
+    pintar($ci);
+    ?>
 </body>
 </html>
