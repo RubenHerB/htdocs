@@ -39,10 +39,10 @@ body{background-color: aquamarine;}
     ?>
     <br>
     <form method="post" action="Jugar.php">
-        <input style="background-color: red" type="submit" name="ROJO" value="1" />
-        <input style="background-color: blue" type="submit" name="AZUL" value="1" />
-        <input style="background-color: yellow" type="submit" name="AMARILLO" value="1" />
-        <input style="background-color: green" type="submit" name="ROJO" value="1" />
+        <input style="background-color: red" type="submit" name="c" value="ROJO" />
+        <input style="background-color: blue" type="submit" name="c" value="AZUL" />
+        <input style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
+        <input style="background-color: green" type="submit" name="c" value="VERDE" />
     </form>
 </body>
 </html>
