@@ -39,8 +39,6 @@ body{background-color: aquamarine;}
     <br>
     <?php
     pintar($ci);
-    echo"<br><br>";
-    var_dump($_SESSION);
     ?>
     <br>
     <form method="post" action="Jugar.php">
