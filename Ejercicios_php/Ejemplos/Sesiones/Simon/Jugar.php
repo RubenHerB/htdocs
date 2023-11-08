@@ -23,6 +23,9 @@ body{background-color: aquamarine;}
         echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
       }
       session_start();
+
+
+      
 ?> 
 </head>
 <body>
@@ -36,7 +39,10 @@ body{background-color: aquamarine;}
     ?>
     <br>
     <form method="post" action="Jugar.php">
-        <input type="submit" value="VAMOS A JUGAR"/>
+        <input style="background-color: red" type="submit" name="ROJO" value="1" />
+        <input style="background-color: blue" type="submit" name="AZUL" value="1" />
+        <input style="background-color: yellow" type="submit" name="AMARILLO" value="1" />
+        <input style="background-color: green" type="submit" name="ROJO" value="1" />
     </form>
 </body>
 </html>
