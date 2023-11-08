@@ -46,6 +46,12 @@ body{background-color: aquamarine;}
           case "VERDE":
             $a=4;
             break;
+          case "COMPROBAR":
+            if($_SESSION["adi"]==$_SESSION["ran"]){
+            header("Location: Acierto.php");
+          }else{
+            header("Location: Fallo.php");
+          } 
         }
         $c=$_SESSION["count"];
         $_SESSION["adi"][$c]=$a;
@@ -65,6 +71,7 @@ body{background-color: aquamarine;}
     ?>
     <br>
     <?php
+    if($_SESSION["count"]<count($_SESSION["adi"])){
     echo <<<_END
     <form method="post" action="Jugar.php">
         <input style="background-color: red" type="submit" name="c" value="ROJO" />
@@ -73,6 +80,13 @@ body{background-color: aquamarine;}
         <input style="background-color: green" type="submit" name="c" value="VERDE" />
     </form>
     _END;
+  }else{
+      echo <<<_END
+        <form method="post" action="Jugar.php">
+        <input style="background-color: red" type="submit" name="c" value="COMPROBAR" />
+        </form>
+        _END;
+    }
     ?>
 </body>
 </html>
