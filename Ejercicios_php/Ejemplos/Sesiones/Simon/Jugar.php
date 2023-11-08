@@ -26,13 +26,32 @@ body{background-color: aquamarine;}
 
 <?php
     function pintar($c){
-        $col=["black","red","blue","yellow","green"];
+        $col=["black","red","#4772ff","yellow","green"];
         foreach($c as $p)
         echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
       }
       session_start();
-
-
+      if(isset($_POST["c"])){
+        $a=0;
+        switch($_POST["c"]){
+          case "ROJO":
+            $a=1;
+            break;
+          case "AZUL":
+            $a=2;
+            break;
+          case "AMARILLO":
+            $a=3;
+            break;
+          case "VERDE":
+            $a=4;
+            break;
+        }
+        $c=$_SESSION["count"];
+        $_SESSION["adi"][$c]=$a;
+        $_SESSION["count"]++;
+      }
+      session_destroy();
       
 ?> 
 </head>
