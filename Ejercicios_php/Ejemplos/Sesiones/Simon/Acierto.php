@@ -9,7 +9,9 @@
   width: 20%;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 4%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 10px;
   margin-top: 100px;
   
 }
@@ -22,7 +24,11 @@ input[type="submit"] {
   padding: 10px;
   border-radius: 10px;
 }
-body{background-color: aquamarine;}
+input[type="submit"]:hover{
+    box-shadow: 0px 5px 10px black;
+    transform: translateY(5px);
+}
+body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
