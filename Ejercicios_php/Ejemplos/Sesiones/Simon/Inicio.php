@@ -43,7 +43,7 @@ body{background-color: aquamarine;}
     var_dump($_SESSION);
     ?>
     <form method="post" action="Jugar.php">
-        <submit type="submit" value="VAMOS A JUGAR"/>
+        <input type="submit" value="VAMOS A JUGAR"/>
     </form>
 </body>
 </html>
