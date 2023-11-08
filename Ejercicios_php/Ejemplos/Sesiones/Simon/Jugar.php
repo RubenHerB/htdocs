@@ -54,7 +54,9 @@ body{background-color: aquamarine;}
           } 
         }
         $c=$_SESSION["count"];
+        if($a!=0){
         $_SESSION["adi"][$c]=$a;
+        }
         $_SESSION["count"]++;
       }
       

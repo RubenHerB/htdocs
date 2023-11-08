@@ -36,7 +36,6 @@ body{background-color: aquamarine;}
     <br>
     <h4>HAS PINTADO:</h4>
     <?php
-    session_start();
     pintar($_SESSION["adi"]);
     session_destroy();
     ?>
