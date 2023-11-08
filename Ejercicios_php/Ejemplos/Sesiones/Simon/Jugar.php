@@ -13,9 +13,13 @@
   margin-top: 100px;
   
 }
+form{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 input[type="submit"] {
   padding: 5px;
-  color:white;
 }
 body{background-color: aquamarine;}
   </style>
@@ -44,7 +48,7 @@ body{background-color: aquamarine;}
     <br>
     <form method="post" action="Jugar.php">
         <input style="background-color: red" type="submit" name="c" value="ROJO" />
-        <input style="background-color: blue" type="submit" name="c" value="AZUL" />
+        <input style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
         <input style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
         <input style="background-color: green" type="submit" name="c" value="VERDE" />
     </form>
