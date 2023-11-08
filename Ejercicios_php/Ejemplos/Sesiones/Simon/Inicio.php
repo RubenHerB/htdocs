@@ -26,7 +26,7 @@ body{background-color: aquamarine;}
       $ci=[0,0,0,0];
       $_SESSION=["ran"=>$ci,
       "adi"=>$ci,
-      "count"=>0];
+      "count"=>-1];
       for ($i=0;$i<count($ci);$i++){
         $ci[$i]=rand(1,4);
       }
