@@ -64,11 +64,15 @@ body{background-color: aquamarine;}
     var_dump($_SESSION);
     ?>
     <br>
+    <?php
+    echo <<<_END
     <form method="post" action="Jugar.php">
         <input style="background-color: red" type="submit" name="c" value="ROJO" />
         <input style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
         <input style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
         <input style="background-color: green" type="submit" name="c" value="VERDE" />
     </form>
+    _END;
+    ?>
 </body>
 </html>
