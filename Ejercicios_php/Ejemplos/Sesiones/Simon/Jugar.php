@@ -83,7 +83,7 @@ body{background-color: aquamarine;}
   }else{
       echo <<<_END
         <form method="post" action="Jugar.php">
-        <input style="background-color: red" type="submit" name="c" value="COMPROBAR" />
+        <input type="submit" name="c" value="COMPROBAR" />
         </form>
         _END;
     }
