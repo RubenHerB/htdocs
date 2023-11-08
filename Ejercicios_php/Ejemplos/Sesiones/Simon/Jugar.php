@@ -51,7 +51,6 @@ body{background-color: aquamarine;}
         $_SESSION["adi"][$c]=$a;
         $_SESSION["count"]++;
       }
-      session_destroy();
       
 ?> 
 </head>
