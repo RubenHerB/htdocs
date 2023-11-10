@@ -60,5 +60,8 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Jugar.php">
         <input type="submit" value="VAMOS A JUGAR"/>
     </form>
+    <?php
+    var_dump(time());
+    ?>
 </body>
 </html>
