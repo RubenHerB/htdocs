@@ -1,4 +1,4 @@
-<html>block
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,11 @@
   margin-top: 100px;
   
 }
-div
 .dotcenter {
   display: flex;
   align-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 form{
   margin-left: auto;
