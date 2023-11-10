@@ -30,12 +30,17 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-      const numero_circulos = 20;//numero de circulos que habra que acertar en el simon
+      if(isset($_POST["submit"])){
+        if($_POST["submit"]=="VAMOS A JUGAR"){
+
+        }
+      }
+      $numero_circulos = 20;//numero de circulos que habra que acertar en el simon
       include 'circulos.php';
       $cir=new Circulos();
       session_start();
       $ci=[0];
-      for ($i=1;$i<numero_circulos;$i++){
+      for ($i=1;$i<$numero_circulos;$i++){
         array_push($ci,0);
       }
       $_SESSION=["ran"=>$ci,
@@ -58,8 +63,25 @@ body{background-color: aquamarine;text-align: center;}
     ?>
     </div>
     <br>
-    <form method="post" action="Jugar.php">
-        <input type="submit" value="VAMOS A JUGAR"/>
+    <form method="post" action="Inicio.php">
+      <?php
+      if(isset($_POST["nc"])){
+        echo"<input type=\"submit\" value=\"VAMOS A JUGAR\"/>";
+      }
+      ?>
+        <select name="nc">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select>
+
+        
     </form>
     
 </body>
