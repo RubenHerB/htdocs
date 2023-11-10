@@ -63,6 +63,7 @@ body{background-color: aquamarine;text-align: center;}
 <body>
     <h1>SIMÓN</h1><br><br>
     <h2>Has fallado</h2>
+    <h3 id="temp"></h3>
     <br>
     <h4>DEBIAS PINTAR:</h4>
     <div class="dotcenter">
