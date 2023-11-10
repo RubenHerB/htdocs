@@ -86,8 +86,8 @@ body{background-color: aquamarine;text-align: center;}
         t=[0,0,0];
         t[1]=n*20;
         if(t[1]>=60){
-          t[0]=Math.truncate(t[1]/60);
-          t[1]-=(Math.truncate(t[1]/60)*60);
+          t[0]=Math.trunc(t[1]/60);
+          t[1]-=(Math.trunc(t[1]/60)*60);
         }
       }
       function r(){  
