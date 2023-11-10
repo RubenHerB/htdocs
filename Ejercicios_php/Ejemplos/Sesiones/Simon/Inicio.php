@@ -50,6 +50,7 @@ body{background-color: aquamarine;text-align: center;}
 <body>
     <h1>SIMÓN</h1><br><br>
     <h2>Hola, memoriza los siguientes colores</h2>
+    <h3 id="temp"></h3>
     <br>
     <div class="dotcenter" id="dc">
     <?php
@@ -60,8 +61,6 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Jugar.php">
         <input type="submit" value="VAMOS A JUGAR"/>
     </form>
-    <?php
-    var_dump(time());
-    ?>
+    
 </body>
 </html>
