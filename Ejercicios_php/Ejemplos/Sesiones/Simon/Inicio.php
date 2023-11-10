@@ -101,8 +101,9 @@ body{background-color: aquamarine;text-align: center;}
         if(t==[0,0,0]){
           window.location.href = "Fallo.php";
         }
-        document.getElementById("rel").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+        document.getElementById("temp").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
+    setInterval(r,10);
     </script>
 </body>
 </html>
