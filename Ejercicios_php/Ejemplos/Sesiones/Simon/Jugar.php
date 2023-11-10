@@ -9,12 +9,11 @@
   width: 20%;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 2%;
-  margin-right: 2%;
   margin-bottom: 10px;
   margin-top: 100px;
   
 }
+.dotcenter {align-content: space-between;}
 form{
   margin-left: auto;
   margin-right: auto;
@@ -73,9 +72,11 @@ body{background-color: aquamarine;text-align: center;}
     <h1>SIMÓN</h1><br><br>
     <h2>Introduce los colores correctamente</h2>
     <br>
+    <div class="dotcenter">
     <?php
     pintar($_SESSION["adi"]);
     ?>
+    </div>
     <br>
     <?php
     if($_SESSION["count"]<count($_SESSION["adi"])){

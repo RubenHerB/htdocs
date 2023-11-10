@@ -9,12 +9,11 @@
   width: 20%;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 2%;
-  margin-right: 2%;
   margin-bottom: 10px;
   margin-top: 100px;
   
 }
+.dotcenter {align-content: space-between;}
 form{
   margin-left: auto;
   margin-right: auto;
