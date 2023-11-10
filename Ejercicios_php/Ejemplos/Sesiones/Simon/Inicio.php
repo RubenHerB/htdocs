@@ -91,7 +91,10 @@ body{background-color: aquamarine;text-align: center;}
           t[1]-=(Math.truncate(t[1]/60)*60);
         }
       }
-
+      function r(){  
+        if(t[2]=0){}
+        document.getElementById("rel").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+    }
     </script>
 </body>
 </html>
