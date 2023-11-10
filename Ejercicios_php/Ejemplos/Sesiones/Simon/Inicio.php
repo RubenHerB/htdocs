@@ -55,17 +55,19 @@ body{background-color: aquamarine;text-align: center;}
     <h1>SIMÓN</h1><br><br>
     <h2>Hola, memoriza los siguientes colores</h2>
     <h3 id="temp"></h3>
-    <br>
-    <div class="dotcenter" id="dc">
-    </div>
-    <br>
     <form method="post" action="Inicio.php">
       <?php
       if(isset($_POST["nc"])){
-        include 'circulos.php';
-         $cir=new Circulos();
-        $cir->pintar($ci);
-        echo"<input type=\"submit\" value=\"VAMOS A JUGAR\"/>";
+        echo <<<_END
+            <div class="dotcenter" id="dc">
+            <?php
+            include 'circulos.php';
+            $cir=new Circulos();
+            $cir->pintar($ci);
+              ?>
+            </div>
+            <input type="submit" value="VAMOS A JUGAR"/>
+            _END;
       }else{
       echo <<<_END
         <select name="nc">
