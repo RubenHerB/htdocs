@@ -106,7 +106,7 @@ body{background-color: aquamarine;text-align: center;}
             t[2]--;
         }}
         
-        document.getElementById("temp").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+        document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
     var timer=setInterval(r,10);
     function salida(){

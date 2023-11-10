@@ -54,5 +54,13 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Inicio.php">
         <input type="submit" value="Volver a jugar?"/>
     </form>
+    <script type="text/javascript">
+      var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
+      if(t[0]==0&&t[1]==0&&t[2]==0){
+        document.getElementById("temp").innerHTML="Te has quedado sin tiempo";
+      }else{
+      document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+      }
+    </script>
 </body>
 </html>
