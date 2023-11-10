@@ -108,7 +108,11 @@ body{background-color: aquamarine;text-align: center;}
         
         document.getElementById("temp").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
-    setInterval(r,10);
+    var timer=setInterval(r,10);
+    function salida(){
+      clearInterval(timer);
+      localStorage.setItem("timer", t);
+    }
     </script>
 </body>
 </html>
