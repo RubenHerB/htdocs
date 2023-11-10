@@ -6,7 +6,6 @@
   <style>
     .dot {
     aspect-ratio: 1/1;
-  width: 20%;
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 10px;
@@ -61,12 +60,5 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Jugar.php">
         <input type="submit" value="VAMOS A JUGAR"/>
     </form>
-    <script>
-      var element = document.getElementById("dc");
-      var nb = element.getElementsByTagName('*').length;
-      console.log(nb);
-      document.getElementsByClassName("dot").style.width=(90/nb)+"%";
-
-    </script>
 </body>
 </html>
