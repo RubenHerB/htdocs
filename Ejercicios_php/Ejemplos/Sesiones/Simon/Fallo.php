@@ -19,6 +19,36 @@ form{
   margin-right: auto;
   text-align: center;
 }
+.parpadea {
+  color: red;
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name:parpadeo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
 input[type="submit"] {
   padding: 10px;
   border-radius: 10px;
@@ -58,6 +88,7 @@ body{background-color: aquamarine;text-align: center;}
       var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
       if(t[0]==0&&t[1]==0&&t[2]==0){
         document.getElementById("temp").innerHTML="Te has quedado sin tiempo";
+        document.getElementById("temp").classList.add("parpadea")
       }else{
       document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
       }
