@@ -6,7 +6,7 @@ class Circulos{
 
     function pintar($c){
         $col=["black","red","#4772ff","yellow","green"];
-        $stl="";
+        $style="";
         if(count($c)>4){
           $style=";width:".(90/count($c))."%;margin-left:".(5/count($c))."%;margin-right:".(5/count($c))."%";
         }
