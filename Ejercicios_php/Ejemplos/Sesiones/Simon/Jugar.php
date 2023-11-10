@@ -99,6 +99,9 @@ body{background-color: aquamarine;text-align: center;}
       function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
+          localStorage.setItem("timer0", 0);
+          localStorage.setItem("timer1", 0);
+          localStorage.setItem("timer2", 0);
           window.location.href = "Fallo.php";
         }
         if(t[2]<0){
