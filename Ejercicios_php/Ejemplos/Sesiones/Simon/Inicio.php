@@ -34,7 +34,11 @@ body{background-color: aquamarine;text-align: center;}
 </head>
 <body>
     <h1>SIMÓN</h1><br><br>
-    <h2>Hola, memoriza los siguientes colores</h2>
+    <?php
+    if(isset($_POST["nc"])){
+      echo "<h2>Hola, memoriza los siguientes colores</h2>";
+    }
+    ?>
     <h3 id="temp"></h3>
     <form method="post" action="Inicio.php">
       <?php
@@ -97,8 +101,8 @@ body{background-color: aquamarine;text-align: center;}
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
           localStorage.setItem("timer0", 0);
-      localStorage.setItem("timer1", 0);
-      localStorage.setItem("timer2", 0);
+          localStorage.setItem("timer1", 0);
+          localStorage.setItem("timer2", 0);
           window.location.href = "Fallo.php";
         }
         if(t[2]<0){
