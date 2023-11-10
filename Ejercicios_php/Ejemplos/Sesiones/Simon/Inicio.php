@@ -57,16 +57,14 @@ body{background-color: aquamarine;text-align: center;}
     <h3 id="temp"></h3>
     <br>
     <div class="dotcenter" id="dc">
-    <?php
-    include 'circulos.php';
-    $cir=new Circulos();
-    $cir->pintar($ci);
-    ?>
     </div>
     <br>
     <form method="post" action="Inicio.php">
       <?php
       if(isset($_POST["nc"])){
+        include 'circulos.php';
+         $cir=new Circulos();
+        $cir->pintar($ci);
         echo"<input type=\"submit\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
