@@ -68,6 +68,7 @@ body{background-color: aquamarine;text-align: center;}
 <body>
     <h1>SIMÓN</h1><br><br>
     <h2>Introduce los colores correctamente</h2>
+    <h3 id="temp"></h3>
     <br>
     <div class="dotcenter">
     <?php
