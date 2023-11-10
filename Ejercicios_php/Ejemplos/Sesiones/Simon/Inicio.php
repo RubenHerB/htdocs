@@ -35,8 +35,11 @@ body{background-color: aquamarine;text-align: center;}
     <h3 id="temp"></h3>
     <form method="post" action="Inicio.php">
       <?php
+      if(isset($_POST["submit"])){
       if($_POST["submit"]=="VAMOS A JUGAR"){
-         
+      header("Location: Jugar.php");
+    }}
+      if(isset($_POST["nc"])){
         $numero_circulos = (int)$_POST["nc"];//numero de circulos que habra que acertar en el simon
         session_start();
         $ci=[0];
@@ -50,9 +53,6 @@ body{background-color: aquamarine;text-align: center;}
           $ci[$i]=rand(1,4);
         }
       $_SESSION["ran"]=$ci;
-      header("Location: Jugar.php");
-    }
-      if(isset($_POST["nc"])){
             echo "<div class=\"dotcenter\" id=\"dc\">";
             include 'circulos.php';
             $cir=new Circulos();
@@ -60,7 +60,7 @@ body{background-color: aquamarine;text-align: center;}
               
         echo "                      
               </div>
-              <input type=\"submit\" value=\"VAMOS A JUGAR\"/>";
+              <input type=\"submit\" name=\"submit\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
         <select name="nc">
@@ -74,7 +74,7 @@ body{background-color: aquamarine;text-align: center;}
         <option value="9">9</option>
         <option value="10">10</option>
         </select>
-        <input type="Submit"  value="SELECCIONAR NUMERO DE CIRCULOS"/>>
+        <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>>
         _END;
       }
         ?>
