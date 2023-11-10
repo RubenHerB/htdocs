@@ -37,7 +37,7 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-      const numero_circulos = 5;
+      const numero_circulos = 4;
       include 'circulos.php';
       $cir=new Circulos();
       session_start();
@@ -71,6 +71,7 @@ body{background-color: aquamarine;text-align: center;}
       var element = document.getElementById("dc");
       var nb = element.getElementsByTagName('*').length;
       console.log(nb);
+      document.getElementById("dot").style.width=(90/nb)+"%";
     </script>
 </body>
 </html>
