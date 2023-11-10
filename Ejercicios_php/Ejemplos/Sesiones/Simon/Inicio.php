@@ -72,7 +72,7 @@ body{background-color: aquamarine;text-align: center;}
       var nb = element.getElementsByTagName('*').length;
       console.log(nb);
       document.getElementById("dot").style.width=(90/nb)+"%";
-      document.getElementById("dot").style.height=(90/nb)+"%";
+      document.getElementById("dot").style.aspectRatio=1/1;
     </script>
 </body>
 </html>
