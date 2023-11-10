@@ -8,18 +8,12 @@
     aspect-ratio: 1/1;
   width: 20%;
   border-radius: 50%;
-  display: flex;
+  display: inline-block;
   margin-bottom: 10px;
   margin-top: 100px;
   
 }
-.dotcenter {
-  display: flex;
-  align-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
-}
+
 form{
   margin-left: auto;
   margin-right: auto;
@@ -73,6 +67,7 @@ body{background-color: aquamarine;text-align: center;}
       console.log(nb);
       document.getElementById("dot").style.width=(90/nb)+"%";
       document.getElementById("dot").style.aspectRatio=document.getElementById("dot").offsetWidth;
+      
     </script>
 </body>
 </html>
