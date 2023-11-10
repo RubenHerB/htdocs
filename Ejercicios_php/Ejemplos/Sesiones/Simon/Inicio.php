@@ -37,10 +37,14 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
+      const numero_circulos = 5;
       include 'circulos.php';
       $cir=new Circulos();
       session_start();
-      $ci=[0,0,0,0];
+      $ci=[0];
+      for ($i=1;$i<numero_circulos;$i++){
+        array_push($ci,0);
+      }
       $_SESSION=["ran"=>$ci,
       "adi"=>$ci,
       "count"=>0];
