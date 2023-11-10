@@ -37,11 +37,8 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-    function pintar($c){
-        $col=["black","red","#4772ff","yellow","green"];
-        foreach($c as $p)
-        echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
-      }
+      include 'circulos.php';
+      $cir=new Circulos();
       session_start();
       $ci=[0,0,0,0];
       $_SESSION=["ran"=>$ci,
@@ -59,7 +56,7 @@ body{background-color: aquamarine;text-align: center;}
     <br>
     <div class="dotcenter">
     <?php
-    pintar($ci);
+    $cir.pintar($ci);
     ?>
     </div>
     <br>
