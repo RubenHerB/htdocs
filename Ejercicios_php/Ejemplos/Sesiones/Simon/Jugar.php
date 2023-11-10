@@ -62,8 +62,8 @@ body{background-color: aquamarine;text-align: center;}
         $_SESSION["count"]++;
         }else{
         $_SESSION["count"]--;
-        $_SESSION["adi"][$_SESSION["count"]]=$a;
-        } }     
+        $_SESSION["adi"][$_SESSION["count"]]=0;
+        }}     
 ?> 
 </head>
 <body>
