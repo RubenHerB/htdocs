@@ -95,7 +95,7 @@ body{background-color: aquamarine;text-align: center;}
     }
     ?>
     <script type="text/javascript">
-      var t=localStorage.getItem("timer");
+      var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
       function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
