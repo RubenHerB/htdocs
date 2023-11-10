@@ -114,7 +114,9 @@ body{background-color: aquamarine;text-align: center;}
     var timer=setInterval(r,10);
     function salida(){
       clearInterval(timer);
-      localStorage.setItem("timer", t);
+      localStorage.setItem("timer0", t[0]);
+      localStorage.setItem("timer1", t[1]);
+      localStorage.setItem("timer2", t[2]);
     }
     </script>
     </script>
