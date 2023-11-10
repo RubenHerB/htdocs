@@ -63,7 +63,7 @@ body{background-color: aquamarine;text-align: center;}
               
         echo "                      
               </div>
-              <input type=\"submit\" name=\"submit\" value=\"VAMOS A JUGAR\"/>";
+              <input type=\"submit\" name=\"submit\" onclick=\"salida()\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
         <select name="nc" id="num">
