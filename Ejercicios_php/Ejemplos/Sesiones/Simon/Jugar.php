@@ -6,7 +6,9 @@
   <style>
     .dot {
     aspect-ratio: 1/1;
-  width: 20%;
+    width: 20%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 10px;

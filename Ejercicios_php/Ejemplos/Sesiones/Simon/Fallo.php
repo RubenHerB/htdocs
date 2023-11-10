@@ -8,6 +8,8 @@
     aspect-ratio: 1/1;
   width: 20%;
   border-radius: 50%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 100px;
