@@ -84,7 +84,7 @@ body{background-color: aquamarine;text-align: center;}
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
-        t[1]=n*20;
+        t[1]=n*6;
         if(t[1]>=60){
           t[0]=Math.trunc(t[1]/60);
           t[1]-=(Math.trunc(t[1]/60)*60);
@@ -92,7 +92,7 @@ body{background-color: aquamarine;text-align: center;}
       }
       function r(){  
         t[2]--;
-        if(t==[0,0,0]){
+        if(t[0]==0&&t[1]==0&&t[2]==0){
           window.location.href = "Fallo.php";
         }
         if(t[2]<0){
