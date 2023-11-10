@@ -77,7 +77,9 @@ body{background-color: aquamarine;text-align: center;}
     </div>
     <br>
     <?php
+    $t=false;
     if($_SESSION["count"]<count($_SESSION["adi"])){
+      $t=true;
     echo <<<_END
     <form method="post" action="Jugar.php">
         <input style="background-color: red" type="submit" name="c" value="ROJO" />
@@ -114,6 +116,8 @@ body{background-color: aquamarine;text-align: center;}
         
         document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
+    var c=window.some_variable = '<?=$t?>';
+    console.log(c);
     var timer=setInterval(r,10);
     function salida(){
       clearInterval(timer);
