@@ -37,7 +37,7 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-      const numero_circulos = 4;
+      const numero_circulos = 6;
       include 'circulos.php';
       $cir=new Circulos();
       session_start();
