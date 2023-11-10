@@ -8,12 +8,14 @@
     aspect-ratio: 1/1;
   width: 20%;
   border-radius: 50%;
-  display: inline-block;
+  display: flex;
   margin-bottom: 10px;
   margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
   
+}
+.dotcenter {
+  align-content: space-between;
+  flex-wrap: wrap;
 }
 form{
   margin-left: auto;
