@@ -63,7 +63,7 @@ body{background-color: aquamarine;text-align: center;}
               <input type=\"submit\" name=\"submit\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
-        <select name="nc">
+        <select name="nc" id="num">
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -80,6 +80,12 @@ body{background-color: aquamarine;text-align: center;}
         ?>
         
     </form>
-    
+    <script>
+      var n=parseInt(docume.getElementById("num").value);
+      if (!isNaN(n)){
+        document.getElementById("temp").innerHTML=("0" + h).slice(-2)+":"+("0" + d.getMinutes().toString()).slice(-2)+":"+("0" + d.getSeconds().toString()).slice(-2)+" "+t  ;
+      }
+
+    </script>
 </body>
 </html>
