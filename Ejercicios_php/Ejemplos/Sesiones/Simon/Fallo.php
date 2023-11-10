@@ -29,13 +29,6 @@ input[type="submit"]:hover{
 }
 body{background-color: aquamarine;text-align: center;}
   </style>
-<?php
-    function pintar($c){
-        $col=["black","red","#4772ff","yellow","green"];
-        foreach($c as $p)
-        echo "<span class=\"dot\" style=\"background-color:",$col[$p],"\"></span>";
-      }
-?> 
 </head>
 <body>
     <h1>SIMÓN</h1><br><br>
@@ -45,14 +38,16 @@ body{background-color: aquamarine;text-align: center;}
     <div class="dotcenter">
     <?php
     session_start();
-    pintar($_SESSION["ran"]);
+    include 'circulos.php';
+      $cir=new Circulos();
+    $cir->pintar($_SESSION["ran"]);
     ?>
     </div>
     <br>
     <h4>HAS PINTADO:</h4>
     <div class="dotcenter">
     <?php
-    pintar($_SESSION["adi"]);
+    $cir->pintar($_SESSION["adi"]);
     session_destroy();
     ?>
     </div>

@@ -56,7 +56,7 @@ body{background-color: aquamarine;text-align: center;}
     <br>
     <div class="dotcenter">
     <?php
-    $cir.pintar($ci);
+    $cir->pintar($ci);
     ?>
     </div>
     <br>
