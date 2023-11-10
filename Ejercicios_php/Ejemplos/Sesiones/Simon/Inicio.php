@@ -70,6 +70,7 @@ body{background-color: aquamarine;text-align: center;}
               <input type=\"submit\" name=\"submit\" onclick=\"salida()\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
+        Numero de circulos:
         <select name="nc" id="num">
         <option value="2">2</option>
         <option value="3">3</option>
@@ -81,6 +82,8 @@ body{background-color: aquamarine;text-align: center;}
         <option value="9">9</option>
         <option value="10">10</option>
         </select>
+        <br>
+        <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
         _END;
       }

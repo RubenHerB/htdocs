@@ -49,6 +49,8 @@ body{background-color: aquamarine;text-align: center;}
           case "VERDE":
             $a=4;
             break;
+          case "BORRAR":
+
           case "COMPROBAR":
             if($_SESSION["adi"]==$_SESSION["ran"]){
             header("Location: Acierto.php");
@@ -86,6 +88,7 @@ body{background-color: aquamarine;text-align: center;}
         <input onclick="salida()" style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
         <input onclick="salida()" style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
         <input onclick="salida()" style="background-color: green" type="submit" name="c" value="VERDE" />
+        <input onclick="salida()" type="submit" name="c" value="BORRAR" />
     </form>
     _END;
   }else{
