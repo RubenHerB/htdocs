@@ -60,7 +60,7 @@ body{background-color: aquamarine;text-align: center;}
         if($a!=0){
         $_SESSION["adi"][$_SESSION["count"]]=$a;
         $_SESSION["count"]++;
-        }elseif($a==0) {
+        }elseif($_POST["c"]!="COMPROBAR"){
         $_SESSION["count"]--;
         $_SESSION["adi"][$_SESSION["count"]]=0;
         }}     
