@@ -77,9 +77,9 @@ body{background-color: aquamarine;text-align: center;}
     </div>
     <br>
     <?php
-    $t=false;
+    $t=true;
     if($_SESSION["count"]<count($_SESSION["adi"])){
-      $t=true;
+      $t=false;
     echo <<<_END
     <form method="post" action="Jugar.php">
         <input onclick="salida()" style="background-color: red" type="submit" name="c" value="ROJO" />
@@ -98,6 +98,7 @@ body{background-color: aquamarine;text-align: center;}
     ?>
     <script type="text/javascript">
       var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
+      document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
       function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
