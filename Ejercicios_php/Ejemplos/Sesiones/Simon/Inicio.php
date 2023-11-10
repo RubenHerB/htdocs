@@ -52,9 +52,11 @@ body{background-color: aquamarine;text-align: center;}
     <h1>SIMÓN</h1><br><br>
     <h2>Hola, memoriza los siguientes colores</h2>
     <br>
+    <div class="dotcenter">
     <?php
     pintar($ci);
     ?>
+    </div>
     <br>
     <form method="post" action="Jugar.php">
         <input type="submit" value="VAMOS A JUGAR"/>
