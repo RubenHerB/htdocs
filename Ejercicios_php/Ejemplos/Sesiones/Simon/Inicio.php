@@ -37,7 +37,7 @@ body{background-color: aquamarine;text-align: center;}
       <?php
       if($_POST["submit"]=="VAMOS A JUGAR"){
          
-        $numero_circulos = 20;//numero de circulos que habra que acertar en el simon
+        $numero_circulos = (int)$_POST["nc"];//numero de circulos que habra que acertar en el simon
         session_start();
         $ci=[0];
         for ($i=1;$i<$numero_circulos;$i++){
