@@ -58,16 +58,14 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Inicio.php">
       <?php
       if(isset($_POST["nc"])){
-        echo <<<_END
-            <div class="dotcenter" id="dc">
-            <?php
+            echo "<div class=\"dotcenter\" id=\"dc\">";
             include 'circulos.php';
             $cir=new Circulos();
             $cir->pintar($ci);
-              ?>
-            </div>
-            <input type="submit" value="VAMOS A JUGAR"/>
-            _END;
+              
+        echo "                      
+              </div>
+              <input type=\"submit\" value=\"VAMOS A JUGAR\"/>";
       }else{
       echo <<<_END
         <select name="nc">
