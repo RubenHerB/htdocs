@@ -43,11 +43,13 @@ body{background-color: aquamarine;text-align: center;}
     <h1>SIMÓN</h1><br><br>
     <h2>Felicidades, has acertado</h2>
     <br>
+    <div class="dotcenter">
     <?php
     session_start();
     pintar($_SESSION["ran"]);
     session_destroy();
     ?>
+    </div>
     <br>
     <form method="post" action="Inicio.php">
         <input type="submit" value="Volver a jugar?"/>

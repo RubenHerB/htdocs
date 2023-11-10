@@ -30,9 +30,6 @@ input[type="submit"]:hover{
 }
 body{background-color: aquamarine;text-align: center;}
   </style>
-<script type="text/javascript">
-    console.log(document.getElementsByClass('span').length);
-</script>
 <?php
     function pintar($c){
         $col=["black","red","#4772ff","yellow","green"];
@@ -46,16 +43,20 @@ body{background-color: aquamarine;text-align: center;}
     <h2>Has fallado</h2>
     <br>
     <h4>DEBIAS PINTAR:</h4>
+    <div class="dotcenter">
     <?php
     session_start();
     pintar($_SESSION["ran"]);
     ?>
+    </div>
     <br>
     <h4>HAS PINTADO:</h4>
+    <div class="dotcenter">
     <?php
     pintar($_SESSION["adi"]);
     session_destroy();
     ?>
+    </div>
     <form method="post" action="Inicio.php">
         <input type="submit" value="Volver a jugar?"/>
     </form>
