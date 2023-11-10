@@ -82,10 +82,10 @@ body{background-color: aquamarine;text-align: center;}
       $t=true;
     echo <<<_END
     <form method="post" action="Jugar.php">
-        <input style="background-color: red" type="submit" name="c" value="ROJO" />
-        <input style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
-        <input style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
-        <input style="background-color: green" type="submit" name="c" value="VERDE" />
+        <input onclick="salida()" style="background-color: red" type="submit" name="c" value="ROJO" />
+        <input onclick="salida()" style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
+        <input onclick="salida()" style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
+        <input onclick="salida()" style="background-color: green" type="submit" name="c" value="VERDE" />
     </form>
     _END;
   }else{
@@ -117,8 +117,8 @@ body{background-color: aquamarine;text-align: center;}
         document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
     var c=window.some_variable = '<?=$t?>';
-    console.log(c);
-    var timer=setInterval(r,10);
+    if(!c){
+    var timer=setInterval(r,10);}
     function salida(){
       clearInterval(timer);
       localStorage.setItem("timer0", t[0]);
