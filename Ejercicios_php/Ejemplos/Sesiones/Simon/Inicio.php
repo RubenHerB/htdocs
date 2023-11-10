@@ -81,8 +81,7 @@ body{background-color: aquamarine;text-align: center;}
         
     </form>
     <script>
-      var n=parseInt(document.getElementById("num").value);
-      vars=0;
+      var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
         t[1]=n*20;
