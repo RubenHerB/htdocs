@@ -49,8 +49,6 @@ body{background-color: aquamarine;text-align: center;}
           case "VERDE":
             $a=4;
             break;
-          case "BORRAR":
-
           case "COMPROBAR":
             if($_SESSION["adi"]==$_SESSION["ran"]){
             header("Location: Acierto.php");
@@ -63,7 +61,10 @@ body{background-color: aquamarine;text-align: center;}
         $_SESSION["adi"][$_SESSION["count"]]=$a;
         }
         $_SESSION["count"]++;
-      }
+      }else{
+        $_SESSION["count"]--;
+        $_SESSION["adi"][$_SESSION["count"]]=$a;
+        }
       
 ?> 
 </head>
