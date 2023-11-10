@@ -54,7 +54,7 @@ body{background-color: aquamarine;text-align: center;}
     <h1>SIMÓN</h1><br><br>
     <h2>Hola, memoriza los siguientes colores</h2>
     <br>
-    <div class="dotcenter">
+    <div class="dotcenter" id="dc">
     <?php
     $cir->pintar($ci);
     ?>
@@ -63,5 +63,10 @@ body{background-color: aquamarine;text-align: center;}
     <form method="post" action="Jugar.php">
         <input type="submit" value="VAMOS A JUGAR"/>
     </form>
+    <script>
+      var element = document.getElementById("dc");
+      var nb = element.getElementsByTagName('*').length;
+      console.log(nb);
+    </script>
 </body>
 </html>
