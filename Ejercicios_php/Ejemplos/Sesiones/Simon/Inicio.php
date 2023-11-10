@@ -91,6 +91,10 @@ body{background-color: aquamarine;text-align: center;}
         }
       }
       function r(){  
+        t[2]--;
+        if(t==[0,0,0]){
+          window.location.href = "Fallo.php";
+        }
         if(t[2]<0){
           t[2]=99;
           t[1]--;
@@ -98,9 +102,7 @@ body{background-color: aquamarine;text-align: center;}
             t[1]=59;
             t[2]--;
         }}
-        if(t==[0,0,0]){
-          window.location.href = "Fallo.php";
-        }
+        
         document.getElementById("temp").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
     setInterval(r,10);
