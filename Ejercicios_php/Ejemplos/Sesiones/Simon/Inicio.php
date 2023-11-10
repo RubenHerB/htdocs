@@ -18,6 +18,7 @@
   align-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: space-around;
 }
 form{
   margin-left: auto;
