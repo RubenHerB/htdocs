@@ -28,28 +28,6 @@ input[type="submit"]:hover{
 }
 body{background-color: aquamarine;text-align: center;}
   </style>
-
-<?php
-      if(isset($_POST["submit"])){
-        if($_POST["submit"]=="VAMOS A JUGAR"){
-         
-      $numero_circulos = 20;//numero de circulos que habra que acertar en el simon
-      session_start();
-      $ci=[0];
-      for ($i=1;$i<$numero_circulos;$i++){
-        array_push($ci,0);
-      }
-      $_SESSION=["ran"=>$ci,
-      "adi"=>$ci,
-      "count"=>0];
-      for ($i=0;$i<count($ci);$i++){
-        $ci[$i]=rand(1,4);
-      }
-    $_SESSION["ran"]=$ci;
-    header("Location: Jugar.php");
-  }
-}
-?> 
 </head>
 <body>
     <h1>SIMÓN</h1><br><br>
@@ -57,6 +35,23 @@ body{background-color: aquamarine;text-align: center;}
     <h3 id="temp"></h3>
     <form method="post" action="Inicio.php">
       <?php
+      if($_POST["submit"]=="VAMOS A JUGAR"){
+         
+        $numero_circulos = 20;//numero de circulos que habra que acertar en el simon
+        session_start();
+        $ci=[0];
+        for ($i=1;$i<$numero_circulos;$i++){
+          array_push($ci,0);
+        }
+        $_SESSION=["ran"=>$ci,
+        "adi"=>$ci,
+        "count"=>0];
+        for ($i=0;$i<count($ci);$i++){
+          $ci[$i]=rand(1,4);
+        }
+      $_SESSION["ran"]=$ci;
+      header("Location: Jugar.php");
+    }
       if(isset($_POST["nc"])){
             echo "<div class=\"dotcenter\" id=\"dc\">";
             include 'circulos.php';
