@@ -81,7 +81,7 @@ body{background-color: aquamarine;text-align: center;}
         
     </form>
     <script>
-      var n=parseInt(docume.getElementById("num").value);
+      var n=parseInt(document.getElementById("num").value);
       vars=0;
       if (!isNaN(n)){
         t=[0,0,0];
@@ -92,7 +92,16 @@ body{background-color: aquamarine;text-align: center;}
         }
       }
       function r(){  
-        if(t[2]=0){}
+        if(t[2]<0){
+          t[2]=99;
+          t[1]--;
+          if(t[1]<0){
+            t[1]=59;
+            t[2]--;
+        }}
+        if(t==[0,0,0]){
+          window.location.href = "Fallo.php";
+        }
         document.getElementById("rel").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
     </script>
