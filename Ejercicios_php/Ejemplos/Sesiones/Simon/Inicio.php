@@ -13,7 +13,9 @@
   margin-top: 100px;
   
 }
-.dotcenter {align-content: space-between;}
+.dotcenter {
+  align-content: space-between;
+}
 form{
   margin-left: auto;
   margin-right: auto;
