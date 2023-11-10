@@ -11,10 +11,9 @@
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
   
-}
-.dotcenter {
-  align-content: space-between;
 }
 form{
   margin-left: auto;
