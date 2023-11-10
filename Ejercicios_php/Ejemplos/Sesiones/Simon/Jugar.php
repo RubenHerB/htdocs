@@ -94,5 +94,29 @@ body{background-color: aquamarine;text-align: center;}
         _END;
     }
     ?>
+    <script type="text/javascript">
+      var t=localStorage.getItem("timer");
+      function r(){  
+        t[2]--;
+        if(t[0]==0&&t[1]==0&&t[2]==0){
+          window.location.href = "Fallo.php";
+        }
+        if(t[2]<0){
+          t[2]=99;
+          t[1]--;
+          if(t[1]<0){
+            t[1]=59;
+            t[2]--;
+        }}
+        
+        document.getElementById("temp").innerHTML=("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+    }
+    var timer=setInterval(r,10);
+    function salida(){
+      clearInterval(timer);
+      localStorage.setItem("timer", t);
+    }
+    </script>
+    </script>
 </body>
 </html>
