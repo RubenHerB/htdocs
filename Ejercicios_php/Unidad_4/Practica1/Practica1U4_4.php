@@ -22,6 +22,7 @@
         $y=$_POST['a'];
         $m=$_POST['m'];
         $nd=cal_days_in_month(CAL_GREGORIAN,$m,$y)+1;
+        var_dump(cal_days_in_month(CAL_GREGORIAN,$m,$y));
         $c=date('w', strtotime("$y-$m-1"))-1;
         if($c<0){
             $c=6;
