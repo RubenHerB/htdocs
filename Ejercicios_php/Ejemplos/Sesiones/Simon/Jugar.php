@@ -12,7 +12,7 @@
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 10px;
-  margin-top: 100px;
+  margin-top: 20px;
   
 }
 .dotcenter {align-content: space-between;}
