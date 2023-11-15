@@ -4,12 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cookies</title>
 </head>
-<body>
+
     <?php
     if(isset($_COOKIE['color'])){
-        echo '<div style="background-color:',$_COOKIE['color'],'">';
+        echo '<body style="background-color:',$_COOKIE['color'],'">';
     }else{
-        echo '<div style="background-color:white">';
+        echo '<body style="background-color:white">';
     }
     ?>
         <form method="post" action="Practica4U4_2.php">
@@ -20,6 +20,6 @@
             <input type="radio" name="col" value="green">
             <label for="html">Verde</label><br>
             <input type="submit" value="Crear la coockie"/>
-    </div>
+
 </body>
 </html>
