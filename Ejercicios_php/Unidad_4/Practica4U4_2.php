@@ -7,7 +7,7 @@
 <body>
 <?php
     if(isset($_POST['col'])){
-        setcookie('color', $_POST['col'], time()+600, '/', '127.0.0.1', FALSE, FALSE);
+        setcookie('color', $_POST['col'], time()+60, '/', '127.0.0.1', FALSE, FALSE);
         echo "Se crea la coockie";
     }else{
         echo "La coockie no se ha creado";
