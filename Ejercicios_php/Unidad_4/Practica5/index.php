@@ -5,7 +5,16 @@
   <title>Sesiones</title>
 </head>
 <body>
-    <form method="post" action="confirmacion.php">
+    <?php
+    if(isset($_POST['user'])&&isset($_POST['password'])){
+      session_start();
+      $_SESSION=['u'=>$_POST['user'],'p'=>$_POST['password']];
+      header("Location: confirmar.php");
+    }else{
+      echo "<p style=\"color:red\">Introduce todos los datos</p>";
+    }
+    ?>
+    <form method="post" action="index.php">
       Usuario: 
       <input type="text" name="user">
       <br/>
@@ -13,6 +22,5 @@
       <input type="passwrd" name="pasword">
       <br/>
       <input type="submit">
-
 </body>
 </html>
