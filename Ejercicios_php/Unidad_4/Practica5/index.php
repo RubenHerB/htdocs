@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-    if(isset($_POST['user'])&&isset($_POST['password'])){
+    if(isset($_POST['user']) && isset($_POST['password'])){
       session_start();
       $_SESSION=['u'=>$_POST['user'],'p'=>$_POST['password']];
       header("Location: confirmar.php");
@@ -19,7 +19,7 @@
       <input type="text" name="user">
       <br/>
       Contraseña: 
-      <input type="passwrd" name="pasword">
+      <input type="password" name="password">
       <br/>
       <input type="submit">
 </body>
