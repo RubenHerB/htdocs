@@ -6,14 +6,14 @@
 </head>
 <body>
 <?php
-if(isset($_COOKIE('color'))){
     if(isset($_POST['col'])){
-        setcookie('color', $_POST['col']);
+        setcookie('color', $_POST['col'], time()+600, '/', '127.0.0.1', FALSE, FALSE);
+        echo "Se crea la coockie";
+    }else{
+        echo "La coockie no se ha creado";
     }
-}else{
-    if(isset($_POST['col'])){
-    setcookie('color', $_POST['col'], time()+600, '/', '127.0.0.1', FALSE, FALSE);
-}}
 ?>
+<br>
+<a href="Practica4U4.php">Ir a la otra web</a>
 </body>
 </html>
