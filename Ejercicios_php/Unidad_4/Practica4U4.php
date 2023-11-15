@@ -6,8 +6,8 @@
 </head>
 <body>
     <?php
-    if(isset($_COOKIE('color'))){
-        echo '<div style="background-color:',$_COOKIE('color'),'">';
+    if(isset($_COOKIE['color'])){
+        echo '<div style="background-color:',$_COOKIE['color'],'">';
     }else{
         echo '<div style="background-color:white">';
     }
@@ -15,10 +15,11 @@
         <form method="post" action="Practica4U4_2.php">
             <input type="radio" name="col" value="red">
             <label for="html">Rojo</label><br>
-            <input type="radio" name="col" value="red">
+            <input type="radio" name="col" value="#4287f5">
             <label for="html">Azul</label><br>
             <input type="radio" name="col" value="green">
             <label for="html">Verde</label><br>
+            <input type="submit" value="Crear la coockie"/>
     </div>
 </body>
 </html>
