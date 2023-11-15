@@ -6,9 +6,19 @@
 </head>
 <body>
     <?php
-        setcookie('color', '', time()+600, '/', '127.0.0.1', FALSE, FALSE);
+    if(isset($_COOKIE('color'))){
+        echo '<div style="background-color:',$_COOKIE('color'),'">';
+    }else{
+        echo '<div style="background-color:white">';
+    }
     ?>
-
+        <form method="post" action="Practica4U4_2.php">
+            <input type="radio" name="col" value="red">
+            <label for="html">Rojo</label><br>
+            <input type="radio" name="col" value="red">
+            <label for="html">Azul</label><br>
+            <input type="radio" name="col" value="green">
+            <label for="html">Verde</label><br>
     </div>
 </body>
 </html>
