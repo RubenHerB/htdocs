@@ -70,6 +70,7 @@ body{background-color: aquamarine;text-align: center;}
               </div>
               <input type=\"submit\" name=\"submit\" onclick=\"salida()\" value=\"VAMOS A JUGAR\"/>";
       }else{
+        echo "<h2>Hola ",$_SESSION['user'],"</h2>";
       echo <<<_END
         Numero de circulos:
         <select name="nc" id="num">
