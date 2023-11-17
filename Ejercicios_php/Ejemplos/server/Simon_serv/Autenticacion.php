@@ -37,14 +37,14 @@ body{background-color: aquamarine;text-align: center;}
     $uspw=['admin'=>'letmein','user'=>'user','Ruben'=>'1234'];
  if (isset($_SERVER['PHP_AUTH_USER']) &&
  isset($_SERVER['PHP_AUTH_PW']))
- {
+ {if($_SERVER['PHP_AUTH_PW']!=null){
  if ($uspw[$_SERVER['PHP_AUTH_USER']] === $_SERVER['PHP_AUTH_PW']){
     session_start();
 $_SESSION=['user'=>$_SERVER['PHP_AUTH_USER']];
     header("Location: Inicio.php");
 } else die("Invalid username/password combination");
 
- }
+ }}
  else
  {
  header('WWW-Authenticate: Basic realm="Restricted Area"');

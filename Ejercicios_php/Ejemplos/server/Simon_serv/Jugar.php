@@ -33,9 +33,6 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-  if (isset($_SERVER['PHP_AUTH_USER'])){
-    $_SERVER['PHP_AUTH_USER']=null;
-  }
   if(isset($_SERVER['PHP_AUTH_PW']))
   {
     $_SERVER['PHP_AUTH_PW']=null;
