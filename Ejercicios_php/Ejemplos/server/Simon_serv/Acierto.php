@@ -50,7 +50,7 @@ body{background-color: aquamarine;text-align: center;}
     ?>
     </div>
     <br>
-    <form method="post" action="Inicio.php">
+    <form method="post" action="Autenticacion.php">
         <input type="submit" value="Volver a jugar?"/>
     </form>
     <script type="text/javascript">

@@ -35,8 +35,9 @@ body{background-color: aquamarine;text-align: center;}
 <body>
     <h1>SIMÓN</h1><br><br>
     <?php
+    session_start();
     if(isset($_POST["nc"])){
-      echo "<h2>Hola, memoriza los siguientes colores</h2>";
+      echo "<h2>Hola ",$_SESSION['user'],", memoriza los siguientes colores</h2>";
     }
     ?>
     <h3 id="temp"></h3>
@@ -48,7 +49,7 @@ body{background-color: aquamarine;text-align: center;}
     }}
       if(isset($_POST["nc"])){
         $numero_circulos = (int)$_POST["nc"];//numero de circulos que habra que acertar en el simon
-        session_start();
+        
         $ci=[0];
         for ($i=1;$i<$numero_circulos;$i++){
           array_push($ci,0);
