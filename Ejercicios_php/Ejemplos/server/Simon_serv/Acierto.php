@@ -47,6 +47,7 @@ body{background-color: aquamarine;text-align: center;}
     $cir=new Circulos();
     $cir->pintar($_SESSION["ran"]);
     session_destroy();
+    var_dump($_SERVER);
     ?>
     </div>
     <br>
