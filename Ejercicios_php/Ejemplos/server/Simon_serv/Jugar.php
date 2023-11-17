@@ -69,7 +69,7 @@ body{background-color: aquamarine;text-align: center;}
 ?> 
 </head>
 <body>
-    <h1>SIMÓN</h1><br><br>
+    <h1>SIMÓN</h1>
     <h2>Introduce los colores correctamente</h2>
     <h3 id="temp"></h3>
     <br>

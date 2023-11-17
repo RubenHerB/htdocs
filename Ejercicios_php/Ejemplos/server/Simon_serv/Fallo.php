@@ -63,7 +63,7 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 </head>
 <body>
-    <h1>SIMÓN</h1><br><br>
+    <h1>SIMÓN</h1>
     <h2>Has fallado</h2>
     <h3 id="temp"></h3>
     <br>
