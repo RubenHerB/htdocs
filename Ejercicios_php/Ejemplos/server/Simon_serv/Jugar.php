@@ -34,11 +34,11 @@ body{background-color: aquamarine;text-align: center;}
 
 <?php
   if (isset($_SERVER['PHP_AUTH_USER'])){
-    unset($_SERVER['PHP_AUTH_USER']);
+    $_SERVER['PHP_AUTH_USER']=null;
   }
   if(isset($_SERVER['PHP_AUTH_PW']))
   {
-    unset($_SERVER['PHP_AUTH_PW']);
+    $_SERVER['PHP_AUTH_PW']=null;
   }
     include 'circulos.php';
     $cir=new Circulos();
