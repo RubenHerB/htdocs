@@ -33,7 +33,7 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 
 <?php
-    $_SERVER['PHP_AUTH_PW']=null;  
+    $_SERVER['PHP_AUTH_PW']='0';  
     include 'circulos.php';
     $cir=new Circulos();
       session_start();
