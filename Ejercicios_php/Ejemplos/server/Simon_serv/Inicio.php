@@ -53,7 +53,7 @@ body{background-color: aquamarine;text-align: center;}
         for ($i=1;$i<$numero_circulos;$i++){
           array_push($ci,0);
         }
-        $_SESSION=["ran"=>$ci,
+        $_SESSION+=["ran"=>$ci,
         "adi"=>$ci,
         "count"=>0];
         for ($i=0;$i<count($ci);$i++){
