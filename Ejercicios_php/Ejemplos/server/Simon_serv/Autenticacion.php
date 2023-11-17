@@ -41,7 +41,7 @@ body{background-color: aquamarine;text-align: center;}
  if ($uspw[$_SERVER['PHP_AUTH_USER']] === $_SERVER['PHP_AUTH_PW']){
     session_start();
 $_SESSION=['user'=>$_SERVER['PHP_AUTH_USER']];
-    header("Location: Acierto.php");
+    header("Location: Inicio.php");
 } else die("Invalid username/password combination");
 
  }
