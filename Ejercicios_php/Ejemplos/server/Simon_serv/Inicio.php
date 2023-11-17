@@ -33,7 +33,7 @@ body{background-color: aquamarine;text-align: center;}
   </style>
 </head>
 <body>
-    <h1>SIMÓN</h1><br><br>
+    <h1>SIMÓN</h1>
     <?php
     session_start();
     if(isset($_POST["nc"])){
