@@ -52,7 +52,7 @@ E-mail:<input type="text" name="email" value="<?php echo $email; ?>">
 <span class="error">* <?php echo $emailErr;?></span><br><br>
 Website:<input type="text" name="url" value="<?php echo $url; ?>">
 <span class="error">* <?php echo $urlErr;?></span><br><br>
-Comment:<input style="height:100px;width:300px" type="text" name="comment" value="<?php echo $com; ?>">
+Comment:<textarea style="height:100px;width:300px" name="comment" value="<?php echo $com; ?>"></textarea>
 <br><br>
 <input type="submit">
 
