@@ -43,17 +43,34 @@ if(isset($_POST["comment"])) {
 }else {
     $com=""; 
 }
+//validacion sexo
+if(isset($_POST['sexo'])){
 
+    $sexo=$_POST['sexo'];
+}
+if(!isset($sexo)) {
+$sexoErr="ERROR";}else{$sexoErr="";}
  ?>
+ <h1>Form validation example</h1
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-Name:<input type="text" name="name" value="<?php echo $name; ?>">
+Name: <input type="text" name="name" value="<?php echo $name; ?>">
 <span class="error">* <?php echo $nameErr;?></span><br><br>
-E-mail:<input type="text" name="email" value="<?php echo $email; ?>">
+E-mail: <input type="text" name="email" value="<?php echo $email; ?>">
 <span class="error">* <?php echo $emailErr;?></span><br><br>
-Website:<input type="text" name="url" value="<?php echo $url; ?>">
+Website: <input type="text" name="url" value="<?php echo $url; ?>">
 <span class="error">* <?php echo $urlErr;?></span><br><br>
-Comment:<textarea style="height:100px;width:300px" name="comment"><?php echo $com; ?></textarea>
+Comment: <textarea style="height:100px;width:300px" name="comment"><?php echo $com; ?></textarea>
 <br><br>
+Gender: <input type="radio" name="sexo"
+<?php if (isset($sexo) && $sexo=="mujer") echo "checked";?>
+value="mujer"> Mujer
+<input type="radio" name="sexo"
+<?php if (isset($sexo) && $sexo=="hombre") echo "checked";?>
+value="hombre"> Hombre
+<span class="error">* <?php echo $sexoErr;?></span><br><br>
 <input type="submit">
-
 </form>
+<h2>Your input</h2>
+<?php
+echo "$name<br>$email<br>$url<br>$com<br>$sexo"
+?>
