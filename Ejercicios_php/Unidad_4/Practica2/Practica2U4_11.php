@@ -44,12 +44,14 @@ if(isset($_POST["comment"])) {
     $com=""; 
 }
 //validacion sexo
-if(isset($_POST['sexo'])){
 
+if(isset($_POST['sexo'])){
     $sexo=$_POST['sexo'];
+    $sexoErr="";
+}else{
+    $sexo="";
+    $sexoErr="Escoge un sexo";
 }
-if(!isset($sexo)) {
-$sexoErr="ERROR";}else{$sexoErr="";}
  ?>
  <h1>Form validation example</h1
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
