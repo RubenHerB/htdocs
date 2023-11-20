@@ -1,4 +1,9 @@
 <?php
+class email{
+    function __construct(){
+
+    }
+
 function validar_email($email){
 $emailErr="Email correcto";
 if (empty($email)) {
@@ -9,5 +14,5 @@ if (empty($email)) {
  }
  }
 return $emailErr;
-}
+}}
 ?>

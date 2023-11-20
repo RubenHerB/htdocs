@@ -1,4 +1,13 @@
 <?php
+if(!isset($urlc)){
+    $urlc=new url();
+}
+if(!isset($emailc)){
+    $emailc=new email();
+}
+
+
+
 //Validacion nombre
 function test_entrada($valor) {
     $valor = trim($valor);
@@ -21,7 +30,7 @@ if(isset($_POST["email"])) {
 }else {
     $email="";
     include('Practica2U4_9.php');
-    $emailErr=validar_email($email);
+    $emailErr=$emailc->validar_email($email);
 }
 //validacion url
 if(isset($_POST["url"])) {
@@ -29,7 +38,7 @@ if(isset($_POST["url"])) {
 }else {
     $url="";
     include('Practica2U4_10.php');
-    $urlErr=validar_url($url);
+    $urlErr=$urlc->validar_url($url);
 }
 
 
@@ -39,7 +48,7 @@ Name:<input type="text" name="name" value="<?php echo $name; ?>">
 <span class="error">* <?php echo $nameErr;?></span><br><br>
 E-mail:<input type="text" name="email" value="<?php echo $email; ?>">
 <span class="error">* <?php echo $emailErr;?></span><br><br>
-Website:<input type="text" name="url" value="<?php echo $url; ?>">
+Website:<input type="text" name="url" value="<?php echo $rl; ?>">
 <span class="error">* <?php echo $urlErr;?></span><br><br>
 <input type="submit">
 
