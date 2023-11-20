@@ -29,7 +29,7 @@ if(isset($_POST["url"])) {
 }else {
     $url="";
     include('Practica2U4_10.php');
-    $emailUrl=validar_url($url);
+    $urlErr=validar_url($url);
 }
 
 
@@ -37,6 +37,10 @@ if(isset($_POST["url"])) {
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 Name:<input type="text" name="name" value="<?php echo $name; ?>">
 <span class="error">* <?php echo $nameErr;?></span><br><br>
+E-mail:<input type="text" name="email" value="<?php echo $email; ?>">
+<span class="error">* <?php echo $emailErr;?></span><br><br>
+Website:<input type="text" name="url" value="<?php echo $url; ?>">
+<span class="error">* <?php echo $urlErr;?></span><br><br>
 <input type="submit">
 
 </form>
