@@ -1,8 +1,13 @@
 <?php
-include('Practica2U4_9.php');
-include('Practica2U4_10.php');
-    $urlc=new url();
-    $emailc=new email();
+function validar_email($email){
+    $emailErr="Email correcto";
+    if (empty($email)) {
+     $emailErr = "Se requiere Email";
+     } else {
+     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     $emailErr = "Fomato de Email invalido";
+     }
+     }
 
 //Validacion nombre
 function test_entrada($valor) {
@@ -26,7 +31,7 @@ if(isset($_POST["email"])) {
     $email=$_POST["email"];
 }else {
     $email="";
-    $emailErr=$emailc->validar_email($email);
+    $emailErr=validar_email($email);
 }
 //validacion url
 $urlErr="";

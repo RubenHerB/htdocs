@@ -14,5 +14,6 @@ if (empty($url)) {
  }
  }
 return $urlErr;
-}}
+}
+}
 ?>
