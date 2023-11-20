@@ -37,7 +37,12 @@ if(isset($_POST["url"])) {
     $url="";    
     $urlErr = "Se requiere Url";
 }
-
+//Relleno comment
+if(isset($_POST["comment"])) {
+    $com=$_POST["comment"];
+}else {
+    $com=""; 
+}
 
  ?>
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -47,6 +52,8 @@ E-mail:<input type="text" name="email" value="<?php echo $email; ?>">
 <span class="error">* <?php echo $emailErr;?></span><br><br>
 Website:<input type="text" name="url" value="<?php echo $url; ?>">
 <span class="error">* <?php echo $urlErr;?></span><br><br>
+Comment:<input type="text" name="comment" value="<?php echo $com; ?>">
+<br><br>
 <input type="submit">
 
 </form>
