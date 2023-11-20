@@ -10,7 +10,7 @@ function test_entrada($valor) {
     $valor = stripslashes($valor);
     return $valor;
    }
-   $nameErr="";
+   $nameErr="Nombre correcto";
 if (empty($_POST["name"])) {
  $nameErr = "El nombre es obligatorio";
  $name="";
