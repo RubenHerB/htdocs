@@ -4,7 +4,7 @@ function test_entrada($valor) {
     $valor = stripslashes($valor);
     return $valor;
    }
-   
+   $nameErr="";
 if (empty($_POST["name"])) {
  $nameErr = "El nombre es obligatorio";
  $name="";
@@ -16,5 +16,7 @@ if (empty($_POST["name"])) {
 }
  ?>
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-<input type="text" name="name" value="<?php echo $name; ?>"
+<input type="text" name="name" value="<?php echo $name; ?>">
+<span class="error">* <?php echo $nameErr;?></span><br><br>
+<input type="submit">
 </form>
