@@ -53,6 +53,38 @@ if(isset($_POST['sexo'])){
     $sexoErr="Escoge un sexo";
 }
  ?>
+ <style>
+    .error {
+  color: red;
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name:parpadeo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+ </style>
  <h1>Form validation example</h1>
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 Name: <input type="text" name="name" value="<?php echo $name; ?>">
