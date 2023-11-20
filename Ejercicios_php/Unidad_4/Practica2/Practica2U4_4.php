@@ -1,10 +1,12 @@
 <?php
 if(isset($_POST['sexo'])){
+
     $sexo=$_POST['sexo'];
+    var_dump($sexo);
 }
 if(isset($sexo)!=true) {
 $sexoErr="ERROR";}else{$sexoErr="";}
-var_dump($sexo);
+
 ?>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     
