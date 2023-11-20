@@ -21,19 +21,19 @@ if (empty($_POST["name"])) {
  }
 }
 //validacion email
+$emailErr="";
 if(isset($_POST["email"])) {
     $email=$_POST["email"];
 }else {
     $email="";
-    
     $emailErr=$emailc->validar_email($email);
 }
 //validacion url
+$urlErr="";
 if(isset($_POST["url"])) {
     $url=$_POST["url"];
 }else {
     $url="";
-    
     $urlErr=$urlc->validar_url($url);
 }
 
