@@ -1,4 +1,5 @@
 <?php
+//Validacion nombre
 function test_entrada($valor) {
     $valor = trim($valor);
     $valor = stripslashes($valor);
@@ -14,6 +15,24 @@ if (empty($_POST["name"])) {
  $nameErr = "Únicamente se permiten letras y espacios";
  }
 }
+//validacion email
+if(isset($_POST["email"])) {
+    $email=$_POST["email"];
+}else {
+    $email="";
+    include('Practica2U4_9.php');
+    $emailErr=validar_email($email);
+}
+//validacion url
+if(isset($_POST["url"])) {
+    $url=$_POST["url"];
+}else {
+    $url="";
+    include('Practica2U4_10.php');
+    $emailUrl=validar_url($url);
+}
+
+
  ?>
  <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 Name:<input type="text" name="name" value="<?php echo $name; ?>">
