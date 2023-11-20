@@ -1,6 +1,6 @@
 <?php
-
-$email=$_POST['email'];
+if(isset($_POST['email'])){
+$email=$_POST['email'];}else{$email="";}
 $emailErr="Email correcto";
 if (empty($email)) {
  $emailErr = "Se requiere Email";
