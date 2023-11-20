@@ -1,5 +1,5 @@
 <?php
-$email="";
+$email="abc@abc.com";
 $emailErr="Email correcto";
 if (empty($email)) {
  $emailErr = "Se requiere Email";
