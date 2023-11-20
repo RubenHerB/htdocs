@@ -7,6 +7,7 @@ function test_entrada($valor) {
    
 if (empty($_POST["name"])) {
  $nameErr = "El nombre es obligatorio";
+ $name="";
  } else {
  $name = test_entrada($_POST["name"]);
  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
@@ -14,3 +15,6 @@ if (empty($_POST["name"])) {
  }
 }
  ?>
+ <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+<input type="text" name="name" value="<?php echo $name; ?>"
+</form>
