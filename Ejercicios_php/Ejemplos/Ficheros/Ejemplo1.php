@@ -1,6 +1,7 @@
 <?php // testfile.php
  $fh = fopen("testfile.txt", 'w') or die("Failed to create file");
- $text = "Line 1
+ $text =  
+ "Line 1
 Line 2
 Line 3
 ";
