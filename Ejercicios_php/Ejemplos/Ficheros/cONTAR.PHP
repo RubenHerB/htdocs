@@ -1,5 +1,5 @@
 <?php
-$fp = fopen('test2.txt', 'r');
+$fp = file_get_contents('test2.txt');
 if (!$fp) {
     echo 'No se pudo abrir archivo.txt';
 }
