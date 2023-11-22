@@ -6,4 +6,5 @@ if (!$fp) {
 while (false !== ($carácter = fgetc($fp))) {
     echo "$carácter\n";
 }
+echo 'br'
 ?>
