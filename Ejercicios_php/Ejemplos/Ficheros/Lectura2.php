@@ -14,4 +14,5 @@ if (!$fp) {
 while (false !== ($carácter = fgets($fp))) {
     echo "$carácter ";
 }
+
 ?>
