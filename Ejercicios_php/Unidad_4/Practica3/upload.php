@@ -5,7 +5,7 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     if((pathinfo($target_file,PATHINFO_EXTENSION))=='txt'){
         if (!file_exists($target_file)) {
-            if ($_FILES["fileToUpload"]["size"] <= 300000) {
+            if ($_FILES["fileToUpload"]["size"] <= 30) {
                 echo "El fichero subido es correcto<br>";
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";
