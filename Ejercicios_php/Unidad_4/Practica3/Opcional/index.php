@@ -4,10 +4,23 @@ function test_entrada($valor) {
     $valor = stripslashes($valor);
     return $valor;
    }
+
    $nameErr="Nombre correcto";
 if (empty($_POST["name"])) {
  $nameErr = "El nombre es obligatorio";
  $name="";
+ } else {
+ $name = test_entrada($_POST["name"]);
+ if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+ $nameErr = "Únicamente se permiten letras y espacios";
+ }
+}
+
+
+$nameAp="Apellido/s correcto";
+if (empty($_POST["ape"])) {
+ $nameErr = "El apellido/s es obligatorio";
+ $ape="";
  } else {
  $name = test_entrada($_POST["name"]);
  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
