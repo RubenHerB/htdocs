@@ -2,7 +2,7 @@
 <input type="submit" name="submit" value="Mostrar info">
 </form>
 <?php
-if (isset($_POST) && $_POST['submit']=="Mostrar info"){
+if ($_POST!=null){
     $fp = fopen('datos.txt', 'r');
 if (!$fp) {
     echo 'No se pudo abrir archivo.txt';
