@@ -33,7 +33,13 @@ if(isset($_POST["comment"])) {
 }else {
     $com=""; 
 }
-
+if($nameErr=="Nombre correcto" && $nameAp=="Apellido/s correcto"){
+    $myfile = fopen("datos.txt", "w") or die("No se ha podido crear el archivo");
+$txt = $name."\n".$ape."\n".$com;
+fwrite($myfile, $txt);
+fclose($myfile);
+header("Location: /mostrar.php");
+}
 ?>
 
 
