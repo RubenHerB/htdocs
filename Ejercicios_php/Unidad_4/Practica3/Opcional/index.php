@@ -19,12 +19,12 @@ if (empty($_POST["name"])) {
 
 $nameAp="Apellido/s correcto";
 if (empty($_POST["ape"])) {
- $nameErr = "El apellido/s es obligatorio";
+ $nameAp = "El apellido/s es obligatorio";
  $ape="";
  } else {
  $ape = test_entrada($_POST["ape"]);
- if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
- $nameErr = "Únicamente se permiten letras y espacios";
+ if (!preg_match("/^[a-zA-Z ]*$/",$ape)) {
+ $nameAp = "Únicamente se permiten letras y espacios";
  }
 }
 
