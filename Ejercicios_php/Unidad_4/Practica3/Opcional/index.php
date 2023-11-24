@@ -28,6 +28,12 @@ if (empty($_POST["ape"])) {
  }
 }
 
+if(isset($_POST["comment"])) {
+    $com=$_POST["comment"];
+}else {
+    $com=""; 
+}
+
 ?>
 
 
