@@ -21,6 +21,8 @@ if (empty($_POST["name"])) {
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 Name: <input type="text" name="name" value="<?php echo $name; ?>">
 <span class="error">* <?php echo $nameErr;?></span><br><br>
+Apellidos: <input type="text" name="ape" value="<?php echo $ape; ?>">
+<span class="error">* <?php echo $nameAp;?></span><br><br>
 Comment: <textarea style="height:100px;width:300px" name="comment"><?php echo $com; ?></textarea>
 <br><br>
 <input type="submit" name="submit" value="Guardar">
