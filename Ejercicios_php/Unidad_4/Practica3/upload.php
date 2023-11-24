@@ -8,8 +8,14 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
  
     if((pathinfo('test2.txt',PATHINFO_EXTENSION))=='txt'){
         if (!file_exists($target_file)) {
-
-        }else{
+            if ($_FILES["fileToUpload"]["size"] <= 300000) {
+                echo "El fichero subido es correcto";
+                $uploadOk = 1;
+               }else{
+                echo "El fichero es demasiado grande.";
+                $uploadOk = 0;
+               }   
+            }else{
             echo "El fichero ya existe.";
             $uploadOk = 0;}
     }else{
