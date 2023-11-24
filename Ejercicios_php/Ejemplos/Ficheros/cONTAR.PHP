@@ -18,5 +18,6 @@ return "La letra $l se repite ".substr_count($fp,$l)." veces";
 <?php
     if (isset($_POST['nombre']) && isset($_POST['nombre']) && $_POST['nombre']!=""&& $_POST['letra']!=""){
         echo cont($_POST['nombre'],$_POST['letra']);
+        echo(filetype($_POST['nombre']));
     }
 ?>
