@@ -51,3 +51,4 @@ Apellidos: <input type="text" name="ape" value="<?php echo $ape; ?>">
 Comment: <textarea style="height:100px;width:300px" name="comment"><?php echo $com; ?></textarea>
 <br><br>
 <input type="submit" name="submit" value="Guardar">
+</form>
