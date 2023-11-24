@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['fileToUpload']) && $_POST['fileToUpload'] == NULL) {
+if(isset($_FILES["fileToUpload"])) {
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
