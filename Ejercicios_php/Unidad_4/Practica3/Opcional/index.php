@@ -38,7 +38,7 @@ if($nameErr=="Nombre correcto" && $nameAp=="Apellido/s correcto"){
 $txt = $name."\n".$ape."\n".$com;
 fwrite($myfile, $txt);
 fclose($myfile);
-header("Location: /mostrar.php");
+header("Location: mostrar.php");
 }
 ?>
 
