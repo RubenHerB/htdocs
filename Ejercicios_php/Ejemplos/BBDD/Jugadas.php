@@ -14,6 +14,7 @@ $result = $connection->query($query);
  {
  $result->data_seek($j);
  echo "Codigo: ".$result->fetch_assoc()['codjugada'].'<br/>';
+ $result->data_seek($j);
  if ($result->fetch_assoc()['acierto']==1){
     $g="Ganada";
  }else{
