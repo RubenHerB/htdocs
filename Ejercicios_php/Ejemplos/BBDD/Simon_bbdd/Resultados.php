@@ -14,7 +14,7 @@ $result = $connection->query($query);
  $rows = $result->num_rows; 
 echo $rows;
  
- 
+ echo "<table>";
  for ($j = 0 ; $j < $rows ; ++$j)
  {
 echo '<tr>';
@@ -26,4 +26,5 @@ echo '<tr>';
  echo '<td>'.$result->fetch_assoc()['s'].'</td>';
  echo '</tr>';
  }
+ echo "</table>";
  ?>
