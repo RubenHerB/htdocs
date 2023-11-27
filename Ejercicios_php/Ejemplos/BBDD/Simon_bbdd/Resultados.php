@@ -75,6 +75,9 @@ echo '<tr>';
  }
  echo "</table>";
  ?>
-
+ <br>
+<form method="post" action="Inicio.php">
+    <input type="submit" value="Volver al juego">
+</form>
 </body>
 </html>
