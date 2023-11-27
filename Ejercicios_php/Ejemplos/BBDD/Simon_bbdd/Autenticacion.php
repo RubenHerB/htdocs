@@ -40,8 +40,11 @@ $conn = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($conn->connect_error) die("Fatal Error");
 
 
-    $uspw=['admin'=>'letmein','user'=>'user','Ruben'=>'1234'];
-
+$query = "SELECT * FROM classics";
+ $result = $connection->query($query);
+ if (!$result) die("Fatal Error");
+ $rows = $result->num_rows; 
+$l=false;
 
 
 
@@ -49,7 +52,13 @@ if ($conn->connect_error) die("Fatal Error");
  if (isset($_SERVER['PHP_AUTH_USER']) &&
  isset($_SERVER['PHP_AUTH_PW']))
  {
- if ($uspw[$_SERVER['PHP_AUTH_USER']] === $_SERVER['PHP_AUTH_PW']){
+  for ($i=0; $i<$rows ; $i++){
+    $result->data_seek($j); 
+ if ($result->ffetch_assoc()['Nombre']===$_SERVER['PHP_AUTH_USER'] && $result->fetch_assoc()['Clave']=== $_SERVER['PHP_AUTH_PW']){
+  $l=true;
+ }}
+
+ if($l){
     session_start();
 $_SESSION=['user'=>$_SERVER['PHP_AUTH_USER']];
     header("Location: Inicio.php");
