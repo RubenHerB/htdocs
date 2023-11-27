@@ -52,7 +52,7 @@ $c=0;
  if (isset($_SERVER['PHP_AUTH_USER']) &&
  isset($_SERVER['PHP_AUTH_PW']))
  {
-  for ($i=0; $i<$rows ; $i++){
+  for ($j=0; $j<$rows ; $j++){
     $result->data_seek($j); 
     $row = $result->fetch_array(MYSQLI_ASSOC);
  if ($row['Nombre']===$_SERVER['PHP_AUTH_USER'] && $row['Clave']=== $_SERVER['PHP_AUTH_PW']){
@@ -61,7 +61,7 @@ $c=0;
  }}
 
  $result->close();
- $conn->close(); 
+ $connection->close(); 
 
  if($l){
     session_start();
