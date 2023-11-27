@@ -40,7 +40,7 @@ body{background-color: aquamarine;text-align: center;}
 table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
 td:not(.grf){text-align: center;
 }
-.grf{background-color: blue;}
+.grf div{background-color: blue;}
 table{margin: 0 auto 0 auto;}
 
 
@@ -151,7 +151,12 @@ echo '<tr><td>'.($j+1).'</td>';
     
     <script>
       function rankshow() {
-        document.getElementById("rankcontent").style.display="block";
+        var x = document.getElementById("rankcontent");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
       }
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
