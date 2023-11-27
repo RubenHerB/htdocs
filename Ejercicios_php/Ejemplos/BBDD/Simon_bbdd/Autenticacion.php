@@ -36,12 +36,8 @@ body{background-color: aquamarine;text-align: center;}
     <?php
 
 
-$hn = 'localhost';
-$db = 'bdsimon';
-$un = 'username';
-$pw = 'password';
-
-
+$conn = new mysqli('localhost', 'root', '', 'bdsimon');
+if ($conn->connect_error) die("Fatal Error");
 
 
     $uspw=['admin'=>'letmein','user'=>'user','Ruben'=>'1234'];
