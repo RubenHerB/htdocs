@@ -1,10 +1,8 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'bdsimon');
-if ($conn->connect_error) die("Fatal Error");
-
-
+$connection = new mysqli('localhost', 'root', '', 'bdsimon');
+if ($connection->connect_error) die("Fatal Error");
 $query = "SELECT codjugada, acierto FROM jugadas WHERE codigousu = 2";
- $result = $connection->query($query);
+$result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
 
