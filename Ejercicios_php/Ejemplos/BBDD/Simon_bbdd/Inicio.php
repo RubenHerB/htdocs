@@ -87,6 +87,7 @@ body{background-color: aquamarine;text-align: center;}
         <br>
         <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
+        <input type="submit" name="submit" value="RANKING"/>
         _END;
       }
         ?>
