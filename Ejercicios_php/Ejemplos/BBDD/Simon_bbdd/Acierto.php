@@ -47,7 +47,7 @@ body{background-color: aquamarine;text-align: center;}
     $connection = new mysqli('localhost', 'root','', 'bdsimon');
     if ($connection->connect_error) die("Fatal Error");
     $query = 
-    "INSERT INTO jugadas (codusu,acierto)
+    "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,1)";
     $result = $connection->query($query);
      if (!$result) die("Fatal Error");
