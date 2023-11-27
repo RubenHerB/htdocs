@@ -6,6 +6,7 @@
   <style>
 
   .ranks {position: absolute; top: 20px;left: 20px;}
+  .rankcontent{display: none;position: absolute; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;}
 
     .dot {
     aspect-ratio: 1/1;
@@ -41,6 +42,8 @@ td:not(.grf){text-align: center;
 }
 .grf{background-color: blue;}
 table{margin: 0 auto 0 auto;}
+
+
   </style>
 </head>
 <body>
