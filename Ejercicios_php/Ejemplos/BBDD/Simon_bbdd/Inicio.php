@@ -147,7 +147,7 @@ echo '<tr><td>'.($j+1).'</td>';
         _END;
       }
         ?>
-        <button class="ranks" onclick="rankshow()">RANKING</button>
+        
     
     <script>
       function rankshow() {
@@ -193,5 +193,6 @@ echo '<tr><td>'.($j+1).'</td>';
       localStorage.setItem("timer2", t[2]);
     }
     </script>
+    <button class="ranks" onclick="rankshow()">RANKING</button> 
 </body>
 </html>
