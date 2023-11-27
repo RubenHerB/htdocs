@@ -35,6 +35,9 @@ body{background-color: aquamarine;text-align: center;}
 <body>
     <h1>SIMÓN</h1>
     <?php
+    if(isset($_POST['submit']) && $_POST['submit'] == 'RANKING'){
+      header('Location: Resultados.php');
+    }
     session_start();
     if(isset($_POST["nc"])){
       echo "<h2>Hola ",$_SESSION['user'],", memoriza los siguientes colores</h2>";
