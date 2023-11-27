@@ -45,7 +45,7 @@ $query = "SELECT * FROM classics";
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
 $l=false;
-
+$c=0;
 
 
 
@@ -56,11 +56,12 @@ $l=false;
     $result->data_seek($j); 
  if ($result->ffetch_assoc()['Nombre']===$_SERVER['PHP_AUTH_USER'] && $result->fetch_assoc()['Clave']=== $_SERVER['PHP_AUTH_PW']){
   $l=true;
+  $c=$result->fetch_assoc()['Codigo'];
  }}
 
  if($l){
     session_start();
-$_SESSION=['user'=>$_SERVER['PHP_AUTH_USER']];
+$_SESSION=['userc'=>$_SERVER['PHP_AUTH_USER']];
     header("Location: Inicio.php");
 } else die("Invalid username/password combination");
 
