@@ -30,6 +30,15 @@ input[type="submit"]:hover{
     transform: translateY(5px);
 }
 body{background-color: aquamarine;text-align: center;}
+
+
+table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
+td:not(.grf){text-align: center;
+}
+.grf div{background-color: blue;}
+table{margin: 0 auto 0 auto;}
+.ranks {position: absolute; top: 20px;left: 20px;}
+  .rankcontent{display: none;position: absolute; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;overflow: scroll;}
   </style>
 
 <?php
