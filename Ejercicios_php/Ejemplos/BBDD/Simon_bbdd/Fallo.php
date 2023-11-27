@@ -71,12 +71,12 @@ body{background-color: aquamarine;text-align: center;}
     <div class="dotcenter">
     <?php
     session_start();
-
-    $connection = new mysqli('localhost', 'root', '', 'bdsimon');
+    $c=$_SESSION['userc'];
+    $connection = new mysqli('localhost', 'root','', 'bdsimon');
     if ($connection->connect_error) die("Fatal Error");
     $query = 
     "INSERT INTO jugadas (codusu,acierto)
-    VALUES (".$_SESSION['usuc'].",0)";
+    VALUES ($c,0)";
     $result = $connection->query($query);
      if (!$result) die("Fatal Error");
 
