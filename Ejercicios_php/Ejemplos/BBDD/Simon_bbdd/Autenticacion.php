@@ -59,6 +59,9 @@ $c=0;
   $l=true;
   $c=$row['Codigo'];
  }}
+ 
+ $result->close();
+ $conn->close(); 
 
  if($l){
     session_start();
