@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
   <style>
-    .ranks {position: absolute; top: 0;}
+    .ranks {position: absolute; top: 20px;left: 20px;}
     .dot {
     aspect-ratio: 1/1;
   width: 20%;
