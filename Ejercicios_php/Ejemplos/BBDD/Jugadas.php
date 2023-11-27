@@ -3,9 +3,8 @@ $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 $query = 
 "SELECT jugadas.codjugada, jugadas.acierto 
-FROM jugadas 
-where (select Codigo from usuarios 
-    where jugadas.codigousu = usuarios.Codigo and usuarios.Nombre = 'maria')"
+FROM jugadas ,usuarios 
+    where jugadas.codigousu = usuarios.Codigo and usuarios.Nombre = 'maria'"
 ;
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
