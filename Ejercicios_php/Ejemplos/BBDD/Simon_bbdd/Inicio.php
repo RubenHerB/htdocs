@@ -39,7 +39,7 @@ body{background-color: aquamarine;text-align: center;}
 table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
 td:not(.grf){text-align: center;
 }
-div{background-color: blue;}
+.grf{background-color: blue;}
 table{margin: 0 auto 0 auto;}
   </style>
 </head>
