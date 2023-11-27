@@ -1,7 +1,12 @@
 <?php
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
-$query = "SELECT codjugada, acierto FROM jugadas WHERE codigousu = 2";
+$query = 
+"SELECT jugadas.codjugada, jugadas.acierto 
+FROM jugadas  
+INNER JOIN usuarios  
+ON jugadas.codigousu = usuarios.Codigo
+where usuarios.Nombre = maria";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
