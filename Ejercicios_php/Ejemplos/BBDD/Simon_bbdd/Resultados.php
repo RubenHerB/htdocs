@@ -34,7 +34,7 @@ body{background-color: aquamarine;text-align: center;}
 table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
 td:not(.grf){text-align: center;
 }
-.grf{color: blue;}
+span{background-color: blue;}
 table{margin: 0 auto 0 auto;}
 
   </style>
@@ -57,7 +57,10 @@ ORDER BY sum(acierto) DESC, codigousu";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
- 
+
+$result->data_seek(0);
+$ms=$s=$result->fetch_assoc()['s'];
+
  echo "<table><tr><th>Codigo</th><th>Nombre</th><th>Aciertos</th><th>Grafica</th></tr>";
  for ($j = 0 ; $j < $rows ; ++$j)
  {
@@ -70,7 +73,7 @@ echo '<tr>';
  $s=$result->fetch_assoc()['s'];
  echo "<td>$s</td><td class= \"grf\">";
  for ($i=0;$i<$s;$i++){
-    echo "■";
+    echo "<span style=\"height: 1em;width:".(10*($s/$ms))."em></span>";
  }
  echo '</td></tr>';
  }
