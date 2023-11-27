@@ -23,8 +23,12 @@ echo '<tr>';
  $result->data_seek($j);
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
- echo '<td>'.$result->fetch_assoc()['s'].'</td>';
- echo '</tr>';
+ $s=$result->fetch_assoc()['s'];
+ echo "<td>$c</td><td>";
+ for ($i=0;$i<$s;$i++){
+    echo
+ }
+ echo '</td></tr>';
  }
  echo "</table>";
  ?>
