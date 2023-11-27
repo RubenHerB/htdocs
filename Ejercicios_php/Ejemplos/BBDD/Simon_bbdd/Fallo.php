@@ -71,6 +71,18 @@ body{background-color: aquamarine;text-align: center;}
     <div class="dotcenter">
     <?php
     session_start();
+
+    $connection = new mysqli('localhost', 'root', '', 'bdsimon');
+    if ($connection->connect_error) die("Fatal Error");
+    $query = 
+    "INSERT INTO jugadas (codusu,acierto)
+    VALUES (".$_SESSION['usuc'].",0)";
+    $result = $connection->query($query);
+     if (!$result) die("Fatal Error");
+
+
+
+
     include 'circulos.php';
       $cir=new Circulos();
     $cir->pintar($_SESSION["ran"]);
@@ -82,6 +94,8 @@ body{background-color: aquamarine;text-align: center;}
     <?php
     $cir->pintar($_SESSION["adi"]);
     session_destroy();
+    $result->close();
+    $connection->close(); 
     ?>
     </div>
     <form method="post" action="Autenticacion.php">

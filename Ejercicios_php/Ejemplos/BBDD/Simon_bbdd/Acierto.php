@@ -48,8 +48,7 @@ body{background-color: aquamarine;text-align: center;}
     if ($connection->connect_error) die("Fatal Error");
     $query = 
     "INSERT INTO jugadas (codusu,acierto)
-    VALUES (".$_SESSION['usuc'].",1);"
-    ;
+    VALUES (".$_SESSION['usuc'].",1)";
     $result = $connection->query($query);
      if (!$result) die("Fatal Error");
 
