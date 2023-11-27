@@ -34,7 +34,7 @@ body{background-color: aquamarine;text-align: center;}
 table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
 td:not(.grf){text-align: center;
 }
-span{background-color: blue;}
+div{background-color: blue;}
 table{margin: 0 auto 0 auto;}
 
   </style>
@@ -71,7 +71,7 @@ echo '<tr>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
- echo "<td>$s</td><td class= \"grf\"><span style=\"height: 10px;width:".(10*($s/$ms))."px\"></span></td></tr>";
+ echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(100*($s/$ms))."px\"></div></td></tr>";
  }
  echo "</table>";
  ?>
