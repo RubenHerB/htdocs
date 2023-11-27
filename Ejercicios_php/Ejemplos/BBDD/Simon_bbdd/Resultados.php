@@ -2,7 +2,7 @@
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 $query = "SELECT 
-u.Codigo, u.Nombre, sum(j.acierto)
+u.Codigo, u.Nombre, sum(j.acierto) as s
 FROM
 usuarios u 
 LEFT OUTER JOIN 
@@ -19,7 +19,11 @@ echo $rows;
  {
 echo '<tr>';
  $result->data_seek($j);
+ echo '<td>'.$result->fetch_assoc()['Codigo'].'</td>';
+ $result->data_seek($j);
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
+ $result->data_seek($j);
+ echo '<td>'.$result->fetch_assoc()['s'].'</td>';
  echo '</tr>';
  }
  ?>
