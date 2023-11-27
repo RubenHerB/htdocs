@@ -42,7 +42,7 @@ table{margin: 0 auto 0 auto;}
 
 </head>
 <body>
-
+<h1>Rankings</h1>
 <?php
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
