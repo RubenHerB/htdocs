@@ -24,9 +24,9 @@ echo '<tr>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
- echo "<td>$c</td><td>";
+ echo "<td>$s</td><td>";
  for ($i=0;$i<$s;$i++){
-    echo
+    echo "&#9611;";
  }
  echo '</td></tr>';
  }
