@@ -185,12 +185,15 @@ echo '<tr><td>'.($j+1).'</td>';
       localStorage.setItem("timer1", t[1]);
       localStorage.setItem("timer2", t[2]);
     }
-    </script>
-    <button type="button" class="ranks" onclick="var x = document.getElementById('rankcontent');
+    function bt(){
+      var x = document.getElementById('rankcontent');
   if (x.style.display === 'none') {
     x.style.display = 'block';
   } else {
     x.style.display = 'none';
-  }">RANKING</button> 
+  }
+    }
+    </script>
+    <button type="button" class="ranks" onclick="bt">RANKING</button> 
 </body>
 </html>
