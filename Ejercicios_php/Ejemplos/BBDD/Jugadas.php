@@ -3,10 +3,10 @@ $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 $query = 
 "SELECT jugadas.codjugada, jugadas.acierto 
-FROM jugadas  
-INNER JOIN usuarios  
-ON jugadas.codigousu = usuarios.Codigo
-where usuarios.Nombre = maria";
+FROM jugadas 
+where (select Codigo from usuarios 
+    where jugadas.codigousu = usuarios.Codigo and usuarios.Nombre = 'maria')"
+;
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
