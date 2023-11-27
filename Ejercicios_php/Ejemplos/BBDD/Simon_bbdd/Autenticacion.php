@@ -59,13 +59,13 @@ $c=0;
   $l=true;
   $c=$row['Codigo'];
  }}
- 
+
  $result->close();
  $conn->close(); 
 
  if($l){
     session_start();
-$_SESSION=['userc'=>$_SERVER['PHP_AUTH_USER']];
+$_SESSION=['user'=>$_SERVER['PHP_AUTH_USER'],'userc'=>$c];
     header("Location: Inicio.php");
 } else die("Invalid username/password combination");
 
