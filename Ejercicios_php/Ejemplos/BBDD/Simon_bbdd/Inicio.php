@@ -99,13 +99,10 @@ table{margin: 0 auto 0 auto;}
         <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
         </form>
-        <form class="ranks" method="post" action=Resultados.php >
-         <input type="submit" name="submit" value="RANKING"/>
-         </form>
         _END;
       }
         ?>
-        
+        <button class="ranks">RANKING</button>
     
     <script>
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
