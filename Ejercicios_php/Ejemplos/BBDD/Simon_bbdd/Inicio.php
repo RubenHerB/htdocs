@@ -4,6 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
   <style>
+
+  .ranks {position: absolute; top: 0;}
+
     .dot {
     aspect-ratio: 1/1;
   border-radius: 50%;
@@ -87,12 +90,15 @@ body{background-color: aquamarine;text-align: center;}
         <br>
         <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
-        <input type="submit" name="submit" value="RANKING"/>
+        </form>
+        <form class="ranks" method="post" action=Resultados.php >
+         <input type="submit" name="submit" value="RANKING"/>
+         </form>
         _END;
       }
         ?>
         
-    </form>
+    
     <script>
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){

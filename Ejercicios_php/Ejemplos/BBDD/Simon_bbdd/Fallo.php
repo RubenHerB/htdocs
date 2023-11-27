@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
   <style>
+    .ranks {position: absolute; top: 0;}
     .dot {
     aspect-ratio: 1/1;
   width: 20%;
@@ -99,6 +100,9 @@ body{background-color: aquamarine;text-align: center;}
     </div>
     <form method="post" action="Autenticacion.php">
         <input type="submit" value="Volver a jugar?"/>
+    </form>
+    <form class="ranks" method="post" action=Resultados.php >
+    <input type="submit" name="submit" value="RANKING"/>
     </form>
     <script type="text/javascript">
       var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
