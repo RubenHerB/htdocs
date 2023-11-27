@@ -13,7 +13,7 @@ $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
  
- echo "<table><tr></tr>";
+ echo "<table><tr><th>Codigo</th><th>Nombre</th><th>Aciertos</th><th>Grafica</th></tr>";
  for ($j = 0 ; $j < $rows ; ++$j)
  {
 echo '<tr>';
