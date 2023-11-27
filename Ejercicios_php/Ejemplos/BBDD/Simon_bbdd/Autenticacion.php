@@ -54,9 +54,10 @@ $c=0;
  {
   for ($i=0; $i<$rows ; $i++){
     $result->data_seek($j); 
- if ($result->ffetch_assoc()['Nombre']===$_SERVER['PHP_AUTH_USER'] && $result->fetch_assoc()['Clave']=== $_SERVER['PHP_AUTH_PW']){
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+ if ($row['Nombre']===$_SERVER['PHP_AUTH_USER'] && $row['Clave']=== $_SERVER['PHP_AUTH_PW']){
   $l=true;
-  $c=$result->fetch_assoc()['Codigo'];
+  $c=$row['Codigo'];
  }}
 
  if($l){
