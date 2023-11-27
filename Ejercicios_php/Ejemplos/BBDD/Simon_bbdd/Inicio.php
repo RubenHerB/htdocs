@@ -154,7 +154,7 @@ echo '<tr><td>'.($j+1).'</td>';
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
-        t[1]=n*4;
+        t[1]=1.8^n;
         if(t[1]>=60){
           t[0]=Math.trunc(t[1]/60);
           t[1]-=(Math.trunc(t[1]/60)*60);
