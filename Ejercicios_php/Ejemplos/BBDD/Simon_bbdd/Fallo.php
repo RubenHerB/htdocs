@@ -94,7 +94,6 @@ body{background-color: aquamarine;text-align: center;}
     <?php
     $cir->pintar($_SESSION["adi"]);
     session_destroy();
-    $result->close();
     $connection->close(); 
     ?>
     </div>
