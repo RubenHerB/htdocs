@@ -47,7 +47,9 @@ table{margin: 0 auto 0 auto;}
   </style>
 </head>
 <body>
-  <div class="rankcontent">
+
+
+  <div class="rankcontent" id="rankcontent">
   <h1>Rankings</h1>
 <?php
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
@@ -83,6 +85,10 @@ echo '<tr><td>'.($j+1).'</td>';
  ?>
  <br>
   </div>
+
+
+
+
     <h1>SIMÓN</h1>
     <?php
     session_start();
@@ -141,9 +147,12 @@ echo '<tr><td>'.($j+1).'</td>';
         _END;
       }
         ?>
-        <button class="ranks">RANKING</button>
+        <button class="ranks" onclick="rankshow()">RANKING</button>
     
     <script>
+      function rankshow() {
+        document.getElementById("rankcontent").style.display="block";
+      }
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
