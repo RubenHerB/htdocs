@@ -17,8 +17,9 @@ echo $rows;
  
  for ($j = 0 ; $j < $rows ; ++$j)
  {
+echo '<tr>';
  $result->data_seek($j);
- echo $result->fetch_assoc()['Nombre'];
- echo '<br>';
+ echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
+ echo '</tr>';
  }
  ?>
