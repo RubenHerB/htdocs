@@ -148,7 +148,7 @@ echo '<tr><td>'.($j+1).'</td>';
     $connection->close(); 
     ?>
     </div>
-    <form method="post" action="Autenticacion.php">
+    <form method="post" action="index.php">
         <input type="submit" value="Volver a jugar?"/>
     </form>
     <script type="text/javascript">
