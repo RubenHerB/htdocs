@@ -12,9 +12,8 @@ ORDER BY sum(acierto) DESC, codigousu";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
-echo $rows;
  
- echo "<table>";
+ echo "<table><tr></tr>";
  for ($j = 0 ; $j < $rows ; ++$j)
  {
 echo '<tr>';
@@ -26,7 +25,7 @@ echo '<tr>';
  $s=$result->fetch_assoc()['s'];
  echo "<td>$s</td><td>";
  for ($i=0;$i<$s;$i++){
-    echo "&#9611;";
+    echo "&#9600;";
  }
  echo '</td></tr>';
  }
