@@ -34,7 +34,22 @@ body{background-color: aquamarine;text-align: center;}
 </head>
 <body>
     <?php
+
+
+$hn = 'localhost';
+$db = 'bdsimon';
+$un = 'username';
+$pw = 'password';
+
+
+
+
     $uspw=['admin'=>'letmein','user'=>'user','Ruben'=>'1234'];
+
+
+
+
+
  if (isset($_SERVER['PHP_AUTH_USER']) &&
  isset($_SERVER['PHP_AUTH_PW']))
  {
