@@ -2,7 +2,7 @@
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 $query = 
-"SELECT usuarios.Codigo, usuarios.Nombre, sum(jugadas.acierto) FROM usuarios, jugadas WHERE usuarios.Codigo = jugadas.codigousu ORDER BY  sum(jugadas.acierto)";
+"SELECT usuarios.Codigo, usuarios.Nombre, s.acs FROM usuarios, (SELECT sum(acierto) as acs, codigousu FROM jugadas as s) where usuarios.Codigo = s.codigousu";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
