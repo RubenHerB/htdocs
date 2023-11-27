@@ -31,8 +31,12 @@ input[type="submit"]:hover{
     transform: translateY(5px);
 }
 body{background-color: aquamarine;text-align: center;}
-table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;}
+table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
+td:not(.grf){text-align: center;
+}
+.grf{color: blue;}
 table{margin: 0 auto 0 auto;}
+
   </style>
 
 
@@ -64,7 +68,7 @@ echo '<tr>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
- echo "<td>$s</td><td>";
+ echo "<td>$s</td><td class= \"grf\">";
  for ($i=0;$i<$s;$i++){
     echo "■";
  }
