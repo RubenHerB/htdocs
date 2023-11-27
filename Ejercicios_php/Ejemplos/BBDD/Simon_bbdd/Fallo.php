@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
   <style>
-    .ranks {position: absolute; top: 20px;left: 20px;}
     .dot {
     aspect-ratio: 1/1;
   width: 20%;
@@ -67,8 +66,8 @@ td:not(.grf){text-align: center;
 }
 .grf div{background-color: blue;}
 table{margin: 0 auto 0 auto;}
-.ranks {position: absolute; top: 20px;left: 20px;}
-  .rankcontent{position: absolute; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;overflow: scroll;}
+.ranks {position: fixed; top: 20px;left: 20px;}
+  .rankcontent{position: fixed; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;overflow: scroll;}
   </style>
 </head>
 <body>
