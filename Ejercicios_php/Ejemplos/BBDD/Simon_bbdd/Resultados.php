@@ -71,7 +71,7 @@ echo '<tr>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
- echo "<td>$s</td><td class= \"grf\"><span style=\"height: 1em;width:".(10*($s/$ms))."em></span></td></tr>";
+ echo "<td>$s</td><td class= \"grf\"><span style=\"height: 10px;width:".(10*($s/$ms))."px\"></span></td></tr>";
  }
  echo "</table>";
  ?>
