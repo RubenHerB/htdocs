@@ -150,14 +150,7 @@ echo '<tr><td>'.($j+1).'</td>';
         
     
     <script>
-      function rankshow() {
-        var x = document.getElementById("rankcontent");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-      }
+
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
@@ -193,6 +186,11 @@ echo '<tr><td>'.($j+1).'</td>';
       localStorage.setItem("timer2", t[2]);
     }
     </script>
-    <button class="ranks" onclick="rankshow()">RANKING</button> 
+    <button class="ranks" onclick="var x = document.getElementById('rankcontent');
+  if (x.style.display === 'none') {
+    x.style.display = 'block';
+  } else {
+    x.style.display = 'none';
+  }">RANKING</button> 
 </body>
 </html>
