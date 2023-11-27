@@ -36,11 +36,11 @@ body{background-color: aquamarine;text-align: center;}
     <?php
 
 
-$conn = new mysqli('localhost', 'root', '', 'bdsimon');
-if ($conn->connect_error) die("Fatal Error");
+$connection = new mysqli('localhost', 'root', '', 'bdsimon');
+if ($connection->connect_error) die("Fatal Error");
 
 
-$query = "SELECT * FROM classics";
+$query = "SELECT * FROM usuarios";
  $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
