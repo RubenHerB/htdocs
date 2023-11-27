@@ -71,7 +71,7 @@ echo '<tr><td>'.($j+1).'</td>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
- echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(100*($s/$ms))."px\"></div></td></tr>";
+ echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(200*($s/$ms))."px\"></div></td></tr>";
  }
  echo "</table>";
  ?>
