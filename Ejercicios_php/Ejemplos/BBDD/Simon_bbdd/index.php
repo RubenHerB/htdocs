@@ -3,34 +3,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
-  <style>
-    .dot {
-    aspect-ratio: 1/1;
-  border-radius: 50%;
-  width: 20%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  display: inline-block;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  
-}
-
-form{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-input[type="submit"] {
-  padding: 10px;
-  border-radius: 10px;
-}
-input[type="submit"]:hover{
-    box-shadow: 0px 5px 10px black;
-    transform: translateY(5px);
-}
-body{background-color: aquamarine;text-align: center;}
-  </style>
 </head>
 <body>
     <?php
