@@ -3,72 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
-  <style>
-    .dot {
-    aspect-ratio: 1/1;
-  width: 20%;
-  border-radius: 50%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  display: inline-block;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  
-}
-.dotcenter {align-content: space-between;}
-form{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.parpadea {
-  color: red;
-  animation-name: parpadeo;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  -webkit-animation-name:parpadeo;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@-moz-keyframes parpadeo{  
-  0% { opacity: 1.0; }
-  50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
-}
-
-@-webkit-keyframes parpadeo {  
-  0% { opacity: 1.0; }
-  50% { opacity: 0.0; }
-   100% { opacity: 1.0; }
-}
-
-@keyframes parpadeo {  
-  0% { opacity: 1.0; }
-   50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
-}
-input[type="submit"] {
-  padding: 10px;
-  border-radius: 10px;
-}
-input[type="submit"]:hover{
-    box-shadow: 0px 5px 10px black;
-    transform: translateY(5px);
-}
-body{background-color: aquamarine;text-align: center;}
-
-table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
-td:not(.grf){text-align: center;
-}
-.grf div{background-color: blue;}
-table{margin: 0 auto 0 auto;}
-.ranks {position: fixed; top: 20px;left: 20px;}
-  .rankcontent{position: fixed; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;overflow: scroll;}
-  </style>
+  <link rel="stylesheet" href="simon.css">
 </head>
 <body>
     <h1>SIMÓN</h1>
