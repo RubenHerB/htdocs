@@ -3,48 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
-  <style>
-
-  .ranks {position: fixed; top: 20px;left: 20px;}
-  .rankcontent{position: fixed; top: 0;left: 0;height: 40%;width: 40%;border: 1px solid black; background-color: white;overflow: scroll;}
-
-    .dot {
-    aspect-ratio: 1/1;
-  border-radius: 50%;
-  width: 20%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  display: inline-block;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  
-}
-
-form{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-input[type="submit"] {
-  padding: 10px;
-  border-radius: 10px;
-}
-input[type="submit"]:hover{
-    box-shadow: 0px 5px 10px black;
-    transform: translateY(5px);
-}
-body{background-color: aquamarine;text-align: center;}
-
-
-
-table,tr,td,th{border-collapse: collapse;border: 1px solid black;background-color: white;padding: 5px;}
-td:not(.grf){text-align: center;
-}
-.grf div{background-color: blue;}
-table{margin: 0 auto 0 auto;}
-
-
-  </style>
+  <link rel="stylesheet" href="simon.css">
 </head>
 <body>
     <h1>SIMÓN</h1>
