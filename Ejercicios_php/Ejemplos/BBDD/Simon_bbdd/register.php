@@ -23,25 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $connection=$log->log();
     
     
-    $query = "SELECT Nombre FROM usuarios";
+    $query = "SELECT Nombre FROM usuarios where Nombre LIKE '$username'";
      $result = $connection->query($query);
      if (!$result) die("Fatal Error");
-     $rows = $result->num_rows; 
-    $l=false;
+     $rows = $result->num_rows;  
+   
     
-
-
-
-
-    for ($j=0; $j<$rows ; $j++){
-      $result->data_seek($j); 
-      $row = $result->fetch_array()['Nombre'];
-      var_dump($row);
-   if ($row===$username){
-    $l=true;
-   }}
-    
-   if($l){
+   if($rows>0){
     $error="Este nombre de usuario ya existe";
    }else{
     if($password===$passwordcheck){
@@ -55,9 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     }else{
         $error="La contraseña y la confirmacion de contraseña deben ser iguales";
     }
-   }
-
- }
+   }}
 ?>
 
     <h2>Registrarse</h2>
