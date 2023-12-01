@@ -49,17 +49,16 @@
 
 
     <div class="ranking3"id="rankcontent">
-
 <?php
-include 'ranking.php';
-var_dump($_POST);
+ include 'ranking.php';
+if(isset($_POST["submit"])) {
 if($_POST["submit"]=="Salir"){
   session_destroy();
   header("Location: index.php");
 }else if($_POST["submit"]=="Volver a jugar"){
   $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
   header("Location: Inicio.php");
-}
+}}
  ?>
  <br>
   </div>
@@ -68,6 +67,7 @@ if($_POST["submit"]=="Salir"){
       var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
       document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     </script>
+    
     <button type="button" class="ranks" onclick="var x = document.getElementById('rankcontent');
   if (x.classList.contains('ranking')) {
     x.classList.add('ranking2');

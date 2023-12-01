@@ -55,14 +55,14 @@
     <div class="ranking3"id="rankcontent">
 <?php
  include 'ranking.php';
-var_dump($_POST);
+if(isset($_POST["submit"])) {
 if($_POST["submit"]=="Salir"){
   session_destroy();
   header("Location: index.php");
 }else if($_POST["submit"]=="Volver a jugar"){
   $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
   header("Location: Inicio.php");
-}
+}}
  ?>
  <br>
   </div>
