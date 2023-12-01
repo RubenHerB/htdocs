@@ -9,7 +9,7 @@
     <?php
 
 
-$connection = new mysqli('localhost', 'root', '', 'bdsimon');
+$connection = new mysqli('localhost', 'user', 'user', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 
 

@@ -22,7 +22,7 @@
     <div class="dotcenter">
     <?php
     $c=$_SESSION['userc'];
-    $connection = new mysqli('localhost', 'root','', 'bdsimon');
+    $connection = new mysqli('localhost', 'user','user', 'bdsimon');
     if ($connection->connect_error) die("Fatal Error");
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
