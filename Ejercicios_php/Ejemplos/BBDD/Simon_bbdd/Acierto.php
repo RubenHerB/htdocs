@@ -23,6 +23,8 @@
     <?php
     $c=$_SESSION['userc'];
     include("login.php");
+$log=new login();
+$connection=$log->log();
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,1)";

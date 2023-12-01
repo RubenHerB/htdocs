@@ -64,7 +64,9 @@ if($_POST["submit"]=="Salir"){
   header("Location: Inicio.php");
 }
 
-
+include("login.php");
+$log=new login();
+$connection=$log->log();
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s
 FROM

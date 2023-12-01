@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     // Obtener los datos del formulario
     $username = $_POST["username"];
     $password = $_POST["password"];
-
-    $connection = new mysqli('localhost', 'user', 'user', 'bdsimon');
-    if ($connection->connect_error) die("Fatal Error");
+    include("login.php");
+    $log=new login();
+    $connection=$log->log();
     
     
     $query = "SELECT * FROM usuarios";
