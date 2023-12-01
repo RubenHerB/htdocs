@@ -33,7 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $error="Este nombre de usuario ya existe";
    }else{
     if($password===$passwordcheck){
-        $queryi = "INSERT INTO `usuarios` (`Codigo`, `Nombre`, `Clave`, `Rol`) VALUES ('".($rows+1)."','".$username."','".password_hash($password, PASSWORD_DEFAULT)."', '0');";
+        $query = "SELECT Codigo FROM usuarios order by Codigo DESC limit 1";
+        $result = $connection->query($query);
+        if (!$result) die("Fatal Error");
+        $result->data_seek(0); 
+        $lastid = $result->fetch_array()['Codigo'];        
+        $queryi = "INSERT INTO `usuarios` (`Codigo`, `Nombre`, `Clave`, `Rol`) VALUES ('".($lastid+1)."','".$username."','".password_hash($password, PASSWORD_DEFAULT)."', '0');";
      $resulti = $connection->query($queryi);
      if (!$resulti) {
         die("Fatal Error");
