@@ -55,7 +55,6 @@
     <div class="ranking3"id="rankcontent">
 <?php
 include 'ranking.php';
-var_dump($_POST);
 if($_POST["submit"]=="Salir"){
   session_destroy();
   header("Location: index.php");
