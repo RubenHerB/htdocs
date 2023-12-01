@@ -4,11 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
   <link rel="stylesheet" href="simon.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 
 <?php
     include 'circulos.php';
     $cir=new Circulos();
-      session_start();
+    session_start();
+    if(!isset($_SESSION['user'])) {
+        header("Location: index.php");
+      }
       if(isset($_POST["c"])){
         $a=0;
         switch($_POST["c"]){
@@ -43,8 +47,8 @@
 </head>
 <body>
 
-<div class="rankcontent" id="rankcontent" style="display: none;">
-  <h1>Rankings</h1>
+<div class="ranking3" id="rankcontent" >
+  <h1>Ranking</h1>
 <?php
 $connection = new mysqli('localhost', 'root', '', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
@@ -73,6 +77,7 @@ echo '<tr><td>'.($j+1).'</td>';
  echo '<td>'.$result->fetch_assoc()['Nombre'].'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['s'];
+ if($s==null){$s=0;}
  echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(200*($s/$ms))."px\"></div></td></tr>";
  }
  echo "</table>";
@@ -84,7 +89,7 @@ echo '<tr><td>'.($j+1).'</td>';
 
 
     <h1>SIMÓN</h1>
-    <h2>Introduce los colores correctamente</h2>
+    <h2><?php echo $_SESSION['user'] ;?>, introduce los colores correctamente</h2>
     <h3 id="temp"></h3>
     <br>
     <div class="dotcenter">
@@ -146,10 +151,15 @@ echo '<tr><td>'.($j+1).'</td>';
     }
     </script>
     <button type="button" class="ranks" onclick="var x = document.getElementById('rankcontent');
-  if (x.style.display === 'none') {
-    x.style.display = 'block';
-  } else {
-    x.style.display = 'none';
-  }">RANKING</button> 
+  if (x.classList.contains('ranking')) {
+    x.classList.add('ranking2');
+    x.classList.remove('ranking');
+  } else if(x.classList.contains('ranking3'))
+  {x.classList.remove('ranking3');
+    x.classList.add('ranking2');
+  }else{
+    x.classList.add('ranking');
+    x.classList.remove('ranking2');
+  }">RANKING</button>
 </body>
 </html>

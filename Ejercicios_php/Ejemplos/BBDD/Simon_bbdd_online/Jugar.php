@@ -5,75 +5,52 @@
   <title>Simon</title>
   <link rel="stylesheet" href="simon.css">
   <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-    <h1>SIMÓN</h1>
-    <?php
+
+<?php
+    include 'circulos.php';
+    $cir=new Circulos();
     session_start();
     if(!isset($_SESSION['user'])) {
         header("Location: index.php");
       }
-    
-    if(isset($_POST["nc"])){
-      echo "<h2>Hola ",$_SESSION['user'],", memoriza los siguientes colores</h2>";
-    }
-    ?>
-    <h3 id="temp"></h3>
-    <form method="post" action="Inicio.php">
-      <?php
-      if(isset($_POST["submit"])){
-      if($_POST["submit"]=="VAMOS A JUGAR"){
-      header("Location: Jugar.php");
-    }}
-      if(isset($_POST["nc"])){
-        $numero_circulos = (int)$_POST["nc"];
-        
-        $ci=[0];
-        for ($i=1;$i<$numero_circulos;$i++){
-          array_push($ci,0);
+      if(isset($_POST["c"])){
+        $a=0;
+        switch($_POST["c"]){
+          case "ROJO":
+            $a=1;
+            break;
+          case "AZUL":
+            $a=2;
+            break;
+          case "AMARILLO":
+            $a=3;
+            break;
+          case "VERDE":
+            $a=4;
+            break;
+          case "COMPROBAR":
+            if($_SESSION["adi"]==$_SESSION["ran"]){
+            header("Location: Acierto.php");
+          }else{
+            header("Location: Fallo.php");
+          } 
+          break;
         }
-        $_SESSION+=["ran"=>$ci,
-        "adi"=>$ci,
-        "count"=>0];
-        for ($i=0;$i<count($ci);$i++){
-          $ci[$i]=rand(1,4);
-        }
-      $_SESSION["ran"]=$ci;
-            echo "<div class=\"dotcenter\" id=\"dc\">";
-            include 'circulos.php';
-            $cir=new Circulos();
-            $cir->pintar($ci);
-              
-        echo "                      
-              </div>
-              <input type=\"submit\" name=\"submit\" onclick=\"salida()\" value=\"VAMOS A JUGAR\"/>";
-      }else{
-        echo "<h2>Hola ",$_SESSION['user'],"</h2>";
-      echo <<<_END
-        Numero de circulos:
-        <select name="nc" id="num">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        </select>
-        <br>
-        <br>
-        <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
-        </form>
-        _END;
-      }
-        ?>
-        
-  <div class="ranking3" id="rankcontent">
+        if($a!=0){
+        $_SESSION["adi"][$_SESSION["count"]]=$a;
+        $_SESSION["count"]++;
+        }elseif($_POST["c"]!="COMPROBAR"){
+        $_SESSION["count"]--;
+        $_SESSION["adi"][$_SESSION["count"]]=0;
+        }}     
+?> 
+</head>
+<body>
+
+<div class="ranking3" id="rankcontent" >
   <h1>Ranking</h1>
 <?php
-$connection = new mysqli('localhost', 'root', '', 'bdsimon');
+$connection = new mysqli('sql8.freesqldatabase.com:3306', 'sql8666442','jQCWvxaRa8', 'sql8666442');
 if ($connection->connect_error) die("Fatal Error");
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s
@@ -107,18 +84,44 @@ echo '<tr><td>'.($j+1).'</td>';
  ?>
  <br>
   </div>
-  
-    <script>
 
-      var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
-      if (!isNaN(n)){
-        t=[0,0,0];
-        t[1]=Math.ceil((n*1.5)+Math.pow(1.25,n));
-        if(t[1]>=60){
-          t[0]=Math.trunc(t[1]/60);
-          t[1]-=(Math.trunc(t[1]/60)*60);
-        }
-      }
+
+
+
+    <h1>SIMÓN</h1>
+    <h2><?php echo $_SESSION['user'] ;?>, introduce los colores correctamente</h2>
+    <h3 id="temp"></h3>
+    <br>
+    <div class="dotcenter">
+    <?php
+    $cir->pintar($_SESSION["adi"]);
+    ?>
+    </div>
+    <br>
+    <?php
+    $t=true;
+    if($_SESSION["count"]<count($_SESSION["adi"])){
+      $t=false;
+    echo <<<_END
+    <form method="post" action="Jugar.php">
+        <input onclick="salida()" style="background-color: red" type="submit" name="c" value="ROJO" />
+        <input onclick="salida()" style="background-color: #4772ff" type="submit" name="c" value="AZUL" />
+        <input onclick="salida()" style="background-color: yellow" type="submit" name="c" value="AMARILLO" />
+        <input onclick="salida()" style="background-color: green" type="submit" name="c" value="VERDE" />
+        <input onclick="salida()" type="submit" name="c" value="BORRAR" />
+    </form>
+    _END;
+  }else{
+      echo <<<_END
+        <form method="post" action="Jugar.php">
+        <input type="submit" name="c" value="COMPROBAR" />
+        </form>
+        _END;
+    }
+    ?>
+    <script type="text/javascript">
+      var t=[localStorage.getItem("timer0"),localStorage.getItem("timer1"),localStorage.getItem("timer2")];
+      document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
       function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
@@ -137,14 +140,15 @@ echo '<tr><td>'.($j+1).'</td>';
         
         document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
-    var timer=setInterval(r,10);
+    var c=window.some_variable = '<?=$t?>';
+    if(!c){
+    var timer=setInterval(r,10);}
     function salida(){
       clearInterval(timer);
       localStorage.setItem("timer0", t[0]);
       localStorage.setItem("timer1", t[1]);
       localStorage.setItem("timer2", t[2]);
     }
-
     </script>
     <button type="button" class="ranks" onclick="var x = document.getElementById('rankcontent');
   if (x.classList.contains('ranking')) {
@@ -156,6 +160,6 @@ echo '<tr><td>'.($j+1).'</td>';
   }else{
     x.classList.add('ranking');
     x.classList.remove('ranking2');
-  }">RANKING</button> 
+  }">RANKING</button>
 </body>
 </html>

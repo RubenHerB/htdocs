@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $connection = new mysqli('localhost', 'root', '', 'bdsimon');
+    $connection = new mysqli('sql8.freesqldatabase.com:3306', 'sql8666442','jQCWvxaRa8', 'sql8666442');
     if ($connection->connect_error) die("Fatal Error");
     
     
