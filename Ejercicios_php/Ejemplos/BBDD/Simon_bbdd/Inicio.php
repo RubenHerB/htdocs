@@ -73,7 +73,7 @@
   <div class="ranking3" id="rankcontent">
   <h1>Ranking</h1>
 <?php
-$connection = new mysqli('localhost', 'root', '', 'bdsimon');
+$connection = new mysqli('localhost', 'user', 'user', 'bdsimon');
 if ($connection->connect_error) die("Fatal Error");
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s

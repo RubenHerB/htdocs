@@ -58,8 +58,6 @@ if($_POST["submit"]=="Salir"){
   $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
   header("Location: Inicio.php");
 }
-$connection = new mysqli('localhost', 'root', '', 'bdsimon');
-if ($connection->connect_error) die("Fatal Error");
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s
 FROM

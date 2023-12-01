@@ -21,7 +21,7 @@
     <div class="dotcenter">
     <?php
     $c=$_SESSION['userc'];
-    $connection = new mysqli('localhost', 'root','', 'bdsimon');
+    $connection = new mysqli('localhost', 'user','user', 'bdsimon');
     if ($connection->connect_error) die("Fatal Error");
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
@@ -64,8 +64,7 @@ if($_POST["submit"]=="Salir"){
   header("Location: Inicio.php");
 }
 
-$connection = new mysqli('localhost', 'root', '', 'bdsimon');
-if ($connection->connect_error) die("Fatal Error");
+
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s
 FROM
