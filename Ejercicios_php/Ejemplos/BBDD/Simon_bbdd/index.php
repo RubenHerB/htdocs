@@ -22,28 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     
     
     $query = "SELECT Codigo, Nombre ,Clave FROM usuarios WHERE Nombre like '$username'";
-     $result = $connection->query($query);
-     if (!$result) die("Fatal Error");
-     $rows = $result->num_rows; 
-    $l=false;
-    $c=0;
-    if($rows>0){
+    $result = $connection->query($query);
+    if (!$result) die("Fatal Error");
+      $rows = $result->num_rows; 
+      $l=false;
+      $c=0;
+      if($rows>0){
         $result->data_seek(0); 
-      $row = $result->fetch_array(MYSQLI_ASSOC);
-      if(password_verify($password, $row['Clave'])){
-        $l=true;
-        $c=$row["Codigo"];
-      }
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        if(password_verify($password, $row['Clave'])){
+          $l=true;
+          $c=$row["Codigo"];
+        }
     }    
 
    if($l){
     session_start();
-$_SESSION=['user'=>$username,'userc'=>$c];
+    $_SESSION=['user'=>$username,'userc'=>$c];
     header("Location: Inicio.php");
-} else {
-$error="Usuario o contraeña incorrectas";
-}
-
+  } else {
+    $error="Usuario o contraeña incorrectas";
+  }
  }
 ?>
 
