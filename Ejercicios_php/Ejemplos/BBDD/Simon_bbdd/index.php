@@ -21,24 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $connection=$log->log();
     
     
-    $query = "SELECT Codigo, Nombre ,Clave FROM usuarios WHERE Nombre like $username";
+    $query = "SELECT Codigo, Nombre ,Clave FROM usuarios WHERE Nombre like '$username'";
      $result = $connection->query($query);
      if (!$result) die("Fatal Error");
      $rows = $result->num_rows; 
     $l=false;
     $c=0;
-
-
-
-
-    for ($j=0; $j<$rows ; $j++){
-      $result->data_seek($j); 
+    if($rows>0){
+        $result->data_seek(0); 
       $row = $result->fetch_array(MYSQLI_ASSOC);
-   if ($row['Nombre']===$username && password_verify($password, $row['Clave']) ){
-    $l=true;
-    $c=$row['Codigo'];
-   }}
-    
+      if(password_verify($password, $row['Clave'])){
+        $l=true;
+        $c=$row["Codigo"];
+      }
+    }    
 
    if($l){
     session_start();
