@@ -21,12 +21,11 @@
             $result = $connection->query($query);
             if (!$result) die("Fatal Error");
             $rows = $result->num_rows; 
-
+            $ms=$result->fetch_all(MYSQLI_ASSOC);
             for ($i=0;$i<$rows;$i++){
-            $result->data_seek($i);
-            $ms=$result->fetch_assoc(MYSQLI_ASSOC);
-                $text+=$ms['codigousu'].",".$ms['acierto']."
-                ";
+            var_dump($ms[$i]);
+                $text+=($ms[$i]['codigousu'].",".$ms[$i]['acierto']."
+                ");
             }
 
 
