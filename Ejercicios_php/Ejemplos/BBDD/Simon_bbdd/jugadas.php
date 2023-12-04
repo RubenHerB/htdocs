@@ -46,6 +46,7 @@
                                 }
                                 while (false !== ($carácter = fgetc($fp))) {
                                     echo "aaa";
+                                    
                                 $num1=(int)$carácter;
                                 while(',' != ($carácter = fgetc($fp))){
                                     $num1*=10;
@@ -53,15 +54,15 @@
                                 }
                                 $carácter = (int)fgetc($fp);
 
+                                if($a){
                                 $log=new login();
                                 $connection=$log->log();
                                 $query = 
                                 "INSERT INTO jugadas (codigousu,acierto)
-                                VALUES ($c,1)";
+                                VALUES ($num1,$caracter)";
                                 $result = $connection->query($query);
-                                if (!$result) die("Fatal Error");
+                                if (!$result) die("Fatal Error");}
                                 $connection->close();
-                                echo "$num1 : $carácter<br>";
                                 fgetc($fp);
                             }
 
