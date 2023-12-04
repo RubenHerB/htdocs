@@ -23,7 +23,6 @@
             $rows = $result->num_rows; 
             $ms=$result->fetch_all(MYSQLI_ASSOC);
             for ($i=0;$i<$rows;$i++){
-            var_dump($ms[$i]);
                 $text.=($ms[$i]['codigousu'].",".$ms[$i]['acierto']."
 ");
             }
@@ -40,7 +39,9 @@
 </div>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <input type="submit" name="submit" value="Exportat archivo del servidor" />
+    <input type="submit" name="submit" value="Exportat archivo del servidor" /><br>
+    <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
+<input type="submit" value="Subir archivo" name="submit">
     </form>
 
 
