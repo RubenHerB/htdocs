@@ -23,13 +23,17 @@
     <?php
     $c=$_SESSION['userc'];
     include("login.php");
-    $log=new login();
+    if(isset($_POST['c'])){
+      $log=new login();
     $connection=$log->log();
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,1)";
     $result = $connection->query($query);
      if (!$result) die("Fatal Error");
+     $connection->close(); 
+    }
+    
 
 
 
@@ -37,7 +41,7 @@
     include 'circulos.php';
     $cir=new Circulos();
     $cir->pintar($_SESSION["ran"]);
-    $connection->close(); 
+    
     ?>
     </div>
     <br>
