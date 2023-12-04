@@ -48,10 +48,10 @@
                                 $num1=0;
                                 while(',' != ($carácter = fgetc($fp))){
                                     $num1*=10;
-                                    $num+=$carácter; 
+                                    $num+=(int)$carácter; 
                                 }
-                                $carácter = fgetc($fp);
-                                echo"$num1 : $carácter<br>";
+                                $carácter = (int)fgetc($fp);
+                                echo "$num1 : $carácter<br>";
                             }
 
 
