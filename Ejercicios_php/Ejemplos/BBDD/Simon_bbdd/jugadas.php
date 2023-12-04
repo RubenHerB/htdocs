@@ -46,7 +46,7 @@
                                 }
                                 while (false !== ($carácter = fgetc($fp))) {
                                     echo "aaa";
-                                $num1=0;
+                                $num1=(int)$carácter;
                                 while(',' != ($carácter = fgetc($fp))){
                                     $num1*=10;
                                     $num1+=(int)$carácter; 
