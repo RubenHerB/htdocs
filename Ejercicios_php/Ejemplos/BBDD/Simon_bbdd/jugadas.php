@@ -14,6 +14,23 @@
         include('login.php');
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
+            $text="";
+
+
+            $log=new login();
+            $connection=$log->log();
+            $query = "SELECT codigousu, acierto FROM jugadas";
+            $result = $connection->query($query);
+            if (!$result) die("Fatal Error");
+            $rows = $result->num_rows; 
+
+            for ($i=0;$i<$rows;$i++){
+            $result->data_seek(0);
+            $ms=$result->fetch_assoc();
+
+            }
+
+
             fwrite($fh, $text) or die("Could not write to file");
             fclose($fh);
             echo "El archivo se ha exportado correctamente";
