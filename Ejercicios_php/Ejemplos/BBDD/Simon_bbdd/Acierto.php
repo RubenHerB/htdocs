@@ -23,6 +23,7 @@
     <?php
     $c=$_SESSION['userc'];
     include("login.php");
+    var_dump($_POST);
     if(isset($_POST['c'])){
       $log=new login();
     $connection=$log->log();
