@@ -58,7 +58,7 @@
 
                                 $caracter = (int)fgetc($fp);
 
-                                if($rows>0){                            
+                                if($rows>0 &&($caracter==0||$caracter==1)){                            
                                 $query = 
                                 "INSERT INTO jugadas (codigousu,acierto)
                                 VALUES ($num1,$caracter)";
