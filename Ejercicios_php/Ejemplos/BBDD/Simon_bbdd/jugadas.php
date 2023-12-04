@@ -10,12 +10,16 @@
 <h1>Importacion/Exportacion de las jugadas</h1>
 <div>
     <?php 
-    include('login.php');
     if(isset($_POST['submit'])) {
+        include('login.php');
         if($_POST['submit'] == "Exportat archivo del servidor"){
-            $fh = fopen("testfile.txt", 'w') or die("Failed to create file");
+            $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
+            fwrite($fh, $text) or die("Could not write to file");
+            fclose($fh);
+            echo "El archivo se ha exportado correctamente";
 
         }
+    }
 
     ?>
 </div>
