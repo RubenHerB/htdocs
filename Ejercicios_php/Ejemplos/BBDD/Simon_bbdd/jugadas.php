@@ -10,6 +10,10 @@
 <h1>Importacion/Exportacion de las jugadas</h1>
 <div>
     <?php 
+    session_start();
+    if(!isset($_SESSION['user'])) {
+        header("Location: index.php");
+      }
     include('login.php'); 
     $log=new login();
     $connection=$log->log();
