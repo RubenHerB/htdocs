@@ -31,4 +31,5 @@ echo '<tr><td>'.($j+1).'</td>';
  echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(200*($s/$ms))."px\"></div></td></tr>";
  }
  echo "</table>";
+ $connection->close(); 
  ?>
