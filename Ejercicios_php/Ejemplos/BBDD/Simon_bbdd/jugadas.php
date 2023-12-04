@@ -52,6 +52,15 @@
                                     $num1+=(int)$carácter; 
                                 }
                                 $carácter = (int)fgetc($fp);
+
+                                $log=new login();
+                                $connection=$log->log();
+                                $query = 
+                                "INSERT INTO jugadas (codigousu,acierto)
+                                VALUES ($c,1)";
+                                $result = $connection->query($query);
+                                if (!$result) die("Fatal Error");
+                                $connection->close();
                                 echo "$num1 : $carácter<br>";
                                 fgetc($fp);
                             }
