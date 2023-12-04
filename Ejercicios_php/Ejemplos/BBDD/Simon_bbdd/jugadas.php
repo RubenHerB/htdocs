@@ -12,12 +12,11 @@
     <?php 
     include('login.php'); 
     $log=new login();
+    $connection=$log->log();
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
             $text="";
-            
-            $connection=$log->log();
             $query = "SELECT codigousu, acierto FROM jugadas";
             $result = $connection->query($query);
             if (!$result) die("Fatal Error");
@@ -40,9 +39,7 @@
                         if ($_FILES["fileToUpload"]["size"] <= 300000) {
                             echo "El fichero subido es correcto<br>";
                             if ($fp = fopen($_FILES["fileToUpload"]["tmp_name"], 'r')) {
-                                echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";      
-                                
-                                $connection=$log->log();        
+                                echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";       
                                 $texte="";                 
                                                                
                                 while (false !== ($caracter = fgetc($fp))) {                                    
@@ -56,7 +53,7 @@
                                 "SELECT Codigo FROM usuarios WHERE Codigo LIKE $num1 LIMIT 1";
                                 $result = $connection->query($query);
                                 if (!$result) die("Fatal Error");
-                                $rows=$result->num_rows;
+                                $rows=$result->num_rows     ;
 
 
                                 $caracter = (int)fgetc($fp);
@@ -67,10 +64,9 @@
                                 VALUES ($num1,$caracter)";
                                 $result = $connection->query($query);
                                 if (!$result) die("Fatal Error");
-                                }else{
-                                    
-                                    $texte.=("$num1,$caracter
-");
+                                }else{                                    
+                                    $texte.="$num1,$caracter
+";
                                     }
                                 
                                 fgetc($fp);
