@@ -8,7 +8,7 @@ FROM
 usuarios u 
 LEFT OUTER JOIN 
 jugadas j ON u.Codigo=j.codigousu
-GROUP BY Nombre
+GROUP BY Codigo
 ORDER BY sum(acierto) DESC, codigousu";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
