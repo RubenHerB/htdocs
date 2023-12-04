@@ -67,6 +67,9 @@
         <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
         </form>
+        <form method="post" class="imp" action="jugadas.php">
+        <input type="submit" name="submit" value="Importar/Exportar jugadas" />
+        </form>
         _END;
       }
         ?>
