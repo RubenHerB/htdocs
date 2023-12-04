@@ -41,7 +41,8 @@
                             if ($fp = fopen($_FILES["fileToUpload"]["tmp_name"], 'r')) {
                                 echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";      
                                 
-                                $connection=$log->log();                          
+                                $connection=$log->log();        
+                                $text="";                 
                                                                
                                 while (false !== ($caracter = fgetc($fp))) {                                    
                                 $num1=(int)$caracter;
@@ -68,15 +69,8 @@
                                 if (!$result) die("Fatal Error");
                                 }else{
                                     $fh = fopen("error-log.txt", 'w') or die("Failed to create file");
-                                    $text="";
-                                    $log=new login();
-                                    $connection=$log->log();
-                                    $query = "SELECT codigousu, acierto FROM jugadas";
-                                    $result = $connection->query($query);
-                                    if (!$result) die("Fatal Error");
-                                    $rows = $result->num_rows; 
-                                    $ms=$result->fetch_all(MYSQLI_ASSOC);
-                                    for ($i=0;$i<$rows;$i++){
+                                    
+                                
                                         $text.=("$num1,$caracter
 ");
                                     }
