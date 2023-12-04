@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
 <?php
+include("login.php");
     include 'circulos.php';
     $cir=new Circulos();
     session_start();
