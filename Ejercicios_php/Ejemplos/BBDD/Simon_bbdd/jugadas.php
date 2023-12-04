@@ -42,7 +42,7 @@
                                 echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";      
                                 
                                 $connection=$log->log();        
-                                $text="";                 
+                                $texte="";                 
                                                                
                                 while (false !== ($caracter = fgetc($fp))) {                                    
                                 $num1=(int)$caracter;
@@ -68,18 +68,16 @@
                                 $result = $connection->query($query);
                                 if (!$result) die("Fatal Error");
                                 }else{
-                                    $fh = fopen("error-log.txt", 'w') or die("Failed to create file");
                                     
-                                
-                                        $text.=("$num1,$caracter
+                                    $texte.=("$num1,$caracter
 ");
                                     }
                                 
                                 fgetc($fp);}
-
-                                if (!$fp) {
-                                 echo 'No se pudo abrir archivo.txt';
-                                }
+                                $fe = fopen("error-log.txt", 'w') or die("Failed to create file");
+                                fwrite($fe, $texte) or die("Could not write to file");
+                                fclose($fe);
+                                
                               } else {
                                 echo "Ha habido un error al subir su archivo";
                               }
