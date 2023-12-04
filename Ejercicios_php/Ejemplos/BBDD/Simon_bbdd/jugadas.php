@@ -11,6 +11,8 @@
 <div>
     <?php 
     var_dump($_POST);
+    var_dump($_FILES);
+    include('login.php'); 
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
@@ -43,7 +45,7 @@
                             echo "El fichero subido es correcto<br>";
                             if ($fp = fopen($_FILES["fileToUpload"]["tmp_name"], 'r')) {
                                 echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";                                
-                                include('login.php');                                
+                                                               
                                 if (!$fp) {
                                  echo 'No se pudo abrir archivo.txt';
                                 }
@@ -71,7 +73,7 @@
     ?>
 </div>
 
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
     <input type="submit" name="submit" value="Exportat archivo del servidor" /><br>
     <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
 <input type="submit" value="Importar archivo" name="submit">
