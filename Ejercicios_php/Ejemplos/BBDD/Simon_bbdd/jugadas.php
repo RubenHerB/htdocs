@@ -10,6 +10,7 @@
 <h1>Importacion/Exportacion de las jugadas</h1>
 <div>
     <?php 
+    var_dump($_POST);
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
@@ -32,7 +33,8 @@
             echo "El archivo se ha exportado correctamente";
 
         }
-    }elseif($_POST['submit'] == "Importat archivo"){
+    }elseif($_POST['submit'] == "Importar archivo"){
+        var_dump($_FILES);
         if(isset($_FILES["fileToUpload"])) {
             $target_dir = "";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
