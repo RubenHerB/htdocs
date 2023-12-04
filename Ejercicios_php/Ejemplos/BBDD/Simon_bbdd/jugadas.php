@@ -11,7 +11,6 @@
 <div>
     <?php 
     var_dump($_POST);
-    var_dump($_FILES);
     include('login.php'); 
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
@@ -35,7 +34,7 @@
             echo "El archivo se ha exportado correctamente";
 
         }
-    }elseif($_POST['submit'] == "Importar archivo"){
+    }else{
         var_dump($_FILES);
         if(isset($_FILES["fileToUpload"])) {
             $target_file =  basename($_FILES["fileToUpload"]["name"]);
