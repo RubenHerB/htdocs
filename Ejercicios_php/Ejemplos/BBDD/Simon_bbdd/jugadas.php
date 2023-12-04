@@ -26,8 +26,9 @@
 
             for ($i=0;$i<$rows;$i++){
             $result->data_seek(0);
-            $ms=$result->fetch_assoc();
-
+            $ms=$result->fetch_assoc(MYSQLI_ASSOC);
+                $text+=$ms['codigousu'].",".$ms['acierto']."
+                ";
             }
 
 
