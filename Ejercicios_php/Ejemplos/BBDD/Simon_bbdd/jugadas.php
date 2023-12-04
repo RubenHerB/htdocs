@@ -15,8 +15,6 @@
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
             $text="";
-
-
             $log=new login();
             $connection=$log->log();
             $query = "SELECT codigousu, acierto FROM jugadas";
@@ -25,7 +23,7 @@
             $rows = $result->num_rows; 
 
             for ($i=0;$i<$rows;$i++){
-            $result->data_seek(0);
+            $result->data_seek($i);
             $ms=$result->fetch_assoc(MYSQLI_ASSOC);
                 $text+=$ms['codigousu'].",".$ms['acierto']."
                 ";
