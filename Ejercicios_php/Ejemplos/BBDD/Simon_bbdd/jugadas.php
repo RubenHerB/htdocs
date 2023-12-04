@@ -40,7 +40,7 @@
                             echo "El fichero subido es correcto<br>";
                             if ($fp = fopen($_FILES["fileToUpload"]["tmp_name"], 'r')) {
                                 echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";      
-                                $log=new login();  
+                                
                                 $connection=$log->log();                          
                                                                
                                 while (false !== ($carácter = fgetc($fp))) {
@@ -62,14 +62,13 @@
 
                                 $carácter = (int)fgetc($fp);
 
-                                if($a){
-                                $¡                              
+                                if($rows>0){                            
                                 $query = 
                                 "INSERT INTO jugadas (codigousu,acierto)
                                 VALUES ($num1,$caracter)";
                                 $result = $connection->query($query);
-                                if (!$result) die("Fatal Error");}
-                                $connection->close();
+                                if (!$result) die("Fatal Error");}else
+                                
                                 fgetc($fp);}
 
                                 if (!$fp) {
@@ -78,6 +77,7 @@
                               } else {
                                 echo "Ha habido un error al subir su archivo";
                               }
+                              $connection->close();
                            }else{
                             echo "El fichero es demasiado grande.";
                            }   
