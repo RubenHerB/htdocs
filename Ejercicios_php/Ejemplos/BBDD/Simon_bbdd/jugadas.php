@@ -7,5 +7,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <input type="submit" name="submit" value="Exportat archivo del servidor" />
+    </form>
 </body>
 </html>
