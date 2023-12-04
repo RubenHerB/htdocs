@@ -52,6 +52,7 @@
                                 }
                                 $carácter = (int)fgetc($fp);
                                 echo "$num1 : $carácter<br>";
+                                fgetc($fp);
                             }
 
 
