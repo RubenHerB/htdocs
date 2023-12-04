@@ -11,11 +11,12 @@
 <div>
     <?php 
     include('login.php'); 
+    $log=new login();
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
             $text="";
-            $log=new login();
+            
             $connection=$log->log();
             $query = "SELECT codigousu, acierto FROM jugadas";
             $result = $connection->query($query);
@@ -55,7 +56,7 @@
                                 "SELECT Codigo FROM usuarios WHERE Codigo LIKE $num1 LIMIT 1";
                                 $result = $connection->query($query);
                                 if (!$result) die("Fatal Error");
-                                $rows=$result->rows();
+                                $rows=$result->num_rows;
 
 
                                 $caracter = (int)fgetc($fp);
