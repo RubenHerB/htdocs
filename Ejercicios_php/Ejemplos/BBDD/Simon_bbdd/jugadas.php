@@ -33,15 +33,16 @@
             echo "El archivo se ha exportado correctamente";
 
         }
-    }
+    }elseif($_POST['submit'] == "Importat archivo"){
 
+    }
     ?>
 </div>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <input type="submit" name="submit" value="Exportat archivo del servidor" /><br>
     <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
-<input type="submit" value="Subir archivo" name="submit">
+<input type="submit" value="Importar archivo" name="submit">
     </form>
 
 
