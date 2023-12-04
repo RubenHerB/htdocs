@@ -43,13 +43,11 @@
                                 
                                 $connection=$log->log();                          
                                                                
-                                while (false !== ($carácter = fgetc($fp))) {
-                                    echo "aaa";
-                                    
-                                $num1=(int)$carácter;
-                                while(',' != ($carácter = fgetc($fp))){
+                                while (false !== ($caracter = fgetc($fp))) {                                    
+                                $num1=(int)$caracter;
+                                while(',' != ($caracter = fgetc($fp))){
                                     $num1*=10;
-                                    $num1+=(int)$carácter; 
+                                    $num1+=(int)$caracter; 
                                 }
 
                                 $query = 
@@ -60,14 +58,28 @@
                                 $rows=$result->rows();
 
 
-                                $carácter = (int)fgetc($fp);
+                                $caracter = (int)fgetc($fp);
 
                                 if($rows>0){                            
                                 $query = 
                                 "INSERT INTO jugadas (codigousu,acierto)
                                 VALUES ($num1,$caracter)";
                                 $result = $connection->query($query);
-                                if (!$result) die("Fatal Error");}else
+                                if (!$result) die("Fatal Error");
+                                }else{
+                                    $fh = fopen("error-log.txt", 'w') or die("Failed to create file");
+                                    $text="";
+                                    $log=new login();
+                                    $connection=$log->log();
+                                    $query = "SELECT codigousu, acierto FROM jugadas";
+                                    $result = $connection->query($query);
+                                    if (!$result) die("Fatal Error");
+                                    $rows = $result->num_rows; 
+                                    $ms=$result->fetch_all(MYSQLI_ASSOC);
+                                    for ($i=0;$i<$rows;$i++){
+                                        $text.=("$num1,$caracter
+");
+                                    }
                                 
                                 fgetc($fp);}
 
