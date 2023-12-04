@@ -10,7 +10,6 @@
 <h1>Importacion/Exportacion de las jugadas</h1>
 <div>
     <?php 
-    var_dump($_POST);
     include('login.php'); 
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
@@ -33,12 +32,9 @@
             fclose($fh);
             echo "El archivo se ha exportado correctamente";
 
-        }
-    }else{
-        var_dump($_FILES);
+        }else{
         if(isset($_FILES["fileToUpload"])) {
             $target_file =  basename($_FILES["fileToUpload"]["name"]);
-            var_dump($target_file);
                 if((pathinfo($target_file,PATHINFO_EXTENSION))=='txt'){
                         if ($_FILES["fileToUpload"]["size"] <= 300000) {
                             echo "El fichero subido es correcto<br>";
@@ -49,7 +45,7 @@
                                  echo 'No se pudo abrir archivo.txt';
                                 }
                                 while (false !== ($carácter = fgetc($fp))) {
-                                echo "$carácter\n";
+                                echo "$carácter";
                             }
 
 
@@ -68,7 +64,7 @@
                }else{
                 echo "No se ha subido ningun fichero";
             }
-    }
+    }}
     ?>
 </div>
 
