@@ -36,9 +36,8 @@
     }elseif($_POST['submit'] == "Importar archivo"){
         var_dump($_FILES);
         if(isset($_FILES["fileToUpload"])) {
-            $target_dir = "";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+            $target_file =  basename($_FILES["fileToUpload"]["name"]);
+            var_dump($target_file);
                 if((pathinfo($target_file,PATHINFO_EXTENSION))=='txt'){
                         if ($_FILES["fileToUpload"]["size"] <= 300000) {
                             echo "El fichero subido es correcto<br>";
