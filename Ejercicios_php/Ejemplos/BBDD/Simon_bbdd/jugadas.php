@@ -72,7 +72,7 @@
                                 fgetc($fp);
                             }
                                 $fe = fopen("error-log.txt", 'w') or die("Failed to create file");
-                                fwrite($fe, $texte) or die("Could not write to file");
+                                fwrite($fe, $texte);
                                 fclose($fe);
                                 
                               } else {
