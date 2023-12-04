@@ -52,8 +52,7 @@
                                 }
 
                                 $query = 
-                                "INSERT INTO jugadas (codigousu,acierto)
-                                VALUES ($num1,$caracter)";
+                                "SELECT Codigo FROM usuarios WHERE Codigo LIKE $num1 LIMIT 1";
                                 $result = $connection->query($query);
                                 if (!$result) die("Fatal Error");
                                 $rows=$result->rows();
@@ -73,7 +72,8 @@
 ");
                                     }
                                 
-                                fgetc($fp);}
+                                fgetc($fp);
+                            }
                                 $fe = fopen("error-log.txt", 'w') or die("Failed to create file");
                                 fwrite($fe, $texte) or die("Could not write to file");
                                 fclose($fe);
