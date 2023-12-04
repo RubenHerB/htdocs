@@ -45,10 +45,11 @@
                                  echo 'No se pudo abrir archivo.txt';
                                 }
                                 while (false !== ($carácter = fgetc($fp))) {
+                                    echo "aaa";
                                 $num1=0;
                                 while(',' != ($carácter = fgetc($fp))){
                                     $num1*=10;
-                                    $num+=(int)$carácter; 
+                                    $num1+=(int)$carácter; 
                                 }
                                 $carácter = (int)fgetc($fp);
                                 echo "$num1 : $carácter<br>";
