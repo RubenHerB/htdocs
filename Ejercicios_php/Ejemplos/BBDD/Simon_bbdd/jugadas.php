@@ -40,10 +40,15 @@
                 if((pathinfo($target_file,PATHINFO_EXTENSION))=='txt'){
                         if ($_FILES["fileToUpload"]["size"] <= 300000) {
                             echo "El fichero subido es correcto<br>";
-                            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                                echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";
-                                
-                                include('login.php');
+                            if ($fp = fopen($_FILES["fileToUpload"]["tmp_name"], 'r')) {
+                                echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " se ha subido";                                
+                                include('login.php');                                
+                                if (!$fp) {
+                                 echo 'No se pudo abrir archivo.txt';
+                                }
+                                while (false !== ($carácter = fgetc($fp))) {
+                                echo "$carácter\n";
+                            }
 
 
 
