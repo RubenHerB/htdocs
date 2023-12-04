@@ -1,6 +1,5 @@
 <h1>Ranking</h1>
 <?php
-include("login.php");
 $log=new login();
 $connection=$log->log();
 $query = "SELECT 
