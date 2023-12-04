@@ -24,8 +24,8 @@
             $ms=$result->fetch_all(MYSQLI_ASSOC);
             for ($i=0;$i<$rows;$i++){
             var_dump($ms[$i]);
-                $text+=($ms[$i]['codigousu'].",".$ms[$i]['acierto']."
-                ");
+                $text.=($ms[$i]['codigousu'].",".$ms[$i]['acierto']."
+");
             }
 
 
