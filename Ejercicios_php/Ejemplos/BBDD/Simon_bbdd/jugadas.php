@@ -103,6 +103,9 @@
     <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
 <input type="submit" value="Importar archivo" name="submit">
     </form>
+    <form method="post" action="Inicio.php">
+        <input type="submit" name="submit" value="Volver al inicio">
+    </form>
 
 
 
