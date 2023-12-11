@@ -6,10 +6,16 @@
 
 </head>
 <body>
-    <h1>Agenda de contactos</h1>
-    <?php 
-    
-    ?>
+    <h1>AGENDA</h1>
+    <div>
+    Hola <?php session_start(); echo $_SESSION['usu']; ?>, cuantos contactos deseas grabar?<br>
+    Puedes grabar entre 1 y 5. Por cada pulsación en INCREMENTAR grabarás un usuario más.<br>
+    Cuando el número sea el deseado pulsa GRABAR.
+
+    </div>
+    <div>
+
+    </div>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 
 <input type="submit">
