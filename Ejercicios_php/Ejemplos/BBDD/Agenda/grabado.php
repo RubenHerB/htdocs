@@ -23,5 +23,8 @@
      echo "Se han grabado ".$_SESSION['con']." contactos de ".$_SESSION['usu'] ?><br>
 
     </div>
+    <a href="index.php">Volver a logearse</a><br>
+    <a href="inicio.php">Introducir mas contactos para <?php echo $_SESSION['usu']?></a><br>
+    <a href="index.php">Total de contactos guardados</a><br>
 </body>
 </html>
