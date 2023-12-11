@@ -3,6 +3,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda</title>
+  <style type="text/css">
+    table,tr,td,th {border-collapse: collapse; border: 1px solid black; text-align: center;}
+    </style>
 
 </head>
 <body>
@@ -31,7 +34,7 @@ $result = $connection->query($query);
  $result->data_seek($j);
  $s=$result->fetch_assoc()['co'];
  if($s==null){$s=0;}
- echo "<td>$s</td><td style=\"color:red;\">";
+ echo "<td>$s</td><td style=\"text-align:left;color:red;\">";
  for($i=0;$i<$s;$i++){
     echo "°";
  }
