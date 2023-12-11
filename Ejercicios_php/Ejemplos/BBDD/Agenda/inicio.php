@@ -15,6 +15,15 @@
     </div>
     <div>
       <?php
+      if(isset($_POST["inicio"])){
+        if($_POST["inicio"] == "GRABAR"){
+          header("Location: agenda.php");
+      }else{
+        $_SESSION['con']++;
+        if($_SESSION['con']==5){
+          header("Location: agenda.php");
+        }
+      }}
       $order=[0,1,2,3,4];
       shuffle($order);
       for ($i=0;$i<$_SESSION['con'];$i++){
@@ -23,8 +32,8 @@
         ?>
     </div>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-
-<input type="submit">
+<input type="submit" name="inicio" value="INCREMENTAR">
+<input type="submit" name="inicio" value="GRABAR">
 </form>
 </body>
 </html>
