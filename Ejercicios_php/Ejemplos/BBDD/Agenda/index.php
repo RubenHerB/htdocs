@@ -6,6 +6,7 @@
 
 </head>
 <body>
+    <h1>Agenda de contactos</h1>
     <?php 
     if(isset($_POST['usuario'])) {
         $usu=$_POST["usuario"];
@@ -33,9 +34,9 @@
         $usu="";
     }
     ?>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" required>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 Usuario: <input type="text" name="usuario" value="<?php echo $usu ?>" required>
-Clave: <input type="password" name="clave" ">
+Clave: <input type="password" name="clave" " required>
 <input type="submit">
 </form>
 </body>
