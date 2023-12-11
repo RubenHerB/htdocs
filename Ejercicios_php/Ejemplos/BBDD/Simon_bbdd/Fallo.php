@@ -18,7 +18,7 @@
         session_destroy();
         header("Location: index.php");
       }else if($_POST["submit"]=="Volver a jugar"){
-        $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
+        $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"],'admin'=>$_SESSION["admin"]];
         header("Location: Inicio.php");
       }}
   ?>
