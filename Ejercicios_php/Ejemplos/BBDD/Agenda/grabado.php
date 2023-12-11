@@ -9,10 +9,16 @@
     <h1>AGENDA</h1>
     <div>
     Hola <?php session_start(); echo $_SESSION['usu']."<br>"; 
+    $connection = new mysqli('localhost', 'root','', 'AGENDA');
+    if ($connection->connect_error) die("Fatal Error");
      for($i=1;$i<=$_SESSION['con'];$i++){
-        
-     }
+        $query = 
+    "INSERT INTO `contactos` ( `nombre`, `email`, `telefono`, `codusuario`) VALUES ('".$_POST["nombre$i"]."', '".$_POST["mail$i"]."', '".$_POST["tel$i"]."', '".$_SESSION['cod']."');";
+    $result = $connection->query($query);
+     if (!$result) die("Fatal Error");
      
+     }
+     $connection->close(); 
      
      echo "Se han grabado ".$_SESSION['con']." contactos de ".$_SESSION['usu'] ?><br>
 
