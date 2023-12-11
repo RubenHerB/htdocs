@@ -24,7 +24,7 @@
             $row = $result->fetch_array(MYSQLI_ASSOC);
             $c=$row["Codigo"];
             session_start();
-            $_SESSION=['cod'=>$c,'usu'=>$usu];
+            $_SESSION=['cod'=>$c,'usu'=>$usu,'con'=>1];
             header("Location: inicio.php");
         }else{
             echo "Usuario o contraseña incorrrectas<br>";
