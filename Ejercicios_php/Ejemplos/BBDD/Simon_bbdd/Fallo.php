@@ -55,7 +55,7 @@
         <input type="submit" name="submit" value="Salir"/>
     </form>
     <?php
-    if($_SESSION['admin'])
+    if($_SESSION['admin']==1)
     echo <<<_END
     <form method="post" class="imp" action="jugadas.php">
     <input type="submit" name="submit" value="Importar/Exportar jugadas" />

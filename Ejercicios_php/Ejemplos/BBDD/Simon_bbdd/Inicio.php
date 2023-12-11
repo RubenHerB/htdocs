@@ -70,7 +70,7 @@
         </form>
         
         _END;
-        if($_SESSION["admin"]){
+        if($_SESSION["admin"]==1){
           echo <<<_END
           <div class="fichero">
         <form method="post"  action="jugadas.php">
