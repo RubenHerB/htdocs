@@ -24,6 +24,7 @@
             $c=$row["Codigo"];
             session_start();
             $_SESSION=['cod'=>$c,'usu'=>$usu];
+            header("Location: inicio.php");
         }else{
             echo "Usuario o contraseña incorrrectas<br>";
         }
