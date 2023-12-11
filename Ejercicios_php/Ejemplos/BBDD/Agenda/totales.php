@@ -43,3 +43,7 @@ $result = $connection->query($query);
  echo "</table>";
  $connection->close(); 
  ?>
+ <a href="index.php">Volver a logearse</a><br>
+    <a href="inicio.php">Introducir mas contactos para <?php echo $_SESSION['usu']?></a><br>
+    </div>
+</body></html>
