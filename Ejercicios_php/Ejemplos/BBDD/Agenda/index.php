@@ -13,17 +13,16 @@
 
         $connection = new mysqli('localhost', 'root','', 'AGENDA');
         if ($connection->connect_error) die("Fatal Error");
-        $query = "SELECT Codigo,Nombre FROM usuarios WHERE Nombre like '$usu'";
-    $result = $connection->query($query);
-    if (!$result) die("Fatal Error");
-      $rows = $result->num_rows; 
-      $c=0;
-      if($rows>0){
-        $result->data_seek(0); 
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-          $c=$row["Codigo"];
+        $query = "SELECT Codigo,Nombre FROM usuarios WHERE Nombre like '$usu' AND Clave like '$pass'";
+        $result = $connection->query($query);
+        if (!$result) die("Fatal Error");
+        $rows = $result->num_rows; 
+        $c=0;
+        if($rows>0){
+            $result->data_seek(0); 
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            $c=$row["Codigo"];
         }
-    }   
     }else{
         $usu="";
     }
