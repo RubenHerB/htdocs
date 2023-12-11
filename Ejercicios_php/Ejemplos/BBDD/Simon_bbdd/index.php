@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $connection=$log->log();
     
     
-    $query = "SELECT Codigo, Nombre ,Clave FROM usuarios WHERE Nombre like '$username'";
+    $query = "SELECT * FROM usuarios WHERE Nombre like '$username'";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
       $rows = $result->num_rows; 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
         if(password_verify($password, $row['Clave'])){
           $l=true;
           $c=$row["Codigo"];
-          $ad=$row["Rol"];
+          $ad=$row['Rol']==1? true:false;
         }
     }    
 

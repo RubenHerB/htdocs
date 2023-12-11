@@ -11,7 +11,6 @@
     <?php
     include("login.php");
     session_start();
-    var_dump($_SESSION);
     if(!isset($_SESSION['user'])) {
         header("Location: index.php");
       }
@@ -70,7 +69,7 @@
         </form>
         
         _END;
-        if($_SESSION["admin"]==1){
+        if($_SESSION["admin"]){
           echo <<<_END
           <div class="fichero">
         <form method="post"  action="jugadas.php">
