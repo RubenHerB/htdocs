@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $connection=$log->log();
     
     
-    $query = "SELECT * FROM usuarios WHERE Nombre like '$username'";
+    $query = "SELECT Codigo, Nombre ,Clave FROM usuarios WHERE Nombre like '$username'";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
       $rows = $result->num_rows; 
