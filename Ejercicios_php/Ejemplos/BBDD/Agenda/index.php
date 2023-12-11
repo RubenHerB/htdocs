@@ -29,6 +29,7 @@
                 $emojis[$i]=rand(0,4);
             }
             $_SESSION=['cod'=>$c,'usu'=>$usu,'con'=>1,'emo'=>$emojis];
+            $connection->close(); 
             header("Location: inicio.php");
         }else{
             echo "Usuario o contraseña incorrrectas<br>";
