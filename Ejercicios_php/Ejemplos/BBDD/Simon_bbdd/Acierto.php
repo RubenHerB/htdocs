@@ -49,9 +49,14 @@
         <input type="submit" name="submit" value="Volver a jugar"/>
         <input type="submit" name="submit" value="Salir"/>
     </form>
+    <?php
+    if($_SESSION['admin'])
+    echo <<<_END
   <form method="post" class="imp" action="jugadas.php">
     <input type="submit" name="submit" value="Importar/Exportar jugadas" />
   </form>
+  _END;
+  ?>
 
 
 
