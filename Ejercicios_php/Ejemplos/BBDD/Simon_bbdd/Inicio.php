@@ -67,12 +67,17 @@
         <br>
         <input type="submit" name="submit" value="SELECCIONAR NUMERO DE CIRCULOS"/>
         </form>
-        <div class="fichero">
+        
+        _END;
+        if($_SESSION["admin"]){
+          echo <<<_END
+          <div class="fichero">
         <form method="post"  action="jugadas.php">
         <input type="submit" name="submit" value="Importar/Exportar jugadas" />
         </form>
         </div>
         _END;
+        }
       }
         ?>
         
