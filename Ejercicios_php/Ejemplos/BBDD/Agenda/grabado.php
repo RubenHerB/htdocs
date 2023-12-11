@@ -20,7 +20,16 @@
      }
      $connection->close(); 
      
-     echo "Se han grabado ".$_SESSION['con']." contactos de ".$_SESSION['usu'] ?><br>
+     echo "Se han grabado ".$_SESSION['con']." contactos de ".$_SESSION['usu'] ;
+
+     $emojis=[0,0,0,0,0];
+            for ($i=0;$i<count($emojis);$i++) {
+                $emojis[$i]=rand(0,4);
+            }
+            $_SESSION['con']=1;
+            $_SESSION['emo']=$emojis;
+     
+     ?><br>
 
     </div>
     <a href="index.php">Volver a logearse</a><br>
