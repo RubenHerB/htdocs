@@ -33,12 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
         if(password_verify($password, $row['Clave'])){
           $l=true;
           $c=$row["Codigo"];
+          $ad=$row['Rol']=1? true:false;
         }
     }    
 
    if($l){
     session_start();
-    $_SESSION=['user'=>$username,'userc'=>$c];
+    $_SESSION=['user'=>$username,'userc'=>$c,'admin'=>$ad];
     header("Location: Inicio.php");
   } else {
     $error="Usuario o contraeña incorrectas";
