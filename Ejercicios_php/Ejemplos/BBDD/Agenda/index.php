@@ -22,13 +22,18 @@
             $result->data_seek(0); 
             $row = $result->fetch_array(MYSQLI_ASSOC);
             $c=$row["Codigo"];
+            session_start();
+            $_SESSION=['cod'=>$c,'usu'=>$usu];
+        }else{
+            echo "Usuario o contraseña incorrrectas<br>";
         }
     }else{
+        $error="";
         $usu="";
     }
     ?>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-Usuario: <input type="text" name="usuario" value="<?php echo $usu ?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" required>
+Usuario: <input type="text" name="usuario" value="<?php echo $usu ?>" required>
 Clave: <input type="password" name="clave" ">
 <input type="submit">
 </form>
