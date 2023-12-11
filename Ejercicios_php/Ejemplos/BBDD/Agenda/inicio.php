@@ -24,10 +24,9 @@
           header("Location: agenda.php");
         }
       }}
-      $order=[0,1,2,3,4];
-      shuffle($order);
+      
       for ($i=0;$i<$_SESSION['con'];$i++){
-        echo "<img src=\"img/OIP".$order[$i].".jfif\">";
+        echo "<img src=\"img/OIP".rand(0,4).".jfif\">";
       }
         ?>
     </div>
