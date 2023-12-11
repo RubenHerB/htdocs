@@ -36,7 +36,11 @@ echo '<tr><td>'.($j+1).'</td>';
  $result->data_seek($j);
  $s=$result->fetch_assoc()['co'];
  if($s==null){$s=0;}
- echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(200*($s/$ms))."px\"></div></td></tr>";
+ echo "<td>$s</td><td style=\"color:red;\">";
+ for($i=0;$i<$s;$i++){
+    echo "°";
+ }
+ echo "</td></tr>";
  }
  echo "</table>";
  $connection->close(); 
