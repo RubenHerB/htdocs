@@ -21,14 +21,9 @@ GROUP BY u.Codigo";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
-
-$result->data_seek(0);
-$ms=$result->fetch_assoc()['s'];
-
  echo "<table><tr><th>Codigo usuario</th><th>Nombre</th><th>Numero de contactos</th><th>Grafica</th></tr>";
  for ($j = 0 ; $j < $rows ; ++$j)
  {
-echo '<tr><td>'.($j+1).'</td>';
  $result->data_seek($j);
  echo '<td>'.$result->fetch_assoc()['Codigo'].'</td>';
  $result->data_seek($j);
