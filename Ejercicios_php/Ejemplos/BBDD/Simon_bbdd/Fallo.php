@@ -13,6 +13,14 @@
   if(!isset($_SESSION['user'])) {
       header("Location: index.php");
     }
+    if(isset($_POST["submit"])) {
+      if($_POST["submit"]=="Salir"){
+        session_destroy();
+        header("Location: index.php");
+      }else if($_POST["submit"]=="Volver a jugar"){
+        $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
+        header("Location: Inicio.php");
+      }}
   ?>
     <h1>SIMÓN</h1>
     <h2><?php echo $_SESSION['user'] ;?>, has fallado</h2>
@@ -29,10 +37,6 @@
     VALUES ($c,0)";
     $result = $connection->query($query);
      if (!$result) die("Fatal Error");
-
-
-
-
     include 'circulos.php';
       $cir=new Circulos();
     $cir->pintar($_SESSION["ran"]);
@@ -59,14 +63,6 @@
     <div class="ranking3"id="rankcontent">
 <?php
  include 'ranking.php';
-if(isset($_POST["submit"])) {
-if($_POST["submit"]=="Salir"){
-  session_destroy();
-  header("Location: index.php");
-}else if($_POST["submit"]=="Volver a jugar"){
-  $_SESSION=['user'=>$_SESSION["user"],'userc'=>$_SESSION["userc"]];
-  header("Location: Inicio.php");
-}}
  ?>
  <br>
   </div>

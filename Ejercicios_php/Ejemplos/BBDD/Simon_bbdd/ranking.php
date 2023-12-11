@@ -15,7 +15,7 @@ $result = $connection->query($query);
  $rows = $result->num_rows; 
 
 $result->data_seek(0);
-$ms=$s=$result->fetch_assoc()['s'];
+$ms=$result->fetch_assoc()['s'];
 
  echo "<table><tr><th>Rank</th><th>Codigo</th><th>Nombre</th><th>Aciertos</th><th>Grafica</th></tr>";
  for ($j = 0 ; $j < $rows ; ++$j)

@@ -86,12 +86,12 @@
       var n=parseInt(window.some_variable = '<?=$_POST['nc']?>');
       if (!isNaN(n)){
         t=[0,0,0];
-        t[1]=Math.ceil((n*1.5)+Math.pow(1.25,n));
+        t[1]=Math.ceil((n*1.5)+Math.pow(1.25,(n+1)));
         if(t[1]>=60){
           t[0]=Math.trunc(t[1]/60);
           t[1]-=(Math.trunc(t[1]/60)*60);
-        }
-      }
+        }}
+        
       function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
