@@ -12,7 +12,7 @@
 <body>
     <h1>AGENDA</h1>
     <h2>Hola <?php session_start(); echo $_SESSION['usu']; ?></h2>
-    <form method="post" action="<
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <?php 
     for($i=1; $i<=$_SESSION['con'];$i++){
         echo <<<_END
@@ -20,10 +20,11 @@
             <h3>Contacto $i</h3>
             Nombre $i: <input type="text" name="nombre$i" required>
             Email $i: <input type="text" name="mail$i" required>
-            Telèfono $i: <input type="text" name="tel$i" required>
+            Teléfono $i: <input type="text" name="tel$i" required>
             </div>
         _END;
     }
     ?>
+    </form>
 </body>
 </html>
