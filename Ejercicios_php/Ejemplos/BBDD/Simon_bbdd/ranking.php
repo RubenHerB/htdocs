@@ -1,5 +1,14 @@
-<h1>Ranking</h1>
-<?php
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda</title>
+
+</head>
+<body>
+    <h1>AGENDA</h1>
+
+    Hola <?php session_start(); echo $_SESSION['usu']."<br>"; 
 $log=new login();
 $connection=$log->log();
 $query = "SELECT 
@@ -30,6 +39,9 @@ echo '<tr><td>'.($j+1).'</td>';
  if($s==null){$s=0;}
  echo "<td>$s</td><td class= \"grf\"><div style=\"height: 10px;width:".(200*($s/$ms))."px\"></div></td></tr>";
  }
- echo "</table>";
+ 
  $connection->close(); 
  ?>
+</table>
+</body>
+</html>
