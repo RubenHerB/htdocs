@@ -18,13 +18,14 @@
         echo <<<_END
             <div>
             <h3>Contacto $i</h3>
-            Nombre $i: <input type="text" name="nombre$i" required>
-            Email $i: <input type="text" name="mail$i" required>
-            Teléfono $i: <input type="text" name="tel$i" required>
+            Nombre $i: <input type="text" name="nombre$i" required><br />
+            Email $i: <input type="text" name="mail$i" required><br />
+            Teléfono $i: <input type="text" name="tel$i" required><br />
             </div>
         _END;
     }
     ?>
+    <input type="submit" name="grabar" value="grabar">
     </form>
 </body>
 </html>
