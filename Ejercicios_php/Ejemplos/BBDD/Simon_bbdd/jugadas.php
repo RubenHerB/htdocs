@@ -13,6 +13,8 @@
     session_start();
     if(!isset($_SESSION['user'])) {
         header("Location: index.php");
+      }elseif(!$_SESSION['admin']){
+        header("Location: index.php");
       }
     include('login.php'); 
     $log=new login();
