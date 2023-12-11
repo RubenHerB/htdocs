@@ -26,7 +26,7 @@
       }}
       
       for ($i=0;$i<$_SESSION['con'];$i++){
-        echo "<img src=\"img/OIP".rand(0,4).".jfif\">";
+        echo "<img src=\"img/OIP".$_SESSION['emo'][$i].".jfif\">";
       }
         ?>
     </div>
