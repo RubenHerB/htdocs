@@ -24,7 +24,11 @@
             $row = $result->fetch_array(MYSQLI_ASSOC);
             $c=$row["Codigo"];
             session_start();
-            $_SESSION=['cod'=>$c,'usu'=>$usu,'con'=>1];
+            $emojis=[0,0,0,0,0];
+            for ($i=0;$i<count($emojis);$i++) {
+                $emojis[$i]=rand(0,4);
+            }
+            $_SESSION=['cod'=>$c,'usu'=>$usu,'con'=>1,'emo'=>$emojis];
             header("Location: inicio.php");
         }else{
             echo "Usuario o contraseña incorrrectas<br>";
