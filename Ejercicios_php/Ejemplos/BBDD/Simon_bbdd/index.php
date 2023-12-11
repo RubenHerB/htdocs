@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
         if(password_verify($password, $row['Clave'])){
           $l=true;
           $c=$row["Codigo"];
-          $ad=$row['Rol']=1? true:false;
+          $ad=$row['Rol']==1? true:false;
         }
     }    
 
