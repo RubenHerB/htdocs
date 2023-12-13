@@ -11,14 +11,12 @@
 <div>
     <?php 
     session_start();
-    if(!isset($_SESSION['user'])) {
-        header("Location: index.php");
-      }elseif(!$_SESSION['admin']){
+    if(!isset($_SESSION['user'])||!$_SESSION['admin']) {
         header("Location: index.php");
       }
     include('login.php'); 
     $log=new login();
-    $connection=$log->log();
+    $connection=$log->log(true);
     if(isset($_POST['submit'])) {
         if($_POST['submit'] == "Exportat archivo del servidor"){
             $fh = fopen("jugadas.txt", 'w') or die("Failed to create file");
