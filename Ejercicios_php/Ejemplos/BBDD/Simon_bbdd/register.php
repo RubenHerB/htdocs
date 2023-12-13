@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     
     include("login.php");
     $log=new login();
-    $connection=$log->log();
+    $connection=$log->log(false);
     
     
     $query = "SELECT Nombre FROM usuarios where Nombre LIKE '$username'";
