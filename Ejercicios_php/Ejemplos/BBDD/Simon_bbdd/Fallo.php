@@ -30,6 +30,7 @@
     <div class="dotcenter">
     <?php
     $c=$_SESSION['userc'];
+    $log=new login();
     $connection=$log->log();
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
