@@ -25,7 +25,7 @@
     include("login.php");
     if($_POST==null){
       $log=new login();
-    $connection=$log->log();
+    $connection=$log->log($_SESSION['admin']);
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,1)";
