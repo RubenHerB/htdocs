@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $username = $_POST["username"];
     $password = $_POST["password"];
     include("login.php");
-    $log=new login();
+    $log=new logininicial();
     $connection=$log->log();
     
     
