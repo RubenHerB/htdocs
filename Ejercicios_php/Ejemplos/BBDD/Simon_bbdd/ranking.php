@@ -1,7 +1,8 @@
 <h1>Ranking</h1>
 <?php
 $log=new login();
-$connection=$log->log();
+session_start();
+$connection=$log->log($_SESSION['admin']);
 $query = "SELECT 
 u.Codigo, u.Nombre, sum(j.acierto) as s
 FROM
