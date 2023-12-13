@@ -30,8 +30,7 @@
     <div class="dotcenter">
     <?php
     $c=$_SESSION['userc'];
-    $connection = new mysqli('localhost', 'user','user', 'bdsimon');
-    if ($connection->connect_error) die("Fatal Error");
+    $connection=$log->log();
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,0)";
