@@ -31,7 +31,7 @@
     <?php
     $c=$_SESSION['userc'];
     $log=new login();
-    $connection=$log->log();
+    $connection=$log->log($_SESSION['admin']);
     $query = 
     "INSERT INTO jugadas (codigousu,acierto)
     VALUES ($c,0)";
