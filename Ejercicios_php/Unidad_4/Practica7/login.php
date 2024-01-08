@@ -5,16 +5,20 @@
     <title>Simon</title>
 </head>
     <body>
-        <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-            Login del usuario: 
-            <input type="text" name="user"> 
-            Clave: 
-            <input type="password" name="password">
-            <input type="submit" name="Iniciar sesion">
-        </form>
-
         <?php
+        if(isset($c) && !$c){
+            echo <<<_END
+                <form method="post" action="<?php \$_SERVER['PHP_SELF']; ?>">
+                    Login del usuario: 
+                    <input type="text" name="user"> 
+                    Clave: 
+                    <input type="password" name="password">
+                    <input type="submit" name="Iniciar sesion">
+                </form>
+            _END;
+        
             if($_POST!=null){
+                $c=false; 
                 if(isset($_POST['user']) && $_POST['password']){
                     $user=$_POST['user'];
                     $pass=$_POST['password'];
@@ -23,6 +27,14 @@
                     $result = $connection->query($query);
                     if (!$result) die("Fatal Error");
                     $rows = $result->num_rows;
+                    echo "Se esta intentando validar como el usuario $user<br>";
+                    if($rows==0){
+                        $connection->close();
+                        echo"El usuario $user no existe, vuelva a validar otro usuario";
+                    }else{
+                        $c=true;
+
+                    }
                 }else{
                     echo 'Rellena todos los campos';
                 }
