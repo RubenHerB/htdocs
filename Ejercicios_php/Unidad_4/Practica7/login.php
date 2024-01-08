@@ -12,5 +12,15 @@
             <input type="password" name="password">
             <input type="submit" name="Iniciar sesion">
         </form>
+
+        <?php
+            if($_POST!=null){
+                if(isset($_POST['user']) && $_POST['password']){
+
+                }else{
+                    echo 'Rellena todos los campos';
+                }
+            }
+        ?>
     </body>
 </html>
