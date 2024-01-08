@@ -5,7 +5,7 @@
     <title>Simon</title>
 </head>
     <body>
-        <form method="post" action="<?php $_SERVER['self']; ?>">
+        <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
             Login del usuario: 
             <input type="text" name="user"> 
             Clave: 
