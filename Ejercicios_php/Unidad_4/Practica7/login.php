@@ -6,7 +6,7 @@
 </head>
     <body>
         <?php
-        if(isset($c) && !$c){
+        if(!isset($c) || !$c){
             echo <<<_END
                 <form method="post" action="<?php \$_SERVER['PHP_SELF']; ?>">
                     Login del usuario: 
@@ -16,29 +16,29 @@
                     <input type="submit" name="Iniciar sesion">
                 </form>
             _END;
-        
-            if($_POST!=null){
-                $c=false; 
-                if(isset($_POST['user']) && $_POST['password']){
-                    $user=$_POST['user'];
-                    $pass=$_POST['password'];
-                    $connection = new mysqli('localhost', 'loginventas','log', 'ventas');
-                    $query = "SELECT * FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
-                    $result = $connection->query($query);
-                    if (!$result) die("Fatal Error");
-                    $rows = $result->num_rows;
-                    echo "Se esta intentando validar como el usuario $user<br>";
-                    if($rows==0){
-                        $connection->close();
-                        echo"El usuario $user no existe, vuelva a validar otro usuario";
-                    }else{
-                        $c=true;
-
-                    }
+        }
+        if($_POST!=null){
+            $c=false; 
+            if(isset($_POST['user']) && $_POST['password']){
+                $user=$_POST['user'];
+                $pass=$_POST['password'];
+                $connection = new mysqli('localhost', 'loginventas','log', 'ventas');
+                $query = "SELECT * FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
+                $result = $connection->query($query);
+                if (!$result) die("Fatal Error");
+                $rows = $result->num_rows;
+                echo "Se esta intentando validar como el usuario $user<br>";
+                if($rows==0){
+                    $connection->close();
+                    echo"El usuario $user no existe, vuelva a validar otro usuario";
                 }else{
-                    echo 'Rellena todos los campos';
+                    $c=true;
+
                 }
+            }else{
+                echo 'Rellena todos los campos';
             }
+        }
         ?>
     </body>
 </html>
