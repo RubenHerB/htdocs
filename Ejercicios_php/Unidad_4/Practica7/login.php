@@ -39,6 +39,7 @@
                         session_start();
                         $_SESSION=['id'=>$r["idusuario"],'admin'=>$r["rol"]=="administrador"?true:false];
                         var_dump($r);
+                        var_dump($_SESSION);
                     }
                 }else{
                     echo 'Rellena todos los campos';
