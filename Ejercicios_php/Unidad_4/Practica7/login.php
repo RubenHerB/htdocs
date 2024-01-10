@@ -37,6 +37,11 @@
                             </form>
                             _END;
                         }
+                        echo <<<_END
+                            <form method="post" action="output.php">
+                                <input type="submit" name="Visualizar artículos">
+                            </form>
+                            _END;
                     }
                 }else{
                     echo 'Rellena todos los campos';
