@@ -16,29 +16,30 @@
                     <input type="submit" name="Iniciar sesion">
                 </form>
             _END;
-        }
-        if($_POST!=null){
-            $c=false; 
-            if(isset($_POST['user']) && $_POST['password']){
-                $user=$_POST['user'];
-                $pass=$_POST['password'];
-                $connection = new mysqli('localhost', 'loginventas','log', 'ventas');
-                $query = "SELECT * FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
-                $result = $connection->query($query);
-                if (!$result) die("Fatal Error");
-                $rows = $result->num_rows;
-                echo "Se esta intentando validar como el usuario $user<br>";
-                if($rows==0){
-                    $connection->close();
-                    echo"El usuario $user no existe, vuelva a validar otro usuario";
+            if($_POST!=null){
+                $c=false; 
+                if(isset($_POST['user']) && $_POST['password']){
+                    $user=$_POST['user'];
+                    $pass=$_POST['password'];
+                    $connection = new mysqli('localhost', 'loginventas','log', 'ventas');
+                    $query = "SELECT * FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
+                    $result = $connection->query($query);
+                    if (!$result) die("Fatal Error");
+                    $rows = $result->num_rows;
+                    echo "Se esta intentando validar como el usuario $user<br>";
+                    if($rows==0){
+                        $connection->close();
+                        echo"El usuario $user no existe, vuelva a validar otro usuario";
+                    }else{
+                        $c=true;
+                        $r=$result->fetch_array(0)['MYSQL_ASSOC'];
+                        var_dump($r);
+                    }
                 }else{
-                    $c=true;
-
+                    echo 'Rellena todos los campos';
                 }
-            }else{
-                echo 'Rellena todos los campos';
             }
-        }
+    }
         ?>
     </body>
 </html>
