@@ -32,7 +32,9 @@
                         echo"El usuario $user no existe, vuelva a validar otro usuario";
                     }else{
                         $c=true;
-                        $r=$result->fetch_array(0);
+                        $result->data_seek(0);
+                        $r=$result->fetch_array(MYSQLI_ASSOC);
+
                         var_dump($r);
                     }
                 }else{
