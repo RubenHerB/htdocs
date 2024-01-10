@@ -12,7 +12,7 @@
                     $user=$_POST['user'];
                     $pass=$_POST['password'];
                     $connection = new mysqli('localhost', 'loginventas','log', 'ventas');
-                    $query = "SELECT * FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
+                    $query = "SELECT usuario,password,rol FROM usuarios WHERE usuario like '$user' AND password like '$pass'";
                     $result = $connection->query($query);
                     if (!$result) die("Fatal Error");
                     $rows = $result->num_rows;
@@ -23,12 +23,13 @@
                     }else{
                         $c=true;
                         $result->data_seek(0);
-                        $r=$result->fetch_array(MYSQLI_ASSOC);
-                        echo "<br>Se ha iniciado sesion como ".$r["rol"]."<br>";
+                        $r=$result->fetch_assoc("rol");
+                        echo "<br>Se ha iniciado sesion como ".$r."<br>";
                         session_start();
-                        $_SESSION=['id'=>$r["idusuario"],'admin'=>$r["rol"]=="administrador"?true:false];
+                        $_SESSION=['admin'=>$r=="administrador"?true:false];
                         var_dump($r);
                         var_dump($_SESSION);
+
                     }
                 }else{
                     echo 'Rellena todos los campos';
