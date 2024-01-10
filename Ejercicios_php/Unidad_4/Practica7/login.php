@@ -35,7 +35,7 @@
                         $c=true;
                         $result->data_seek(0);
                         $r=$result->fetch_array(MYSQLI_ASSOC);
-                        echo "<br>Se ha iniciado sesion como ".$r["rol"];
+                        echo "<br>Se ha iniciado sesion como ".$r["rol"]."<br>";
                         session_start();
                         $_SESSION=['id'=>$r["idusuario"],'admin'=>$r["rol"]=="administrador"?true:false];
                         var_dump($r);
