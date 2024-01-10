@@ -23,13 +23,14 @@
                     }else{
                         $c=true;
                         $result->data_seek(0);
-                        $r=$result->fetch_assoc("rol");
+                        $r=$result->fetch_assoc()["rol"];
                         echo "<br>Se ha iniciado sesion como ".$r."<br>";
                         session_start();
-                        $_SESSION=['admin'=>$r=="administrador"?true:false];
+                        $admin=$r=="administrador"?true:false;
+                        $_SESSION=['admin'=>$admin];
                         var_dump($r);
                         var_dump($_SESSION);
-
+                        if
                     }
                 }else{
                     echo 'Rellena todos los campos';
