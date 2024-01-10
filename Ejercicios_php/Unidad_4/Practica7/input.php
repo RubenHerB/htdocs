@@ -13,6 +13,10 @@
         ?>
         <h1>Introducir articulos</h1>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            Descripcion: <input type="text" name="descripcion"><br>
+            Precio: <input type="number" name="precio"><br>
+            Caracteristicas: <input type="text" name="caracteristicas"><br>
+            <input type="submit" value="Introducir articulo">
 
         </form>
     </body>
