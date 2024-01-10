@@ -3,6 +3,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon</title>
+    <style>
+        table,td,th{border: 1px solid black;border-collapse: collapse;}
+    </style>
 </head>
     <body>
         <?php
