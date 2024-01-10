@@ -33,13 +33,13 @@
                         if($admin){
                             echo <<<_END
                             <form method="post" action="input.php">
-                                <input type="submit" name="Introducir nuevos artículos">
+                                <input type="submit" value="Introducir nuevos artículos">
                             </form>
                             _END;
                         }
                         echo <<<_END
                             <form method="post" action="output.php">
-                                <input type="submit" name="Visualizar artículos">
+                                <input type="submit" value="Visualizar artículos">
                             </form>
                             _END;
                     }
@@ -54,7 +54,7 @@
                         <input type="text" name="user"> 
                         Clave: 
                         <input type="password" name="password">
-                        <input type="submit" name="Iniciar sesion">
+                        <input type="submit" value="Iniciar sesion">
                     </form>
                 _END;
             }
