@@ -6,17 +6,6 @@
 </head>
     <body>
         <?php
-        if(!isset($c) || !$c){
-            echo <<<_END
-                <form method="post" action="login.php">
-                    Login del usuario: 
-                    <input type="text" name="user"> 
-                    Clave: 
-                    <input type="password" name="password">
-                    <input type="submit" name="Iniciar sesion">
-                </form>
-            _END;
-        }
             if($_POST!=null){
                 $c=false; 
                 if(isset($_POST['user']) && $_POST['password']){
@@ -43,9 +32,19 @@
                     }
                 }else{
                     echo 'Rellena todos los campos';
-                }
-            
-    }
+                }          
+            }
+            if(!isset($c) || !$c){
+                echo <<<_END
+                    <form method="post" action="login.php">
+                        Login del usuario: 
+                        <input type="text" name="user"> 
+                        Clave: 
+                        <input type="password" name="password">
+                        <input type="submit" name="Iniciar sesion">
+                    </form>
+                _END;
+            }
         ?>
     </body>
 </html>
