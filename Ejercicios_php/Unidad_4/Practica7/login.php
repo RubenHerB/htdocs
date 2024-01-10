@@ -28,8 +28,8 @@
                         session_start();
                         $admin=$r=="administrador"?true:false;
                         $_SESSION=['admin'=>$admin];
-                        var_dump($r);
-                        var_dump($_SESSION);
+                        // var_dump($r);
+                        // var_dump($_SESSION);
                         if($admin){
                             echo <<<_END
                             <form method="post" action="input.php">
