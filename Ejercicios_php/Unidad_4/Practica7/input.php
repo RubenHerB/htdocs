@@ -19,7 +19,7 @@
             <input type="submit" value="Introducir articulo">
         </form>
         <?php
-        if(isset($_POST)){
+        if(isset($_POST["descripcion"])){
             $connection = new mysqli('localhost', 'administrador','administrador', 'ventas');
             $query = "INSERT INTO articulos (descripcion,precio,caracteristicas) VALUES ('".$_POST["descripcion"]."',".$_POST["precio"].",'".$_POST["caracteristicas"]."')";
             $result = $connection->query($query);
