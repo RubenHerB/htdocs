@@ -8,7 +8,7 @@
         <?php
         if(!isset($c) || !$c){
             echo <<<_END
-                <form method="post" action="<?php echo '\$_SERVER['PHP_SELF'];' ?>">
+                <form method="post" action="login.php">
                     Login del usuario: 
                     <input type="text" name="user"> 
                     Clave: 
