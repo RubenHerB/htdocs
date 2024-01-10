@@ -16,6 +16,7 @@
                     <input type="submit" name="Iniciar sesion">
                 </form>
             _END;
+        }
             if($_POST!=null){
                 $c=false; 
                 if(isset($_POST['user']) && $_POST['password']){
@@ -34,13 +35,15 @@
                         $c=true;
                         $result->data_seek(0);
                         $r=$result->fetch_array(MYSQLI_ASSOC);
-
+                        echo "<br>Se ha iniciado sesion como ".$r["rol"];
+                        session_start();
+                        $_SESSION=['id'=>$r["idusuario"],'admin'=>$r["rol"]=="administrador"?true:false];
                         var_dump($r);
                     }
                 }else{
                     echo 'Rellena todos los campos';
                 }
-            }
+            
     }
         ?>
     </body>
