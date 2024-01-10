@@ -30,7 +30,13 @@
                         $_SESSION=['admin'=>$admin];
                         var_dump($r);
                         var_dump($_SESSION);
-                        if
+                        if($admin){
+                            echo <<<_END
+                            <form method="post" action="input.php">
+                                <input type="submit" name="Introducir nuevos artículos">
+                            </form>
+                            _END;
+                        }
                     }
                 }else{
                     echo 'Rellena todos los campos';
