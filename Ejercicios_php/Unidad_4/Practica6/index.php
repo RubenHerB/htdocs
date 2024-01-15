@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     include("login.php");
     $connection=$log->log_login();
     
-    $query = "SELECT * FROM usuarios WHERE Nombre like '$username'";
+    $query = "SELECT * FROM usuarios WHERE User like '$username'";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
       $rows = $result->num_rows; 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
       if($rows>0){
         $result->data_seek(0); 
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        if(password_verify($password, $row['Clave'])){
+        if(password_verify($password, $row['Pass'])){
           $l=true;
           $c=$row["IdUser"];
           $ad=$row['Role']==1? true:false;
