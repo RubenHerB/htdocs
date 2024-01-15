@@ -20,7 +20,7 @@
 </head>
 <body>
 <button class="btn" onclick="reducir('b1')">-</button>
-<input type="number" min="0" value="0" id="b1">
+<input type="number" min="0" max="99" value="0" id="b1" class="numero">
 <button class="btn" onclick="aumentar('b1')">+</button>
 </body>
 </html>
