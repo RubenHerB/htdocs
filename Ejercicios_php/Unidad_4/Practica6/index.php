@@ -19,8 +19,8 @@
     </script>
 </head>
 <body>
-<button class="btn" onclick="reducir()">-</button>
+<button class="btn" onclick="reducir('b1')">-</button>
 <input type="number" min="0" value="0" id="b1">
-<button class="btn" onclick="aumentar()">+</button>
+<button class="btn" onclick="aumentar('b1')">+</button>
 </body>
 </html>
