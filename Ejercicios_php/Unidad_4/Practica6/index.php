@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="estilos.css">
-
 </head>
 <body>
-  <?php
+    <?php
   $username="";
   $error="";
 // Verificar si se han enviado datos
@@ -17,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $username = $_POST["username"];
     $password = $_POST["password"];
     include("login.php");
-    $log=new logininicial();
-    $connection=$log->log();
+    $connection=$log->log_login();
     
     
     $query = "SELECT * FROM usuarios WHERE Nombre like '$username'";
@@ -46,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
   }
  }
 ?>
+
 
     <h2>Iniciar sesión</h2>
     <div class="log-container">
