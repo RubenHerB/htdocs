@@ -70,7 +70,16 @@
         <input type="submit" value="Ir al carrito"> 
     </form>
     <?php
+    if(isset($_POST[0])){
+    $n=count($_POST);
+    for ($i=0; $i<$n; $i++) {
+        if($_POST[$i]==0){
+            unset($_POST[$i]);
+        }
+    }}
+    
     var_dump($_POST);
+    var_dump($_SESSION);
     ?>
     </body>
 </html>
