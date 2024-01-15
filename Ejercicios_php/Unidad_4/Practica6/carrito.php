@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="estilos.css">
     <script type="text/javascript">
         function aumentar(id) {
-            var n=document.getElementById(id);
-            if(n.value<99){
+            var n=document.getElementById(id,n);
+            if(n.value<n){
                 n.value++;
             }
         }
@@ -51,8 +51,8 @@ $t=0;
         ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
-        <input type=\"number\"name=\"$i\" min=\"0\" max=\"99\" value=\"0\" id=\"b$i\" class=\"numero\">
-        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i')\">+</button></div></div></article>";
+        <input type=\"number\"name=\"$i\" min=\"0\" max=\"$n\" value=\"0\" id=\"b$i\" class=\"numero\">
+        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i,$n')\">+</button></div></div></article>";
         if($i<($rows-1)){
             echo "<hr>";
         }
