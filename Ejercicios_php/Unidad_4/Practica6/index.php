@@ -39,7 +39,11 @@
     if($l){
     session_start();
     $_SESSION=['name'=>$name,'IdUser'=>$c,'admin'=>$ad];
+    if($ad){
+    header("Location: admin.php");
+    }else{
     header("Location: Inicio.php");
+    }
     } else {
       $error="Usuario o contraeña incorrectas";
     }
