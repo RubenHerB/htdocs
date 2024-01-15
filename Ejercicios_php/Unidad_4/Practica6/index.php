@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     include("login.php");
     $connection=$log->log_login();
     
-    
     $query = "SELECT * FROM usuarios WHERE Nombre like '$username'";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
@@ -30,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
         $row = $result->fetch_array(MYSQLI_ASSOC);
         if(password_verify($password, $row['Clave'])){
           $l=true;
-          $c=$row["Codigo"];
-          $ad=$row['Rol']==1? true:false;
+          $c=$row["IdUser"];
+          $ad=$row['Role']==1? true:false;
         }
     }    
 
    if($l){
     session_start();
-    $_SESSION=['user'=>$username,'userc'=>$c,'admin'=>$ad];
+    $_SESSION=['user'=>$username,'IdUser'=>$c,'admin'=>$ad];
     header("Location: Inicio.php");
   } else {
     $error="Usuario o contraeña incorrectas";
