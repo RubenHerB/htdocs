@@ -26,10 +26,10 @@ button{
     margin-right: 20px;
 }
 
-article{display: flex;align-items: center}
+article{display: flex;align-items: center; }
 .articlediv{display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-between;
 }
-.btmdiv{display: flex; flex-direction: row;flex-wrap: nowrap;}
+.btndiv{display: block;}
