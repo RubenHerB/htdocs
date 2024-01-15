@@ -8,7 +8,7 @@
     <script type="text/javascript">
         function aumentar(id) {
             var n=document.getElementById(id,n);
-            if(n.value<n){
+            if(n.value<parseInt(n)){
                 n.value++;
             }
         }
@@ -28,7 +28,7 @@
         header("Location: index.php");
     }
     ?>
-
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <?php 
 include("login.php");
 $log= new login();
@@ -52,13 +52,14 @@ $t=0;
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
         <input type=\"number\"name=\"$i\" min=\"0\" max=\"$n\" value=\"0\" id=\"b$i\" class=\"numero\">
-        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i,$n')\">+</button></div></div></article>";
+        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i',$n)\">+</button></div></div></article>";
         if($i<($rows-1)){
             echo "<hr>";
         }
         $t+=$p["Price"]*$n;
     }
     ?>
+    </form>
 
     </body>
 </html>
