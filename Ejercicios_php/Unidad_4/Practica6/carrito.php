@@ -29,6 +29,7 @@
     }
     ?>
 <form method="post" name="delete" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<input type="hidden" value="delete" name="delete">
 <?php 
 include("login.php");
 $log= new login();
@@ -61,7 +62,14 @@ $t=0;
         $t+=$p["Price"]*$n;
     }
     echo" Precio total: ".$t;
-    // $res = preg_replace("/[^0-9]/", "", "Every 6 Months" );
+    if(isset($_POST["delete"])){
+        
+        foreach($_POST["delete"] as $i=>$n){
+            if(!is_numeric($i)){
+                $dlti=preg_replace("/[^0-9]/", "", $i );
+            }
+        }
+    }
     var_dump($_POST);
     ?>
     </form>
