@@ -24,17 +24,3 @@ button{
     height: auto;
 }
 
-article{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.btndiv{display: flex;
-    flex-direction: row;
-    height: 20px;
-}
-article div{display: flex;
-    flex-direction: row;
-    align-items: center;}
-
-    .text {display: block;}
