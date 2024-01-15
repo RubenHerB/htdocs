@@ -6,8 +6,11 @@
     <title>Registro</title>
     <link rel="stylesheet" href="estilos.css">
     <script type="text/javascript">
-        function aumentar(id) {
-            document.getElementById(id).value++;
+        function reducir(id) {
+            var n=document.getElementById(id);
+            if(n.value<99){
+                n.value--;
+            }
         }
 
         function reducir(id) {
