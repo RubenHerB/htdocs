@@ -22,7 +22,7 @@
     </script>
 </head>
     <body>
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        
     <?php 
     session_start();
     if(!isset($_SESSION)){
@@ -33,6 +33,7 @@
     <h1>Hola, <?php echo $_SESSION["name"]; ?></h1>
     
     <h2>Nuestros productos</h2>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <?php
         include("login.php");
         $log= new login();
