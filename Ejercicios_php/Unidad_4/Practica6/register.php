@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $connection=$log->log_register();
     
     
-    $query = "SELECT Nombre FROM usuarios where User LIKE '$username'";
+    $query = "SELECT User FROM usuarios where User LIKE '$username'";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
     $rows = $result->num_rows;  
@@ -33,12 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
     $error="Este nombre de usuario ya existe";
     }else{
     if($password===$passwordcheck){
-        $query = "SELECT Codigo FROM usuarios order by Codigo DESC limit 1";
-        $result = $connection->query($query);
-        if (!$result) die("Fatal Error");
-        $result->data_seek(0); 
-        $lastid = $result->fetch_array()['Codigo'];        
-        $queryi = "INSERT INTO `usuarios` (`Codigo`, `Nombre`, `Clave`, `Rol`) VALUES ('".($lastid+1)."','".$username."','".password_hash($password, PASSWORD_DEFAULT)."', '0');";
+        $queryi = "INSERT INTO `usuarios` (`Name`, `User`, `Pass`, `Role`) VALUES ('".$name."','".$username."','".password_hash($password, PASSWORD_DEFAULT)."', '0');";
     $resulti = $connection->query($queryi);
     if (!$resulti) {
         die("Fatal Error");
