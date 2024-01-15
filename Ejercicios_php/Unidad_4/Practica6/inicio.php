@@ -48,7 +48,7 @@
         $p=$result->fetch_array(MYSQLI_ASSOC);
         echo "<article>
         <img class=\"imge\" src=\"".$p["Image"]."\">
-        <div>
+        <div class=\"articlediv\">
         <div class=\"text\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
