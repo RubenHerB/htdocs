@@ -64,9 +64,14 @@ $t=0;
     echo" Precio total: ".$t;
     if(isset($_POST["delete"])){
         
-        foreach($_POST["delete"] as $i=>$n){
+        foreach($_POST as $i=>$n){
             if(!is_numeric($i)){
                 $dlti=preg_replace("/[^0-9]/", "", $i );
+            }
+        }
+        foreach($_POST as $i=>$n){
+            if($i!=$dlti){
+                unset($_POST[$i]);
             }
         }
     }
