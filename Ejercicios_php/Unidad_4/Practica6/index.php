@@ -11,9 +11,9 @@
         }
 
         function reducir(id) {
-            var n=document.getElementById(id).value;
-            if(n>0){
-                n--;
+            var n=document.getElementById(id);
+            if(n.value>0){
+                n.value--;
             }
         }
     </script>
