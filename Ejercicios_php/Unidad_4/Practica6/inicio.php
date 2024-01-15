@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript">
+        function reducir(id) {
+            var n=document.getElementById(id);
+            if(n.value<99){
+                n.value--;
+            }
+        }
+
+        function reducir(id) {
+            var n=document.getElementById(id);
+            if(n.value>0){
+                n.value--;
+            }
+        }
+    </script>
 </head>
     <body>
     <?php 
@@ -31,7 +46,7 @@
     for ($i=0;$i<$rows;$i++){
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
-        echo "<article><img src=\"".$p["Image"]."\"><h3>".$p["Name"]."</h3>".$p["Description"]."</article>";
+        echo "<article><img src=\"".$p["Image"]."\"><h3>".$p["Name"]."</h3>".$p["Description"]."<button class=\"btn\" onclick=\"reducir('b1')\">-</button><input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b1\" class=\"numero\"><button class=\"btn\" onclick=\"aumentar('b1')\">+</button></article>";
     }
     ?>
     </form>
