@@ -46,7 +46,7 @@
     for ($i=0;$i<$rows;$i++){
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
-        echo "<article><img src=\"".$p["Image"]."\"><h3>".$p["Name"]."</h3>".$p["Description"]."<button class=\"btn\" onclick=\"reducir('b1')\">-</button><input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b1\" class=\"numero\"><button class=\"btn\" onclick=\"aumentar('b1')\">+</button></article>";
+        echo "<article><img src=\"".$p["Image"]."\"><h3>".$p["Name"]."</h3>".$p["Description"]."<button class=\"btn\" onclick=\"reducir('b".$i."')\">-</button><input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b".$i."\" class=\"numero\"><button class=\"btn\" onclick=\"aumentar('b".$i."')\">+</button></article>";
     }
     ?>
     </form>
