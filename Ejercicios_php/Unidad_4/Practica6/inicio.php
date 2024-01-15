@@ -32,7 +32,6 @@
     <h1>Hola, <?php echo $_SESSION["name"]; ?></h1>
     
     <h2>Nuestros productos</h2>
-    <form method="post" action="">
     <?php
         include("login.php");
         $log= new login();
@@ -55,6 +54,5 @@
         <button class=\"btn\" onclick=\"aumentar('b".$i."')\">+</button></article>";
     }
     ?>
-    </form>
     </body>
 </html>
