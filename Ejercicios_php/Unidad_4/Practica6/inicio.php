@@ -49,12 +49,13 @@
         echo "<article>
         <img class=\"imge\" src=\"".$p["Image"]."\">
         <div>
+        <div>
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b".$i."')\">-</button>
         <input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b".$i."\" class=\"numero\">
-        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b".$i."')\">+</button></div></article>";
+        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b".$i."')\">+</button></div></div></article>";
         if($i<($rows-1)){
             echo "<hr>";
         }

@@ -33,3 +33,5 @@ article{
     flex-direction: row;
     height: 20px;
 }
+article div{display: flex;
+    flex-direction: row;}
