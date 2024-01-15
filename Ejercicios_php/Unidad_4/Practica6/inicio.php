@@ -77,9 +77,15 @@
             unset($_POST[$i]);
         }
     }}
-    
-    var_dump($_POST);
-    var_dump($_SESSION);
+    foreach($_POST as $i=>$c){
+        if(isset($_SESSION["carrito"][$i])){
+            $_SESSION["carrito"][$i]+=$c;
+        }else{
+            $_SESSION["carrito"][$i]=$c;
+        }
+    }
+    // var_dump($_POST);
+    // var_dump($_SESSION);
     ?>
     </body>
 </html>
