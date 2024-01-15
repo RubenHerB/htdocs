@@ -13,5 +13,7 @@
         header("Location: index.php");
     }
     ?>
+
+    <h1>Hola, <?php echo $_SESSION["name"]; ?></h1>
     </body>
 </html>
