@@ -34,4 +34,7 @@ article{
     height: 20px;
 }
 article div{display: flex;
-    flex-direction: row;}
+    flex-direction: row;
+    align-items: center;}
+
+    .text {display: block;}

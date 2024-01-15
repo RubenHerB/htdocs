@@ -49,7 +49,7 @@
         echo "<article>
         <img class=\"imge\" src=\"".$p["Image"]."\">
         <div>
-        <div>
+        <div class=\"text\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
         <div class=\"btndiv\">
