@@ -23,3 +23,13 @@ button{
     width: 100px;
     height: auto;
 }
+
+article{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.btndiv{display: flex;
+    flex-direction: row;
+    height: 20px;
+}
