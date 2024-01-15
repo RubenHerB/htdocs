@@ -38,6 +38,7 @@ $query = "SELECT * FROM producto";
 $result = $connection->query($query);
 if (!$result) die("Fatal Error");
 $rows = $result->num_rows; 
+$t=0;
     foreach ($_SESSION["carrito"] as $i=>$n) {
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
@@ -47,7 +48,7 @@ $rows = $result->num_rows;
         <div class=\"text\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
-        ".$p["Price"]."€
+        ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
         <input type=\"number\"name=\"$i\" min=\"0\" max=\"99\" value=\"0\" id=\"b$i\" class=\"numero\">
@@ -55,6 +56,7 @@ $rows = $result->num_rows;
         if($i<($rows-1)){
             echo "<hr>";
         }
+        $t+=$p["Price"]*$n;
     }
     ?>
 
