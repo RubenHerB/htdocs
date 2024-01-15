@@ -89,6 +89,12 @@ $t=0;
     var_dump($_POST);
     ?>
     </form>
+    <form method="post" action="inicio.php">
+        <input type="submit" value="Seguir comprando">
+    </form>
+    <form method="post" action="compra.php">
+        <input type="submit" value="Comprar seleccion">
+    </form>
 
     </body>
 </html>
