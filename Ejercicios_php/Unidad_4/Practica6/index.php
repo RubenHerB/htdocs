@@ -11,11 +11,12 @@
   $username="";
   $error="";
 // Verificar si se han enviado datos
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["username"])) {
+  if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["username"])) {
     // Obtener los datos del formulario
     $username = $_POST["username"];
     $password = $_POST["password"];
     include("login.php");
+    $log= new login();
     $connection=$log->log_login();
     
     $query = "SELECT * FROM usuarios WHERE User like '$username'";
@@ -31,17 +32,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
           $l=true;
           $c=$row["IdUser"];
           $ad=$row['Role']==1? true:false;
+          $name=$row["Name"];
         }
     }    
 
-   if($l){
+    if($l){
     session_start();
-    $_SESSION=['user'=>$username,'IdUser'=>$c,'admin'=>$ad];
+    $_SESSION=['name'=>$name,'IdUser'=>$c,'admin'=>$ad];
     header("Location: Inicio.php");
-  } else {
-    $error="Usuario o contraeña incorrectas";
+    } else {
+      $error="Usuario o contraeña incorrectas";
+    }
   }
- }
 ?>
 
 
