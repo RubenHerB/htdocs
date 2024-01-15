@@ -31,7 +31,7 @@
     for ($i=0;$i<$rows;$i++){
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
-        echo "<article><img src=\"".$p["Image"]."\"><h3></h3></article>";
+        echo "<article><img src=\"".$p["Image"]."\"><h3>".$p["Name"]."</h3>".$p["Description"]."</article>";
     }
     ?>
     </form>
