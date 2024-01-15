@@ -52,6 +52,7 @@
         <div class=\"text\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
+        ".$p["Price"]."€
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
         <input type=\"number\"name=\"$i\" min=\"0\" max=\"99\" value=\"0\" id=\"b$i\" class=\"numero\">
