@@ -27,6 +27,29 @@
     if(!isset($_SESSION)){
         header("Location: index.php");
     }
+
+    if(isset($_POST["delete"])){
+        
+        foreach($_POST as $i=>$n){
+            if(!is_numeric($i)){
+                $dlti=preg_replace("/[^0-9]/", "", $i );
+            }
+        }
+        foreach($_POST as $i=>$n){
+            if($i!=$dlti){
+                unset($_POST[$i]);
+            }
+        }
+        foreach($_POST as $i=>$n){
+            $_SESSION["carrito"][$i]-=$n;
+        }
+        foreach($_SESSION["carrito"] as $i=>$n){
+            if($n==0){
+                unset($_SESSION["carrito"][$i]);
+            }
+        }
+    }
+
     ?>
 <form method="post" name="delete" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="hidden" value="delete" name="delete">
@@ -62,19 +85,7 @@ $t=0;
         $t+=$p["Price"]*$n;
     }
     echo" Precio total: ".$t;
-    if(isset($_POST["delete"])){
-        
-        foreach($_POST as $i=>$n){
-            if(!is_numeric($i)){
-                $dlti=preg_replace("/[^0-9]/", "", $i );
-            }
-        }
-        foreach($_POST as $i=>$n){
-            if($i!=$dlti){
-                unset($_POST[$i]);
-            }
-        }
-    }
+    
     var_dump($_POST);
     ?>
     </form>
