@@ -61,6 +61,8 @@
         }
     }
     ?>
+    <br><br>
+    <input type="submit" value="Añadir al carrito" class="add">
     </form>
     </body>
 </html>
