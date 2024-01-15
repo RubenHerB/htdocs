@@ -28,7 +28,7 @@
         header("Location: index.php");
     }
     ?>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="post" name="delete" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <?php 
 include("login.php");
 $log= new login();
@@ -59,12 +59,9 @@ $t=0;
             echo "<hr>";
         }
         $t+=$p["Price"]*$n;
-        
-        
-        
-        $res = preg_replace("/[^0-9]/", "", "Every 6 Months" );
     }
     echo" Precio total: ".$t;
+    // $res = preg_replace("/[^0-9]/", "", "Every 6 Months" );
     var_dump($_POST);
     ?>
     </form>
