@@ -6,8 +6,8 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
     <script type="text/javascript">
-        function aumentar(id) {
-            var n=document.getElementById(id,n);
+        function aumentar(id,n) {
+            var n=document.getElementById(id);
             if(n.value<parseInt(n)){
                 n.value++;
             }
