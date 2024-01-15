@@ -38,7 +38,7 @@
 
     if($l){
     session_start();
-    $_SESSION=['name'=>$name,'IdUser'=>$c,'admin'=>$ad];
+    $_SESSION=['name'=>$name,'IdUser'=>$c,'admin'=>$ad,'carrito'=>""];
     if($ad){
     header("Location: admin.php");
     }else{
