@@ -22,7 +22,14 @@ button{
 .imge{
     width: 100px;
     height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-article{display: flex;}
-.articlediv{display: flex}
+article{display: flex;align-items: center}
+.articlediv{display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+.btmdiv{display: flex; flex-direction: row;flex-wrap: nowrap;}
