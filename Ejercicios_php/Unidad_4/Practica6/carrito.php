@@ -59,7 +59,12 @@ $t=0;
             echo "<hr>";
         }
         $t+=$p["Price"]*$n;
+        
+        
+        
+        $res = preg_replace("/[^0-9]/", "", "Every 6 Months" );
     }
+    echo" Precio total: ".$t;
     var_dump($_POST);
     ?>
     </form>
