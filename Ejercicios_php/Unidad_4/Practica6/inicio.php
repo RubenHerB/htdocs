@@ -44,12 +44,8 @@
     $rows = $result->num_rows; 
 
     for ($i=0;$i<$rows;$i++){
-        $v=0;
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
-        if(isset($_SESSION["carrito"]["b".$i])){
-            $v=$_SESSION["carrito"]["b".$i];
-        }
         echo "<article>
         <img class=\"imge\" src=\"".$p["Image"]."\">
         <div class=\"articlediv\">
@@ -58,7 +54,7 @@
         ".$p["Description"]."</div>
         <div class=\"btndiv\">
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
-        <input type=\"number\" min=\"0\" max=\"99\" value=\"$v\" id=\"b$i\" class=\"numero\">
+        <input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b$i\" class=\"numero\">
         <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i')\">+</button></div></div></article>";
         if($i<($rows-1)){
             echo "<hr>";
@@ -67,6 +63,10 @@
     ?>
     <br><br>
     <input type="submit" value="Añadir al carrito" class="add">
+    </form>
+    <br><br>
+    <form method="post" action="carrito.php">
+        <input type="submit" value="Ir al carrito"> 
     </form>
     </body>
 </html>
