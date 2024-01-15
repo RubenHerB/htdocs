@@ -47,7 +47,7 @@
         $result->data_seek($i);
         $p=$result->fetch_array(MYSQLI_ASSOC);
         echo "<article>
-        <img src=\"".$p["Image"]."\">
+        <img class=\"imge\" src=\"".$p["Image"]."\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b".$i."')\">-</button>
