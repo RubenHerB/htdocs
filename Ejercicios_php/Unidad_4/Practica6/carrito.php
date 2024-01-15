@@ -53,7 +53,7 @@ $t=0;
         <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
         <input type=\"number\"name=\"$i\" min=\"0\" max=\"$n\" value=\"0\" id=\"b$i\" class=\"numero\">
         <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i',$n)\">+</button>
-        <input type=\"submit\" name=\"submit\" value=\"Quitar productos\"></div></div></article>";
+        <input type=\"submit\" name=\"submit$i\" value=\"Quitar productos\"></div></div></article>";
 
         if($i<($rows-1)){
             echo "<hr>";
