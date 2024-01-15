@@ -6,10 +6,10 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
     <script type="text/javascript">
-        function reducir(id) {
+        function aumentar(id) {
             var n=document.getElementById(id);
             if(n.value<99){
-                n.value--;
+                n.value++;
             }
         }
 
@@ -22,6 +22,7 @@
     </script>
 </head>
     <body>
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <?php 
     session_start();
     if(!isset($_SESSION)){
@@ -49,10 +50,11 @@
         <img src=\"".$p["Image"]."\">
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."
-        <button class=\"btn\" onclick=\"reducir('b".$i."')\">-</button>
+        <button class=\"btn\" type=\"button\" onclick=\"reducir('b".$i."')\">-</button>
         <input type=\"number\" min=\"0\" max=\"99\" value=\"0\" id=\"b".$i."\" class=\"numero\">
-        <button class=\"btn\" onclick=\"aumentar('b".$i."')\">+</button></article>";
+        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b".$i."')\">+</button></article>";
     }
     ?>
+    </form>
     </body>
 </html>
