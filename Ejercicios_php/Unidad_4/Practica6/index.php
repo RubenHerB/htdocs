@@ -61,9 +61,9 @@
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required><br><br>
 
-        <input type="submit" value="Iniciar sesión">
+        <input type="submit" value="Iniciar sesión"><br>
+        O
     </form>
-    O
     <form  action="register.php" method="post">
     <input type="submit" value="Registrarse">
     </form>
