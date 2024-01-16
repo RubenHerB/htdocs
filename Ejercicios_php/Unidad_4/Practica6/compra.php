@@ -17,8 +17,10 @@
     var_dump($_POST);
     ?>
     <h1>Proceso de compra</h1>
-    <h2>Se va a proceder a comprar los siguientes productos</h2>
+    
     <?php 
+    if($_POST==null){
+        echo "<h2>Se va a proceder a comprar los siguientes productos</h2>";
 include("login.php");
 $log= new login();
 $connection=$log->log_user();
@@ -46,13 +48,21 @@ $t=0;
         $t+=$p["Price"]*$n;
     }
     echo" Precio total: ".$t;
-    ?>
-    
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    echo <<<_END
+    <form method="post" action="<?php echo 
+    _END; 
+    echo '$_SERVER';
+    echo <<<_END
+    ["PHP_SELF"]; ?>">
     <input type="submit" name="submit"  value="Confirmar">
     </form>
     <form method="post" action="carrito.php">
     <input type="submit" value="Volver al carrito">
     </form>
+    _END;
+}
+    ?>
+    
+    
 
 </head>
