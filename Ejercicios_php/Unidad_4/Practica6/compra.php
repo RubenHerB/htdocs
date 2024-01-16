@@ -53,7 +53,7 @@ $t=0;
     _END; 
     echo '$_SERVER';
     echo <<<_END
-    ["PHP_SELF"]; ?>">
+    ['PHP_SELF']; ?>" >
     <input type="submit" name="submit"  value="Confirmar">
     </form>
     <form method="post" action="carrito.php">
