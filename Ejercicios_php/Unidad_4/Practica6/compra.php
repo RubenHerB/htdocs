@@ -76,6 +76,14 @@ $t=0;
     }
     $_SESSION["carrito"]=null;
     unset($_POST);
+    echo <<<_END
+    <form method="post" action="inicio.php">
+    <input type="submit" value="Seguir comprando">
+    </form>
+    <form method="post" action="historial.php">
+    <input type="submit" value="Seguir comprando">
+    </form>
+    _END;
 }
     ?>
     
