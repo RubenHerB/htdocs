@@ -73,6 +73,11 @@ $t=0;
     $last=$result->fetch_assoc()["IdSell"];
     $last++;
     var_dump($last);
+    foreach($_SESSION["carrito"] as $i=>$p){
+        $query = "INSERT INTO `ventas` (`IdSell`, `IdBuyer`, `IdProduct`, `Date`, `Number`) VALUES (".$last.", '2', '2', '2024-01-16 12:20:43.000000', '1');";
+    $result = $connection->query($query);
+    if (!$result) die("Fatal Error");
+    }
 }
     ?>
     
