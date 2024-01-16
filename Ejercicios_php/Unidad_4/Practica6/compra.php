@@ -81,7 +81,7 @@ $t=0;
     <input type="submit" value="Seguir comprando">
     </form>
     <form method="post" action="historial.php">
-    <input type="submit" value="Seguir comprando">
+    <input type="submit" value="Ver el historial de compras">
     </form>
     _END;
 }
