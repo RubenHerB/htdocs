@@ -60,6 +60,19 @@ $t=0;
     <input type="submit" value="Volver al carrito">
     </form>
     _END;
+}else{
+    echo"<h2>Compra realizada</h2><br>Puedes ver tus compras en el historial de compras o seguir comprando";
+    include("login.php");
+    $log= new login();
+    $connection=$log->log_user();
+
+    $query = "SELECT IdSell FROM ventas order by IdProductSell desc limit 1";
+    $result = $connection->query($query);
+    if (!$result) die("Fatal Error");
+    $result->data_seek(0);
+    $last=$result->fetch_field("IdSell");
+    $last++;
+    var_dump($last);
 }
     ?>
     
