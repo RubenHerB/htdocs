@@ -36,3 +36,4 @@ article{display: flex;align-items: center; }
 .text{width: 80%;}
 .add{margin-left: auto;margin-right: auto;}
 form{text-align: center;}
+body{text-align: center; margin-left: auto; margin-right: auto}

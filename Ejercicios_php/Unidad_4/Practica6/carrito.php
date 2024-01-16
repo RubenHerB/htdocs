@@ -92,9 +92,14 @@ $t=0;
     <form method="post" action="inicio.php">
         <input type="submit" value="Seguir comprando">
     </form>
-    <form method="post" action="compra.php">
+    <?php 
+    if($_SESSION["carrito"]!=""){
+        echo <<<_END
+        <form method="post" action="compra.php">
         <input type="submit" value="Comprar seleccion">
-    </form>
-
+        </form>
+    _END;
+    }
+    ?>
     </body>
 </html>
