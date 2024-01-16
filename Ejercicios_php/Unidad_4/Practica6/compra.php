@@ -70,7 +70,7 @@ $t=0;
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
     $result->data_seek(0);
-    $last=$result->fetch_field("IdSell");
+    $last=$result->fetch_assoc()["IdSell"];
     $last++;
     var_dump($last);
 }
