@@ -49,11 +49,7 @@ $t=0;
     }
     echo" Precio total: ".$t;
     echo <<<_END
-    <form method="post" action="<?php echo 
-    _END; 
-    echo '$_SERVER';
-    echo <<<_END
-    ['PHP_SELF']; ?>" >
+    <form method="post" action="compra.php">
     <input type="submit" name="submit"  value="Confirmar">
     </form>
     <form method="post" action="carrito.php">
