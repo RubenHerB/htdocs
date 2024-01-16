@@ -54,6 +54,7 @@
 <form method="post" name="delete" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="hidden" value="delete" name="delete">
 <?php 
+if($_SESSION["carrito"]!=null){
 include("login.php");
 $log= new login();
 $connection=$log->log_user();
@@ -88,19 +89,19 @@ $t=0;
     
     var_dump($_POST);
     var_dump($_SESSION);
-    ?>
-    </form>
-    <form method="post" action="inicio.php">
-        <input type="submit" value="Seguir comprando">
-    </form>
-    <?php 
-    if($_SESSION["carrito"]!=null){
+    
         echo <<<_END
         <form method="post" action="compra.php">
         <input type="submit" value="Comprar seleccion">
         </form>
     _END;
+    }else{
+        echo "El carrito de la compra esta vacio";
     }
     ?>
+    </form>
+    <form method="post" action="inicio.php">
+        <input type="submit" value="Volver al catalogo">
+    </form>
     </body>
 </html>
