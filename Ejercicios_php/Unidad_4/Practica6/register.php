@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css">  
 </head>
 <body>
   <?php
@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST) && isset($_POST["usern
         <label for="password">Repetir ontraseña:</label>
         <input type="password" id="passwordcheck" name="passwordcheck" required><br><br>
 
-        <input type="submit" value="Registrarse">
+        <input type="submit" value="Registrarse"><br>O
     </form>
-    O
+    
     <form  action="index.php" method="post">
     <input type="submit" value="Iniciar Sesion">
     </form>
