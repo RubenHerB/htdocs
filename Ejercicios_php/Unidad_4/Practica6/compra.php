@@ -13,5 +13,9 @@
     if($_SESSION["carrito"]==null){
         header("Location: inicio.php");
     }
+    var_dump($_POST);
     ?>
+    <h1>Proceso de compra</h1>
+    <h2>Se va a proceder a comprar los siguientes productos</h2>
+    
 </head>
