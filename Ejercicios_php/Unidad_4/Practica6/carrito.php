@@ -87,13 +87,14 @@ $t=0;
     echo" Precio total: ".$t;
     
     var_dump($_POST);
+    var_dump($_SESSION);
     ?>
     </form>
     <form method="post" action="inicio.php">
         <input type="submit" value="Seguir comprando">
     </form>
     <?php 
-    if($_SESSION["carrito"]!=""){
+    if($_SESSION["carrito"]!=null){
         echo <<<_END
         <form method="post" action="compra.php">
         <input type="submit" value="Comprar seleccion">
