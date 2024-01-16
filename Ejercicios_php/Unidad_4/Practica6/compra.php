@@ -74,7 +74,7 @@ $t=0;
     $last++;
     var_dump($last);
     foreach($_SESSION["carrito"] as $i=>$p){
-        $query = "INSERT INTO `ventas` (`IdSell`, `IdBuyer`, `IdProduct`, `Date`, `Number`) VALUES ('$last', '".$_SESSION["IdUser"]."', '$i', NOW(), '$n');";
+        $query = "INSERT INTO `ventas` (`IdSell`, `IdBuyer`, `IdProduct`, `Date`, `Number`) VALUES ('$last', '".$_SESSION["IdUser"]."', '$i', NOW(), '$p');";
     $result = $connection->query($query);
     if (!$result) die("Fatal Error");
     }
