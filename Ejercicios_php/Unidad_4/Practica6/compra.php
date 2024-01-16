@@ -38,11 +38,7 @@ $t=0;
         <h3>".$p["Name"]."</h3>
         ".$p["Description"]."</div>
         ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
-        <div class=\"btndiv\">
-        <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
-        <input type=\"number\"name=\"$i\" min=\"0\" max=\"$n\" value=\"0\" id=\"b$i\" class=\"numero\">
-        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i',$n)\">+</button>
-        <input type=\"submit\" name=\"submit$i\" value=\"Quitar productos\"></div></div></article>";
+        </div></article>";
 
         if($i<($rows-1)){
             echo "<hr>";
@@ -52,4 +48,11 @@ $t=0;
     echo" Precio total: ".$t;
     ?>
     
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    <input type="submit" name="submit"  value="Confirmar">
+    </form>
+    <form method="post" action="carrito.php">
+    <input type="submit" value="Volver al carrito">
+    </form>
+
 </head>
