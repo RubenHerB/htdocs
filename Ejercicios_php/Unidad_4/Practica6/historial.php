@@ -29,7 +29,7 @@ if($rows>0){
 for ($i=0;$i<$rows;$i++){
     $result->data_seek($i);
     $id= $result->fetch_assoc()["IdSell"];
-    $queryaux="SELECT * FROM ventas v outer join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
+    $queryaux="SELECT p.Name,p.Price,p.Image FROM ventas v outer join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
     $resultaux = $connection->query($queryaux);
     if (!$resultaux) die("Fatal Error");
     $rowsaux = $resultaux->num_rows; 
@@ -38,6 +38,7 @@ for ($i=0;$i<$rows;$i++){
     for ($j=0;$j<$rowsaux;$j++){
 
     }
+    echo "</article><hr>";
 }
 }else{
     echo "No se ha realizado ninguna compra";
