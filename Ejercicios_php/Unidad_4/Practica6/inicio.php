@@ -8,6 +8,7 @@
 </head>
     <body>
         <form method="post" name="add" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <input type="hidden" value="add" name="add">
     <?php 
     session_start();
     if(!isset($_SESSION)){
