@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
-    <script type="text/javascript">
-        function aumentar(id,i) {
-            var n=document.getElementById(id);
-            if(n.value<i){
-                n.value++;
-            }
-        }
-
-        function reducir(id) {
-            var n=document.getElementById(id);
-            if(n.value>0){
-                n.value--;
-            }
-        }
-    </script>
 </head>
     <body>
     <?php 
@@ -68,11 +53,8 @@ $t=0;
         ".$p["Description"]."</div>
         ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
         <div class=\"btndiv\">
-        <input type=\"submit\" name=\"$i\" value=\"Quitar productos\"></div></div></article>";
+        <input type=\"submit\" name=\"$i\" value=\"Quitar productos\"></div></div></article><hr>";
 
-        if($i<($rows-1)){
-            echo "<hr>";
-        }
         $t+=$p["Price"]*$n;
     }
     echo"</form> Precio total: ".$t;
