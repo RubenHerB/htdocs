@@ -24,7 +24,9 @@ if (!$result) die("Fatal Error");
 $rows = $result->num_rows; 
 if($rows>0){
 for ($i=0;$i<$rows;$i++){
-    
+    $result->data_seek($i);
+    $id= $result->fetch_assoc()["IdSell"];
+    $queryaux="SELECT * FROM ventas WHERE IdSell like $id";
 }
 }else{
     echo "No se ha realizado ninguna compra";
