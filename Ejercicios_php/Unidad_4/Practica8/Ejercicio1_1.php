@@ -19,4 +19,6 @@
         <input type="submit" name="submit" value="-" /><?php echo $_SESSION["num"]; ?> <input type="submit" name="submit" value="+" /><br>
         <input type="submit" name="submit" value="Poner a cero" />
     </form>
+</body>
+</html>
     
