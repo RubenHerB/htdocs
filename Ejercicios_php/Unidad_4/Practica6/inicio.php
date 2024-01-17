@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
     <body>
-        <form method="post" name="add" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <input type="hidden" value="add" name="add">
+        
     <?php 
     session_start();
     if(!isset($_SESSION)){
@@ -20,7 +19,10 @@
     <form method="post" action="historial.php">
         <input type="submit" value="Ir al historial de compras">
     </form> 
+    
     <h2>Nuestros productos</h2>
+    <form method="post" name="add" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <input type="hidden" value="add" name="add">
     <?php
         include("login.php");
         $log= new login();
