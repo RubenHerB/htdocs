@@ -5,12 +5,12 @@ session_name("UD4P5E2");
         case "<-":
             $_SESSION["ancho"]-=20;
             break;
-        case "-":
-            $_SESSION["num"]--;
+        case "->":
+            $_SESSION["ancho"]+=20;
             break;
         default:
-            $_SESSION["num"]=0;;
+        $_SESSION["ancho"]=295;
             break;
             }
-            header("Location: Ejercicio1_1.php");
+            header("Location: Ejercicio2_1.php");
 ?>
