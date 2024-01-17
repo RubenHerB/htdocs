@@ -14,15 +14,15 @@
         session_name("UD4P5E4");
         session_start();
         if($_SESSION==null){
-            $_SESSION=["a"=>300, "b"=>300];
+            $_SESSION=["a"=>0, "b"=>0];
         }
         var_dump($_SESSION);
     ?>
     <h1>Votar una opcion</h1>
     Haz clic en los botones para votar por una opcion:
-    <form method="post" action="Ejercicio3_2.php">
-        <input type="submit" name="submit" value="a" /><div class="a"></div><br
-        <input type="submit" name="submit" value="b" /><div class="b"></div><br>
+    <form method="post" action="Ejercicio4_2.php">
+        <input type="submit" name="submit" value="a"/><div class="a" style="width: <?php echo $_SESSION["a"]; ?>px"></div><br>
+        <input type="submit" name="submit" value="b"/><div class="b" style="width: <?php echo $_SESSION["b"]; ?>px"></div><br>
         <input type="submit" name="submit" value="poner a cero" /><br>
         
     </form>
