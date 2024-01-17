@@ -24,10 +24,6 @@
             }
         }
     }
-
-    ?>
-
-<?php 
 if($_SESSION["carrito"]!=null){
     echo <<<_END
     <form method="post" name="delete" action="carrito.php">
