@@ -70,7 +70,7 @@ $t=0;
         ".$p["Description"]."</div>
         ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
         <div class=\"btndiv\">
-        <input type=\"submit\" name=\"submit$i\" value=\"Quitar productos\"></div></div></article>";
+        <input type=\"submit\" name=\"$i\" value=\"Quitar productos\"></div></div></article>";
 
         if($i<($rows-1)){
             echo "<hr>";
