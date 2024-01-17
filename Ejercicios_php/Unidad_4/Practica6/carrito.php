@@ -41,10 +41,13 @@
     }
 
     ?>
-<form method="post" name="delete" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<input type="hidden" value="delete" name="delete">
+
 <?php 
 if($_SESSION["carrito"]!=null){
+    echo <<<_END
+    <form method="post" name="delete" action="carrito.php">
+<input type="hidden" value="delete" name="delete">
+_END;
 include("login.php");
 $log= new login();
 $connection=$log->log_user();
