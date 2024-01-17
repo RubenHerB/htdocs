@@ -17,7 +17,7 @@ session_name("UD4P5E2");
             }
             break;
         default:
-        $_SESSION["pos"]=295;
+        $_SESSION["pos"]=300;
             break;
             }
             header("Location: Ejercicio2_1.php");
