@@ -6,7 +6,7 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
     <style>
-        article{width: 30%;border: 1px splid black;border-radius: 20px; padding: 5px; margin: 5px;}
+        /* article{width: 30%;border: 1px splid black;border-radius: 20px; padding: 5px; margin: 5px;} */
     </style>
 </head>
     <body>
@@ -34,12 +34,12 @@ for ($i=0;$i<$rows;$i++){
     if (!$resultaux) die("Fatal Error");
     $rowsaux = $resultaux->num_rows; 
     $resultaux->data_seek(0);
-    echo "<article> Fecha: ".$resultaux->fetch_assoc()["v.Date"]."<br>";
+    echo "<article> Fecha: ".$resultaux->fetch_assoc()["Date"]."<br>";
     for ($j=0;$j<$rowsaux;$j++){
         $resultaux->data_seek(0);
         $p=$resultaux->fetch_array(MYSQLI_ASSOC);
         var_dump($p);
-        echo '<br';
+        echo '<br>';
     }
     echo "</article><hr>";
 }
