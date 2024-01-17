@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
+    <style>
+        article{width: 30%;}
+    </style>
 </head>
     <body>
         <h1>Historial</h1>
@@ -33,6 +36,7 @@ for ($i=0;$i<$rows;$i++){
     $resultaux->data_seek(0);
     echo "<article> Fecha: ".$resultaux->fetch_assoc()["Date"]."<br>";
     for ($j=0;$j<$rowsaux;$j++){
+
     }
 }
 }else{
