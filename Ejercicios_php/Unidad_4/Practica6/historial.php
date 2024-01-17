@@ -6,7 +6,7 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
     <style>
-        article{width: 30%;}
+        article{width: 30%;border: 1px splid black;border-radius: 20px; padding: 5px; margin: 5px;}
     </style>
 </head>
     <body>
@@ -38,7 +38,8 @@ for ($i=0;$i<$rows;$i++){
     for ($j=0;$j<$rowsaux;$j++){
         $resultaux->data_seek(0);
         $p=$resultaux->fetch_array(MYSQLI_ASSOC);
-        
+        var_dump($p);
+        echo '<br';
     }
     echo "</article><hr>";
 }
