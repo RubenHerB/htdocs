@@ -16,8 +16,8 @@
     <h1>Mover un punto de derecha a izquierda</h1>
     Haz clic en los botones para mover el punto:
     <form method="post" action="Ejercicio1_2.php">
-        <input type="submit" name="submit" value="-" /><?php echo $_SESSION["num"]; ?> <input type="submit" name="submit" value="+" /><br>
-        <input type="submit" name="submit" value="Poner a cero" />
+        <input type="submit" name="submit" value="<-" /><input type="submit" name="submit" value="->" /><br>
+        <input type="submit" name="submit" value="volver al centro" />
     </form>
 </body>
 </html>
