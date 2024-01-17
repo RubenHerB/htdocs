@@ -17,7 +17,9 @@
     ?>
 
     <h1>Hola, <?php echo $_SESSION["name"]; ?></h1>
-    
+    <form method="post" action="historial.php">
+        <input type="submit" value="Ir al historial de compras">
+    </form> 
     <h2>Nuestros productos</h2>
     <?php
         include("login.php");
