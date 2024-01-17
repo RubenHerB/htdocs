@@ -11,6 +11,9 @@
 </head>
     <body>
         <h1>Historial</h1>
+        <form method="post" action = "inicio.php">
+            <input type="submit" value="Volver al catalogo"/>
+        </form>
     <?php
     session_start();
     if(!isset($_SESSION)){
