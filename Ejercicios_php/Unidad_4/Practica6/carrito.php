@@ -29,7 +29,7 @@
     }
 
     if(isset($_POST["delete"])){
-        
+        unset($_POST["delete"]);
         foreach($_POST as $i=>$n){
             $_SESSION["carrito"][$i]--;
         }
