@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
     <body>
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form method="post" name="add" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <?php 
     session_start();
     if(!isset($_SESSION)){
@@ -54,19 +54,12 @@
         <input type="submit" value="Ir al carrito"> 
     </form>
     <?php
-    if(isset($_POST[0])){
-    $n=count($_POST);
-    for ($i=0; $i<$n; $i++) {
-        if($_POST[$i]==0){
-            unset($_POST[$i]);
+    if(isset($_POST["add"])){
+        unset($_POST["add"]);
+        foreach($_POST as $i=>$n){
+            $_SESSION["carrito"][$i]++;
         }
-    }}
-    foreach($_POST as $i=>$c){
-        if(isset($_SESSION["carrito"][$i])){
-            $_SESSION["carrito"][$i]+=$c;
-        }else{
-            $_SESSION["carrito"][$i]=$c;
-        }
+        
     }
     var_dump($_POST);
     var_dump($_SESSION);
