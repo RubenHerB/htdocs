@@ -17,6 +17,7 @@
     Haz clic en los botones para mover el punto:
     <form method="post" action="Ejercicio1_2.php">
         <input type="submit" name="submit" value="<-" /><input type="submit" name="submit" value="->" /><br>
+        <div><div class="linea"></div><div class="circulo"></div><div class="linea"></div></div>
         <input type="submit" name="submit" value="volver al centro" />
     </form>
 </body>
