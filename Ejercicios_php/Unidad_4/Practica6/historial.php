@@ -49,7 +49,7 @@ for ($i=0;$i<$rows;$i++){
         </div>";
     }
     echo "<h2>Total: $t</h2>";
-    echo "</article><hr>";
+    echo "</article>";
 }
 }else{
     echo "No se ha realizado ninguna compra";
