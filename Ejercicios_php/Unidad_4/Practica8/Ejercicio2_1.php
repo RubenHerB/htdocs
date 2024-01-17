@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numero</title>
     <style type="text/css">
-        .graph{display: inline-block;}
-        .linea{height: 10px;background-color: black;}
+        .graph{display: flex;}
+        .linea{height: 10px;background-color: black;border-radius: -5px;}
         .circulo{height: 10px;width: 10px;background-color: red;border-radius: 5px;}
     </style>
 </head>
@@ -15,7 +15,7 @@
         session_name("UD4P5E2");
         session_start();
         if($_SESSION==null){
-            $_SESSION=["ancho"=>295];
+            $_SESSION=["ancho"=>300];
         }
     ?>
     <h1>Mover un punto de derecha a izquierda</h1>
