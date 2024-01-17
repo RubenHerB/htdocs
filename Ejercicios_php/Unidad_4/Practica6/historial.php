@@ -29,14 +29,16 @@ if($rows>0){
 for ($i=0;$i<$rows;$i++){
     $result->data_seek($i);
     $id= $result->fetch_assoc()["IdSell"];
-    $queryaux="SELECT p.Name,p.Price,p.Image FROM ventas v outer join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
+    $queryaux="SELECT v.Date,v.Number,p.Name,p.Price,p.Image FROM ventas v outer join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
     $resultaux = $connection->query($queryaux);
     if (!$resultaux) die("Fatal Error");
     $rowsaux = $resultaux->num_rows; 
     $resultaux->data_seek(0);
     echo "<article> Fecha: ".$resultaux->fetch_assoc()["v.Date"]."<br>";
     for ($j=0;$j<$rowsaux;$j++){
-
+        $resultaux->data_seek(0);
+        $p=$resultaux->fetch_array(MYSQLI_ASSOC);
+        
     }
     echo "</article><hr>";
 }
