@@ -6,7 +6,7 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="estilos.css">
     <style>
-        /* article{width: 30%;border: 1px splid black;border-radius: 20px; padding: 5px; margin: 5px;} */
+        article{width: 30%;border: 1px solid black;border-radius: 20px; padding: 5px; margin: 5px;}
     </style>
 </head>
     <body>
@@ -35,12 +35,20 @@ for ($i=0;$i<$rows;$i++){
     $rowsaux = $resultaux->num_rows; 
     $resultaux->data_seek(0);
     echo "<article> Fecha: ".$resultaux->fetch_assoc()["Date"]."<br>";
+    $t=0;
     for ($j=0;$j<$rowsaux;$j++){
         $resultaux->data_seek($j);
         $p=$resultaux->fetch_array(MYSQLI_ASSOC);
-        var_dump($p);
-        echo '<br>';
+        $t+=$p["Price"]*$p["Number"];
+        echo "<div>
+        <img class=\"imge\" src=\"".$p["Image"]."\">
+        <div class=\"articlediv\">
+        <div class=\"text\">
+        <h3>".$p["Name"]."</h3></div>
+        ".$p["Price"]."€x".$p["Number"]."=".($p["Price"]*$p["Number"])."€
+        </div>";
     }
+    echo "<h2>Total: $t</h2>";
     echo "</article><hr>";
 }
 }else{
