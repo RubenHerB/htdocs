@@ -1,9 +1,7 @@
 *{text-align: center;margin-left: auto;margin-right: auto;}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
-
-   opacity: 1;
-
+opacity: 1;
 }
 
 input{
@@ -11,10 +9,10 @@ input{
     margin-right: 0;
 }
 
-.numero{
-    width: 20px;
+/* .numero{
+    width: 40px;
     text-align: center;
-}
+} */
 
 .imge{
     width: 150px;
