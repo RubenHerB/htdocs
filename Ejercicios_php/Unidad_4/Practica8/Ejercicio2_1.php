@@ -7,7 +7,7 @@
     <style type="text/css">
         .graph{display: flex;}
         .linea{height: 10px;width: 600px;background-color: black;margin-left: 10px;margin-top: 5px;}
-        .circulo{height: 20px;width: 20px;background-color: red;border-radius: 5px;position: absolute;}
+        .circulo{height: 20px;width: 20px;background-color: red;border-radius: 10px;position: absolute;}
     </style>
 </head>
 <body>
