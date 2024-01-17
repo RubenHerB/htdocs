@@ -27,6 +27,13 @@ for ($i=0;$i<$rows;$i++){
     $result->data_seek($i);
     $id= $result->fetch_assoc()["IdSell"];
     $queryaux="SELECT * FROM ventas WHERE IdSell like $id";
+    $resultaux = $connection->query($queryaux);
+    if (!$resultaux) die("Fatal Error");
+    $rowsaux = $resultaux->num_rows; 
+    $resultaux->data_seek(0);
+    echo "<article> Fecha: ".$resultaux->fetch_assoc()["Date"]."<br>";
+    for ($j=0;$j<$rowsaux;$j++){
+    }
 }
 }else{
     echo "No se ha realizado ninguna compra";
