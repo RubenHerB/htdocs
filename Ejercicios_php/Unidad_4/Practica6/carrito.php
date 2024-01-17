@@ -31,11 +31,6 @@
     if(isset($_POST["delete"])){
         
         foreach($_POST as $i=>$n){
-            if(!is_numeric($i)){
-                $dlti=preg_replace("/[^0-9]/", "", $i );
-            }
-        }
-        foreach($_POST as $i=>$n){
             $_SESSION["carrito"][$i]--;
         }
         foreach($_SESSION["carrito"] as $i=>$n){
