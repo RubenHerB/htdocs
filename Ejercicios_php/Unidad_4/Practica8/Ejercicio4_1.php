@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numero</title>
     <style type="text/css">
-        .a{height: 10px; background-color: lightblue;}
-        .b{height: 10px; background-color: lightsalmon;}
+        .a{height: 10px; background-color: lightblue;display: inline-block;}
+        .b{height: 10px; background-color: lightsalmon;display: inline-block;}
     </style>
 </head>
 <body>
@@ -16,7 +16,7 @@
         if($_SESSION==null){
             $_SESSION=["a"=>0, "b"=>0];
         }
-        var_dump($_SESSION);
+        // var_dump($_SESSION);
     ?>
     <h1>Votar una opcion</h1>
     Haz clic en los botones para votar por una opcion:

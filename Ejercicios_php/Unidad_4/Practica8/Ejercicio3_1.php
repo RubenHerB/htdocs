@@ -17,7 +17,7 @@
         if($_SESSION==null){
             $_SESSION=["x"=>300, "y"=>300];
         }
-        var_dump($_SESSION);
+        // var_dump($_SESSION);
     ?>
     <h1>Mover un punto de derecha a izquierda</h1>
     Haz clic en los botones para mover el punto:
