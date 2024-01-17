@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numero</title>
+    <style type="text/css">
+        .linea{height: 10px;background-color: black;}
+        .circulo{height: 10px;width: 10px;background-color: red;border-radius: 5px;}
+    </style>
 </head>
 <body>
 <?php
-        session_name("UD4P5E1");
+        session_name("UD4P5E2");
         session_start();
         if($_SESSION==null){
-            $_SESSION=["num"=>0];
+            $_SESSION=["ancho"=>295];
         }
     ?>
     <h1>Mover un punto de derecha a izquierda</h1>
