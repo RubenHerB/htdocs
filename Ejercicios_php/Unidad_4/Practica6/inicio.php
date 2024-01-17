@@ -51,8 +51,6 @@
         }
     }
     ?>
-    <br><br>
-    <input type="submit" value="Añadir al carrito" class="add">
     </form>
     <br><br>
     <form method="post" action="carrito.php">
