@@ -36,7 +36,7 @@ for ($i=0;$i<$rows;$i++){
     $resultaux->data_seek(0);
     echo "<article> Fecha: ".$resultaux->fetch_assoc()["Date"]."<br>";
     for ($j=0;$j<$rowsaux;$j++){
-        $resultaux->data_seek(0);
+        $resultaux->data_seek($j);
         $p=$resultaux->fetch_array(MYSQLI_ASSOC);
         var_dump($p);
         echo '<br>';
