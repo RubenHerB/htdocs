@@ -22,8 +22,13 @@
     <h1>Mover un punto de derecha a izquierda</h1>
     Haz clic en los botones para mover el punto:
     <form method="post" action="Ejercicio3_2.php">
-        <input type="submit" name="submit" value="<-" /><input type="submit" name="submit" value="volver al centro" /><input type="submit" name="submit" value="->" /><br>
-        <div class="graph"><div class="area"></div><div class="circulo" style="margin-left: <?php echo $_SESSION["x"]; ?>px;margin-top: <?php echo $_SESSION["Y"]; ?>px"></div>
+        <input type="submit" name="submit" value="←" />
+        <input type="submit" name="submit" value="↑" />
+        <input type="submit" name="submit" value="↓" />
+        <input type="submit" name="submit" value="→" />
+        
+        <input type="submit" name="submit" value="volver al centro" /><br>
+        <div class="graph"><div class="area"></div><div class="circulo" style="margin-left: <?php echo $_SESSION["x"]; ?>px;margin-top: <?php echo $_SESSION["y"]; ?>px"></div>
         <br>
         
     </form>
