@@ -57,7 +57,11 @@
     if(isset($_POST["add"])){
         unset($_POST["add"]);
         foreach($_POST as $i=>$n){
+            if(isset($_SESSION["carrito"][$i])){
             $_SESSION["carrito"][$i]++;
+            }else{
+                $_SESSION["carrito"][$i]=1;
+            }
         }
         
     }
