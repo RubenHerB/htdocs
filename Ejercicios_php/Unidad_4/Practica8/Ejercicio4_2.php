@@ -13,5 +13,5 @@ session_name("UD4P5E3");
         $_SESSION["b"]=0;
             break;
             }
-            header("Location: Ejercicio4_1.php");
+        header("Location: Ejercicio4_1.php");
 ?>
