@@ -85,7 +85,7 @@ $t=0;
         }
         $t+=$p["Price"]*$n;
     }
-    echo" Precio total: ".$t;
+    echo"</form> Precio total: ".$t;
     
     var_dump($_POST);
     var_dump($_SESSION);
@@ -99,7 +99,7 @@ $t=0;
         echo "El carrito de la compra esta vacio";
     }
     ?>
-    </form>
+    
     <form method="post" action="inicio.php">
         <input type="submit" value="Volver al catalogo">
     </form>

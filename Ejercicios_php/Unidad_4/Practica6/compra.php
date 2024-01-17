@@ -11,9 +11,9 @@
     if(!isset($_SESSION)){
         header("Location: index.php");
     }
-    // if($_SESSION["carrito"]==null){
-    //     header("Location: inicio.php");
-    // }
+    if($_SESSION["carrito"]==null){
+        header("Location: inicio.php");
+    }
     var_dump($_POST);
     ?>
     <h1>Proceso de compra</h1>
