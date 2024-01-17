@@ -6,8 +6,8 @@
     <title>Numero</title>
     <style type="text/css">
         .graph{display: flex;}
-        .linea{height: 10px;background-color: black;border-radius: -5px;}
-        .circulo{height: 10px;width: 10px;background-color: red;border-radius: 5px;position: relative;}
+        .linea{height: 10px;width: 600px;background-color: black;margin-left: 10px;margin-top: 5px;}
+        .circulo{height: 20px;width: 20px;background-color: red;border-radius: 5px;position: absolute;}
     </style>
 </head>
 <body>
@@ -15,14 +15,15 @@
         session_name("UD4P5E2");
         session_start();
         if($_SESSION==null){
-            $_SESSION=["ancho"=>300];
+            $_SESSION=["pos"=>300];
         }
     ?>
     <h1>Mover un punto de derecha a izquierda</h1>
     Haz clic en los botones para mover el punto:
     <form method="post" action="Ejercicio2_2.php">
         <input type="submit" name="submit" value="<-" /><input type="submit" name="submit" value="->" /><br>
-        <div class="graph"><div class="linea" style="width:<?php echo $_SESSION['ancho']; ?>px"></div><div class="circulo"></div><div class="linea" style="width:<?php echo 590-$_SESSION['ancho']; ?>px"></div></div>
+        <div class="graph"><div class="linea"></div><div class="circulo" style="margin-left: <?php echo $_SESSION["pos"]; ?>px"></div><br>
+
         <input type="submit" name="submit" value="volver al centro" />
     </form>
 </body>
