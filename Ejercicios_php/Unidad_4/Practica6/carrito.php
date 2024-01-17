@@ -36,12 +36,7 @@
             }
         }
         foreach($_POST as $i=>$n){
-            if($i!=$dlti){
-                unset($_POST[$i]);
-            }
-        }
-        foreach($_POST as $i=>$n){
-            $_SESSION["carrito"][$i]-=$n;
+            $_SESSION["carrito"][$i]--;
         }
         foreach($_SESSION["carrito"] as $i=>$n){
             if($n==0){
@@ -75,9 +70,6 @@ $t=0;
         ".$p["Description"]."</div>
         ".$p["Price"]."€ x $n = ".$p["Price"]*$n."€
         <div class=\"btndiv\">
-        <button class=\"btn\" type=\"button\" onclick=\"reducir('b$i')\">-</button>
-        <input type=\"number\"name=\"$i\" min=\"0\" max=\"$n\" value=\"0\" id=\"b$i\" class=\"numero\">
-        <button class=\"btn\" type=\"button\" onclick=\"aumentar('b$i',$n)\">+</button>
         <input type=\"submit\" name=\"submit$i\" value=\"Quitar productos\"></div></div></article>";
 
         if($i<($rows-1)){
