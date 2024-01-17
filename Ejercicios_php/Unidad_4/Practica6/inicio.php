@@ -39,7 +39,7 @@
         ".$p["Description"]."</div>
         ".$p["Price"]."€
         <div class=\"btndiv\">
-        <input type=\"number\"name=\"$i\" min=\"0\" max=\"99\" value=\"0\" class=\"numero\">
+        <input type=\"submit\" name=\"$i\" value=\"Añadir productos\">
         </div></article>";
         if($i<($rows-1)){
             echo "<hr>";
