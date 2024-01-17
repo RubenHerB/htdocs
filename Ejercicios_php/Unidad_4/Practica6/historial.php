@@ -21,7 +21,7 @@
 $log= new login();
 $connection=$log->log_user();
 
-$query = "SELECT IdSell FROM ventas WHERE IdBuyer like ".$_SESSION["IdUser"]." group by IdSell ORDER desc";
+$query = "SELECT IdSell FROM ventas WHERE IdBuyer like ".$_SESSION["IdUser"]." group by IdSell ORDER by IdSell desc";
 $result = $connection->query($query);
 if (!$result) die("Fatal Error");
 $rows = $result->num_rows; 
@@ -29,7 +29,7 @@ if($rows>0){
 for ($i=0;$i<$rows;$i++){
     $result->data_seek($i);
     $id= $result->fetch_assoc()["IdSell"];
-    $queryaux="SELECT v.Date,v.Number,p.Name,p.Price,p.Image FROM ventas v outer join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
+    $queryaux="SELECT v.Date,v.Number,p.Name,p.Price,p.Image FROM ventas v inner join productos p WHERE v.IdSell like $id and v.IdProduct like p.IdProduct";
     $resultaux = $connection->query($queryaux);
     if (!$resultaux) die("Fatal Error");
     $rowsaux = $resultaux->num_rows; 
