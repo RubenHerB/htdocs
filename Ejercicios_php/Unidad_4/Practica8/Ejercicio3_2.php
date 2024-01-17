@@ -24,7 +24,7 @@ session_name("UD4P5E3");
             }
             break;
         case "↑":
-            if($_SESSION["y"]>600){
+            if($_SESSION["y"]>0){
                 $_SESSION["y"]-=20;
             }else{
                 $_SESSION["y"]=600;
@@ -32,7 +32,7 @@ session_name("UD4P5E3");
             break;
         default:
         $_SESSION["x"]=300;
-        $_SESSION["Y"]=300;
+        $_SESSION["y"]=300;
             break;
             }
             header("Location: Ejercicio3_1.php");
