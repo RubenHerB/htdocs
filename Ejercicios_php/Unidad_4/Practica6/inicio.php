@@ -57,7 +57,7 @@
         <input type="submit" value="Ir al carrito"> 
     </form>
     <?php
-    var_dump($_POST);
+    // var_dump($_POST);
     if(isset($_POST["add"])){
         unset($_POST["add"]);
         foreach($_POST as $i=>$n){
