@@ -24,7 +24,7 @@
             }
         }
     }
-if($_SESSION["carrito"]!=null){
+if($_SESSION["carrito"]!=null){ 
     echo <<<_END
     <form method="post" name="delete" action="carrito.php">
 <input type="hidden" value="delete" name="delete">
