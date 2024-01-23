@@ -23,13 +23,13 @@
 <!-- Pills content -->
 <div class="tab-content">
       <!-- Email input -->
-      <div class="form-outline mb-4">
+      <div class="form-floating mb-4">
         <input type="email" id="loginName" class="form-control" />
         <label class="form-label" for="loginName">Email or username</label>
       </div>
 
       <!-- Password input -->
-      <div class="form-outline mb-4">
+      <div class="form-floating mb-4">
         <input type="password" id="loginPassword" class="form-control" />
         <label class="form-label" for="loginPassword">Password</label>
       </div>
