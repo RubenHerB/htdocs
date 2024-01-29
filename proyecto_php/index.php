@@ -12,8 +12,10 @@
   <?php
     const valid="is-valid";
     const notvalid="is-invalid";
-   if (isset($_POST)){
-
+   if (isset($_POST) && isset($_POST["login"])){
+    $usu=$_POST["mail"];
+    $pass=$_POST["pass"];
+    
    }else{
     $validmail="";
     $validpass="";
@@ -39,12 +41,12 @@
               </ul>
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
               </div>
 
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label <?php echo $validpass; ?>">Contraseña</label>
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              <input type="password" name="pass" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
               </div>
 
               <div class="col-12 text-center" style="margin-bottom:30px">
