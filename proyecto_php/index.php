@@ -11,6 +11,8 @@
   <body data-bs-theme="dark">
   <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 150px">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+              <!-- Input oculto para comprobar que el post es de esta pagina -->
+              <input type="hidden" name="login" value="login">
               <!-- Botones nav para cambiar entre el modulo de acceso y el modulo de registro -->
               <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item text-center">
