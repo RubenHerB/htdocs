@@ -8,7 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
   </head>
-  <body data-bs-theme="dark">
+
+  <?php
+  // if (isset($_POST
+  ?>
+
+  <body data-bs-theme="light">
   <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 150px">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <!-- Input oculto para comprobar que el post es de esta pagina -->
@@ -32,6 +37,10 @@
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
               <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Acceder</button>
               </div>
 </div>
 </form>
