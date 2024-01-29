@@ -27,18 +27,21 @@
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com">
               </div>
 
-              <div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Password</label>
-  </div>
-  <div class="col-auto">
-    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-  </div>
+
+              <div class="col-auto">
+              <div class="mb-3">
+              <label for="inputPassword6" class="form-label">Contraseña</label>
+              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+              </div>
   <div class="col-auto">
     <span id="passwordHelpInline" class="form-text">
       Must be 8-20 characters long.
     </span>
   </div>
+
+    
+  
 </div>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
