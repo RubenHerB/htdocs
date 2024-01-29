@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.png">
   </head>
   <body data-bs-theme="light">
-  <div class="container border border-secondary rounded" style="max-width: 574px;">
+  <div class="container border border-secondary rounded align-middle" style="max-width: 574px;">
               <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item text-center">
                   <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="index.php" role="tab" aria-controls="pills-home" aria-selected="true">Acceder</a>
