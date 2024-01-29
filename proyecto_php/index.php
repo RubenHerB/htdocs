@@ -10,17 +10,21 @@
   </head>
 
   <?php
-    const valid="is-valid";
-    const notvalid="is-invalid";
-   if (isset($_POST) && isset($_POST["login"])){
-    $usu=$_POST["mail"];
-    $pass=$_POST["pass"];
-    
-   }else{
+    $valid="is-valid";
+    $invalid="is-invalid";
     $validmail="";
     $validpass="";
+  if (isset($_POST) && isset($_POST["login"])){
+    $usu=$_POST["mail"];
+    $pass=$_POST["pass"];
+    if (filter_var($usu, FILTER_VALIDATE_EMAIL)) {
+      $validmail=$valid;
+  }else{
+    $validmail=$invalid;
+  }
+  }else{
     $usu="";
-   }
+  }
   ?>
 
   <body data-bs-theme="light">
