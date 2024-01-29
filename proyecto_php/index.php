@@ -14,13 +14,26 @@
     $invalid="is-invalid";
     $validmail="";
     $validpass="";
+    $errorusu="";
+    $errorpass="";
   if (isset($_POST) && isset($_POST["login"])){
     $usu=$_POST["mail"];
     $pass=$_POST["pass"];
+    if($usu!="" && $pass!=""){
     if (filter_var($usu, FILTER_VALIDATE_EMAIL)) {
       $validmail=$valid;
   }else{
     $validmail=$invalid;
+    $errorusu="El formato de correo no es correcto";
+  }}else{
+    if($usu==""){
+      $validmail=$invalid;
+      $errorusu="Este campo no puede estar vacio";
+    }
+    if($pass==""){
+      $validpass=$invalid;
+      $errorpass="Este campo no puede estar vacio";
+    }
   }
   }else{
     $usu="";
@@ -47,13 +60,16 @@
               <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
               <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
-        Usuario incorrecto
-    </div>
+                <?php echo $errorusu; ?>
+              </div>
             </div>
 
               <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label <?php echo $validpass; ?>">Contraseña</label>
-              <input type="password" name="pass" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+              <input type="password" name="pass" id="inputPassword6" class="form-control <?php echo $validpass; ?>" aria-describedby="passwordHelpInline">
+              <div class="invalid-feedback">
+                <?php echo $errorpass; ?>
+              </div>
               </div>
 
               <div class="col-12 text-center" style="margin-bottom:30px">
