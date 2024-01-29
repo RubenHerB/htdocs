@@ -46,7 +46,10 @@
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
               <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
-              </div>
+              <div class="invalid-feedback">
+        Usuario incorrecto
+    </div>
+            </div>
 
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label <?php echo $validpass; ?>">Contraseña</label>
