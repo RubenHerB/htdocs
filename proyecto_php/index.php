@@ -10,7 +10,15 @@
   </head>
 
   <?php
-  // if (isset($_POST
+    const valid="is-valid";
+    const notvalid="is-invalid";
+   if (isset($_POST)){
+
+   }else{
+    $validmail="";
+    $validpass="";
+    $usu="";
+   }
   ?>
 
   <body data-bs-theme="light">
@@ -31,11 +39,11 @@
               </ul>
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com">
+              <input type="email" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
               </div>
 
               <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+              <label for="exampleFormControlInput1" class="form-label <?php echo $validpass; ?>">Contraseña</label>
               <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
               </div>
 
