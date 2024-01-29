@@ -8,26 +8,67 @@
     <link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
   <body>
-  <div class="container mt-5">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-            <div class="card px-5 py-5" id="form1">
-                <div class="form-data" v-if="!submitted">
-                    <div class="forms-inputs mb-4"> <span>Email or username</span> <input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true">
-                        <div class="invalid-feedback">A valid email is required!</div>
-                    </div>
-                    <div class="forms-inputs mb-4"> <span>Password</span> <input autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true">
-                        <div class="invalid-feedback">Password must be 8 character!</div>
-                    </div>
-                    <div class="mb-3"> <button v-on:click.stop.prevent="submit" class="btn btn-dark w-100">Login</button> </div>
+  <div class="d-flex justify-content-center align-items-center mt-5">
+
+
+        <div class="card">
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item text-center">
+                  <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
+                </li>
+                <li class="nav-item text-center">
+                  <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a>
+                </li>
+               
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  
+                  <div class="form px-4 pt-5">
+
+                    <input type="text" name="" class="form-control" placeholder="Email or Phone">
+
+                    <input type="text" name="" class="form-control" placeholder="Password">
+                    <button class="btn btn-dark btn-block">Login</button>
+
+                  </div>
+
+
+
                 </div>
-                <div class="success-data" v-else>
-                    <div class="text-center d-flex flex-column"> <i class='bx bxs-badge-check'></i> <span class="text-center fs-1">You have been logged in <br> Successfully</span> </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  
+
+                  <div class="form px-4">
+
+                    <input type="text" name="" class="form-control" placeholder="Name">
+
+                    <input type="text" name="" class="form-control" placeholder="Email">
+
+                    <input type="text" name="" class="form-control" placeholder="Phone">
+
+                    <input type="text" name="" class="form-control" placeholder="Password">
+
+                    <button class="btn btn-dark btn-block">Signup</button>
+                    
+
+                  </div>
+
+
+
                 </div>
-            </div>
+                
+              </div>
+            
+          
+          
+
         </div>
-    </div>
-</div>
+        
+
+      </div>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
