@@ -39,7 +39,7 @@
               <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
               </div>
 
-              <div class="col-12">
+              <div class="col-12" style="margin: auto auto auto auto;">
                 <button type="submit" class="btn btn-primary">Acceder</button>
               </div>
 </div>
