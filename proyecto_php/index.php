@@ -10,6 +10,8 @@
   </head>
   <body data-bs-theme="dark">
   <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 150px">
+
+              <!-- Botones nav para cambiar entre el modulo de acceso y el modulo de registro -->
               <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item text-center">
                   <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="index.php" role="tab" aria-controls="pills-home" aria-selected="true">Acceder</a>
@@ -18,11 +20,26 @@
                   <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="portfolio/register.php" role="tab" aria-controls="pills-profile" aria-selected="false">Registrarse</a>
                 </li>
               
+                <!-- Campo de insercion del correo del usuario -->
               </ul>
               <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com">
               </div>
+
+              <div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Password</label>
+  </div>
+  <div class="col-auto">
+    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+  <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long.
+    </span>
+  </div>
+</div>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
