@@ -14,7 +14,7 @@
 
 
   <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 100px">
-  <form action="reg.php" method="post">
+  <form action="reg.php"   method="post">
               <!-- Input oculto para comprobar que el post es de esta pagina -->
               <input type="hidden" name="reg" value="reg">
               <!-- Botones nav para cambiar entre el modulo de acceso y el modulo de registro -->
