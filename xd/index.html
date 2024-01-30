@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CUBY</title>
+<style>
+.container,.container2 { 
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  margin-top: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+button {padding: 10px; border-radius: 50px; font-size: xx-large;}
+h1 {font-size: 100px;
+    color: red;
+    animation: blinker 1s linear infinite;}
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
+  }
+}
+.container2 {display: none;}
+</style>
+</head>
+<body id="bd">
+
+<div class="container2" id="container2" >
+    <h1 class="center">PUTA</h1>
+</div>
+
+<div class="container" id="container">
+  <div class="center">
+    <button onclick="xd()">Pulsa</button>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    function xd() {
+        document.getElementById("bd").style.backgroundImage = "url('xd.jpg')";
+        document.getElementById("container").style.display = "none";
+        document.getElementById("container2").style.display = "block";
+
+        var audioElement0 = document.createElement('audio');
+    audioElement0.setAttribute('src', 'xd.mp3');
+    audioElement0.setAttribute('autoplay', 'autoplay');
+    audioElement0.setAttribute('loop', 'loop');
+    audioElement0.Play();
+        
+
+    }
+</script>
+</html>
