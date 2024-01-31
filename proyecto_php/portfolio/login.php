@@ -16,7 +16,19 @@ class login{
                 $usu="profesor";
             break;
             case 2:
-                $usu="registrotutorlegal";
+                $usu="profesor";
+                $pass="profesor";
+            break;
+            case 2:
+                $usu="tutot";
+                $pass="tutot";
+            break;
+            case 2:
+                $usu="adminisrativo";
+                $pass="adminisrativo";
+            break;
+            default:
+                $usu="loginincidencias";
             break;
         }
 
