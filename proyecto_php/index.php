@@ -10,7 +10,6 @@
   </head>
 
   <?php
-  var_dump($_SESSION);
     $valid="is-valid";
     $invalid="is-invalid";
     $validmail="";
