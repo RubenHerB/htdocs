@@ -5,26 +5,26 @@ if ($connection->connect_error) die("Fatal Error");
 $query = 
 "SELECT * 
 FROM alumno
-WHERE mail = 'luis@p.es'
+WHERE Mail = 'luis@p.es'
 UNION
 SELECT * 
 FROM profesor
-WHERE mail = 'luis@p.es'
+WHERE Mail = 'luis@p.es'
 UNION
 SELECT *
 FROM tutorlegal
-WHERE mail = 'luis@p.es';"
+WHERE Mail = 'luis@p.es';"
 ;
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
 
 var_dump($result);
-foreach ($result as $row){
+    $row->data_seek(0);
     $r=$row->fetch_array(MYSQLI_ASSOC);
     foreach ($r as $key=>$val){
         echo $key."-".$val."\n";
     }
-}
+
  
 
 
