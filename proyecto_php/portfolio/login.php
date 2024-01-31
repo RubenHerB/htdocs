@@ -19,11 +19,11 @@ class login{
                 $usu="profesor";
                 $pass="profesor";
             break;
-            case 2:
+            case 3:
                 $usu="tutot";
                 $pass="tutot";
             break;
-            case 2:
+            case 4:
                 $usu="adminisrativo";
                 $pass="adminisrativo";
             break;
