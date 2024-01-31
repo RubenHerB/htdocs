@@ -3,15 +3,15 @@
 $connection = new mysqli('localhost', 'root', '', 'incidencias');
 if ($connection->connect_error) die("Fatal Error");
 $query = 
-"SELECT 'tabla1' AS fuente
-FROM tabla1
-WHERE id = 'luis@p.es'
+"SELECT * AS fuente
+FROM alumno
+WHERE IdAlumno = 'luis@p.es'
 UNION
-SELECT 'tabla2' AS fuente
+SELECT * AS fuente
 FROM tabla2
-WHERE id = 'luis@p.es'
+WHERE IdProfesor = 'luis@p.es'
 UNION
-SELECT 'tabla3' AS fuente
+SELECT * AS fuente
 FROM tabla3
 WHERE id = 'luis@p.es';"
 ;
