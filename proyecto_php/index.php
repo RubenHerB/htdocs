@@ -10,6 +10,7 @@
   </head>
 
   <?php
+  var_dump($_SESSION);
     $valid="is-valid";
     $invalid="is-invalid";
     $validmail="";
@@ -52,7 +53,7 @@
           
           if(isset($r['IdProfesor'])){
             session_name("P".$r['IdProfesor']);
-          }elseif(isset($r['IdProfesor'])){
+          }elseif(isset($r['IdAlumno'])){
             session_name("A".$r['IdAlumno']);
           }else{
             session_name("T".$r['IdTutor']);
