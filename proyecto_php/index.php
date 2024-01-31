@@ -53,9 +53,9 @@
           if(isset($r['IdProfesor'])){
             session_name("P".$r['IdProfesor']);
           }elseif(isset($r['IdProfesor'])){
-            session_name("P".$r['IdAlumno']);
+            session_name("A".$r['IdAlumno']);
           }else{
-            session_name("P".$r['IdTutor']);
+            session_name("T".$r['IdTutor']);
           }
             var_dump($_SESSION);
         }else{
