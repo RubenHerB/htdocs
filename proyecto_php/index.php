@@ -23,6 +23,10 @@
     if($usu!="" && $pass!=""){
     if (filter_var($usu, FILTER_VALIDATE_EMAIL)) {
       $validmail=$valid;
+      include "/portfolio/login.php";
+      $conn=new login();
+      $con=$conn->log(-1);
+
   }else{
     $validmail=$invalid;
     $errorusu="El formato de correo no es correcto";
