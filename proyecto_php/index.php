@@ -23,10 +23,29 @@
     if($usu!="" && $pass!=""){
     if (filter_var($usu, FILTER_VALIDATE_EMAIL)) {
       $validmail=$valid;
-      include "/portfolio/login.php";
+      include "portfolio/login.php";
       $conn=new login();
       $con=$conn->log(-1);
-
+      $query = 
+      "SELECT * 
+      FROM alumno
+      WHERE Mail = '$usu'
+      UNION
+      SELECT * 
+      FROM profesor
+      WHERE Mail = '$usu'
+      UNION
+      SELECT *
+      FROM tutorlegal
+      WHERE Mail = '$usu'";
+      $result = $con->query($query);
+      if (!$result) die("Fatal Error");
+      
+      if($result->num_rows==0){
+        $validmail=$invalid;
+        $errorusu="El email introducido no se corresponde a ningun usuario conectado";
+      }else{
+      }
   }else{
     $validmail=$invalid;
     $errorusu="El formato de correo no es correcto";

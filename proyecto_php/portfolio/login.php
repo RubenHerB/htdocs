@@ -32,7 +32,7 @@ class login{
             break;
         }
 
-        $connection = new mysqli('localhost', $usu,$pass, 'bdsimon');
+        $connection = new mysqli('localhost', $usu,$pass, 'incidencias');
     
     if ($connection->connect_error) die("Fatal Error");
     return $connection;
