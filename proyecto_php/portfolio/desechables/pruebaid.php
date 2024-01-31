@@ -13,16 +13,15 @@ WHERE Mail = 'luis@p.es'
 UNION
 SELECT *
 FROM tutorlegal
-WHERE Mail = 'luis@p.es';"
-;
+WHERE Mail = 'luis@p.es'";
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
 
 var_dump($result);
     $result->data_seek(0);
-    $r=$row->fetch_array(MYSQLI_ASSOC);
+    $r=$result->fetch_array(MYSQLI_ASSOC);
     foreach ($r as $key=>$val){
-        echo $key."-".$val."\n";
+        echo $key."-".$val."<br>";
     }
 
  
