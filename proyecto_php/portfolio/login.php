@@ -12,6 +12,12 @@ class login{
             case 0:
                 $usu="registrotutorlegal";
             break;
+            case 1:
+                $usu="profesor";
+            break;
+            case 2:
+                $usu="registrotutorlegal";
+            break;
         }
 
         $connection = new mysqli('localhost', $usu,$pass, 'bdsimon');
