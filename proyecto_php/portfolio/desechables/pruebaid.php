@@ -3,22 +3,28 @@
 $connection = new mysqli('localhost', 'root', '', 'incidencias');
 if ($connection->connect_error) die("Fatal Error");
 $query = 
-"SELECT IdAlumno AS fuente
+"SELECT * 
 FROM alumno
-WHERE IdAlumno = 'luis@p.es'
+WHERE mail = 'luis@p.es'
 UNION
-SELECT IdProfesor AS fuente
+SELECT * 
 FROM profesor
-WHERE IdProfesor = 'luis@p.es'
+WHERE mail = 'luis@p.es'
 UNION
-SELECT IdTutor AS fuente
-FROM tutor
-WHERE IdTutor = 'luis@p.es';"
+SELECT *
+FROM tutorlegal
+WHERE mail = 'luis@p.es';"
 ;
 $result = $connection->query($query);
  if (!$result) die("Fatal Error");
 
 var_dump($result);
+foreach ($result as $row){
+    $r=$row->fetch_array(MYSQLI_ASSOC);
+    foreach ($r as $key=>$val){
+        echo $key."-".$val."\n";
+    }
+}
  
 
 
