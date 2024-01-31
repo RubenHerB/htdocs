@@ -45,6 +45,14 @@
         $validmail=$invalid;
         $errorusu="El email introducido no se corresponde a ningun usuario conectado";
       }else{
+        $result->data_seek(0);
+        $r=$result->fetch_array(MYSQLI_ASSOC);
+        if(password_verify($pass, $r['Contra'])){
+
+        }else{
+          $validpass=$invalid;
+      $errorpass="Contraseña incorrecta";
+        }
       }
   }else{
     $validmail=$invalid;
