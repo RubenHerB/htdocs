@@ -38,6 +38,42 @@
               </div>
             </div>
 
+            <!-- Campo de insercion del nombre del usuario -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <div class="invalid-feedback">
+                <?php echo $errorusu; ?>
+              </div>
+            </div>
+
+            <!-- Campo de insercion de los apellidos del usuario -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <div class="invalid-feedback">
+                <?php echo $errorusu; ?>
+              </div>
+            </div>
+
+
+            <!-- Campo de insercion de la contraseña del usuario -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <div class="invalid-feedback">
+                <?php echo $errorusu; ?>
+              </div>
+            </div>
+
+            <!-- Campo de confirmacion de la contraseña del usuario -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <div class="invalid-feedback">
+                <?php echo $errorusu; ?>
+              </div>
+            </div>
 
               <div class="col-12 text-center" style="margin-bottom:30px">
                 <button type="submit" class="btn btn-primary">Acceder</button>
