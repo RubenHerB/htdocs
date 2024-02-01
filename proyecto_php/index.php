@@ -49,7 +49,7 @@
         $r=$result->fetch_array(MYSQLI_ASSOC);
         if(password_verify($pass, $r['Contra'])){
           
-          
+          var_dump($r);
           if(isset($r['IdProfesor'])){
             session_id("P".$r['IdProfesor']);
             $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"rol"=>$r['rol'],"rolnow"=>-1];
