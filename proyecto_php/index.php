@@ -27,17 +27,11 @@
       $conn=new login();
       $con=$conn->log(-1);
       $query = 
-      "SELECT * 
-      FROM alumno
-      WHERE Mail = '$usu'
+      "SELECT * FROM alumno WHERE Mail = '$usu'
       UNION
-      SELECT * 
-      FROM profesor
-      WHERE Mail = '$usu'
+      SELECT * FROM profesor WHERE Mail = '$usu'
       UNION
-      SELECT *
-      FROM tutorlegal
-      WHERE Mail = '$usu'";
+      SELECT * FROM tutorlegal WHERE Mail = '$usu'";
       $result = $con->query($query);
       if (!$result) die("Fatal Error");
       
