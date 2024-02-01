@@ -38,18 +38,20 @@
       "SELECT *
       FROM tutorlegal
       WHERE Mail = '$usu')"];
-      $n=0;
+      $userexistent=false;
       for($i=0;$i<3;$i++){
       $result[$i] = $con->query($query[$i]);
       if (!$result) die("Fatal Error");
+
       if($result[$i]->num_rows==1){
-        $n=$i;
+        $userexistent=true;
+        $result=$result[$i];
         break;
       }
       }
 
       ////Queda controlar de quien es y pillar la contraseña.
-      if($n==0){
+      if($n==-1){
         $validmail=$invalid;
         $errorusu="El email introducido no se corresponde a ningun usuario conectado";
       }else{
