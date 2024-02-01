@@ -51,7 +51,7 @@
       }
 
       ////Queda controlar de quien es y pillar la contraseña.
-      if($n==-1){
+      if(!$n){
         $validmail=$invalid;
         $errorusu="El email introducido no se corresponde a ningun usuario conectado";
       }else{
