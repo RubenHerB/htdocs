@@ -58,16 +58,16 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
             <!-- Campo de insercion del nombre del usuario -->
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
+              <input type="text" name="nom" class="form-control <?php echo $validnom; ?>" id="exampleFormControlInput1"  value="<?php echo $nom; ?>">
               <div class="invalid-feedback">
-                <?php echo $errorape; ?>
+                <?php echo $errornom; ?>
               </div>
             </div>
 
             <!-- Campo de insercion de los apellidos del usuario -->
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
+              <input type="text" name="ape" class="form-control <?php echo $validape; ?>" id="exampleFormControlInput1"  value="<?php echo $ape; ?>">
               <div class="invalid-feedback">
                 <?php echo $errorape; ?>
               </div>
