@@ -16,7 +16,7 @@
 
 
   // Given password
-$password = 'user-input-pass';
+$password = 'AAaaadsv32432+';
 
 // Validate password strength
 $uppercase = preg_match('@[A-Z]@', $password);
@@ -57,8 +57,8 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
 
             <!-- Campo de insercion del nombre del usuario -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
                 <?php echo $errorusu; ?>
               </div>
@@ -66,8 +66,8 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
 
             <!-- Campo de insercion de los apellidos del usuario -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
                 <?php echo $errorusu; ?>
               </div>
@@ -76,8 +76,8 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
 
             <!-- Campo de insercion de la contraseña del usuario -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+              <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
                 <?php echo $errorusu; ?>
               </div>
@@ -85,8 +85,8 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
 
             <!-- Campo de confirmacion de la contraseña del usuario -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
-              <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1" placeholder="ejemplo@direccion.com" value="<?php echo $usu; ?>">
+              <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
+              <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
                 <?php echo $errorusu; ?>
               </div>
