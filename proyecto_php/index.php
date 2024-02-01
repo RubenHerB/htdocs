@@ -50,7 +50,6 @@
       }
       }
 
-      ////Queda controlar de quien es y pillar la contraseña.
       if(!$userexistent){
         $validmail=$invalid;
         $errorusu="El email introducido no se corresponde a ningun usuario conectado";
@@ -62,19 +61,19 @@
           var_dump($r);
           if(isset($r['IdProfesor'])){
             session_id("P".$r['IdProfesor']);
-            $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"rol"=>$r['rol'],"rolnow"=>-1];
-            // header("Location: /portfolio/profesorprin.php");
+            $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"rol"=>$r['Rol'],"rolnow"=>-1];
+            header("Location: /portfolio/profesorprin.php");
           }elseif(isset($r['IdAlumno'])){
             session_id("A".$r['IdAlumno']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdAlumno'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog']];
-            // header("Location: /portfolio/alumno.php");
+            header("Location: /portfolio/alumno.php");
           }else{
             session_id("T".$r['IdTutor']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdTutor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog'],"idAlumno"=>-1];
             if($r['Confirm']==-1){
-            // header("Location: /portfolio/tutor.php");
+            header("Location: /portfolio/tutor.php");
           }else{
-            // header("Location: /portfolio/confirmacion.php");
+            header("Location: /portfolio/confirmacion.php");
           }
           }
           session_start();
