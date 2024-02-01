@@ -26,15 +26,15 @@
       include "portfolio/login.php";
       $conn=new login();
       $con=$conn->log(-1);
-      $query =[ 
-      "SELECT * 
-      FROM alumno
-      WHERE Mail = '$usu'"
-      ,
-      "SELECT * 
+      $query =[
+        "SELECT * 
       FROM profesor
       WHERE Mail = '$usu'"
       ,
+      "SELECT * 
+      FROM alumno
+      WHERE Mail = '$usu'"
+      ,      
       "SELECT *
       FROM tutorlegal
       WHERE Mail = '$usu')"];
@@ -44,6 +44,7 @@
       if (!$result) die("Fatal Error");
       if($result[$i]->num_rows==1){
         $n=$i;
+        break;
       }
       }
 
