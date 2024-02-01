@@ -12,6 +12,8 @@
 
   <?php include "dark.php"; 
   $usu="";
+  $nom="";
+  $ape="";
 
 
 
@@ -77,16 +79,16 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
             <!-- Campo de insercion de la contraseña del usuario -->
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-              <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
+              <input type="password" name="pass1" class="form-control <?php echo $validpass1; ?>" id="exampleFormControlInput1">
               <div class="invalid-feedback">
-                <?php echo $errorpass2; ?>
+                <?php echo $errorpass1; ?>
               </div>
             </div>
 
             <!-- Campo de confirmacion de la contraseña del usuario -->
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
-              <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
+              <input type="password" name="pass2" class="form-control <?php echo $validpass2; ?>" id="exampleFormControlInput1" >
               <div class="invalid-feedback">
                 <?php echo $errorpass2; ?>
               </div>
