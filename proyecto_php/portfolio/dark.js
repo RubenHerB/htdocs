@@ -8,7 +8,7 @@ else{
     window.localStorage.setItem('data-bs-theme', 'dark');
     theme="dark";
 }}
-checkBox.checked = theme == 'dark' ? true : false;
+checkBox.checked = (theme == 'dark' )? true : false;
 if (theme == 'dark') document.getElementById('bd').setAttribute('data-bs-theme', 'dark');
 
 
