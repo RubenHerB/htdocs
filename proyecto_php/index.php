@@ -51,11 +51,11 @@
           session_start();
           
           if(isset($r['IdProfesor'])){
-            session_name("P".$r['IdProfesor']);
+            session_id("P".$r['IdProfesor']);
           }elseif(isset($r['IdAlumno'])){
-            session_name("A".$r['IdAlumno']);
+            session_id("A".$r['IdAlumno']);
           }else{
-            session_name("T".$r['IdTutor']);
+            session_id("T".$r['IdTutor']);
           }
             var_dump($_SESSION);
         }else{
