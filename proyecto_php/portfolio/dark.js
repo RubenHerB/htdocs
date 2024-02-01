@@ -1,4 +1,4 @@
-
+//Esta primera parte define el "boton" que se usa para seleccionar el modo oscuro como una cariable chckbox
       var checkBox = document.getElementById('darkmode-toggle');
 
 var theme = window.localStorage.getItem('data-bs-theme');
