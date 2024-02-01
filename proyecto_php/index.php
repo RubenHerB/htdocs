@@ -48,7 +48,7 @@
         $result->data_seek(0);
         $r=$result->fetch_array(MYSQLI_ASSOC);
         if(password_verify($pass, $r['Contra'])){
-          session_start();
+          
           
           if(isset($r['IdProfesor'])){
             session_id("P".$r['IdProfesor']);
@@ -57,7 +57,9 @@
           }else{
             session_id("T".$r['IdTutor']);
           }
+          session_start();
             var_dump($_SESSION);
+            var_dump(session_id());
         }else{
           $validpass=$invalid;
       $errorpass="Contraseña incorrecta";
