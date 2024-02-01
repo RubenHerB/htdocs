@@ -37,7 +37,7 @@
       ,      
       "SELECT *
       FROM tutorlegal
-      WHERE Mail = '$usu')"];
+      WHERE Mail = '$usu'"];
       $userexistent=false;
       for($i=0;$i<3;$i++){
       $result[$i] = $con->query($query[$i]);
