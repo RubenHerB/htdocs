@@ -7,8 +7,8 @@ if ($connection->connect_error) die("Fatal Error");
 // ;
 
 $query = 
-"INSERT INTO profesor (Nombre,Apellidos,Mail,Contra,Rol)
-VALUES ('juan','a','juan@p.es','".password_hash("juan",PASSWORD_DEFAULT)."',0);"
+"INSERT INTO profesor (Nombre,Apellidos,Mail,Contra,Rol,Departamento)
+VALUES ('ana','a','ana@p.es','".password_hash("ana",PASSWORD_DEFAULT)."',0,'Informatica');"
 ;
 
 $result = $connection->query($query);
