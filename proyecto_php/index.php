@@ -52,6 +52,8 @@
           
           if(isset($r['IdProfesor'])){
             session_id("P".$r['IdProfesor']);
+            $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor']];
+            header("Location: /portfolio/profesorprin.php");
           }elseif(isset($r['IdAlumno'])){
             session_id("A".$r['IdAlumno']);
           }else{
