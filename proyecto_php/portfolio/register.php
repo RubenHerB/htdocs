@@ -34,7 +34,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
   ?>
 
 
-  <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 100px">
+  <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 40px">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>"   method="post">
               <!-- Input oculto para comprobar que el post es de esta pagina -->
               <input type="hidden" name="reg" value="reg">
