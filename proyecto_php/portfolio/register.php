@@ -78,7 +78,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
 
             <!-- Campo de insercion de la contraseña del usuario -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+              <label for="exampleFormControlInput1" class="form-label">Contraseña (al menos 8 caracteres, mayusculas, minusculas, numeros y caracteres especiales)</label>
               <input type="password" name="pass1" class="form-control <?php echo $validpass1; ?>" id="exampleFormControlInput1">
               <div class="invalid-feedback">
                 <?php echo $errorpass1; ?>
