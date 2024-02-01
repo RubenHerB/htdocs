@@ -60,7 +60,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
               <label for="exampleFormControlInput1" class="form-label">Nombre</label>
               <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
-                <?php echo $errorusu; ?>
+                <?php echo $errorape; ?>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
               <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
               <input type="email" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
-                <?php echo $errorusu; ?>
+                <?php echo $errorape; ?>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
               <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
               <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
-                <?php echo $errorusu; ?>
+                <?php echo $errorpass2; ?>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password)
               <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
               <input type="password" name="mail" class="form-control <?php echo $validmail; ?>" id="exampleFormControlInput1"  value="<?php echo $usu; ?>">
               <div class="invalid-feedback">
-                <?php echo $errorusu; ?>
+                <?php echo $errorpass2; ?>
               </div>
             </div>
 
