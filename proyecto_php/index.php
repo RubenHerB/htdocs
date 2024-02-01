@@ -26,22 +26,29 @@
       include "portfolio/login.php";
       $conn=new login();
       $con=$conn->log(-1);
-      $query = 
+      $query =[ 
       "SELECT * 
       FROM alumno
-      WHERE Mail = '$usu'
-      UNION
-      (SELECT * 
+      WHERE Mail = '$usu'"
+      ,
+      "SELECT * 
       FROM profesor
-      WHERE Mail = '$usu')
-      UNION
-      (SELECT *
+      WHERE Mail = '$usu'"
+      ,
+      "SELECT *
       FROM tutorlegal
-      WHERE Mail = '$usu')";
-      $result = $con->query($query);
+      WHERE Mail = '$usu')"];
+      $n=0;
+      for($i=0;$i<3;$i++){
+      $result[$i] = $con->query($query[$i]);
       if (!$result) die("Fatal Error");
-      
-      if($result->num_rows==0){
+      if($result[$i]->num_rows==1){
+        $n=$i;
+      }
+      }
+
+      ////Queda controlar de quien es y pillar la contraseña.
+      if($n==0){
         $validmail=$invalid;
         $errorusu="El email introducido no se corresponde a ningun usuario conectado";
       }else{
@@ -50,15 +57,18 @@
         if(password_verify($pass, $r['Contra'])){
           
           var_dump($r);
-          if(isset($r['IdProfesor'])){
+          switch($n){
+            case 0:
             session_id("P".$r['IdProfesor']);
             $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"rol"=>$r['rol'],"rolnow"=>-1];
             // header("Location: /portfolio/profesorprin.php");
-          }elseif(isset($r['IdAlumno'])){
+          break;
+          case 1:
             session_id("A".$r['IdAlumno']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdAlumno'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog']];
             // header("Location: /portfolio/alumno.php");
-          }else{
+            break;
+            case 2:
             session_id("T".$r['IdTutor']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdTutor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog'],"idAlumno"=>-1];
             if($r['Confirm']==-1){
@@ -66,6 +76,7 @@
           }else{
             // header("Location: /portfolio/confirmacion.php");
           }
+          break;
           }
           session_start();
             var_dump($_SESSION);
