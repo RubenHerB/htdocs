@@ -21,8 +21,9 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            include "login.php";
-    $con=(new login)->log(1);
+            var_dump($_POST);
+            
+
     if (isset($_POST["modo"])){
         $_SESSION["rolnow"]=$_POST["modo"];
         switch($_POST["modo"]){
