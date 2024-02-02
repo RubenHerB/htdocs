@@ -16,15 +16,18 @@
   <?php
   var_dump($_POST);
     session_start();
-    if(!isset($_SESSION) || $_SESSION!=null){
+    if(!isset($_SESSION)){
         header("Location: ../index.php");
         var_dump($_SESSION["tipo"]);
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
+            var_dump("entro");
     if (isset($_POST["modo"])){
-        $_SESSION["rolnow"]=$_POST["modo"];
-        switch($_POST["modo"]){
+        $modo=intval($_POST["modo"]);
+        $_SESSION["rolnow"]=$modo;
+        var_dump($modo);
+        switch($modo){
             case 1:
                 header("Location: profesores/profesor.php");
                 break;
