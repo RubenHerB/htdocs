@@ -51,7 +51,6 @@
     </div>
 </div>
   </div>
-</div>
     <?php 
     include "login.php";
     $con=(new login)->log(1);
@@ -99,7 +98,7 @@
 }    
     if($_SESSION["rol"]==3){
         echo <<<_END
-        <div class="row">
+
         <div class="col-sm-6 col-lg-4 columna">
         <div class="card h-100">
         <h5 class="card-header">Equipo administrativo</h5>
