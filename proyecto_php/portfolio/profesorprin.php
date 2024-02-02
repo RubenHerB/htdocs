@@ -35,7 +35,7 @@
   <?php include "dark.php"; ?>
   
 <div class="container-sm">
-<h1>Panel de control</h1>
+<h1 style="margin-top: 20px;">Panel de control</h1>
 <br>
 <div class="row">
   <div class="col-sm-6 col-lg-4 columna">
@@ -53,7 +53,7 @@
   </div>
     <?php 
     include "login.php";
-    $con=(new login)->log(1 );
+    $con=(new login)->log(1);
     $query ="SELECT IdClase,Codigo,Nombre,Year,Tipo FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
