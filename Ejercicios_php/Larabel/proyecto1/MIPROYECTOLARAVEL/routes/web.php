@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/holamundo',function () {
-    return view('holamundo');
+    return view('miprimeravista');
 });
