@@ -67,7 +67,12 @@
             echo $_SERVER['PHP_SELF'];
             echo <<<_END
                     ' method="post">
-                    <input type="hidden" name="modo" value="1">
+                    <input type="hidden" name="modo" value="2">
+                    <input type="hidden" name="clase" value="
+                _END;
+            echo $row["IdClase"];
+            echo <<<_END
+                    ">
                     <button type="button" class="btn btn-primary">Iniciar sesión</button>
                     </form>
                 </div>
