@@ -69,7 +69,7 @@
             header("Location: portfolio/alumno.php");
           }else{
             session_id("T".$r['IdTutor']);
-            $_SESSION=["tipo"=>1,"id"=>$r['IdTutor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog'],"idAlumno"=>-1];
+            $_SESSION=["tipo"=>2,"id"=>$r['IdTutor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog'],"idAlumno"=>-1];
             if($r['Confirm']==-1){
             header("Location: portfolio/tutor.php");
           }else{
