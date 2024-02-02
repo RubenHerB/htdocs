@@ -38,7 +38,7 @@
 <h1 style="margin-top: 20px;">Panel de control</h1>
 <br>
 <div class="row">
-  <div class="col-sm-6 col-lg-4 columna">
+  <div class="col-sm-6 col-lg-4 col-xxl-3 columna">
 <div class="card h-100">
 <h5 class="card-header">Profesor</h5>
     <div class="card-body">    
@@ -60,7 +60,7 @@
     if($result->num_rows>0){
         foreach($result as $row){
             echo <<<_END
-            <div class="col-sm-6 col-lg-4 columna">
+            <div class="col-sm-6 col-lg-4 col-xxl-3 columna">
             <div class="card"">
             <h5 class="card-header">Tutor</h5>
                 <div class="card-body">
@@ -99,7 +99,7 @@
     if($_SESSION["rol"]==3){
         echo <<<_END
         <div class="row">
-        <div class="col-sm-6 col-lg-4 columna">
+        <div class="col-sm-6 col-lg-4 col-xxl-3 columna">
         <div class="card h-100">
         <h5 class="card-header">Equipo administrativo</h5>
         <div class="card-body">    
