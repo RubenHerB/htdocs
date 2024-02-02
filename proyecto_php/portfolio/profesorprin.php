@@ -11,11 +11,11 @@
 
   <?php
     session_start();
-    var_dump($_SESSION);
-    if(!isset($_SESSION)){
-        var_dump($_SESSION);
+    if(!isset($_SESSION) || $_SESSION==null){
+        header("Location: ../index.php");
+        var_dump($_SESSION["tipo"]);
         if($_SESSION["tipo"]!=0){
-
+            header("Location: redirect.php");
         }
 
     }
