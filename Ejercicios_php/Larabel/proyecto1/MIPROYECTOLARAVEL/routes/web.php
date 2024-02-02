@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/holamundo',function () {
     return view('miprimeravista');
 });
+
+Route::get('/segunda',function () {
+    return 'Estoy creando una nueva ruta';
+});
