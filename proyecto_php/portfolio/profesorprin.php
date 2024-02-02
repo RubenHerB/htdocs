@@ -34,7 +34,7 @@
 <h1>Panel de control</h1>
 <br>
 <div class="row">
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-6 col-lg-4">
 <div class="card h-100">
 <h5 class="card-header">Profesor</h5>
     <div class="card-body">    
@@ -56,7 +56,7 @@
     if($result->num_rows>0){
         foreach($result as $row){
             echo <<<_END
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-lg-4">
             <div class="card"">
             <h5 class="card-header">Tutor</h5>
                 <div class="card-body">
