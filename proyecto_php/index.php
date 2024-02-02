@@ -57,15 +57,18 @@
         $result->data_seek(0);
         $r=$result->fetch_array(MYSQLI_ASSOC);
         if(password_verify($pass, $r['Contra'])){
-          
-          var_dump($r);
+          session_start();
+
           if(isset($r['IdProfesor'])){
+            session_id("P".$r['IdProfesor']);
             $_SESSION=["tipo"=>0,"id"=>$r['IdProfesor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"rol"=>$r['Rol'],"rolnow"=>-1];
             header("Location: portfolio/profesorprin.php");
           }elseif(isset($r['IdAlumno'])){
+            session_id("A".$r['IdAlumno']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdAlumno'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog']];
             header("Location: portfolio/alumno.php");
           }else{
+            session_id("T".$r['IdTutor']);
             $_SESSION=["tipo"=>1,"id"=>$r['IdTutor'],"nombre"=>$r['Nombre'],"apellidos"=>$r['Apellidos'],"lastlogtime"=>$r['LastLog'],"idAlumno"=>-1];
             if($r['Confirm']==-1){
             header("Location: portfolio/tutor.php");
@@ -73,9 +76,6 @@
             header("Location: portfolio/confirmacion.php");
           }
           }
-          session_start();
-            var_dump($_SESSION);
-            var_dump(session_id());
         }else{
           $validpass=$invalid;
       $errorpass="Contraseña incorrecta";
