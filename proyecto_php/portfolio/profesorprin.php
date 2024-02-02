@@ -42,6 +42,7 @@
   </div>
 </div>
     <?php 
+    include "login.php";
     $con=(new login)->log(1);
     $query ="SELECT IdClase,Codigo,Nombre,Year,Tipo FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
