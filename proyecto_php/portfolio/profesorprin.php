@@ -29,8 +29,11 @@
   <body id="bd" data-bs-theme="light">
 
   <?php include "dark.php"; ?>
+  
 <div class="container-sm">
-<div class="card" style="width: 18rem;">
+<h1>Panel de control</h1>
+<br>
+<div class="card md-3" >
   <div class="card-body">
     <h5 class="card-title">Profesor</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo profesor</h6>
@@ -43,7 +46,7 @@
 </div>
     <?php 
     include "login.php";
-    $con=(new login)->log(1);
+    $con=(new login)->log(1 );
     $query ="SELECT IdClase,Codigo,Nombre,Year,Tipo FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
