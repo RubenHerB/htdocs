@@ -42,13 +42,10 @@
   </div>
 </div>
     <?php 
-    
+    $con=(new login)->log(1);
     $query ="SELECT IdClase,Codigo,Nombre,Year,Tipo FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
-    if($_SESSION["rol"]==1){
-        header("Location: profesores/profesor.php");
-    }else{
     if($result->num_rows>0){
         foreach($result as $row){
             echo <<<_END
@@ -76,13 +73,18 @@
                 </div>
             </div>
             _END;
-    }
+        }
+    }elseif($_SESSION["rol"] ==1){
+        header("Location: profesores/profesor.php");
+}
+    
     if($_SESSION["rol"]==3){
         echo <<<_END
         
         _END;
-    }}
-}
+    }
+
+$con->close(); 
     ?>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
