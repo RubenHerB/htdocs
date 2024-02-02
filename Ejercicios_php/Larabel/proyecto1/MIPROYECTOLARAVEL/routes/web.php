@@ -17,10 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/holamundo',function () {
+Route::get('holamundo',function () {
     return view('miprimeravista');
 });
 
-Route::get('/segunda',function () {
+Route::get('segunda',function () {
     return 'Estoy creando una nueva ruta';
+});
+Route::get('segunda/nivel1',function () {
+    return 'Estoy creando un nuevo nivel';
 });
