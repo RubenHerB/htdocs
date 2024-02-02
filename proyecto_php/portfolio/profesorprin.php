@@ -33,7 +33,9 @@
 <div class="container-sm">
 <h1>Panel de control</h1>
 <br>
-<div class="card md-3" >
+<div class="row">
+  <div class="col-sm-4">
+<div class="card">
 <h5 class="card-header">Profesor</h5>
     <div class="card-body">    
     <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo profesor</h6>
@@ -44,6 +46,7 @@
     </form>
     </div>
 </div>
+  </div>
     <?php 
     include "login.php";
     $con=(new login)->log(1 );
@@ -53,7 +56,8 @@
     if($result->num_rows>0){
         foreach($result as $row){
             echo <<<_END
-            <div class="card" style="width: 18rem;">
+            <div class="col-sm-4">
+            <div class="card"">
             <h5 class="card-header">Tutor</h5>
                 <div class="card-body">
                     
@@ -82,6 +86,7 @@
                     </form>
                 </div>
             </div>
+            </div>
             _END;
         }
     }elseif($_SESSION["rol"] ==1){
@@ -95,6 +100,7 @@
 
 $con->close(); 
     ?>
+</div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  <script src=dark.js></script>
