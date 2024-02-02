@@ -74,7 +74,7 @@
             _END;
             echo $row["Year"]."º de ".$row["Nombre"]." ".$row["Tipo"];
             echo <<<_END
-                    para ver,las incidencias de los alumnos de ese modulo.</p>
+                    para ver las incidencias de los alumnos de ese modulo.</p>
                     <form action=' 
             _END;
             echo $_SERVER['PHP_SELF'];
