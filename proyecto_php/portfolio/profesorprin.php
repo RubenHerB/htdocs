@@ -99,7 +99,7 @@
     if($_SESSION["rol"]==3){
         echo <<<_END
         <div class="row">
-        <div class="col-sm-6 col-lg-4 col-xxl-3 columna">
+        <div class="col-sm-6 col-lg-4 columna">
         <div class="card h-100">
         <h5 class="card-header">Equipo administrativo</h5>
         <div class="card-body">    
