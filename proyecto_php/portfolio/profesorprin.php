@@ -20,14 +20,32 @@
 
     }
       include "login.php";
-      
   ?>
 
   <body id="bd" data-bs-theme="light">
 
   <?php include "dark.php"; ?>
 <div class="container-sm">
-aa
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Profesor</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo profesor</h6>
+    <p class="card-text">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+    <input type="hidden" name="modo" value="1">
+    <button type="button" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+  </div>
+</div>
+    <?php 
+    if($_SESSION["rol"]==1){
+        header("Location: profesores/profesor.php");
+    }elseif($_SESSION["rol"]==3){
+        echo <<<_END
+        
+        _END;
+    }
+    ?>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  <script src=dark.js></script>

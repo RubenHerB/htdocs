@@ -14,16 +14,13 @@ class login{
             break;
             case 1:
                 $usu="profesor";
-            break;
-            case 2:
-                $usu="profesor";
                 $pass="profesor";
             break;
-            case 3:
-                $usu="tutot";
-                $pass="tutot";
+            case 2:
+                $usu="tutor";
+                $pass="tutor";
             break;
-            case 4:
+            case 3:
                 $usu="adminisrativo";
                 $pass="adminisrativo";
             break;
