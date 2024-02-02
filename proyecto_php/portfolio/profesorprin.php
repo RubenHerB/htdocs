@@ -19,7 +19,8 @@
         }
 
     }
-      include "login.php";
+      
+
   ?>
 
   <body id="bd" data-bs-theme="light">
@@ -38,6 +39,11 @@
   </div>
 </div>
     <?php 
+    include "login.php";
+    $con=(new login)->log(1);
+    $query ="SELECT IdClase FROM clases WHERE IdTutor=";
+    $result = $con->query($query);
+    if (!$result) die("Fatal Error");
     if($_SESSION["rol"]==1){
         header("Location: profesores/profesor.php");
     }elseif($_SESSION["rol"]==3){
