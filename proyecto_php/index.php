@@ -104,7 +104,6 @@
 
   <body id="bd" data-bs-theme="light">
 
-  <?php include "portfolio/dark.php"; ?>
 
 
   <div class="container border border-secondary rounded align-middle" style="max-width: 574px;margin-top: 40px">
