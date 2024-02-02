@@ -31,10 +31,10 @@
                 break;
             case 2:
                 if(!$_SESSION["clase"]=$_POST["clase"]) die ("Error");                
-                header("Location: profesores/profesor.php");
+                header("Location: profesores/tutor.php");
                 break;
             case 3:
-                header("Location: profesores/profesor.php");
+                header("Location: profesores/equipo.php");
                 break;
             default:
                 die("Error");
