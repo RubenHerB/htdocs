@@ -43,17 +43,46 @@
 </div>
     <?php 
     
-    $query ="SELECT IdClase FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
+    $query ="SELECT IdClase,Codigo,Nombre,Year,Tipo FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
     if($_SESSION["rol"]==1){
         header("Location: profesores/profesor.php");
     }else{
+    if($result->num_rows>0){
+        foreach($result as $row){
+            echo <<<_END
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Tutor</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">
+            _END;
+            echo $row["Codigo"].".".$row["Year"];
+            echo <<<_END
+                    </h6>
+                    <p class="card-text">Esta funcion te permite iniciar sesion como tutor de la calse 
+            _END;
+            echo $row["Year"]."º de ".$row["Nombre"]." ".$row["tipo"];
+            echo <<<_END
+                    para ver,las incidencias de los alumnos de ese modulo.</p>
+                    <form action=' 
+            _END;
+            echo $_SERVER['PHP_SELF'];
+            echo <<<_END
+                    ' method="post">
+                    <input type="hidden" name="modo" value="1">
+                    <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                    </form>
+                </div>
+            </div>
+            _END;
+    }
     if($_SESSION["rol"]==3){
         echo <<<_END
         
         _END;
     }}
+}
     ?>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
