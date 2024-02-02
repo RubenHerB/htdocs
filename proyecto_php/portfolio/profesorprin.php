@@ -81,8 +81,7 @@
         }
     }elseif($_SESSION["rol"] ==1){
         header("Location: profesores/profesor.php");
-}
-    
+}    
     if($_SESSION["rol"]==3){
         echo <<<_END
         
