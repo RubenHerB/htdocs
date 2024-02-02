@@ -98,7 +98,24 @@
 }    
     if($_SESSION["rol"]==3){
         echo <<<_END
-        
+        <div class="row">
+        <div class="col-sm-6 col-lg-4 columna">
+        <div class="card h-100">
+        <h5 class="card-header">Equipo administrativo</h5>
+        <div class="card-body">    
+        <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo equipo administrativo</h6>
+        <p class="card-text">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
+        <form action=" 
+        _END;
+        echo $_SERVER['PHP_SELF'];
+        echo <<<_END
+        " method="post" class="text-center">
+        <input type="hidden" name="modo" value="1">
+        <button type="button" class="btn btn-primary ">Iniciar sesión</button>
+        </form>
+        </div>
+        </div>
+        </div>
         _END;
     }
 
