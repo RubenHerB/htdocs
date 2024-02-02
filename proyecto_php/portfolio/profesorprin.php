@@ -68,7 +68,7 @@
                     </h6>
                     <p class="card-text">Esta funcion te permite iniciar sesion como tutor de la calse 
             _END;
-            echo $row["Year"]."º de ".$row["Nombre"]." ".$row["tipo"];
+            echo $row["Year"]."º de ".$row["Nombre"]." ".$row["Tipo"];
             echo <<<_END
                     para ver,las incidencias de los alumnos de ese modulo.</p>
                     <form action=' 
