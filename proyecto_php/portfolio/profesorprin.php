@@ -16,10 +16,13 @@
         var_dump($_SESSION["tipo"]);
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
+        }else{
+            include "login.php";
+    $con=(new login)->log(1);
         }
 
     }
-      
+    
 
   ?>
 
@@ -39,18 +42,18 @@
   </div>
 </div>
     <?php 
-    include "login.php";
-    $con=(new login)->log(1);
+    
     $query ="SELECT IdClase FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
     if($_SESSION["rol"]==1){
         header("Location: profesores/profesor.php");
-    }elseif($_SESSION["rol"]==3){
+    }else{
+    if($_SESSION["rol"]==3){
         echo <<<_END
         
         _END;
-    }
+    }}
     ?>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
