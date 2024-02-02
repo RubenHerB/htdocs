@@ -1,7 +1,6 @@
 //Esta primera parte define el "boton" que se usa para seleccionar el modo oscuro como una cariable chckbox
-try {      
-var checkBox = document.getElementById('darkmode-toggle');
-}catch(e) {}
+      var checkBox = document.getElementById('darkmode-toggle');
+
 var theme = window.localStorage.getItem('data-bs-theme');
 if(theme) {document.getElementById('bd').setAttribute('dat-bs-theme', theme);}
 else{
@@ -9,8 +8,7 @@ else{
     window.localStorage.setItem('data-bs-theme', 'dark');
     theme="dark";
 }}
-try{
-checkBox.checked = (theme == 'dark' )? true : false;}catch(e) {}
+checkBox.checked = (theme == 'dark' )? true : false;
 if (theme == 'dark') document.getElementById('bd').setAttribute('data-bs-theme', 'dark');
 
 
