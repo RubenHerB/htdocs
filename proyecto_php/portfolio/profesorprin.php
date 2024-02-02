@@ -23,6 +23,24 @@
         }else{
             include "login.php";
     $con=(new login)->log(1);
+    if (isset($_POST["modo"])){
+        $_SESSION["rolnow"]=$_POST["modo"];
+        switch($_POST["modo"]){
+            case 1:
+                header("Location: profesores/profesor.php");
+                break;
+            case 2:
+                if(!$_SESSION["clase"]=$_POST["clase"]) die ("Error");                
+                header("Location: profesores/profesor.php");
+                break;
+            case 3:
+                header("Location: profesores/profesor.php");
+                break;
+            default:
+                die("Error");
+                break;  
+        }
+    }
         }
 
     }
@@ -110,7 +128,7 @@
         echo $_SERVER['PHP_SELF'];
         echo <<<_END
         " method="post" class="text-center">
-        <input type="hidden" name="modo" value="1">
+        <input type="hidden" name="modo" value="3">
         <button type="button" class="btn btn-primary ">Iniciar sesión</button>
         </form>
         </div>
