@@ -51,6 +51,7 @@
     </div>
 </div>
   </div>
+</div>
     <?php 
     include "login.php";
     $con=(new login)->log(1);
