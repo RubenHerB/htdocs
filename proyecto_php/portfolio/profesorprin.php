@@ -14,16 +14,14 @@
   </head>
 
   <?php
+  var_dump($_POST);
     session_start();
-    if(!isset($_SESSION) || $_SESSION==null){
+    if(!isset($_SESSION) || $_SESSION!=null){
         header("Location: ../index.php");
         var_dump($_SESSION["tipo"]);
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            var_dump($_POST);
-            
-
     if (isset($_POST["modo"])){
         $_SESSION["rolnow"]=$_POST["modo"];
         switch($_POST["modo"]){
@@ -65,7 +63,7 @@
     <p class="card-text">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="text-center">
     <input type="hidden" name="modo" value="1">
-    <button type="button" class="btn btn-primary ">Iniciar sesión</button>
+    <button type="submit" class="btn btn-primary ">Iniciar sesión</button>
     </form>
     </div>
 </div>
@@ -105,7 +103,7 @@
             echo $row["IdClase"];
             echo <<<_END
                     ">
-                    <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                     </form>
                 </div>
             </div>
@@ -130,7 +128,7 @@
         echo <<<_END
         " method="post" class="text-center">
         <input type="hidden" name="modo" value="3">
-        <button type="button" class="btn btn-primary ">Iniciar sesión</button>
+        <button type="submit" class="btn btn-primary ">Iniciar sesión</button>
         </form>
         </div>
         </div>
