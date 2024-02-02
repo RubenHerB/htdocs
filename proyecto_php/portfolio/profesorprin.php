@@ -41,7 +41,7 @@
     <?php 
     include "login.php";
     $con=(new login)->log(1);
-    $query ="SELECT IdClase FROM clases WHERE IdTutor=";
+    $query ="SELECT IdClase FROM clases WHERE IdTutor LIKE ".$_SESSION["id"];
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
     if($_SESSION["rol"]==1){
