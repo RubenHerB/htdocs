@@ -39,10 +39,10 @@
 <h5 class="card-header">Profesor</h5>
     <div class="card-body">    
     <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo profesor</h6>
-    <p class="card-text ">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="align-bottom">
+    <p class="card-text">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="text-center">
     <input type="hidden" name="modo" value="1">
-    <button type="button" class="btn btn-primary align-bottom">Iniciar sesión</button>
+    <button type="button" class="btn btn-primary ">Iniciar sesión</button>
     </form>
     </div>
 </div>
@@ -75,7 +75,7 @@
             _END;
             echo $_SERVER['PHP_SELF'];
             echo <<<_END
-                    ' method="post">
+                    ' method="post" class="text-center">
                     <input type="hidden" name="modo" value="2">
                     <input type="hidden" name="clase" value="
                 _END;
