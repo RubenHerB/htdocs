@@ -28,6 +28,6 @@ Route::get('segunda/nivel1',function () {
     return 'Estoy creando un nuevo nivel';
 });
 
-Route::get('tercera/{id}',function ($id) {
+Route::get('tercera/{id?}',function ($id=1) {
     return 'La tercera ruta recibe el numero '.$id;
 });
