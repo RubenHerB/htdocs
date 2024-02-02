@@ -39,7 +39,7 @@
 <h5 class="card-header">Profesor</h5>
     <div class="card-body">    
     <h6 class="card-subtitle mb-2 text-body-secondary">Inicia sesion en modo profesor</h6>
-    <p class="card-text">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
+    <p class="card-text ">Esta funcion te permite iniciar sesion para ver, registrar, editar o borrar tus incidencias de los modulos que impartes.</p>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="align-bottom">
     <input type="hidden" name="modo" value="1">
     <button type="button" class="btn btn-primary align-bottom">Iniciar sesión</button>
