@@ -36,3 +36,8 @@ Route::get('/', function()
 {
 return view('home', array('nombre' => 'Pedro','edad'=>32));
 });
+Route::get('/profile/{id}', function($id)
+{
+    $user= $id;
+return view('user.profile', array('user' => $user));
+});
