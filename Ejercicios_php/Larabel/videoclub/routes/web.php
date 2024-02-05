@@ -34,3 +34,6 @@ Route::get('catalog/create', function () {
 Route::get('catalog/edit/{id?}', function ($id=null) {
     return 'Modificar película '.$id    ;
 });
+Route::get('pelis', function () {
+    return view('peliculas') ;
+});
