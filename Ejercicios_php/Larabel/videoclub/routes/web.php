@@ -27,13 +27,10 @@ Route::get('catalog', function () {
 });
 Route::get('catalog/show/{id?}', function ($id=null) {
     return 'Vista detalle película '.$id;
-});
+})->where('id', '[0-9]+');
 Route::get('catalog/create', function () {
     return 'Añadir pelicula';
 });
 Route::get('catalog/edit/{id?}', function ($id=null) {
     return 'Modificar película '.$id    ;
-});
-Route::get('pelis', function () {
-    return view('peliculas') ;
-});
+})->where('id', '[0-9]+');
