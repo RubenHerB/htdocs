@@ -30,4 +30,4 @@ Route::get('segunda/nivel1',function () {
 
 Route::get('tercera/{id?}',function ($id=1) {
     return 'La tercera ruta recibe el numero '.$id;
-});
+})->where('id', '[0-9]+');
