@@ -25,12 +25,12 @@ Route::get('logout', function () {
 Route::get('catalog', function () {
     return 'Listado películas';
 });
-Route::get('catalog/show/{id}', function ($id=null) {
+Route::get('catalog/show/{id?}', function ($id=null) {
     return 'Vista detalle película '.$id;
 });
 Route::get('catalog/create', function () {
     return 'Añadir pelicula';
 });
-Route::get('catalog/edit/{id}', function ($id=null) {
+Route::get('catalog/edit/{id?}', function ($id=null) {
     return 'Modificar película '.$id    ;
 });
