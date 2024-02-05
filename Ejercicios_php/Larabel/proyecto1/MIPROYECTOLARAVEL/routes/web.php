@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('holamundo',function () {
     return view('miprimeravista');
@@ -31,3 +31,8 @@ Route::get('segunda/nivel1',function () {
 Route::get('tercera/{id?}',function ($id=1) {
     return 'La tercera ruta recibe el numero '.$id;
 })->where('id', '[0-9]+');
+
+Route::get('/', function()
+{
+return view('home', array('nombre' => 'Pedro'));
+});
