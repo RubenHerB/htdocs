@@ -34,5 +34,5 @@ Route::get('tercera/{id?}',function ($id=1) {
 
 Route::get('/', function()
 {
-return view('home', array('nombre' => 'Pedro'));
+return view('home', array('nombre' => 'Pedro','edad'=>32));
 });
