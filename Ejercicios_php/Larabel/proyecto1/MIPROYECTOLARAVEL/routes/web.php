@@ -41,3 +41,8 @@ Route::get('/profile/{id}', function($id)
     $user= $id;
 return view('user.profile', array('user' => $user));
 });
+
+Route::get('/colores/{id}', function($id)
+{
+return view('user.colores', array('n' => $id));
+})->where('id', '[1-4]');
