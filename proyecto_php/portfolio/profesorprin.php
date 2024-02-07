@@ -57,6 +57,7 @@
   
 <div class="container-sm">
 <h1 style="margin-top: 20px;">Panel de control</h1>
+<h3><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h3>
 <br>
 <div class="row">
   <div class="col-sm-6 col-lg-4 columna">
