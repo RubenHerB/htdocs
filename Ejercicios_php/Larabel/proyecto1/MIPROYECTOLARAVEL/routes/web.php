@@ -44,5 +44,5 @@ return view('user.profile', array('user' => $user));
 
 Route::get('/colores/{id}', function($id)
 {
-return view('user.colores', array('n' => $id));
+return view('user.colores', array('n' => $id,'color'=>[1=>'rojo',2=>'verde',3=>'azul',4=>'amarillo']));
 })->where('id', '[1-4]');
