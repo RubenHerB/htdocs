@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-$color=[1=>'rojo',2=>'verde',3=>'azul',4=>'amarillo'];
     echo $color[$n];
 ?>
 </body>
