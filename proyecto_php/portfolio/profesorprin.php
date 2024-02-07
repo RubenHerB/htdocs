@@ -88,8 +88,9 @@
                     
                     <h6 class="card-subtitle mb-2 text-body-secondary">
             _END;
-            echo $row["Codigo"].".".$row["Year"];
+            echo $row["Codigo"].".".$row["Year"]." - <span style=\"text-transform:uppercase\">".$row["Tipo"];
             echo <<<_END
+                    </span>
                     </h6>
                     <p class="card-text">Esta funcion te permite iniciar sesion como tutor de la calse 
             _END;
