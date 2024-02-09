@@ -10,10 +10,11 @@
 </head>
 <?php
   var_dump($_POST);
-    session_start();
+    session_start(); 
+    var_dump($_SESSION);   
     if(!isset($_SESSION)){
         header("Location: ../index.php");
-        var_dump($_SESSION);
+        
     }else{
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
