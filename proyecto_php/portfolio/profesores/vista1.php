@@ -60,19 +60,19 @@ if($nr==0){
         <li>
         <input class="form-check-input" type="checkbox" value="leve" id="leve" checked>
         <label class="form-check-label" for="flexCheckDefault">
-            Leve
+            Leves
         </label>
         </li>
         <li>
         <input class="form-check-input" type="checkbox" value="media" id="media" checked>
         <label class="form-check-label" for="flexCheckDefault">
-            Media
+            Medias
         </label>
         </li>
         <li>
         <input class="form-check-input" type="checkbox" value="grave" id="grave" checked>
         <label class="form-check-label" for="flexCheckDefault">
-            Grave
+            Graves
         </label>
         </li>
         <hr>
