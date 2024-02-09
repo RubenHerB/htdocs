@@ -5,13 +5,13 @@
 $filtroextra=$_POST["filtro"];
 session_start();
 $query="SELECT  Fecha.inci as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura, Observaciones.inci as Observaciones 
-FROM incidencias as inci 
-INNER JOIN alumno as al 
-INNER JOIN incidenciasbase as bas
-INNER JOIN incidencia as incib
-INNER JOIN asignaturas as asig
-INNER JOIN 'alumno-clase' as alc
-INNER JOIN clases as cla
+FROM incidencia as inci 
+FULL OUTER JOIN alumno as al 
+FULL OUTER JOIN incidenciasbase as bas
+FULL OUTER JOIN incidenciasbase as incib
+FULL OUTER JOIN asignaturas as asig
+FULL OUTER JOIN `alumno-clase` as alc
+FULL OUTER JOIN clases as cla
 WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.incib 
 AND IdAlumno.incib LIKE IdAlumno.al
 AND IdAlumno.al LIKE IdAlumno.alc
