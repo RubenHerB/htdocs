@@ -135,11 +135,12 @@ function filtro(){
     var inputva=[null];
     var c=0;
 for(var i = 0; i < inputs.length; i++) {
-    if(inputs[i].type == "checkbox" && inputs[i].checked == true) {
+    if(inputs[i].type == "checkbox") {
+        if(inputs[i].checked == true){
         inputva[c]=inputs[i].value;
-        c++;
+        c++;}else comp=false;
 }}
-    if(inputva[0]!=null){
+    if(!comp){
         filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
             filtasig=" OR IdAsignatura LIKE'"+inputva[i]+"'"
@@ -147,7 +148,7 @@ for(var i = 0; i < inputs.length; i++) {
     }
 
     var ret=filtgravedad;
-    if(ret!="" && filtasig!=""){
+    if(ret!="" && filtasig!="" && !comp){
         ret+=" AND ";
     }
     ret+= filtasig;
