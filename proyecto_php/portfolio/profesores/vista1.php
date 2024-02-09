@@ -132,10 +132,11 @@ function filtro(){
         filtgravedad+= " Tipo LIKE 'grave'";
         }
     }
-    var inputs = document.getElementsByTagName("input");
+    var inputs = document.getElementsByName("input");
     const inputva = new Array(1).fill(null);
     var c=0;
 for(var i = 0; i < inputs.length; i++) {
+    console.log(inputs[i].value);
     if(inputs[i].type == "checkbox") {
         if(inputs[i].checked == true){
         inputva[c]=inputs[i].value;
