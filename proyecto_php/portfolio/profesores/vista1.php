@@ -140,7 +140,7 @@ for(var i = 0; i < inputs.length; i++) {
         inputva[c]=inputs[i].value;
         c++;}else comp=false;
 }}
-    if(!comp){
+    if(comp){
         filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
             filtasig=" OR IdAsignatura LIKE'"+inputva[i]+"'"
@@ -148,7 +148,7 @@ for(var i = 0; i < inputs.length; i++) {
     }
 
     var ret=filtgravedad;
-    if(ret!="" && filtasig!="" && !comp){
+    if(ret!="" && filtasig!=""){
         ret+=" AND ";
     }
     ret+= filtasig;
