@@ -22,11 +22,16 @@
     <tbody>
 <?php
 
-$query="SELECT  Fecha.in as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara,  Observaciones.in as Observaciones 
+$query="SELECT  Fecha.in as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura  Observaciones.inci as Observaciones 
 FROM incidencias as in 
 INNER JOIN alumno as al 
 INNER JOIN incidenciasbase as bas
-INNER JOIN incidencia as in
+INNER JOIN incidencia as inci
+INNER JOIN asignaturas as asig
+INNER JOIN alumno-clase as alc
+INNER JOIN clases as cla
+WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.inci 
+AND 
 "
 
 
