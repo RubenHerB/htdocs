@@ -35,7 +35,7 @@ $result = $con->query($query);
 if (!$result) die("Fatal Error");
 if($result->num_rows==0){
     echo <<<_END
-    <div class="alert alert-secondary" role="alert">
+    <div class="alert alert-secondary" role="alert" style="margin-top:16px">
     No existe ninguna asignatura en la que enseñe
     </div>
     _END;
