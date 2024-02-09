@@ -109,12 +109,13 @@ if($nr==0){
 
 function filtro(){
     var leve=document.getElementById("leve");
+    return "Funciona";
 }
 
     function ajax(){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     var hr = new XMLHttpRequest();
-    http_request.overrideMimeType('text/xml');
+    hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
     var hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
