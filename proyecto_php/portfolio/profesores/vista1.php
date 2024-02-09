@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+<div class="container-sm">100% wide until small breakpoint</div>
 </body>
 <script type="text/javascript">
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
