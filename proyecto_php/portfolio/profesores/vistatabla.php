@@ -4,7 +4,7 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-$query="SELECT  Fecha.inci as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura, Observaciones.inci as Observaciones 
+$query="SELECT  inci.Fecha as Fecha, bas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, ini.Observaciones as Observaciones 
 FROM incidencia as inci 
 FULL OUTER JOIN alumno as al 
 FULL OUTER JOIN incidenciasbase as bas
