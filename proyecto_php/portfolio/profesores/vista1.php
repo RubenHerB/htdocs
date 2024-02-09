@@ -30,11 +30,15 @@
 <?php 
 include "../login.php";
 $con=(new login)->log(1);
-$query ="SELECT IdIncidencia FROM incidencia WHERE IdProfesor LIKE '".$_SESSION['id']."'";
+$query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
 $result = $con->query($query);
 if (!$result) die("Fatal Error");
 if($result->num_rows==0){
-
+    echo <<<_END
+    <div class="alert alert-secondary" role="alert">
+    No existe ninguna asignatura en la que enseñe
+    </div>
+    _END;
 }else{
     echo <<<_END
     <div class="dropdown">
@@ -49,9 +53,6 @@ if($result->num_rows==0){
             
     _END;
     // 
-    $query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
-    $result = $con->query($query);
-    if (!$result) die("Fatal Error");
     foreach($result as $row){
         $r=$row->fetch_array(MYSQLI_ASSOC);
         $id=$r['IdAsignatura'];
