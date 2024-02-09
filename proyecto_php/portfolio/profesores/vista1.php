@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="../../img/logo.png">
     <style>
-        li{padding: 2px 5px;
+        li{padding: 2px 10px;
         }
     </style>
 </head>
@@ -54,7 +54,25 @@ if($nr==0){
     
         </button>        
         <ul class="dropdown-menu">
-            
+        <li>
+        <input class="form-check-input" type="checkbox" value="leve" id="leve" checked>
+        <label class="form-check-label" for="flexCheckDefault">
+            Leve
+        </label>
+        </li>
+        <li>
+        <input class="form-check-input" type="checkbox" value="media" id="media" checked>
+        <label class="form-check-label" for="flexCheckDefault">
+            Media
+        </label>
+        </li>
+        <li>
+        <input class="form-check-input" type="checkbox" value="grave" id="grave" checked>
+        <label class="form-check-label" for="flexCheckDefault">
+            Grave
+        </label>
+        </li>
+        <hr>
             
     _END;
     for($i=0;$i<$nr;$i++){
@@ -72,25 +90,6 @@ if($nr==0){
     }
 }
 ?>
-<hr>
-    <li>
-    <input class="form-check-input" type="checkbox" value="leve" id="leve" checked>
-    <label class="form-check-label" for="flexCheckDefault">
-        Leve
-    </label>
-    </li>
-    <li>
-    <input class="form-check-input" type="checkbox" value="media" id="media" checked>
-    <label class="form-check-label" for="flexCheckDefault">
-        Media
-    </label>
-    </li>
-    <li>
-    <input class="form-check-input" type="checkbox" value="grave" id="grave" checked>
-    <label class="form-check-label" for="flexCheckDefault">
-        Grave
-    </label>
-    </li>
 </ul></div>
 </div>
 </body>
