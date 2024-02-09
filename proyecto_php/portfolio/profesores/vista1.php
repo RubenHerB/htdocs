@@ -110,6 +110,7 @@ if($nr==0){
 function filtro(){
     var filtgravedad="";
     var filtasig="";
+    var compasig=true;
     var leve=document.getElementById("leve").checked;
     var media=document.getElementById("media").checked;
     var grave=document.getElementById("grave").checked;
