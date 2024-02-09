@@ -6,15 +6,24 @@ $filtroextra=$_POST["filtro"];
 session_start();
 $query="SELECT  inci.Fecha as Fecha, bas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, ini.Observaciones as Observaciones 
 FROM incidencia as inci 
+
 FULL OUTER JOIN alumno as al 
-FULL OUTER JOIN incidenciasbase as bas
+ON IdAlumno.incib=al.IdAlumno
+
+
 FULL OUTER JOIN incidenciasbase as incib
+bas.IdIncidenciaBase = incib.TipoIncidencia
+
 FULL OUTER JOIN asignaturas as asig
+
+
 FULL OUTER JOIN `alumno-clase` as alc
+on al.IdAlumno = alc.IdAlumno
+
 FULL OUTER JOIN clases as cla
-WHERE bas.IdIncidenciaBase LIKE incib.TipoIncidencia
-AND IdAlumno.incib LIKE al.IdAlumno
-AND al.IdAlumno LIKE alc.IdAlumno
+
+
+
 AND alc.IdClase LIKE cla.IdClase
 AND cla.IdClase LIKE asig.IdClase
 AND inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
