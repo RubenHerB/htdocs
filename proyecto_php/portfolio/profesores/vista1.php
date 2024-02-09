@@ -128,6 +128,7 @@ hr.onreadystatechange = function(){
     }
 };
 hr.open("POST","vistatabla.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("filtro="+filtro());
 }
 

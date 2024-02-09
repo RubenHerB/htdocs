@@ -1,5 +1,5 @@
 <?php
 
-$filtro=$post['tiltro'];
+$filtro=$_POST['filtro'];
 echo $filtro;
 ?>
