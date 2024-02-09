@@ -113,10 +113,12 @@ if($nr==0){
 } else if (window.ActiveXObject) { // IE
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
-    }
-    function load(){
+    
 http_request.onreadystatechange = function(){
-    hr.open("POST", "filtro="+filtro(),"vistatabla.php");
-};}
+    
+};
+hr.open("POST", "filtro="+filtro(),"vistatabla.php");
+}
+
 </script>
 </html>
