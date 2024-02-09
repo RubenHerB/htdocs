@@ -145,9 +145,10 @@ for(var i = 0; i < inputs.length; i++) {
         console.log(compasig);
 }}
     if(!compasig){
-        filtasig=" IdAsignatura LIKE'"+inputva[0]+"'"
+        filtasig=" IdAsignatura LIKE "+inputva[0];
         for (var j = 1; j < inputs.length; j++){
-            filtasig=" OR IdAsignatura LIKE "+inputva[j]
+            console.log(filtasig);
+            filtasig+=" OR IdAsignatura LIKE "+inputva[j]
         }
     }
 
