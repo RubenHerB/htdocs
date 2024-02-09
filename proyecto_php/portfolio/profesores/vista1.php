@@ -133,6 +133,7 @@ function filtro(){
         }
     }
     var inputs = document.getElementsByTagName("input");
+    const inputva[0]="";
     var c=0;
 for(var i = 0; i < inputs.length; i++) {
     if(inputs[i].type == "checkbox") {
