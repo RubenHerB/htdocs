@@ -53,17 +53,20 @@ $query="SELECT * FROM incidencia WHERE IdProfesor LIKE '".$_SESSION['id']."'";
     <tbody>";
     if($_SESSION['rolnow']==1){
         foreach($result as $row){
+            echo "<tr>";
             foreach($row as $r){
-                echo "<tr>$r</tr>";
+                echo "<td>$r</td>";
             }
-            echo "<button>
-            </button>";
-        }
+            echo "<td><button>
+            </button></td></tr>";
+    }
     }else{
         foreach($result as $row){
+            echo "<tr>";
             foreach($row as $r){
-                echo "<tr>$r</tr>";
+                echo "<td>$r</td>";
             }
+            echo "</tr>";
         }
         }
 
