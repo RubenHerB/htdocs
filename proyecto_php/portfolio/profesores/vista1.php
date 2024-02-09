@@ -113,7 +113,7 @@ if($nr==0){
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 http_request.onreadystatechange = function(){
-    hr.open("POST", filtro(),)
+    hr.open("POST", "filtro="+filtro(),"vistatabla.php");
 };
 </script>
 </html>
