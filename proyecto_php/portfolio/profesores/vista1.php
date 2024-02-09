@@ -70,9 +70,28 @@ if($nr==0){
         </label></li>
         _END;
     }
-    echo"</ul></div>";
 }
 ?>
+<hr>
+    <li>
+    <input class="form-check-input" type="checkbox" value="leve" id="leve" checked>
+    <label class="form-check-label" for="flexCheckDefault">
+        Leve
+    </label>
+    </li>
+    <li>
+    <input class="form-check-input" type="checkbox" value="media" id="media" checked>
+    <label class="form-check-label" for="flexCheckDefault">
+        Media
+    </label>
+    </li>
+    <li>
+    <input class="form-check-input" type="checkbox" value="grave" id="grave" checked>
+    <label class="form-check-label" for="flexCheckDefault">
+        Grave
+    </label>
+    </li>
+</ul></div>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
