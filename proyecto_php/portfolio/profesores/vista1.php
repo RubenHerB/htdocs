@@ -158,7 +158,9 @@ for(var i = 0; i < inputs.length; i++) {
     if(ret!="" && filtasig!=""){
         ret+=" AND ";
     }
-    ret+= filtasig;
+    if(filtasig!=""){
+    ret+= "("+filtasig+")";
+}
     if(ret!=""){
         ret= " AND "+ret;
     }
