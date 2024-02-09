@@ -29,8 +29,11 @@
     }
 ?>
 <body id="bd" data-bs-theme="light">
+    
 <?php include "../dark.php"; ?>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
+<h3 style="margin-top: 20px;">Incidencias</h3>
+<h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 <?php 
 include "../login.php";
 $con=(new login)->log(1);
@@ -89,6 +92,8 @@ if($nr==0){
         </ul></div>
         _END;
     }
+
+
 }
 ?>
 
