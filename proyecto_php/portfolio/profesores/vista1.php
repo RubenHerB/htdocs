@@ -13,7 +13,7 @@
     session_start();
     if(!isset($_SESSION)){
         header("Location: ../index.php");
-        var_dump($_SESSION["tipo"]);
+        var_dump($_SESSION);
     }else{
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
