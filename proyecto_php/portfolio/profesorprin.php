@@ -30,7 +30,7 @@
         var_dump($modo);
         switch($modo){
             case 1:
-                header("Location: profesores/profesor.php");
+                header("Location: profesores/vista1.php");
                 break;
             case 2:
                 if(!$_SESSION["clase"]=$_POST["clase"]) die ("Error");                
@@ -117,7 +117,7 @@
             _END;
         }
     }elseif($_SESSION["rol"] ==1){
-        header("Location: profesores/profesor.php");
+        header("Location: profesores/vista1.php");
 }    
     if($_SESSION["rol"]==3){
         echo <<<_END
