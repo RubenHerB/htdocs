@@ -110,7 +110,6 @@ if($nr==0){
 function filtro(){
     var filtgravedad="";
     var filtasig="";
-    var filtasigcomp=false;
     var leve=document.getElementById("leve").checked;
     var media=document.getElementById("media").checked;
     var grave=document.getElementById("grave").checked;
@@ -132,20 +131,27 @@ function filtro(){
         }
     }
     var inputs = document.getElementsByTagName("input");
-
+    var inputva=[null];
+    var c=0;
 for(var i = 0; i < inputs.length; i++) {
-    if(inputs[i].type == "checkbox") {
-        inputs[i].checked = true; 
-        inputva[i]=inputs[i].value;
-    }else{
-        filtasigcomp=true;
+    if(inputs[i].type == "checkbox" && inputs[i].checked == true) {
+        inputva[c]=inputs[i].value;
+        c++;
+}}
+    if(inputva[0]!=null){
+        filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
+        for (var j = 1; j < inputs.length; j++){
+            filtasig=" OR IdAsignatura LIKE'"+inputva[i]+"'"
+        }
     }
-}
 
+    var ret=filtgravedad;
+    if(ret!="" && filtasig!=""){
+        ret+=" AND ";
+    }
+    ret+= filtasig;
 
-
-
-    return "Funciona";
+    return ret;
 }
 var hr;
     function ajax(){
@@ -156,7 +162,8 @@ var hr;
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 load();
-    }
+}
+
     function load(){
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
@@ -165,7 +172,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistatabla.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("filtro=");
+hr.send("filtro="+filtro());
 }
 
 
