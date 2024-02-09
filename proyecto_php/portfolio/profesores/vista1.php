@@ -133,7 +133,7 @@ function filtro(){
         }
     }
     var inputs = document.getElementsByTagName("input");
-    var inputva=[null];
+    var inputva;
     var c=0;
 for(var i = 0; i < inputs.length; i++) {
     if(inputs[i].type == "checkbox") {
@@ -141,10 +141,10 @@ for(var i = 0; i < inputs.length; i++) {
         inputva[c]=inputs[i].value;
         c++;}else comp=false;
 }}
-    if(comp){
+    if(!comp){
         filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
-            filtasig=" OR IdAsignatura LIKE'"+inputva[i]+"'"
+            filtasig=" OR IdAsignatura LIKE' "+inputva[j]+"'"
         }
     }
 
@@ -153,7 +153,9 @@ for(var i = 0; i < inputs.length; i++) {
         ret+=" AND ";
     }
     ret+= filtasig;
-
+    if(ret!=""){
+        ret= "WHERE "+ret;
+    }
     return ret;
 }
 var hr;
