@@ -48,7 +48,13 @@ if($result->num_rows==0){
             
             
     _END;
-    
+    // <li><a class="dropdown-item" href="#">Action</a></li>
+    $query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
+    $result = $con->query($query);
+    if (!$result) die("Fatal Error");
+    foreach($result as $row){
+        $r=$row->fetch_array(MYSQLI_ASSOC);
+    }
     echo"</ul></div>";
 }
 ?>
