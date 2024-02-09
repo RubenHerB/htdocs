@@ -4,20 +4,20 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-$query="SELECT  Fecha.in as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura  Observaciones.inci as Observaciones 
-FROM incidencias as in 
+$query="SELECT  Fecha.inci as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura, Observaciones.inci as Observaciones 
+FROM incidencias as inci 
 INNER JOIN alumno as al 
 INNER JOIN incidenciasbase as bas
-INNER JOIN incidencia as inci
+INNER JOIN incidencia as incib
 INNER JOIN asignaturas as asig
-INNER JOIN alumno-clase as alc
+INNER JOIN 'alumno-clase' as alc
 INNER JOIN clases as cla
-WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.inci 
-AND IdAlumno.inci LIKE IdAlumno.al
+WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.incib 
+AND IdAlumno.incib LIKE IdAlumno.al
 AND IdAlumno.al LIKE IdAlumno.alc
 AND IdClase.alc LIKE IdClase.cla
 AND IdClase.cla LIKE IdClase.asig
-AND IdProfesor.in LIKE '".$_SESSION['id']."' $filtroextra
+AND IdProfesor.inci LIKE '".$_SESSION['id']."' $filtroextra
 ";
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
