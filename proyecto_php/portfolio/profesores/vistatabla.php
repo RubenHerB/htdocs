@@ -4,28 +4,26 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-// $query="SELECT  inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, inci.Observaciones as Observaciones 
-// FROM incidencia as inci 
+$query="SELECT  inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, inci.Observaciones as Observaciones 
+FROM incidencia as inci 
 
-// INNER JOIN alumno as al 
-// ON inci.IdAlumno=al.IdAlumno
+INNER JOIN alumno as al 
+ON inci.IdAlumno=al.IdAlumno
 
 
-// INNER JOIN incidenciasbase as incibas
-// ON incibas.IdIncidenciaBase = inci.TipoIncidencia
+INNER JOIN incidenciasbase as incibas
+ON incibas.IdIncidenciaBase = inci.TipoIncidencia
 
-// INNER JOIN `alumno-clase` as alc
-// on al.IdAlumno = alc.IdAlumno
+INNER JOIN `alumno-clase` as alc
+on al.IdAlumno = alc.IdAlumno
 
-// INNER JOIN clases as cla
-// ON alc.IdClase = cla.IdClase
+INNER JOIN clases as cla
+ON alc.IdClase = cla.IdClase
 
-// INNER JOIN asignaturas as asig
-// ON cla.IdClase LIKE asig.IdClase
+INNER JOIN asignaturas as asig
+ON cla.IdClase LIKE asig.IdClase
 
-// WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
-// ";
-$query="SELECT * FROM incidencia WHERE IdProfesor LIKE '".$_SESSION['id']."'";
+WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
     $result = $con->query($query);
