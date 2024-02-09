@@ -9,9 +9,7 @@
     <link rel="icon" type="image/x-icon" href="../../img/logo.png">
 </head>
 <?php
-  var_dump($_POST);
     session_start(); 
-    var_dump($_SESSION);   
     if(!isset($_SESSION)){
         header("Location: ../index.php");
         
@@ -25,14 +23,31 @@
         }
 
     }
-    
-
-  ?>
+?>
 <body id="bd" data-bs-theme="light">
 <?php include "../dark.php"; ?>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
 <?php 
+include "../login.php";
+$con=(new login)->log(1);
+$query ="SELECT IdIncidencia FROM incidencia WHERE IdProfesor LIKE '".$_SESSION['id']."'";
+$result = $con->query($query);
+if (!$result) die("Fatal Error");
+if($result->num_rows==0){
 
+}else{
+    echo <<<_END
+    <div class="dropdown">        
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+        </button>        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
+    _END;
+}
 ?>
 </div>
 </body>
