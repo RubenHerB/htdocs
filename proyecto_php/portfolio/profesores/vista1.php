@@ -144,7 +144,7 @@ for(var i = 0; i < inputs.length; i++) {
     if(!comp){
         filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
-            filtasig=" OR IdAsignatura LIKE' "+inputva[j]+"'"
+            filtasig=" OR IdAsignatura LIKE "+inputva[j]
         }
     }
 
