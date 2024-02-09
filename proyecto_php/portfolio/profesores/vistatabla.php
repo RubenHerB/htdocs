@@ -4,15 +4,15 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-$query="SELECT  inci.Fecha as Fecha, incib.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, ini.Observaciones as Observaciones 
+$query="SELECT  inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, inci.Observaciones as Observaciones 
 FROM incidencia as inci 
 
 FULL OUTER JOIN alumno as al 
 ON inci.IdAlumno=al.IdAlumno
 
 
-FULL OUTER JOIN incidenciasbase as incib
-incib.IdIncidenciaBase = inci.TipoIncidencia
+FULL OUTER JOIN incidenciasbase as incibas
+ON incibas.IdIncidenciaBase = inci.TipoIncidencia
 
 FULL OUTER JOIN asignaturas as asig
 ON cla.IdClase LIKE asig.IdClase
