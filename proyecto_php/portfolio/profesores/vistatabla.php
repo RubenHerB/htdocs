@@ -3,7 +3,7 @@
     
 <?php
 $filtroextra=$_POST["filtro"];
-
+session_start();
 $query="SELECT  Fecha.in as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura  Observaciones.inci as Observaciones 
 FROM incidencias as in 
 INNER JOIN alumno as al 
@@ -37,8 +37,6 @@ AND IdProfesor.in LIKE '".$_SESSION['id']."' $filtroextra
         <th>Incidencia</th>
         <th>Observaciones</th>
         _END;
-
-        session_start();
         if($rolnow==1){
             echo "<th>Gestion</th>";
         }
