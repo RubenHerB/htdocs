@@ -48,12 +48,21 @@ if($result->num_rows==0){
             
             
     _END;
-    // <li><a class="dropdown-item" href="#">Action</a></li>
+    // 
     $query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
     foreach($result as $row){
         $r=$row->fetch_array(MYSQLI_ASSOC);
+        $id=$r['IdAsignatura'];
+        $nom=$r['Nombre'];
+        $dep=$r['Departamento'];
+        echo <<<_END
+        <li><input class="form-check-input" type="checkbox" value="$id" id="$id" checked>
+        <label class="form-check-label" for="flexCheckDefault">
+        $dep - $nom
+        </label></li>
+        _END;
     }
     echo"</ul></div>";
 }
