@@ -21,6 +21,7 @@
     </thead>
     <tbody>
 <?php
+$filtroextra=$_POST["filtro"];
 
 $query="SELECT  Fecha.in as Fecha, Tipo.bas as Gravedad, Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso, Year.cla as Yeara, Nombre.asig as Asignatura  Observaciones.inci as Observaciones 
 FROM incidencias as in 
@@ -31,9 +32,14 @@ INNER JOIN asignaturas as asig
 INNER JOIN alumno-clase as alc
 INNER JOIN clases as cla
 WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.inci 
-AND 
-"
-
+AND IdAlumno.inci LIKE IdAlumno.al
+AND IdAlumno.al LIKE IdAlumno.alc
+AND IdClase.alc LIKE IdClase.cla
+AND IdClase.cla LIKE IdClase.asig
+AND IdProfesor.in LIKE '".$_SESSION['id']."' $filtroextra
+";
+    include "../login.php";
+    $con=(new login)->log($_SESSION['rolnow']);
 
 
 ?>
