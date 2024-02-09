@@ -152,13 +152,15 @@ for(var i = 0; i < inputs.length; i++) {
         }
     }
 
-    var ret=filtgravedad;
+    var ret="";
+    if(filtgravedad!=""){
+    ret="("+filtgravedad+")";}
     if(ret!="" && filtasig!=""){
         ret+=" AND ";
     }
     ret+= filtasig;
     if(ret!=""){
-        ret= "WHERE "+ret;
+        ret= " AND "+ret;
     }
     return ret;
 }
