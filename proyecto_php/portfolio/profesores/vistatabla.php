@@ -7,21 +7,21 @@ session_start();
 $query="SELECT  inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, inci.Observaciones as Observaciones 
 FROM incidencia as inci 
 
-FULL OUTER JOIN alumno as al 
+INNER JOIN alumno as al 
 ON inci.IdAlumno=al.IdAlumno
 
 
-FULL OUTER JOIN incidenciasbase as incibas
+INNER JOIN incidenciasbase as incibas
 ON incibas.IdIncidenciaBase = inci.TipoIncidencia
 
-FULL OUTER JOIN asignaturas as asig
-ON cla.IdClase LIKE asig.IdClase
-
-FULL OUTER JOIN `alumno-clase` as alc
+INNER JOIN `alumno-clase` as alc
 on al.IdAlumno = alc.IdAlumno
 
-FULL OUTER JOIN clases as cla
+INNER JOIN clases as cla
 ON alc.IdClase = cla.IdClase
+
+INNER JOIN asignaturas as asig
+ON cla.IdClase LIKE asig.IdClase
 
 WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
 ";
