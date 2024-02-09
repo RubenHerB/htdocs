@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../../css/dark-mode.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="../../img/logo.png">
+    <style>
+        li{padding: 2 5px;
+        }
+    </style>
 </head>
 <?php
     session_start(); 
@@ -33,7 +37,8 @@ $con=(new login)->log(1);
 $query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
 $result = $con->query($query);
 if (!$result) die("Fatal Error");
-if($result->num_rows==0){
+$nr=$result->num_rows;
+if($nr==0){
     echo <<<_END
     <div class="alert alert-secondary" role="alert" style="margin-top:16px">
     No existe ninguna asignatura en la que enseñe
@@ -52,9 +57,9 @@ if($result->num_rows==0){
             
             
     _END;
-    // 
-    foreach($result as $row){
-        $r=$row->fetch_array(MYSQLI_ASSOC);
+    for($i=0;$i<$nr;$i++){
+        $result->data_seek($i);
+        $r=$result->fetch_array(MYSQLI_ASSOC);
         $id=$r['IdAsignatura'];
         $nom=$r['Nombre'];
         $dep=$r['Departamento'];
