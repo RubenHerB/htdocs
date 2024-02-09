@@ -113,9 +113,12 @@ if($nr==0){
 } else if (window.ActiveXObject) { // IE
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
-    
-http_request.onreadystatechange = function(){
-    
+    }
+    function load(){
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        console.log(this.responseText);
+    }
 };
 hr.open("POST", "filtro="+filtro(),"vistatabla.php");
 }
