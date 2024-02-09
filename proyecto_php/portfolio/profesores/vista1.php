@@ -127,8 +127,8 @@ hr.onreadystatechange = function(){
         document.getElementById("tabla").innerHTML=this.responseText;
     }
 };
-hr.open("POST", "filtro="+filtro(),"vistatabla.php");
-hr.send();
+hr.open("POST","vistatabla.php");
+hr.send("filtro="+filtro());
 }
 
 
