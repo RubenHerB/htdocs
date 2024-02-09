@@ -91,7 +91,7 @@ if($nr==0){
         </label></li>
         <hr>
         <li>
-        <button class="btn btn-primary type="button">Filtrar</button>
+        <button class="btn btn-primary type="button" onclick="ajax()">Filtrar</button>
         </li>
         </ul></div>
         _END;
@@ -118,6 +118,7 @@ function filtro(){
 } else if (window.ActiveXObject) { // IE
     var hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
+load();
     }
     function load(){
 hr.onreadystatechange = function(){
