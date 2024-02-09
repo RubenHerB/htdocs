@@ -12,12 +12,12 @@ FULL OUTER JOIN incidenciasbase as incib
 FULL OUTER JOIN asignaturas as asig
 FULL OUTER JOIN `alumno-clase` as alc
 FULL OUTER JOIN clases as cla
-WHERE IdIncidenciaBase.bas LIKE TipoIncidencia.incib 
-AND IdAlumno.incib LIKE IdAlumno.al
-AND IdAlumno.al LIKE IdAlumno.alc
-AND IdClase.alc LIKE IdClase.cla
-AND IdClase.cla LIKE IdClase.asig
-AND IdProfesor.inci LIKE '".$_SESSION['id']."' $filtroextra
+WHERE bas.IdIncidenciaBase LIKE incib.TipoIncidencia
+AND IdAlumno.incib LIKE al.IdAlumno
+AND al.IdAlumno LIKE alc.IdAlumno
+AND alc.IdClase LIKE cla.IdClase
+AND cla.IdClase LIKE asig.IdClase
+AND inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
 ";
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
