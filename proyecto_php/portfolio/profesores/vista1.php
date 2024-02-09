@@ -110,6 +110,7 @@ if($nr==0){
 function filtro(){
     var filtgravedad="";
     var filtasig="";
+    var filtasigcomp=false;
     var leve=document.getElementById("leve").checked;
     var media=document.getElementById("media").checked;
     var grave=document.getElementById("grave").checked;
@@ -130,10 +131,20 @@ function filtro(){
         filtgravedad+= " Tipo LIKE 'grave'";
         }
     }
-    var inputs = document.querySelectorAll("input[type='checkbox']:not(.");
+    var inputs = document.getElementsByTagName("input");
+
 for(var i = 0; i < inputs.length; i++) {
-    inputs[i].checked = true;   
+    if(inputs[i].type == "checkbox") {
+        inputs[i].checked = true; 
+        inputva[i]=inputs[i].value;
+    }else{
+        filtasigcomp=true;
+    }
 }
+
+
+
+
     return "Funciona";
 }
 var hr;
