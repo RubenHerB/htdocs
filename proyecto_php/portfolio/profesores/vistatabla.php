@@ -1,4 +1,6 @@
-<table class="table">
+
+<table class="table table-striped">
+    <thead>
     <tr>
         <th>Fecha</th>
         <th>Gravedad</th>
@@ -8,10 +10,13 @@
         <th>Incidencia</th>
         <th>Observaciones</th>
     </tr>
+    </thead>
+    <tbody>
 <?php
 $query="SELECT Nombre.al as Nombre, Apellidos.al as Apellidos, Nombre.cla as Curso Year.cla as Year  Fecha.in as Fecha, Observaciones.in as Observaciones FROM incidencias as in INNER JOIN alumno as al"
 
 
 
 ?>
+    </tbody>
 </table>
