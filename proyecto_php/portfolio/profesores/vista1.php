@@ -50,7 +50,7 @@ if($nr==0){
 }else{
     echo <<<_END
     <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <button class="btn btn-primary dropdown-toggle tipo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g>
     <polygon points="0,0 0,128 201.143,329.143 201.143,512 310.857,475.429 310.857,329.143 512,128 512,0"/>
     </g></g></svg>
@@ -58,13 +58,13 @@ if($nr==0){
         </button>        
         <ul class="dropdown-menu">
         <li>
-        <input class="form-check-input" type="checkbox" value="leve" id="leve" checked>
+        <input class="form-check-input tipo" type="checkbox" value="leve" id="leve" checked>
         <label class="form-check-label" for="flexCheckDefault">
             Leves
         </label>
         </li>
         <li>
-        <input class="form-check-input" type="checkbox" value="media" id="media" checked>
+        <input class="form-check-input tipo" type="checkbox" value="media" id="media" checked>
         <label class="form-check-label" for="flexCheckDefault">
             Medias
         </label>
@@ -106,6 +106,11 @@ if($nr==0){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  <script src=../dark.js></script>
 <script type="text/javascript">
+
+function filtro(){
+    document.getElementById("
+}
+
     function ajax(){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
@@ -122,6 +127,8 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST", "filtro="+filtro(),"vistatabla.php");
 }
+
+
 
 </script>
 </html>
