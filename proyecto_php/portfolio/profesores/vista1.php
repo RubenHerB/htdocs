@@ -132,7 +132,7 @@ function filtro(){
         filtgravedad+= " Tipo LIKE 'grave'";
         }
     }
-    var inputs = document.getElementsByName("input");
+    var inputs = document.getElementsByName("asignatura");
     const inputva = new Array(1).fill(null);
     var c=0;
 for(var i = 0; i < inputs.length; i++) {
@@ -140,9 +140,9 @@ for(var i = 0; i < inputs.length; i++) {
     if(inputs[i].type == "checkbox") {
         if(inputs[i].checked == true){
         inputva[c]=inputs[i].value;
-        c++;}else comp=false;
+        c++;}else compasig=false;
 }}
-    if(!comp){
+    if(!compasig){
         filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
             filtasig=" OR IdAsignatura LIKE "+inputva[j]
