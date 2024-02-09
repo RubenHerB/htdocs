@@ -140,11 +140,12 @@ for(var i = 0; i < inputs.length; i++) {
         if(inputs[i].checked == true){
             console.log(inputs[i].value);
         inputva[c]=inputs[i].value;
-        c++;}else compasig=false;
-        console.log(inputsva);
+        c++;}else {compasig=false;}
+        console.log(inputva);
+        console.log(compasig);
 }}
     if(!compasig){
-        filtasig="IdAsignatura LIKE'"+inputva[0]+"'"
+        filtasig=" IdAsignatura LIKE'"+inputva[0]+"'"
         for (var j = 1; j < inputs.length; j++){
             filtasig=" OR IdAsignatura LIKE "+inputva[j]
         }
