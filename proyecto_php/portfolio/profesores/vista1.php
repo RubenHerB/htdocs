@@ -85,7 +85,7 @@ if($nr==0){
         $nom=$r['Nombre'];
         $dep=$r['Departamento'];
         echo <<<_END
-        <li><input class="form-check-input" type="checkbox" value="$id" id="$id" checked>
+        <li><input class="form-check-input" type="checkbox" name="asignatura" value="$id" id="$id" checked>
         <label class="form-check-label" for="flexCheckDefault">
         $dep - $nom
         </label></li>
@@ -117,7 +117,23 @@ function filtro(){
         if(leve){
             filtgravedad="Tipo LIKE 'leve'";
         }
+        if(media){
+            if(leve){
+                filtgravedad+=" or";
+            }
+            filtgravedad+= " Tipo LIKE 'media'";
+        }
+        if(grave){
+        if(leve || media){
+            filtgravedad+=" or";
+        }
+        filtgravedad+= " Tipo LIKE 'grave'";
+        }
     }
+    var inputs = document.querySelectorAll("input[type='checkbox']:not(.");
+for(var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = true;   
+}
     return "Funciona";
 }
 var hr;
