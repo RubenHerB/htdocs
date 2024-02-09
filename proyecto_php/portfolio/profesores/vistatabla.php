@@ -8,25 +8,22 @@ $query="SELECT  inci.Fecha as Fecha, bas.Tipo as Gravedad, al.Nombre as Nombre, 
 FROM incidencia as inci 
 
 FULL OUTER JOIN alumno as al 
-ON IdAlumno.incib=al.IdAlumno
+ON incib.IdAlumno=al.IdAlumno
 
 
 FULL OUTER JOIN incidenciasbase as incib
 bas.IdIncidenciaBase = incib.TipoIncidencia
 
 FULL OUTER JOIN asignaturas as asig
-
+ON cla.IdClase LIKE asig.IdClase
 
 FULL OUTER JOIN `alumno-clase` as alc
 on al.IdAlumno = alc.IdAlumno
 
 FULL OUTER JOIN clases as cla
+ON alc.IdClase = cla.IdClase
 
-
-
-AND alc.IdClase LIKE cla.IdClase
-AND cla.IdClase LIKE asig.IdClase
-AND inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
+WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra
 ";
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
