@@ -100,7 +100,7 @@ if($nr==0){
 
 }
 ?>
-
+<div id=tabla></div>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -111,20 +111,20 @@ function filtro(){
     var leve=document.getElementById("leve");
     return "Funciona";
 }
-
+var hr;
     function ajax(){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    var hr = new XMLHttpRequest();
+    hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
-    var hr = new ActiveXObject("Microsoft.XMLHTTP");
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 load();
     }
     function load(){
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
+        document.getElementById("tabla").innerHTML=this.responseText;
     }
 };
 hr.open("POST", "filtro="+filtro(),"vistatabla.php");
