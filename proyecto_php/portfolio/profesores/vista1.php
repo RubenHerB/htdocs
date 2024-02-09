@@ -89,6 +89,10 @@ if($nr==0){
         <label class="form-check-label" for="flexCheckDefault">
         $dep - $nom
         </label></li>
+        <hr>
+        <li>
+        <button class="btn btn-primary type="button">Filtrar</button>
+        </li>
         </ul></div>
         _END;
     }
@@ -109,7 +113,7 @@ if($nr==0){
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 http_request.onreadystatechange = function(){
-    // procesar la respuesta
+    hr.open("POST", filtro(),)
 };
 </script>
 </html>
