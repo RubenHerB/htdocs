@@ -58,19 +58,19 @@ if($nr==0){
         </button>        
         <ul class="dropdown-menu">
         <li>
-        <input class="form-check-input tipo" type="checkbox" value="true" id="leve" checked>
+        <input class="form-check-input tipo" type="checkbox" value="leve" id="leve" checked>
         <label class="form-check-label" for="flexCheckDefault">
             Leves
         </label>
         </li>
         <li>
-        <input class="form-check-input tipo" type="checkbox" value="true" id="media" checked>
+        <input class="form-check-input tipo" type="checkbox" value="media" id="media" checked>
         <label class="form-check-label" for="flexCheckDefault">
             Medias
         </label>
         </li>
         <li>
-        <input class="form-check-input" type="checkbox" value="true" id="grave" checked>
+        <input class="form-check-input" type="checkbox" value="grave" id="grave" checked>
         <label class="form-check-label" for="flexCheckDefault">
             Graves
         </label>
@@ -110,15 +110,15 @@ if($nr==0){
 function filtro(){
     var filtgravedad="";
     var filtasig="";
-    var leve=document.getElementById("leve").value;
-    var media=document.getElementById("media").value;
-    var grave=document.getElementById("grave").value;
+    var leve=document.getElementById("leve").checked;
+    var media=document.getElementById("media").checked;
+    var grave=document.getElementById("grave").checked;
     if(!(leve && media && grave)){
         if(leve){
-
+            filtgravedad="Tipo LIKE 'leve'";
         }
     }
-    return leve;
+    return "Funciona";
 }
 var hr;
     function ajax(){
@@ -138,10 +138,10 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistatabla.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("filtro="+filtro());
+hr.send("filtro=");
 }
 
-ajax();
+
 
 </script>
 </html>
