@@ -108,7 +108,14 @@ if($nr==0){
 <script type="text/javascript">
 
 function filtro(){
-    var leve=document.getElementById("leve");
+    var filtgravedad="";
+    var filtasig="";
+    var leve=document.getElementById("leve").value;
+    var media=document.getElementById("media").value;
+    var grave=document.getElementById("grave").value;
+    if(leve && media && grave){
+
+    }else(if)
     return "Funciona";
 }
 var hr;
@@ -129,7 +136,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistatabla.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("filtro=aaaaaaaa");
+hr.send("filtro=");
 }
 
 
