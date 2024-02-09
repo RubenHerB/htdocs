@@ -89,14 +89,15 @@ if($nr==0){
         <label class="form-check-label" for="flexCheckDefault">
         $dep - $nom
         </label></li>
+        _END;
+    }
+    echo <<<_END
         <hr>
         <li>
         <button class="btn btn-primary type="button" onclick="ajax()">Filtrar</button>
         </li>
         </ul></div>
         _END;
-    }
-
 
 }
 ?>
