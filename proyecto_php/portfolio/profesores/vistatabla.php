@@ -24,6 +24,7 @@ INNER JOIN asignaturas as asig
 ON cla.IdClase LIKE asig.IdClase
 
 WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
+echo $query;
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
     $result = $con->query($query);
