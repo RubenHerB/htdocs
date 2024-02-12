@@ -117,19 +117,19 @@ function filtro(){
     var grave=document.getElementById("grave").checked;
     if(!(leve && media && grave)){
         if(leve){
-            filtgravedad="Tipo.bas LIKE 'leve'";
+            filtgravedad="incibas.Tipo LIKE 'leve'";
         }
         if(media){
             if(leve){
                 filtgravedad+=" or";
             }
-            filtgravedad+= " Tipo.bas LIKE 'media'";
+            filtgravedad+= " incibas.Tipo LIKE 'media'";
         }
         if(grave){
         if(leve || media){
             filtgravedad+=" or";
         }
-        filtgravedad+= " Tipo.bas LIKE 'grave'";
+        filtgravedad+= " incibas.Tipo LIKE 'grave'";
         }
     }
     var inputs = document.getElementsByName("asignatura");
@@ -148,7 +148,7 @@ for(var i = 0; i < inputs.length; i++) {
         filtasig=" IdAsignatura LIKE "+inputva[0];
         for (var j = 1; j < inputva.length; j++){
             console.log(filtasig);
-            filtasig+=" OR IdAsignatura.asig LIKE "+inputva[j]
+            filtasig+=" OR inci.Asignatura LIKE "+inputva[j]
         }
     }
 
