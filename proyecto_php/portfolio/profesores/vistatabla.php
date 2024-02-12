@@ -4,24 +4,18 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-$query="SELECT  inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura, inci.Observaciones as Observaciones 
+$query="SELECT inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
 FROM incidencia as inci 
-
 INNER JOIN alumno as al 
-ON inci.IdAlumno=al.IdAlumno
-
-
-INNER JOIN incidenciasbase as incibas
-ON incibas.IdIncidenciaBase = inci.TipoIncidencia
-
-INNER JOIN `alumno-clase` as alc
-on al.IdAlumno = alc.IdAlumno
-
-INNER JOIN clases as cla
-ON alc.IdClase = cla.IdClase
-
-INNER JOIN asignaturas as asig
-ON cla.IdClase LIKE asig.IdClase
+ON inci.IdAlumno=al.IdAlumno 
+INNER JOIN incidenciasbase as incibas 
+ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
+INNER JOIN `alumno-clase` as alc 
+ON al.IdAlumno = alc.IdAlumno 
+INNER JOIN clases as cla 
+ON alc.IdClase = cla.IdClase 
+INNER JOIN asignaturas as asig 
+ON inci.IdClase LIKE asig.IdClase 
 
 WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
 echo $query;
