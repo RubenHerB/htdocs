@@ -4,7 +4,7 @@
 <?php
 $filtroextra=$_POST["filtro"];
 session_start();
-$query="SELECT inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
+$query="SELECT inci.IdIncidencia as id, inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
 FROM incidencia as inci 
 
 INNER JOIN alumno as al 
@@ -32,6 +32,7 @@ WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
         echo <<<_END
         <thead>
         <tr>
+        <th>Id</th>
         <th>Fecha</th>
         <th>Gravedad</th>
         <th>Nombre</th>
@@ -51,7 +52,7 @@ WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
     <tbody>";
     if($_SESSION['rolnow']==1){
         foreach($result as $row){
-            echo "<tr>";
+            echo "<tr id=\"".$row['id']."\">";
             foreach($row as $r){
                 echo "<td>$r</td>";
             }
