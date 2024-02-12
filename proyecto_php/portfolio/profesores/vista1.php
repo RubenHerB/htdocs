@@ -31,7 +31,7 @@
 <body id="bd" data-bs-theme="light">
     
 <?php include "../dark.php"; ?>
-<form acton="../profesorprin.php">
+<form action="../profesorprin.php">
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
