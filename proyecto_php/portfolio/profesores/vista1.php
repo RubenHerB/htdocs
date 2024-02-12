@@ -188,7 +188,7 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("filtro="+filtro());
 }
 
-
+ajax();
 
 </script>
 </html>
