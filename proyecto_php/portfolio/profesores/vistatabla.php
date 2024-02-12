@@ -68,6 +68,12 @@ WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
         }
         }
 
+    }else{
+        echo <<<_END
+        <div class="alert alert-secondary" role="alert" style="margin-top:16px">
+    Sin incidencias
+    </div>
+    _END;
     }
 
 
