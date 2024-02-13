@@ -2,8 +2,20 @@
 <table class="table table-striped">
     
 <?php
-$filtroextra=$_POST["filtro"];
 session_start();
+$filtroextra=$_POST["filtro"];
+$prof="";
+if($_SESSION["rolnow"] ==1){
+    $prof="WHERE inci.IdProfesor LIKE '".$_SESSION['id']."'";
+}
+if($filtroextra!=""){
+    if($prof!=""){
+        $filtroextra = " AND ".$filtroextra;
+    }else{
+        $filtroextra = " WHERE ".$filtroextra;
+    }
+}
+
 $query="SELECT inci.IdIncidencia as id, inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
 FROM incidencia as inci 
 
@@ -21,8 +33,7 @@ ON alc.IdClase = cla.IdClase
 
 INNER JOIN asignaturas as asig 
 ON inci.Asignatura LIKE asig.IdAsignatura 
-
-WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
+$filtroextra";
 
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
