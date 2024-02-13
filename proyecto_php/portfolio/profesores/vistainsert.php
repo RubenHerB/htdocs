@@ -77,7 +77,7 @@
   type="datetime-local" id="tiempo">
 <br><br>
 <h6>Infraccion</h6>
-  <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
+  <select class="form-select form-select-sm" name="infra" id="infra" aria-label="Small select example">
   <option selected>Infraccion</option>
   <?php
     $query="SELECT IdIncidenciaBase, Tipo, Titulo FROM incidenciasbase";
@@ -149,7 +149,23 @@ document.querySelector("select[name=clase]").addEventListener("change", function
     } 
 });
 
+function grabar(){
 
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("alum").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selects/selectalum.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send(idasig+"&idalumno="+document.getElementById("alumsel").value+"");
+}
 
 
 
