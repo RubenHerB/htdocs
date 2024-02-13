@@ -150,7 +150,7 @@ document.querySelector("select[name=clase]").addEventListener("change", function
 });
 
 function grabar(){
-if(document.getElementById("infra").value!="Infraccion" && document.getElementById("alumsel").value!="Alumno" && document.getElementById("infra").value!=""){
+if(document.getElementById("infra").value!="Infraccion"){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -162,11 +162,11 @@ hr.onreadystatechange = function(){
         document.getElementById("respuesta").innerHTML=this.responseText;
     }
 };
-hr.open("POST","selects/grabar.php");
+hr.open("POST","selects/editar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send((document.getElementById("clase").value)+"&idalumno="+(document.getElementById("alumsel").value)+"&fecha="+(document.getElementById("tiempo").value)+'&tipo='+(document.getElementById("infra").value)+"&observaciones="+(document.getElementById("obs").value));
 }else{
-    document.getElementById("respuesta").innerHTML="<div class=\"alert alert-danger\" role=\"alert\">Completa todos los campos para poder grabar la incidencia</div>"
+    document.getElementById("respuesta").innerHTML="<div class=\"alert alert-danger\" role=\"alert\">Completa todos los campos para poder editar la incidencia</div>"
 }
 }
 </script>
