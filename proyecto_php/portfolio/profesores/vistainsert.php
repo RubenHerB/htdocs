@@ -31,7 +31,7 @@
 <body id="bd" data-bs-theme="light">
     
 <?php include "../dark.php"; ?>
-<div id="respuesta"></div>
+
 <form action="../profesorprin.php">
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
@@ -41,6 +41,7 @@
 <div class="d-flex justify-content-end"><form action="vista1.php"><button class="btn btn-primary type="submit">Ver incidencias</button></form></div>
 <form>
 <br>
+<div id="respuesta"></div>
 <br>
 <h6>Alumno</h6>
 <div class="d-inline-flex justify-content-arround p-2">
@@ -98,6 +99,8 @@
 <br>
 </form>
 <button type="button" onclick="grabar()" class="btn btn-primary">Grabar incidencia</button>
+<br>
+<br>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
