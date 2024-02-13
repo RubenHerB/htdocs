@@ -165,7 +165,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","selects/grabar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send((document.getElementById("clase").value)+"&idalumno="+(document.getElementById("alumsel").value)+"&fecha="+(document.getElementById("tiempo").value)+'&tipo='+(document.getElementById("infra").value));
+hr.send((document.getElementById("clase").value)+"&idalumno="+(document.getElementById("alumsel").value)+"&fecha="+(document.getElementById("tiempo").value)+'&tipo='+(document.getElementById("infra").value)+"&observaciones="+(document.getElementById("obs").value));
 }
 }
 </script>
