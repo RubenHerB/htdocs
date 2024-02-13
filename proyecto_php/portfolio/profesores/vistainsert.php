@@ -166,6 +166,8 @@ hr.onreadystatechange = function(){
 hr.open("POST","selects/grabar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send((document.getElementById("clase").value)+"&idalumno="+(document.getElementById("alumsel").value)+"&fecha="+(document.getElementById("tiempo").value)+'&tipo='+(document.getElementById("infra").value)+"&observaciones="+(document.getElementById("obs").value));
+}else{
+    document.getElementById("respuesta").innerHTML="<div class=\"alert alert-danger\" role=\"alert\">Completa todos los campos para poder grabar la incidencia</div>"
 }
 }
 </script>
