@@ -17,5 +17,5 @@ session_start();
 $day = strtotime($_POST["fecha"]);
 $day = date('Y-m-d H:i:s', $day)
 $query="INSERT INTO incidencia (IdClase, Fecha, IdProfesor, Observaciones, TipoIncidencia,IdAlumno,Asignatura) VALUES ('$day1',
-(".$_POST['idc'].", $day ,".$_SESSION['id'].
+(".$_POST['idc'].", $day,".$_SESSION['id'].", ".$_POST['observaciones'].", ".$_POST['tipo'].", ".$_POST['idalumno'].", ".$_POST['ida'].")";
 ?>
