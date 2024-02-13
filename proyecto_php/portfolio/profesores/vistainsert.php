@@ -93,7 +93,7 @@
 <br>
 <div class="input-group">
   <span class="input-group-text">Observaciones</span>
-  <textarea is="obs" class="form-control" aria-label="With textarea" max="250">Sin observaciones.</textarea>
+  <textarea is="obs" id="obs" class="form-control" aria-label="With textarea" max="250">Sin observaciones.</textarea>
 </div>
 <br>
 </form>
