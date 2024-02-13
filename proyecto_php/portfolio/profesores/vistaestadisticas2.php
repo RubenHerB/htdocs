@@ -23,9 +23,9 @@ FROM (
     SELECT COUNT(*) AS contador
     FROM incidencia as inc
 
-    Inner JOIN clases as cl
-    on inc.IdClase = cl.IdClase
-    GROUP BY cl.Seccion
+    INNER JOIN incidenciasbase as incibas 
+ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
+    GROUP BY incibas.Tipo
     
 ) AS conteos";
 
@@ -53,7 +53,7 @@ ON cla.IdClase = alcl.IdClase
 
 $filtroextra
 
-GROUP BY cla.Seccion
+GROUP BY incibas.Tipo
 ORDER BY cuenta  ".$_POST['orden'];
 // var_dump($query);
     
