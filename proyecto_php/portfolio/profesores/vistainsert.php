@@ -68,7 +68,7 @@
 <div id="asig">
 <select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" >
   <option selected>Asignatura</option>
-  <option value="1">1</option>
+  <option value="1">Asignatura</option>
 </select>
 </div>
 
@@ -127,7 +127,7 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idasig);
 }
 
-$('input[name="clase"]').addEventListener("change", function(){
+document.getElementById("asigsel").addEventListener("change", function(){
     console.log("aa");
     console.log(document.getElementById("alum").value);
     if(document.getElementById("asigsel").value!="Asignatura"){
@@ -138,7 +138,7 @@ $('input[name="clase"]').addEventListener("change", function(){
 });
 
 
-document.getElementById("clase").addEventListener('change', (event) => {
+document.querySelector("input[name=clase]").addEventListener("change", function(){
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
     ajaxasig(document.getElementById("clase").value);}else{
