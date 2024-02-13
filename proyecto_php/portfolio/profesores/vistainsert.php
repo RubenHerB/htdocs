@@ -44,9 +44,19 @@
 <div class="d-flex justify-content-end">
 <select class="form-select form-select-sm" aria-label="Small select example">
   <option selected>Clase</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+    <?php
+    $query="SELECT clas.Nombre,clas.Tipo,clas.Year, clas.IdClase FROM clases as clas
+    
+    INNER JOIN asignaturas as asig
+    ON clas.IdClase=asig.IdClase
+
+    WHERE asig.IdProfesor=".$_SESSION['id'];
+    
+        include "../login.php";
+        $con=(new login)->log($_SESSION['rolnow']);
+        $result = $con->query($query);
+        if (!$result) die("Fatal Error");
+    ?>
 </select>
 <select class="form-select form-select-sm" id="asig" aria-label="Small select example" disabled>
   <option selected>Asignatura</option>
