@@ -65,6 +65,16 @@
         </label>
         </li>
         <hr>
+        <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
+            <option selected>Alumno</option>
+            <option >Alumno</option>
+        <select>
+        <hr>
+        <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
+            <option selected>Alumno</option>
+            <option >Alumno</option>
+        <select>
+        <hr>
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
