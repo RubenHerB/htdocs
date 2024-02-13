@@ -14,7 +14,7 @@
   </head>
 
   <?php
-  var_dump($_POST);
+//   var_dump($_POST);
     session_start();
     if(!isset($_SESSION)){
         header("Location: ../index.php");
@@ -23,7 +23,7 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            var_dump("entro");
+            // var_dump("entro");
     if (isset($_POST["modo"])){
         $modo=intval($_POST["modo"]);
         $_SESSION["rolnow"]=$modo;
