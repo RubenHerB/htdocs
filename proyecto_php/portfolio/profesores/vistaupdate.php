@@ -48,7 +48,7 @@
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example" disabled>
   <option selected>
     <?php
-    $query="SELECT al.Nombre as nom, al.Apellidos as ape from alumno 
+    $query="SELECT al.Nombre as nom, al.Apellidos as ape from alumno as al
 INNER JOIN incidencia as inci
 ON al.IdAlumno=inci.IdAlumno
     where inci.IdIncidencia=".$_POST['id'];
