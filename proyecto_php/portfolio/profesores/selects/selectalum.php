@@ -4,7 +4,7 @@ session_start();
 $query="SELECT al.IdAlumno as id, al.Nombre as nombre, al.Apellidos as apellidos FROM alumno as al
 INNER JOIN `alumno-clase` as cl
 ON cl.IdAlumno = al.IdAlumno
-    WHERE  cl.IdClase LIKE ".$_POST['id']." AND cl.Activa=1 GROUP BY nombre";
+    WHERE  cl.IdClase LIKE ".$_POST['idc']." AND cl.Activa=1";
     
         include "../../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
