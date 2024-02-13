@@ -46,14 +46,15 @@ ON prof.IdProfesor LIKE cla.IdTutor
 INNER JOIN incidenciasbase as incibas 
 ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
 
-GROUP BY inci.IdClase
-$filtroextra";
-var_dump($query);
+$filtroextra
+
+GROUP BY inci.IdClase";
+// var_dump($query);
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
         var_dump($query);
-        var_dump($_SESSION);
+        // var_dump($_SESSION);
         echo <<<_END
         <thead>
         <tr>
