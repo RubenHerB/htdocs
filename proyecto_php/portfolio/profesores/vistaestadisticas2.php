@@ -36,7 +36,7 @@ $result = $con->query($query);
 $result->data_seek(0);
 $maxin=$result->fetch_assoc()['maximo_contador'];
 
-$query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion as dep, count(inci.IdIncidencia) as cuenta,  prof.Nombre as nombre, prof.Apellidos as apellidos 
+$query="SELECT  cla.Seccion as dep, count(inci.IdIncidencia) as cuenta 
 FROM incidencia as inci 
 
 INNER JOIN clases as cla 
@@ -74,10 +74,8 @@ var_dump($query);
     
       foreach($result as $row){
         echo "<tr>";
-        echo "<td>".$row['clase']." ".$row['year']."º ".$row['tipo']."</td>";
         echo "<td>".$row['dep']."</td>";
         echo "<td>".$row['cuenta']."</td>";
-        echo "<td>".$row['nombre']." ".$row['apellidos']."</td>";
         echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta'])/$maxin)."px\"></div></td>";
       }
 
