@@ -117,7 +117,7 @@ if($nr==0){
       </div>
       <div class="modal-footer">
         <button type="button" onclick="cerrarmodal()" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" id="confirm" class="btn btn-primary">Confirmar</button>
+        <button type="button" id="confirm" onclick="" class="btn btn-primary">Confirmar</button>
       </div>
     </div>
   </div>
@@ -232,7 +232,7 @@ hr.onreadystatechange = function(){
         document.getElementById("modalbody").innerHTML+=this.responseText;
     }
 };
-hr.open("POST","vistadel.php");
+hr.open("POST","vistadelete.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
 ajaxtabla();
