@@ -100,7 +100,11 @@ hr.send("id="+idclase);
 }
 
 document.getElementById("clase").addEventListener("change", (event) => {
-    ajaxtabla(document.getElementById("clase").value); 
+    console.log(document.getElementById("clase").value);
+    if(document.getElementById("clase").value!=null){
+    ajaxtabla(document.getElementById("clase").value);}else{
+        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>"
+    } 
 });
 </script>
 </html>
