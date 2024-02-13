@@ -22,7 +22,7 @@ class login{
             break;
             case 3:
                 $usu="adminisrativo";
-                $pass="adminisrativo";
+                $pass="admin";
             break;
             default:
                 $usu="loginincidencias";
