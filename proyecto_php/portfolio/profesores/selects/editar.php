@@ -15,8 +15,8 @@ session_start();
 
     }
 
-$query="UPDATE incidencia  Observaciones='".$_POST['observaciones']."', TipoIncidencia=".$_POST['tipo']." where IdIncidencia LIKE ".$_POST['id'];
-var_dump($query);
+$query="UPDATE incidencia SET  Observaciones='".$_POST['observaciones']."', TipoIncidencia=".$_POST['tipo']." where IdIncidencia LIKE ".$_POST['id'];
+// var_dump($query);
 include "../../login.php";
 $con=(new login)->log($_SESSION['rolnow']);
 $result = $con->query($query);
