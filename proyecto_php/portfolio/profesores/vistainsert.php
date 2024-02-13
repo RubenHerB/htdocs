@@ -127,6 +127,19 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idasig);
 }
 
+
+document.querySelector("select[name=clase]").addEventListener("change", function(){
+    console.log(document.getElementById("clase").value);
+    if(document.getElementById("clase").value!="Clase"){
+    ajaxasig(document.getElementById("clase").value);}else{
+        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
+    } 
+});
+
+
+
+
 document.getElementById("asigsel").addEventListener("change", function(){
     console.log("aa");
     console.log(document.getElementById("alum").value);
@@ -138,14 +151,7 @@ document.getElementById("asigsel").addEventListener("change", function(){
 });
 
 
-document.querySelector("input[name=clase]").addEventListener("change", function(){
-    console.log(document.getElementById("clase").value);
-    if(document.getElementById("clase").value!="Clase"){
-    ajaxasig(document.getElementById("clase").value);}else{
-        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
-        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
-    } 
-});
+
 
 </script>
 </html>
