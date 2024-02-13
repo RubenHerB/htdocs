@@ -74,7 +74,11 @@ ON al.IdAlumno=inci.IdAlumno
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
-            echo "<option value=\"".$row['IdIncidenciaBase']."\">".$row['Tipo']." - ".$row['Titulo']."</option>";
+            echo "<option value=\"".$row['IdIncidenciaBase']."\"";
+            if($row['Tipo']==$tipo){
+                echo " selected";
+            }
+            echo ">".$row['Tipo']." - ".$row['Titulo']."</option>";
         }
     ?>
 </select>
