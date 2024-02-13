@@ -45,19 +45,19 @@
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Clase</option>
     <?php
-    $query="SELECT clas.Nombre,clas.Tipo,clas.Year, clas.IdClase FROM clases as clas
+    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as id FROM clases as clas
     
     INNER JOIN asignaturas as asig
     ON clas.IdClase=asig.IdClase
 
-    WHERE asig.IdProfesor=".$_SESSION['id'];
+    WHERE asig.IdProfesor=".$_SESSION['id']." GROUP BY clas.Nombre";
     
         include "../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
-            echo "<option value=\"".$row['clas.IdClase']."\">".$row['clas.Nombre']." ".$row['clas.Tipo']." ".$row['clas.Year']."º</option>";
+            echo "<option value=\"".$row['id']."\">".$row['nombre']." ".$row['tipo']." ".$row['year']."º</option>";
         }
     ?>
 </select>
