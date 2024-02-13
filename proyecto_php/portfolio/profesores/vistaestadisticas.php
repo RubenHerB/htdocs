@@ -47,7 +47,8 @@ ON incibas.IdIncidenciaBase = inci.TipoIncidencia
 
 $filtroextra
 
-GROUP BY inci.IdClase";
+GROUP BY inci.IdClase
+ORDER BY cuenta ".$_POST['orden'];
 // var_dump($query);
     
     $result = $con->query($query);
