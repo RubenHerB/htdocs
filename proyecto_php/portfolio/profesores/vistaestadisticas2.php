@@ -24,7 +24,7 @@ FROM (
     FROM incidencia as inc
 
     INNER JOIN incidenciasbase as incibas 
-ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
+ON incibas.IdIncidenciaBase = inc.TipoIncidencia 
     GROUP BY incibas.Tipo
     
 ) AS conteos";
@@ -64,7 +64,7 @@ ORDER BY cuenta  ".$_POST['orden'];
         echo <<<_END
         <thead>
         <tr>
-        <th>Departamento</th>
+        <th>Tipo</th>
         <th>Incidencias</th>
         <th>Grafica</th>
         </tr>
