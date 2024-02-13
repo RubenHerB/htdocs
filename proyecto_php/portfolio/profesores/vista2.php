@@ -68,7 +68,7 @@
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
-        </ul></div><form action="estadisticas.php"><button class="btn btn-primary type="submit">Estadisticas</button></form></div>
+        </ul></div><form action="estadisticas2.php"><button class="btn btn-primary type="submit">Estadisticas</button></form></div>
 <div class="table-responsive" id=tabla></div>
 </div>
 </body>

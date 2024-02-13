@@ -35,7 +35,7 @@
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
-<h3 style="margin-top: 20px;">Incidencias Equipo Administrativo</h3>
+<h3 style="margin-top: 20px;">Estadisticas Tutor</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 
         <div class="d-flex justify-content-between"><div class="dropdown">
