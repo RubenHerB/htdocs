@@ -36,7 +36,7 @@ $result = $con->query($query);
 $result->data_seek(0);
 $maxin=$result->fetch_assoc()['maximo_contador'];
 
-$query="SELECT  cla.Seccion as dep, count(inci.IdIncidencia) as cuenta 
+$query="SELECT  incibas.Tipo as dep, count(inci.IdIncidencia) as cuenta 
 FROM incidencia as inci 
 
 INNER JOIN clases as cla 
@@ -55,7 +55,7 @@ $filtroextra
 
 GROUP BY incibas.Tipo
 ORDER BY cuenta  ".$_POST['orden'];
-// var_dump($query);
+var_dump($query);
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
