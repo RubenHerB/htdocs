@@ -45,12 +45,12 @@
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Clase</option>
     <?php
-    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as id FROM clases as clas
+    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as idc,asig.IdAsignatura as ida, asig.Nomnre as asignatura FROM clases as clas
     
     INNER JOIN asignaturas as asig
     ON clas.IdClase=asig.IdClase
 
-    WHERE asig.IdProfesor=".$_SESSION['id']." GROUP BY clas.Nombre";
+    WHERE asig.IdProfesor=".$_SESSION['id'];
     
         include "../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
@@ -124,31 +124,20 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","selects/selectalum.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+idasig);
+hr.send(idasig);
 }
 
 
 document.querySelector("select[name=clase]").addEventListener("change", function(){
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
-    ajaxasig(document.getElementById("clase").value);}else{
+    ajaxalum(document.getElementById("clase").value);}else{
         document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
 });
 
 
-
-
-document.querySelector("select[name=asigsel]").addEventListener("change", function(){
-    console.log("aa");
-    console.log(document.getElementById("alum").value);
-    if(document.getElementById("asigsel").value!="Asignatura"){
-    ajaxalum(document.getElementById("asigsel").value);
-}else{
-        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
-    } 
-});
 
 
 
