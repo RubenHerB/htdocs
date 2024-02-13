@@ -21,7 +21,7 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            if($_SESSION["rolnow"]!=1){
+            if($_SESSION["rolnow"]!=2){
                 header("Location: ../redirect.php");
             }
         }
@@ -37,26 +37,12 @@
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
 <h3 style="margin-top: 20px;">Incidencias</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
-<?php 
-include "../login.php";
-$con=(new login)->log(1);
-$query ="SELECT IdAsignatura,Nombre,Departamento FROM asignaturas WHERE IdProfesor LIKE '".$_SESSION['id']."'";
-$result = $con->query($query);
-if (!$result) die("Fatal Error");
-$nr=$result->num_rows;
-if($nr==0){
-    echo <<<_END
-    <div class="alert alert-secondary" role="alert" style="margin-top:16px">
-    No existe ninguna asignatura en la que enseñe
-    </div>
-    _END;
-}else{
-    echo <<<_END
-    <div class="d-flex justify-content-between"><div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle tipo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g>
-    <polygon points="0,0 0,128 201.143,329.143 201.143,512 310.857,475.429 310.857,329.143 512,128 512,0"/>
-    </g></g></svg>
+
+        <div class="d-flex justify-content-between"><div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle tipo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g>
+        <polygon points="0,0 0,128 201.143,329.143 201.143,512 310.857,475.429 310.857,329.143 512,128 512,0"/>
+        </g></g></svg>
     
         </button>        
         <ul class="dropdown-menu">
@@ -79,31 +65,10 @@ if($nr==0){
         </label>
         </li>
         <hr>
-            
-    _END;
-    for($i=0;$i<$nr;$i++){
-        $result->data_seek($i);
-        $r=$result->fetch_array(MYSQLI_ASSOC);
-        $id=$r['IdAsignatura'];
-        $nom=$r['Nombre'];
-        $dep=$r['Departamento'];
-        echo <<<_END
-        <li><input class="form-check-input" type="checkbox" name="asignatura" value="$id" id="$id" checked>
-        <label class="form-check-label" for="flexCheckDefault">
-        $dep - $nom
-        </label></li>
-        _END;
-    }
-    echo <<<_END
-        <hr>
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
         </ul></div><form action="vistainsert.php"><button class="btn btn-primary type="submit">Crear nueva incidencia</button></form></div>
-        _END;
-
-}
-?>
 <div class="table-responsive" id=tabla></div>
 </div>
 </body>
