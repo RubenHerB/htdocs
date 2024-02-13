@@ -213,7 +213,11 @@ function borrar(id){
 document.getElementById("modal").style.display="block";
 document.getElementById("modaltitle").innerHTML="Borrar incidencia";
 document.getElementById("modalbody").innerHTML="¿Deseas borrar la incidencia?";
+document.getElementById("confirm")..onclick="confirmdel("+id+")";
+}
 
+function donfirmdel(id){
+    document.getElementById("modal").style.display="none";
 }
 
 </script>
