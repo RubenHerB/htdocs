@@ -104,8 +104,37 @@ document.getElementById("clase").addEventListener("change", (event) => {
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
     ajaxasig(document.getElementById("clase").value);}else{
+        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
+    } 
+});
+
+
+function ajaxalum(idclase){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("asig").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selects/selectasig.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+idclase);
+}
+
+document.getElementById("clase").addEventListener("change", (event) => {
+    console.log(document.getElementById("clase").value);
+    if(document.getElementById("clase").value!="Clase"){
+    ajaxasig(document.getElementById("clase").value);}else{
         document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>"
     } 
 });
+
+
 </script>
 </html>
