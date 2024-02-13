@@ -21,7 +21,7 @@ class login{
                 $pass="tutor";
             break;
             case 3:
-                $usu="adminisrativo";
+                $usu="admin";
                 $pass="admin";
             break;
             default:
