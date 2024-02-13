@@ -94,7 +94,7 @@ hr.onreadystatechange = function(){
         document.getElementById("tabla").innerHTML=this.responseText;
     }
 };
-hr.open("POST","selectasig.php");
+hr.open("POST","selects/selectasig.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idclase);
 }
