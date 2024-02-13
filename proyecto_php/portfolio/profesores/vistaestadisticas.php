@@ -6,7 +6,7 @@ session_start();
 $filtroextra=$_POST["filtro"];
 
 
-$query="SELECT inci.IdIncidencia as id, inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
+$query="SELECT cla.Nombre as clase, count(inci.IdIncidencia) as cuenta
 FROM incidencia as inci 
 
 INNER JOIN alumno as al 
@@ -34,15 +34,11 @@ $filtroextra";
         <thead>
         <tr>
         <th>Clase</th>
+        <th>Departamento</th>
         <th>Incidencias</th>
-        <th>Gravedad</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Curso</th>
-        <th>Año</th>
-        <th>Asignatura</th>
-        <th>Incidencia</th>
-        <th>Observaciones</th>
+        <th>Tutor</th>
+        <th>Grafica</th>
+       
         </tr>
         </thead>
         <tbody>
