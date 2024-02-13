@@ -232,6 +232,7 @@ hr.onreadystatechange = function(){
 hr.open("POST","vistadel.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
+ajaxtabla();
 }
 
 </script>
