@@ -127,7 +127,7 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idasig);
 }
 
-document.getElementById("asigsel").addEventListener("change", function(){
+$('input[name="clase"]').addEventListener("change", function(){
     console.log("aa");
     console.log(document.getElementById("alum").value);
     if(document.getElementById("asigsel").value!="Asignatura"){
