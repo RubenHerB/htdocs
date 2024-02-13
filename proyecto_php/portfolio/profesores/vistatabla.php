@@ -65,12 +65,12 @@ $filtroextra";
     <tbody>";
     if($_SESSION['rolnow']==1){
         foreach($result as $row){
-            echo "<tr style=\" overflow: auto;\" id=\"".$row['id']."\">";
+            echo "<tr  id=\"".$row['id']."\">";
             foreach($row as $d=>$r){
                 if($d!="Observaciones"){
                 echo "<td>$r</td>";
             }else{
-                echo "<td style=\"overflow-x:none\">$r</td>";
+                echo "<td class=\"overflow-scroll\">$r</td>";
             }
         }
             echo "<td><button onclick=\"editar(".$row['id'].")\">Editar
