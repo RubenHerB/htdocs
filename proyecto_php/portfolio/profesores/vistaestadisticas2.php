@@ -55,7 +55,7 @@ $filtroextra
 
 GROUP BY incibas.Tipo
 ORDER BY cuenta  ".$_POST['orden'];
-var_dump($query);
+// var_dump($query);
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
