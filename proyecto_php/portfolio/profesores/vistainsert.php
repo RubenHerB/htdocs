@@ -31,6 +31,7 @@
 <body id="bd" data-bs-theme="light">
     
 <?php include "../dark.php"; ?>
+<div id="respuesta"></div>
 <form action="../profesorprin.php">
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
@@ -96,7 +97,7 @@
 </div>
 <br>
 </form>
-<button type="button" onclick="grabar()" class="btn btn-primary">Panel de control</button>
+<button type="button" onclick="grabar()" class="btn btn-primary">Grabar incidencia</button>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -159,12 +160,12 @@ function grabar(){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("alum").innerHTML=this.responseText;
+        document.getElementById("respuesta").innerHTML=this.responseText;
     }
 };
-hr.open("POST","selects/selectalum.php");
+hr.open("POST","selects/grabar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send(idasig+"&idalumno="+document.getElementById("alumsel").value+"");
+hr.send(idasig+"&idalumno="+document.getElementById("alumsel").value+"&infra="document.getElementById("infra").value+"&fecha="+document.getElementById("tiempo").value);
 }
 
 

@@ -99,7 +99,7 @@ if($nr==0){
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
-        </ul></div> <form action="vistainsert.php"><button class="btn btn-primary type="submit">Crear nueva incidencia</button></form></div>
+        </ul></div><form action="vistainsert.php"><button class="btn btn-primary type="submit">Crear nueva incidencia</button></form></div>
         _END;
 
 }
@@ -181,9 +181,6 @@ for(var i = 0; i < inputs.length; i++) {
     if(filtasig!=""){
     ret+= "("+filtasig+")";
 }
-    if(ret!=""){
-        ret= " AND "+ret;
-    }
     return ret;
 }
 var hr;
