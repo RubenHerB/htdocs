@@ -35,7 +35,9 @@ ON alc.IdClase = cla.IdClase
 
 INNER JOIN asignaturas as asig 
 ON inci.Asignatura LIKE asig.IdAsignatura 
-$filtroextra";
+$filtroextra
+order by id desc
+";
 
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
