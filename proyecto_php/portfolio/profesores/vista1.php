@@ -116,8 +116,8 @@ if($nr==0){
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="cerrarmodal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="confirm" class="btn btn-primary">Save changes</button>
+        <button type="button" onclick="cerrarmodal()" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="confirm" class="btn btn-primary">Confirmar</button>
       </div>
     </div>
   </div>
@@ -211,6 +211,8 @@ function cerrarmodal(){
 }
 function borrar(id){
 document.getElementById("modal").style.display="block";
+document.getElementById("modaltitle").innerHTML="Borrar incidencia";
+document.getElementById("modalbody").innerHTML="¿Deseas borrar la incidencia?";
 
 }
 
