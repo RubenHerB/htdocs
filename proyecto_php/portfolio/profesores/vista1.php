@@ -105,7 +105,7 @@ if($nr==0){
 }
 ?>
 <div class="table-responsive" id=tabla></div>
-<div class="modal" tabindex="-1">
+<div class="modal" tabindex="-1" id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -208,6 +208,7 @@ hr.send("filtro="+filtro());
 ajaxtabla();
 
 function borrar(id){
+document.getElementById("modal").style.display="block";
 
 }
 
