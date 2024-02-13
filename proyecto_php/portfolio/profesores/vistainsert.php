@@ -106,14 +106,7 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idclase);
 }
 
-document.getElementById("clase").addEventListener("change", function(){
-    console.log(document.getElementById("clase").value);
-    if(document.getElementById("clase").value!="Clase"){
-    ajaxasig(document.getElementById("clase").value);}else{
-        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
-        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
-    } 
-});
+
 
 
 function ajaxalum(idasig){
@@ -137,11 +130,21 @@ document.getElementById("asigsel").addEventListener("change", function(){
     console.log("aa");
     console.log(document.getElementById("alum").value);
     if(document.getElementById("asigsel").value!="Asignatura"){
-    ajaxalum(document.getElementById("alum").value);}else{
+    ajaxalum(document.getElementById("asigsel").value);
+}else{
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
 });
 
+
+document.getElementById("clase").addEventListener("change", function(){
+    console.log(document.getElementById("clase").value);
+    if(document.getElementById("clase").value!="Clase"){
+    ajaxasig(document.getElementById("clase").value);}else{
+        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
+    } 
+});
 
 </script>
 </html>
