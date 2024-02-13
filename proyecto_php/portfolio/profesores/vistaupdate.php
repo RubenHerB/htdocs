@@ -48,7 +48,7 @@
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example" disabled>
   <option selected>
     <?php
-    $query="SELECT al.Nombre as nom, al.Apellidos as ape,inci.TipoIncidencia as tipo from alumno as al
+    $query="SELECT al.Nombre as nom, al.Apellidos as ape,inci.TipoIncidencia as tipo,inci.Observaciones as obs from alumno as al
 INNER JOIN incidencia as inci
 ON al.IdAlumno=inci.IdAlumno
     where inci.IdIncidencia=".$_POST['id'];
@@ -60,6 +60,7 @@ ON al.IdAlumno=inci.IdAlumno
         $r=$result->fetch_array(MYSQLI_ASSOC);
             echo $r['nom']." ".$r['ape'];
         $tipo=$r['tipo'];
+        $obs=$r['obs'];
         var_dump($tipo);
     ?></option>
 </select>
