@@ -229,7 +229,7 @@ function confirmdel(id){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("modalbody").innerHTML+=this.responseText;
+        document.getElementById("tabla").innerHTML+=this.responseText;
     }
 };
 hr.open("POST","vistadelete.php");
