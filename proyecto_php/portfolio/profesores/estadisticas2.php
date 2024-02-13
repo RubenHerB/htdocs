@@ -70,7 +70,7 @@
             <option >Alumno</option>
         <select>
         <hr>
-        <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
+        <select class="form-select form-select-sm" id="orden" aria-label="Small select example">
             <option value="ASC" selected>↓</option>
             <option value="DES">↑</option>
         <select>
@@ -127,7 +127,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistaestadisticas.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("filtro="+filtro());
+hr.send("filtro="+filtro()+"&orden="+document.getElementById("orden").value);
 }
 
 
