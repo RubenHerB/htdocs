@@ -72,7 +72,7 @@
 <br>
 <h6>Fecha</h6>
 <input
-  type="datetime-local">
+  type="datetime-local" id="tiempo">
 </form>
 </div>
 </body>
