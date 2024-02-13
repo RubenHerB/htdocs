@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            if($_SESSION["rolnow"]!=2){
+            if($_SESSION["rolnow"]!=3){
                 header("Location: ../redirect.php");
             }
         }
