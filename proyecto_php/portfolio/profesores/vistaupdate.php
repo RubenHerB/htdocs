@@ -71,13 +71,14 @@ ON al.IdAlumno=inci.IdAlumno
   <select class="form-select form-select-sm" name="infra" id="infra" aria-label="Small select example">
   <option>Infraccion</option>
   <?php
-  var_dump($tipo);
+ 
     $query="SELECT IdIncidenciaBase, Tipo, Titulo FROM incidenciasbase";
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
             echo "<option value=\"".$row['IdIncidenciaBase']."\"";
-            if($row['Tipo']==$tipo){
+
+            if($row['IdIncidenciaBase']==$tipo){
                 echo " selected";
             }
             echo ">".$row['Tipo']." - ".$row['Titulo']."</option>";
