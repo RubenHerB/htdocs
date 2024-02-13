@@ -97,7 +97,7 @@ if($nr==0){
     echo <<<_END
         <hr>
         <li>
-        <button class="btn btn-primary type="button" onclick="ajax()">Filtrar</button>
+        <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
         </ul></div>
         _END;
@@ -109,15 +109,15 @@ if($nr==0){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="modaltitle">Modal title</h5>
+        <button type="button" id="cancel1" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modalbody">
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" id="cancel2" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confirm" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -187,17 +187,13 @@ for(var i = 0; i < inputs.length; i++) {
     return ret;
 }
 var hr;
-    function ajax(){
+    function ajaxtabla(){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
     hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
-load();
-}
-
-    function load(){
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         document.getElementById("tabla").innerHTML=this.responseText;
@@ -208,7 +204,12 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("filtro="+filtro());
 }
 
-ajax();
+
+ajaxtabla();
+
+function borrar(id){
+
+}
 
 </script>
 </html>
