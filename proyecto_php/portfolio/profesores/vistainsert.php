@@ -66,7 +66,7 @@
 
 
 <div id="asig">
-<select class="form-select form-select-sm" id="asigsel" name="saigsel" aria-label="Small select example" >
+<select class="form-select form-select-sm" id="asigsel" name="asignatura" aria-label="Small select example" >
   <option selected>Asignatura</option>
   <option value="1">Asignatura</option>
 </select>
@@ -140,7 +140,7 @@ document.querySelector("select[name=clase]").addEventListener("change", function
 
 
 
-document.querySelector("select[name=asigsel]").addEventListener("change", function(){
+document.querySelector("select[name=asignatura]").addEventListener("change", function(){
     console.log("aa");
     console.log(document.getElementById("alum").value);
     if(document.getElementById("asigsel").value!="Asignatura"){

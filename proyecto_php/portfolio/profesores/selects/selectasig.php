@@ -10,7 +10,7 @@ $query="SELECT IdAsignatura, Nombre FROM asignaturas
         if (!$result) die("Fatal Error");
 
 ?>
-<select class="form-select form-select-sm" id="asigsel" name="asigsel" aria-label="Small select example">
+<select class="form-select form-select-sm" id="asigsel" name="asignatura" aria-label="Small select example">
   <option selected>Asignatura</option>
 <?php
         foreach ($result as $row){
