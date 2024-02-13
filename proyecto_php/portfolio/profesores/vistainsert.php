@@ -78,7 +78,7 @@
   type="datetime-local" id="tiempo">
 <br><br>
 <h6>Infraccion</h6>
-  <select class="form-select form-select-sm" name="infra" id="infra" aria-label="Small select example">
+  <select class="form-select form-select-sm" name="infra" id="infraccion" aria-label="Small select example">
   <option selected>Infraccion</option>
   <?php
     $query="SELECT IdIncidenciaBase, Tipo, Titulo FROM incidenciasbase";
@@ -165,7 +165,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","selects/grabar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send(document.getElementById("clase").value+"&idalumno="+document.getElementById("alumsel").value+"&infra="document.getElementById("infra").value+"&fecha="+document.getElementById("tiempo").value);
+hr.send((document.getElementById("clase").value)+"\&idalumno="+(document.getElementById("alumsel").value)+"\&infraccion="(document.getElementById("infra").value)+"\&fecha="+(document.getElementById("tiempo").value));
 }
 
 
