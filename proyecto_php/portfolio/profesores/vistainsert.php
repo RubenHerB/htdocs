@@ -100,7 +100,7 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idclase);
 }
 
-document.getElementById("clase").addEventListener("change", (event) => {
+document.getElementById("clase").addEventListener("change", function(){
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
     ajaxasig(document.getElementById("clase").value);}else{
@@ -127,11 +127,9 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idasig);
 }
 
-document.getElementById("clase").addEventListener("change", (event) => {
-
-    console.log(document.getElementById("asigsel").value);
+document.getElementById("clase").addEventListener("change", function(){
     if(document.getElementById("asigsel").value!="Asignatura"){
-    ajaxalum(document.getElementById("asigsel").value);}else{
+    ajaxalum(document.getElementById("alum").value);}else{
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
 });
