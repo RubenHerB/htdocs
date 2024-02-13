@@ -43,9 +43,9 @@
 <h6>Alumno</h6>
 <div class="d-inline-flex justify-content-arround p-2">
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
-  <option selected>Clase</option>
+  <option selected>Asignatura</option>
     <?php
-    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as id FROM clases as clas
+    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as idc,asig.IdAsignatura as ida, asig.Nomnre as asignatura FROM clases as clas
     
     INNER JOIN asignaturas as asig
     ON clas.IdClase=asig.IdClase
@@ -57,7 +57,7 @@
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
-            echo "<option value=\"".$row['id']."\">".$row['nombre']." ".$row['tipo']." ".$row['year']."º</option>";
+            echo "<option value=\"".$row['idc']." ".$row['ida']."\">".$row['nombre']." ".$row['tipo']." ".$row['year']."º</option>";
         }
     ?>
 </select>
@@ -65,18 +65,12 @@
 
 
 
-<div id="asig">
-<select class="form-select form-select-sm" id="asigsel" name="asignatura" aria-label="Small select example" >
-  <option selected>Asignatura</option>
-  <option value="1">Asignatura</option>
-</select>
-</div>
-
 <div id="alum">
-<select class="form-select form-select-sm" id="alumsel" aria-label="Small select example" disabled>
+<select class="form-select form-select-sm" id="alumnsel" name="asignatura" aria-label="Small select example" >
   <option selected>Alumno</option>
 </select>
 </div>
+
 
 </div>
 <br>
