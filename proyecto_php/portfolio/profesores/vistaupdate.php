@@ -118,7 +118,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","selects/editar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id=".$_POST['id']"&tipo="+(document.getElementById("infra").value)+"&observaciones="+(document.getElementById("obs").value));
+hr.send("id=".$_POST['id']"&tipo="+document.getElementById("infra").value+"&observaciones="+document.getElementById("obs").value);
 }else{
     document.getElementById("respuesta").innerHTML="<div class=\"alert alert-danger\" role=\"alert\">Completa todos los campos para poder editar la incidencia</div>"
 }
