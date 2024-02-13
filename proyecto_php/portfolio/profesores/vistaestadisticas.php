@@ -45,6 +45,9 @@ ON prof.IdProfesor LIKE cla.IdTutor
 INNER JOIN incidenciasbase as incibas 
 ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
 
+INNER JOIN `alumno-clase` as alcl
+ON cla.IdClase = alcl.IdClase
+
 $filtroextra
 
 GROUP BY inci.IdClase
