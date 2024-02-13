@@ -123,7 +123,10 @@ function filtro(){
     }
     var historico=document.getElementById("historico").checked;
     if(!historico){
-        filtgravedad+= "AND alcl.Activa=1"
+        if(filtgravedad!=""){
+            filtgravedad+=" AND "
+        }
+        filtgravedad+= " alcl.Activa=1"
     }
     console.log(filtgravedad);
     return filtgravedad;
