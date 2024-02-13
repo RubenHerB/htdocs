@@ -99,6 +99,8 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+idclase);
 }
 
-document.getElementById("clase")
+document.getElementById("clase").addEventListener("change", (event) => {
+    ajaxtabla(document.getElementById("clase").value); 
+});
 </script>
 </html>
