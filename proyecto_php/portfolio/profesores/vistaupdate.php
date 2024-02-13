@@ -91,7 +91,7 @@ ON al.IdAlumno=inci.IdAlumno
 </div>
 <br>
 </form>
-<button type="button" onclick="grabar()" class="btn btn-primary">Grabar incidencia</button>
+<button type="button" onclick="editar()" class="btn btn-primary">Editar incidencia</button>
 <br>
 <br>
 </div>
