@@ -89,7 +89,7 @@
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
-        </ul></div><form action="vista2.php"><button class="btn btn-primary type="submit">Incidencias</button></form></div>
+        </ul></div><form action="vista3.php"><button class="btn btn-primary type="submit">Incidencias</button></form></div>
 <div class="table-responsive" id=tabla></div>
 </div>
 </body>

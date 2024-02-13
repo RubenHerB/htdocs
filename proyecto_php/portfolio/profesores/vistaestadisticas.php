@@ -17,7 +17,7 @@ if($_SESSION["rolnow"]==2){
     }
         $filtroextra=$prof.$filtroextra;
 
-
+var_dump($filtroextra);
 $query="SELECT MAX(contador) AS maximo_contador
 FROM (
     SELECT COUNT(*) AS contador
