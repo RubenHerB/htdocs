@@ -91,7 +91,7 @@ function ajaxtabla(idclase){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("tabla").innerHTML=this.responseText;
+        document.getElementById("asig").innerHTML=this.responseText;
     }
 };
 hr.open("POST","selects/selectasig.php");
