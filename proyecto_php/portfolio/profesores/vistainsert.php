@@ -39,6 +39,8 @@
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 <div class="d-flex justify-content-end"><form action="vista1.php"><button class="btn btn-primary type="submit">Ver incidencias</button></form></div>
 <form>
+<br>
+<h6>Alumno</h6>
 <div class="d-flex justify-content-end">
 <select class="form-select form-select-sm" aria-label="Small select example">
   <option selected>Clase</option>
@@ -59,6 +61,8 @@
   <option value="3">Three</option>
 </select>
 </div>
+<br>
+<h6>Fecha</h6>
 <input
   type="datetime-local">
 </form>
