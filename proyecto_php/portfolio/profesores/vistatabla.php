@@ -7,6 +7,8 @@ $filtroextra=$_POST["filtro"];
 $prof="";
 if($_SESSION["rolnow"] ==1){
     $prof="WHERE inci.IdProfesor LIKE '".$_SESSION['id']."'";
+}elseif($_SESSION["rolnow"] ==2){
+    $prof="WHERE cla.IdTutor LIKE '".$_SESSION['id']."'";
 }
 if($filtroextra!=""){
     if($prof!=""){
