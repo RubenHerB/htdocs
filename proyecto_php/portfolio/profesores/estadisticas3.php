@@ -73,7 +73,7 @@
         </li>
         <hr>
         <li>
-        <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
+        <select class="form-select form-select-sm" id="tipo" aria-label="Small select example">
             <option value="asig" selected>Clase</option>
             <option value="type">Tipo</option>
         <select>
@@ -144,7 +144,11 @@ hr.onreadystatechange = function(){
         document.getElementById("tabla").innerHTML=this.responseText;
     }
 };
-hr.open("POST","vistaestadisticas.php");
+$pag="vistaestadisticas.php";
+if(document.getElementById("tipo").value==type){
+    $pag="vistaestadisticas2.php";
+}
+hr.open("POST",$pag);
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("filtro="+filtro()+"&orden="+document.getElementById("orden").value);
 }
