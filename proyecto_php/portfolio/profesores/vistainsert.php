@@ -110,7 +110,7 @@ document.getElementById("clase").addEventListener("change", (event) => {
 });
 
 
-function ajaxalum(idclase){
+function ajaxalum(idasig){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -119,19 +119,19 @@ function ajaxalum(idclase){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("asig").innerHTML=this.responseText;
+        document.getElementById("alum").innerHTML=this.responseText;
     }
 };
 hr.open("POST","selects/selectasig.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+idclase);
+hr.send("id="+idasig);
 }
 
 document.getElementById("clase").addEventListener("change", (event) => {
-    console.log(document.getElementById("clase").value);
-    if(document.getElementById("clase").value!="Clase"){
-    ajaxasig(document.getElementById("clase").value);}else{
-        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>"
+    console.log(document.getElementById("asigsel").value);
+    if(document.getElementById("asigsel").value!="Asignatura"){
+    ajaxalum(document.getElementById("alum").value);}else{
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
 });
 
