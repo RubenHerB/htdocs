@@ -21,7 +21,7 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            if($_SESSION["rolnow"]!=3){
+            if($_SESSION["rolnow"]!=2){
                 header("Location: ../redirect.php");
             }
         }
