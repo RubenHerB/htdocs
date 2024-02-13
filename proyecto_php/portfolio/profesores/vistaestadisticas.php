@@ -6,23 +6,16 @@ session_start();
 $filtroextra=$_POST["filtro"];
 
 
-$query="SELECT cla.Nombre as clase, count(inci.IdIncidencia) as cuenta
+$query="SELECT cla.Nombre as clase, cla.Seccion, count(inci.IdIncidencia) as cuenta, prof.Nombre as nombre, prof.Apellidos as apellidos 
 FROM incidencia as inci 
 
-INNER JOIN alumno as al 
-ON inci.IdAlumno=al.IdAlumno
-
-INNER JOIN incidenciasbase as incibas 
-ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
-
-INNER JOIN `alumno-clase` as alc 
-ON al.IdAlumno = alc.IdAlumno 
-
 INNER JOIN clases as cla 
-ON alc.IdClase = cla.IdClase 
+ON inci.IdClase=cla.IdClase
 
-INNER JOIN asignaturas as asig 
-ON inci.Asignatura LIKE asig.IdAsignatura 
+INNER JOIN profesor as prof 
+ON prof.IdProfesor LIKE cla.IdTutor 
+
+GROUP BY inci.IdClase
 $filtroextra";
 
     include "../login.php";
