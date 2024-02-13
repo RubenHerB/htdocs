@@ -35,7 +35,7 @@
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
-<h3 style="margin-top: 20px;">Incidencias</h3>
+<h3 style="margin-top: 20px;">Incidencias Tutoria</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 
         <div class="d-flex justify-content-between"><div class="dropdown">
@@ -100,36 +100,7 @@ function filtro(){
         filtgravedad+= " incibas.Tipo LIKE 'grave'";
         }
     }
-    var inputs = document.getElementsByName("asignatura");
-    const inputva = new Array(1).fill(null);
-    var c=0;
-for(var i = 0; i < inputs.length; i++) {
-    if(inputs[i].type == "checkbox") {
-        if(inputs[i].checked == true){
-            console.log(inputs[i].value);
-        inputva[c]=inputs[i].value;
-        c++;}else {compasig=false;}
-        console.log(inputva);
-        console.log(compasig);
-}}
-    if(!compasig){
-        filtasig=" IdAsignatura LIKE "+inputva[0];
-        for (var j = 1; j < inputva.length; j++){
-            console.log(filtasig);
-            filtasig+=" OR inci.Asignatura LIKE "+inputva[j]
-        }
-    }
-
-    var ret="";
-    if(filtgravedad!=""){
-    ret="("+filtgravedad+")";}
-    if(ret!="" && filtasig!=""){
-        ret+=" AND ";
-    }
-    if(filtasig!=""){
-    ret+= "("+filtasig+")";
-}
-    return ret;
+    return filtgravedad;
 }
 var hr;
     function ajaxtabla(){
@@ -153,35 +124,6 @@ hr.send("filtro="+filtro());
 ajaxtabla();
 
 
-function cerrarmodal(){
-    document.getElementById("modal").style.display="none";
-}
-
-function borrar(id){
-document.getElementById("modal").style.display="block";
-document.getElementById("modaltitle").innerHTML="Borrar incidencia";
-document.getElementById("modalbody").innerHTML="¿Deseas borrar la incidencia?";
-document.getElementById("confirm").setAttribute( "onClick","confirmdel("+id+")");
-}
-
-function confirmdel(id){
-    cerrarmodal()
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    hr = new XMLHttpRequest();
-    hr.overrideMimeType('text/xml');
-} else if (window.ActiveXObject) { // IE
-    hr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-hr.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        document.getElementById("tabla").innerHTML=this.responseText;
-    }
-};
-hr.open("POST","vistadelete.php");
-hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+id);
-ajaxtabla();
-}
 
 </script>
 </html>
