@@ -57,7 +57,7 @@
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
-            echo "<option value=\"".$row[]"\">Clase</option>"
+            echo "<option value=\"".$row['clas.IdClase']."\">".$row['clas.Nombre']." ".$row['clas.Tipo']." ".$row['clas.Year']."º</option>";
         }
     ?>
 </select>
