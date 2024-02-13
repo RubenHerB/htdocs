@@ -62,12 +62,12 @@
     ?>
 </select>
 <div id="asig">
-<select class="form-select form-select-sm"  aria-label="Small select example" disabled>
+<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" disabled>
   <option selected>Asignatura</option>
 </select>
 </div>
 <div id="alum">
-<select class="form-select form-select-sm" id="alum" aria-label="Small select example" disabled>
+<select class="form-select form-select-sm" id="alumsel" aria-label="Small select example" disabled>
   <option selected>Alumno</option>
 </select>
 </div>
@@ -82,6 +82,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src=../dark.js></script>
 <script type="text/javascript">
+function ajaxtabla(idclase){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("tabla").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selectasig.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+idclase);
+}
 
+document.getElementById("clase")
 </script>
 </html>
