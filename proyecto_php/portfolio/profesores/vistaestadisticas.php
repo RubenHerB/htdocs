@@ -14,9 +14,8 @@ if($_SESSION["rolnow"]==2){
         }else{
             $filtroextra = " WHERE ".$filtroextra;
         }
-    }else{
-        $filtroextra=$prof;
     }
+        $filtroextra=$prof.$filtroextra;
 
 
 $query="SELECT MAX(contador) AS maximo_contador
@@ -53,7 +52,7 @@ GROUP BY inci.IdClase";
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
-        var_dump($query);
+        // var_dump($query);
         // var_dump($_SESSION);
         echo <<<_END
         <thead>
