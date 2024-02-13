@@ -42,7 +42,7 @@
 <br>
 <h6>Alumno</h6>
 <div class="d-flex justify-content-end">
-<select class="form-select form-select-sm" aria-label="Small select example">
+<select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Clase</option>
     <?php
     $query="SELECT clas.Nombre,clas.Tipo,clas.Year, clas.IdClase FROM clases as clas
@@ -56,6 +56,9 @@
         $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
+        foreach ($result as $row){
+            echo "<option value=\"".$row[]"\">Clase</option>"
+        }
     ?>
 </select>
 <select class="form-select form-select-sm" id="asig" aria-label="Small select example" disabled>
