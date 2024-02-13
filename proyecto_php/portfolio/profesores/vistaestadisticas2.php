@@ -20,11 +20,11 @@ if($_SESSION["rolnow"]==2){
 var_dump($filtroextra);
 $query="SELECT MAX(contador) AS maximo_contador
 FROM (
-    SELECT COUNT(inc.*) AS contador
+    SELECT COUNT(*) AS contador
     FROM incidencia as inc
 
     Inner JOIN clases as cl
-    on in.IdClase = cl.IdClase
+    on inc.IdClase = cl.IdClase
     GROUP BY cl.Seccion
     
 ) AS conteos";
