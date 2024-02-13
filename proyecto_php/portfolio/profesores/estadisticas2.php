@@ -143,7 +143,11 @@ hr.onreadystatechange = function(){
         document.getElementById("tabla").innerHTML=this.responseText;
     }
 };
-hr.open("POST","vistaestadisticas.php");
+$pag="vistaestadisticas.php
+if(document.getElementById("orden").value){
+
+}
+hr.open("POST",$pag);
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("filtro="+filtro()+"&orden="+document.getElementById("orden").value);
 }
