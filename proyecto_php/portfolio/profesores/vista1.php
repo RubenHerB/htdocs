@@ -99,7 +99,7 @@ if($nr==0){
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
-        </ul></div> <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button></div>
+        </ul></div> <button class="btn btn-primary type="button" onclick="newincidencia()">Crear nueva incidencia</button></div>
         _END;
 
 }
