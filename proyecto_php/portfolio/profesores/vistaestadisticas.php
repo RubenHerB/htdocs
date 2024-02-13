@@ -6,7 +6,16 @@ session_start();
 $filtroextra=$_POST["filtro"];
 
 
-$query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion, count(inci.IdIncidencia) as cuenta, max(count(inci.IdIncidencia)) as maximo, prof.Nombre as nombre, prof.Apellidos as apellidos 
+
+$query="SELECT MAX(contador) AS maximo_contador
+FROM (
+    SELECT COUNT(*) AS contador
+    FROM incidencia
+    GROUP BY IdClase
+) AS conteos";
+
+
+$query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion, count(inci.IdIncidencia) as cuenta, max() as maximo, prof.Nombre as nombre, prof.Apellidos as apellidos 
 FROM incidencia as inci 
 
 INNER JOIN clases as cla 
