@@ -56,8 +56,8 @@ WHERE inci.IdProfesor LIKE '".$_SESSION['id']."' $filtroextra";
             foreach($row as $r){
                 echo "<td>$r</td>";
             }
-            echo "<td><button onclick=\"editar($row['id'])\">Editar
-            </button><button onclick=\"borrar($row['id'])\">Borrar
+            echo "<td><button onclick=\"editar(".$row['id'].")\">Editar
+            </button><button onclick=\"borrar(".$row['id'].")\">Borrar
             </button></td></tr>";
     }
     }else{
