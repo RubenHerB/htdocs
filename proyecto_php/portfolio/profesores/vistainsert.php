@@ -73,8 +73,9 @@
 <h6>Fecha</h6>
 <input
   type="datetime-local" id="tiempo">
-
-
+<br>
+  <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
+  <option selected>Clase</option>
 
 <br>
 <br>
