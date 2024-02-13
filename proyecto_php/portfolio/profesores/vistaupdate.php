@@ -52,14 +52,13 @@
 INNER JOIN incidencia as inci
 ON al.IdAlumno=inci.IdAlumno
     where inci.IdIncidencia=".$_POST['id'];
- 
-    
         include "../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
-        
-            echo ""
+        $result->data_seek(0);
+        $r=$result->fetch_array('MYSQLI_ASSOC');
+            echo $r['nom']." ".$r['ape'];
         
     ?></option>
 </select>

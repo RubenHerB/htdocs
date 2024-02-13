@@ -78,7 +78,7 @@ order by id desc
             echo "<td>
             <form method=\"post\" action=\"vistaupdate.php\">
             <input type=\"hidden\" name=\"id\" value=\"".$row['id'].">
-            <button type="submit">
+            <button type=\"submit\">
             Editar
             </button><form>
             <button onclick=\"borrar(".$row['id'].")\">Borrar
