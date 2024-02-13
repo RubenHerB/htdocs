@@ -40,6 +40,7 @@
 <div class="d-flex justify-content-end"><form action="vista1.php"><button class="btn btn-primary type="submit">Ver incidencias</button></form></div>
 <form>
 <br>
+<br>
 <h6>Alumno</h6>
 <div class="d-inline-flex justify-content-arround p-2">
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
@@ -70,24 +71,23 @@
 
 </div>
 <br>
+<br>
 <h6>Fecha</h6>
 <input
   type="datetime-local" id="tiempo">
-<br>
+<br><br>
 <h6>Infraccion</h6>
   <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Infraccion</option>
   <?php
     $query="SELECT IdIncidenciaBase, Tipo, Titulo FROM incidenciasbase";
-        include "../login.php";
-        $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         foreach ($result as $row){
             echo "<option value=\"".$row['IdIncidenciaBase']."\">".$row['Tipo']." - ".$row['Titulo']."</option>";
         }
     ?>
-<select>
+</select>
 <br>
 <br>
 <div class="input-group">
