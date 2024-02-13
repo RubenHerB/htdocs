@@ -104,7 +104,7 @@ if($nr==0){
 
 }
 ?>
-<div class="table-responsive" id=tabla></div>
+<div class="table-responsive" id=tabla></div><div class="table-responsive" id=error></div>
 <div class="modal" tabindex="-1" id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -229,7 +229,7 @@ function confirmdel(id){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("tabla").innerHTML+=this.responseText;
+        document.getElementById("error").innerHTML=this.responseText;
     }
 };
 hr.open("POST","vistadelete.php");

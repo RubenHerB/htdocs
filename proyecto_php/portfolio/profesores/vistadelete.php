@@ -2,7 +2,7 @@
 session_start();
 $id=$_POST["id"];
 
-$query="DELETE FROM incidencias WHERE IdIncidencia='$id'";
+$query="DELETE FROM incidencia WHERE IdIncidencia='$id'";
 var_dump($query);
 include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);
