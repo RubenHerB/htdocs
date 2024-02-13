@@ -71,8 +71,8 @@
         <select>
         <hr>
         <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
-            <option selected>Alumno</option>
-            <option >Alumno</option>
+            <option value="ASC" selected>↓</option>
+            <option value="DES">↑</option>
         <select>
         <hr>
         <li>
