@@ -40,6 +40,9 @@ ON inci.IdClase=cla.IdClase
 INNER JOIN profesor as prof 
 ON prof.IdProfesor LIKE cla.IdTutor 
 
+INNER JOIN incidenciasbase as incibas 
+ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
+
 GROUP BY inci.IdClase
 $filtroextra";
 
@@ -66,7 +69,7 @@ $filtroextra";
         echo "<td>".$row['dep']."</td>";
         echo "<td>".$row['cuenta']."</td>";
         echo "<td>".$row['nombre']." ".$row['apellidos']."</td>";
-        echo "<td><div style=\"height:10px;background-color:red;width:".(100*($row['cuenta'])/$maxin)."px\"></div></td>";
+        echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta'])/$maxin)."px\"></div></td>";
       }
 
 
