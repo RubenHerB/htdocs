@@ -128,6 +128,7 @@ hr.send("id="+idasig);
 }
 
 document.getElementById("asigsel").addEventListener("change", function(){
+    console.log("aa");
     console.log(document.getElementById("alum").value);
     if(document.getElementById("asigsel").value!="Asignatura"){
     ajaxalum(document.getElementById("alum").value);}else{
