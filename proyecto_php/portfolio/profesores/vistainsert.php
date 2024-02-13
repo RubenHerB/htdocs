@@ -138,7 +138,7 @@ document.getElementById("asigsel").addEventListener("change", function(){
 });
 
 
-document.getElementById("clase").addEventListener("change", function(){
+document.getElementById("clase").addEventListener('change', (event) => {
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
     ajaxasig(document.getElementById("clase").value);}else{
