@@ -50,6 +50,7 @@ $filtroextra";
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
         var_dump($query);
+        var_dump($_SESSION);
         echo <<<_END
         <thead>
         <tr>
