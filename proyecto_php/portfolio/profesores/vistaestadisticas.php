@@ -62,11 +62,11 @@ $filtroextra";
     
       foreach($result as $row){
         echo "<tr>";
-        echo "<td>".$row['Clase']." ".$row['year']."º ".$row['tipo']."</td>";
+        echo "<td>".$row['clase']." ".$row['year']."º ".$row['tipo']."</td>";
         echo "<td>".$row['dep']."</td>";
         echo "<td>".$row['cuenta']."</td>";
         echo "<td>".$row['nombre']." ".$row['apellidos']."</td>";
-        echo "<td><div style=\"height:10px;background-color:red;width:".(100*($row['cuenta'])/$maxin)."\"></div></td>";
+        echo "<td><div style=\"height:10px;background-color:red;width:".(100*($row['cuenta'])/$maxin)."px\"></div></td>";
       }
 
 
