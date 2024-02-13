@@ -14,6 +14,8 @@ if($_SESSION["rolnow"]==2){
         }else{
             $filtroextra = " WHERE ".$filtroextra;
         }
+    }else{
+        $filtroextra=$prof;
     }
 
 
@@ -22,6 +24,7 @@ FROM (
     SELECT COUNT(*) AS contador
     FROM incidencia
     GROUP BY IdClase
+    $prof
 ) AS conteos";
 
 
