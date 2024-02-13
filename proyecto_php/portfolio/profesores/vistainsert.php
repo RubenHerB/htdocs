@@ -75,7 +75,18 @@
   type="datetime-local" id="tiempo">
 <br>
   <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
-  <option selected>Clase</option>
+  <option selected>Infraccion</option>
+  <?php
+    $query="SELECT IdIncidenciaBase,Tipo,Titulo FROM incidenciabase";
+    
+        include "../login.php";
+        $con=(new login)->log($_SESSION['rolnow']);
+        $result = $con->query($query);
+        if (!$result) die("Fatal Error");
+        foreach ($result as $row){
+            echo "<option value=\"idc=".$row['idc']."&ida=".$row['ida']."\">".$row['nombre']." ".$row['tipo']." ".$row['year']."º - ".$row['asignatura']."</option>";
+        }
+    ?>
 <select>
 <br>
 <br>
