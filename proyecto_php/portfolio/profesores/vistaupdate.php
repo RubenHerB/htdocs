@@ -60,6 +60,7 @@ ON al.IdAlumno=inci.IdAlumno
         $r=$result->fetch_array(MYSQLI_ASSOC);
             echo $r['nom']." ".$r['ape'];
         $tipo=$r['tipo'];
+        var_dump($tipo);
     ?></option>
 </select>
 
