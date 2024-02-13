@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$query="SELECT IdAsignatura, Nombre FROM asignaturas WHERE 
+$query="SELECT IdAsignatura, Nombre FROM asignaturas
     WHERE IdProfesor=".$_SESSION['id']." AND IdClase LIKE ".$_POST['id']." GROUP BY Nombre";
     
         include "../../login.php";

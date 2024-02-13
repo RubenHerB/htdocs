@@ -41,7 +41,7 @@
 <form>
 <br>
 <h6>Alumno</h6>
-<div class="d-flex justify-content-end">
+<div class="d-inline-flex justify-content-arround p-2">
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Clase</option>
     <?php
