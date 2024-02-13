@@ -8,16 +8,18 @@ $query="SELECT IdAsignatura, Nombre FROM asignaturas WHERE
         $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
-        foreach ($result as $row){
-            echo "<option value=\"".$row['id']."\">".$row['nombre']." ".$row['tipo']." ".$row['year']."º</option>";
-        }
 
-
-
-
-
-
-
-<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" disabled>
+?>
+<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example">
   <option selected>Asignatura</option>
-</select>
+<?php
+        foreach ($result as $row){
+            echo "<option value=\"".$row['IdAsignatura']."\">".$row['Nombre']."</option>";
+        }
+?>
+
+        </select>
+
+
+
+
