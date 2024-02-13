@@ -66,9 +66,7 @@
 </select>
 <select class="form-select form-select-sm" id="alum" aria-label="Small select example" disabled>
   <option selected>Alumno</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+
 </select>
 </div>
 <br>
@@ -80,4 +78,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src=../dark.js></script>
+<script type="text/javascript">
+
+</script>
 </html>
