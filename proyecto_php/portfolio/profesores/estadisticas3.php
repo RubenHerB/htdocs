@@ -121,6 +121,10 @@ function filtro(){
         filtgravedad+= " incibas.Tipo LIKE 'grave'";
         }
     }
+    var historial=document.getElementById("historial").checked;
+    if(!historial){
+        filtgravedad+= "AND alcl.Activa=1"
+    }
     return filtgravedad;
 }
 var hr;

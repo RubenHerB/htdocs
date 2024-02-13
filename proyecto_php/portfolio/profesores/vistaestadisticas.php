@@ -52,7 +52,7 @@ $filtroextra
 
 GROUP BY inci.IdClase
 ORDER BY cuenta  ".$_POST['orden'];
-// var_dump($query);
+var_dump($query);
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
