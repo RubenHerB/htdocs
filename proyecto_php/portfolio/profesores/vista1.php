@@ -206,9 +206,12 @@ hr.send("filtro="+filtro());
 
 
 ajaxtabla();
+
+
 function cerrarmodal(){
     document.getElementById("modal").style.display="none";
 }
+
 function borrar(id){
 document.getElementById("modal").style.display="block";
 document.getElementById("modaltitle").innerHTML="Borrar incidencia";
@@ -217,7 +220,7 @@ document.getElementById("confirm")..onclick="confirmdel("+id+")";
 }
 
 function donfirmdel(id){
-    document.getElementById("modal").style.display="none";
+    cerrarmodal()
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
