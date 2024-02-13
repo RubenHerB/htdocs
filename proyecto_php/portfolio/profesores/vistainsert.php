@@ -45,12 +45,12 @@
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Asignatura</option>
     <?php
-    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as idc,asig.IdAsignatura as ida, asig.Nomnre as asignatura FROM clases as clas
+    $query="SELECT clas.Nombre as nombre ,clas.Tipo as tipo,clas.Year as year, clas.IdClase as idc,asig.IdAsignatura as ida, asig.Nombre as asignatura FROM clases as clas
     
     INNER JOIN asignaturas as asig
     ON clas.IdClase=asig.IdClase
 
-    WHERE asig.IdProfesor=".$_SESSION['id']." GROUP BY clas.Nombre";
+    WHERE asig.IdProfesor=".$_SESSION['id'];
     
         include "../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
