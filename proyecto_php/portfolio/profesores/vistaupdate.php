@@ -46,7 +46,7 @@
 <h6>Alumno</h6>
 <div class="d-inline-flex justify-content-arround p-2">
 <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example" disabled>
-  <option selected>
+  <option selected
     <?php
     $query="SELECT al.Nombre as nom, al.Apellidos as ape,inci.TipoIncidencia as tipo,inci.Observaciones as obs from alumno as al
 INNER JOIN incidencia as inci
@@ -58,7 +58,7 @@ ON al.IdAlumno=inci.IdAlumno
         if (!$result) die("Fatal Error");
         $result->data_seek(0);
         $r=$result->fetch_array(MYSQLI_ASSOC);
-            echo $r['nom']." ".$r['ape'];
+            echo $_POST['id'].">".$r['nom']." ".$r['ape'];
         $tipo=$r['tipo'];
         $obs=$r['obs'];
         // var_dump($tipo);
@@ -118,7 +118,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","selects/editar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id=".$_POST['id']"&tipo="+document.getElementById("infra").value+"&observaciones="+document.getElementById("obs").value);
+hr.send("id="+(document.getElementById("clase").value)+"&tipo="+(document.getElementById("infra").value)+"&observaciones="+(document.getElementById("obs").value));
 }else{
     document.getElementById("respuesta").innerHTML="<div class=\"alert alert-danger\" role=\"alert\">Completa todos los campos para poder editar la incidencia</div>"
 }
