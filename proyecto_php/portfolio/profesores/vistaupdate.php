@@ -57,7 +57,7 @@ ON al.IdAlumno=inci.IdAlumno
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
         $result->data_seek(0);
-        $r=$result->fetch_array('MYSQLI_ASSOC');
+        $r=$result->fetch_array(MYSQLI_ASSOC);
             echo $r['nom']." ".$r['ape'];
         
     ?></option>
