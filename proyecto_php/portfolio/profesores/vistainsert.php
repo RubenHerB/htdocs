@@ -73,6 +73,16 @@
 <h6>Fecha</h6>
 <input
   type="datetime-local" id="tiempo">
+
+
+
+<br>
+<br>
+<div class="input-group">
+  <span class="input-group-text">Observaciones</span>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+<br>
 </form>
 </div>
 </body>
