@@ -16,7 +16,7 @@ ON cl.IdAlumno = al.IdAlumno
   <option selected>Alumno</option>
 <?php
         foreach ($result as $row){
-            echo "<option value=\"".$row['IdAsignatura']."\">".$row['Nombre']."</option>";
+            echo "<option value=\"".$row['id']."\">".$row['nombre']." ".$row['apellidos']."</option>";
         }
 ?>
 

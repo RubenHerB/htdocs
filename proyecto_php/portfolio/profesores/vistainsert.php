@@ -62,16 +62,6 @@
     ?>
 </select>
 
-
-
-
-<div id="asig">
-<select class="form-select form-select-sm" id="asigsel" name="aigsel" aria-label="Small select example" >
-  <option selected>Asignatura</option>
-  <option value="1">Asignatura</option>
-</select>
-</div>
-
 <div id="alum">
 <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example" disabled>
   <option selected>Alumno</option>
@@ -132,7 +122,6 @@ document.querySelector("select[name=clase]").addEventListener("change", function
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
     ajaxalum(document.getElementById("clase").value);}else{
-        document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
 });
