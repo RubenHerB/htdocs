@@ -2,9 +2,9 @@
 session_start();
 
 $query="SELECT IdAsignatura, Nombre FROM asignaturas WHERE 
-    WHERE asig.IdProfesor=".$_SESSION['id']." AND IdClase LIKE ".$_POST['id']." GROUP BY Nombre";
+    WHERE IdProfesor=".$_SESSION['id']." AND IdClase LIKE ".$_POST['id']." GROUP BY Nombre";
     
-        include "../login.php";
+        include "../../login.php";
         $con=(new login)->log($_SESSION['rolnow']);
         $result = $con->query($query);
         if (!$result) die("Fatal Error");
