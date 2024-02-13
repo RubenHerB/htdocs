@@ -21,7 +21,7 @@
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
         }else{
-            if($_SESSION["rolnow"]!=2){
+            if($_SESSION["rolnow"]!=3){
                 header("Location: ../redirect.php");
             }
         }
@@ -35,7 +35,7 @@
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
-<h3 style="margin-top: 20px;">Estadisticas Tutoria</h3>
+<h3 style="margin-top: 20px;">Estadisticas Equipo Administrativo</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 
         <div class="d-flex justify-content-between"><div class="dropdown">
