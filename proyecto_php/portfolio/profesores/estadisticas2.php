@@ -66,7 +66,7 @@
         </li>
         <hr>
         <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
-            <option value="asig" selected>Asignatura</option>
+            <option value="asig" selected>Clase</option>
             <option value="type">Tipo</option>
         <select>
         <hr>
