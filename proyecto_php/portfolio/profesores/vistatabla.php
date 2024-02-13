@@ -77,8 +77,10 @@ order by id desc
         }
             echo "<td>
             <form method=\"post\" action=\"vistaupdate.php\">
-            <input type=\"hidden\" name=\"id\" value=\"".$row['id'].">
-            <input type=\"submit\" value=\"Editar\"></form>
+            <input type=\"hidden\" name=\"id\" value=\"".$row['id']."\">
+            <button type=\"submit\">
+            Editar
+            </button></form>
             <button onclick=\"borrar(".$row['id'].")\">Borrar
             </button></td></tr>";
     }
