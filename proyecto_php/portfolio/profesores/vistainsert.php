@@ -66,8 +66,9 @@
 
 
 <div id="asig">
-<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" disabled>
+<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" >
   <option selected>Asignatura</option>
+  <option value="1">1</option>
 </select>
 </div>
 
