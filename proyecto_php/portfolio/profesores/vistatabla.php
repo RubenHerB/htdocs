@@ -70,7 +70,7 @@ $filtroextra";
                 if($d!="Observaciones"){
                 echo "<td>$r</td>";
             }else{
-                echo "<td class=\"overflow-auto\" style=\"max-width:20%\">$r</td>";
+                echo "<td class=\"overflow-auto\" style=\"max-width:20vw\">$r</td>";
             }
         }
             echo "<td><button onclick=\"editar(".$row['id'].")\">Editar
