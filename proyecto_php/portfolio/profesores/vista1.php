@@ -110,13 +110,13 @@ if($nr==0){
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modaltitle">Modal title</h5>
-        <button type="button" id="cancel1" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" onclick="cerrarmodal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modalbody">
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="cancel2" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="cerrarmodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" id="confirm" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -206,7 +206,9 @@ hr.send("filtro="+filtro());
 
 
 ajaxtabla();
-
+function cerrarmodal(){
+    document.getElementById("modal").style.display="none";
+}
 function borrar(id){
 document.getElementById("modal").style.display="block";
 
