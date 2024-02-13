@@ -218,6 +218,20 @@ document.getElementById("confirm")..onclick="confirmdel("+id+")";
 
 function donfirmdel(id){
     document.getElementById("modal").style.display="none";
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("modalbody").innerHTML+=this.responseText;
+    }
+};
+hr.open("POST","vistadel.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+id);
 }
 
 </script>
