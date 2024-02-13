@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id=$_POST["id"];
 
 $query="DELETE FROM incidencias WHERE IdIncidencia LIKE '$id'";
