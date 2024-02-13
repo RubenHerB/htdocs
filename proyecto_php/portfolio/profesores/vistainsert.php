@@ -37,7 +37,7 @@
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
 <h3 style="margin-top: 20px;">Incidencias</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
-<form action="vista1.php"><button class="btn btn-primary type="submit">Ver incidencias</button></form>
+<div class="d-flex justify-content-end"><form action="vista1.php"><button class="btn btn-primary type="submit">Ver incidencias</button></form></div>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
