@@ -129,6 +129,7 @@ hr.send("id="+idasig);
 
 document.getElementById("clase").addEventListener("change", (event) => {
     console.log(document.getElementById("asigsel").value);
+    console.log(document.getElementById("asigsel").value);
     if(document.getElementById("asigsel").value!="Asignatura"){
     ajaxalum(document.getElementById("asigsel").value);}else{
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
