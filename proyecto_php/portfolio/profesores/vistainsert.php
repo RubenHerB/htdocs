@@ -59,6 +59,8 @@
   <option value="3">Three</option>
 </select>
 </div>
+<input
+  type="datetime-local">
 </form>
 </div>
 </body>
