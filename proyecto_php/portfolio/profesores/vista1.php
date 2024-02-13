@@ -219,7 +219,7 @@ document.getElementById("modalbody").innerHTML="¿Deseas borrar la incidencia?";
 document.getElementById("confirm").onclick="confirmdel("+id+")";
 }
 
-function donfirmdel(id){
+function confirmdel(id){
     cerrarmodal()
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
