@@ -78,7 +78,7 @@
   type="datetime-local" id="tiempo">
 <br><br>
 <h6>Infraccion</h6>
-  <select class="form-select form-select-sm" name="infra" id="infraccion" aria-label="Small select example">
+  <select class="form-select form-select-sm" name="infra" id="infra" aria-label="Small select example">
   <option selected>Infraccion</option>
   <?php
     $query="SELECT IdIncidenciaBase, Tipo, Titulo FROM incidenciasbase";
@@ -102,9 +102,71 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src=../dark.js></script>
-<script src=insert.js></script>
 <script type="text/javascript">
 
+function ajaxasig(idclase){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("asig").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selects/selectasig.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+idclase);
+}
+
+
+
+
+function ajaxalum(idasig){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("alum").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selects/selectalum.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send(idasig);
+}
+
+
+document.querySelector("select[name=clase]").addEventListener("change", function(){
+    console.log(document.getElementById("clase").value);
+    if(document.getElementById("clase").value!="Clase"){
+    ajaxalum(document.getElementById("clase").value);}else{
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
+    } 
+});
+
+function grabar(){
+
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("respuesta").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","selects/grabar.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send((document.getElementById("clase").value)+"\&idalumno="+(document.getElementById("alumsel").value)+"\&infraccion="(document.getElementById("infra").value)+"\&fecha="+(document.getElementById("tiempo").value));
+}
 
 
 
