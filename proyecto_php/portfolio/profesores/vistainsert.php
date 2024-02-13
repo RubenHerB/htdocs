@@ -121,7 +121,18 @@ hr.send("id="+idasig);
 document.getElementById("clase").addEventListener("change", (event) => {
     console.log(document.getElementById("clase").value);
     if(document.getElementById("clase").value!="Clase"){
-    ajaxasig(document.getElementById("clase").value);}else{
+    ajaxasig(document.getElementById("clase").value);
+
+    document.getElementById("asigsel").addEventListener("change", (event) => {
+    console.log(document.getElementById("asigsel").value);
+    if(document.getElementById("asigsel").value!="Asignatura"){
+    ajaxalum(document.getElementById("asigsel").value);
+}else{
+        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
+    } 
+});
+
+}else{
         document.getElementById("asig").innerHTML="<select class=\"form-select form-select-sm\" id=\"asigsel\" aria-label=\"Small select example\" disabled><option selected>Asignatura</option></select>";
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
@@ -132,14 +143,7 @@ document.getElementById("clase").addEventListener("change", (event) => {
 
 
 
-document.getElementById("asigsel").addEventListener("change", (event) => {
-    console.log(document.getElementById("asigsel").value);
-    if(document.getElementById("asigsel").value!="Asignatura"){
-    ajaxalum(document.getElementById("asigsel").value);
-}else{
-        document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
-    } 
-});
+
 
 
 </script>
