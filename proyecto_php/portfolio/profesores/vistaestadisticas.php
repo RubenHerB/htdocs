@@ -49,7 +49,7 @@ $filtroextra";
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
-
+        var_dump($query);
         echo <<<_END
         <thead>
         <tr>
