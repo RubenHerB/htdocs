@@ -66,9 +66,13 @@ $filtroextra";
     if($_SESSION['rolnow']==1){
         foreach($result as $row){
             echo "<tr id=\"".$row['id']."\">";
-            foreach($row as $r){
+            foreach($row as $d=>$r){
+                if($d!=id){
                 echo "<td>$r</td>";
+            }else{
+                echo "<td style=\"overflow-x:none\">$r</td>";
             }
+        }
             echo "<td><button onclick=\"editar(".$row['id'].")\">Editar
             </button><button onclick=\"borrar(".$row['id'].")\">Borrar
             </button></td></tr>";
