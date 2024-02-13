@@ -6,7 +6,7 @@ session_start();
 $filtroextra=$_POST["filtro"];
 
 
-$query="SELECT cla.Nombre as clase, cla.Seccion, count(inci.IdIncidencia) as cuenta, prof.Nombre as nombre, prof.Apellidos as apellidos 
+$query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion, count(inci.IdIncidencia) as cuenta, prof.Nombre as nombre, prof.Apellidos as apellidos 
 FROM incidencia as inci 
 
 INNER JOIN clases as cla 
