@@ -151,7 +151,7 @@ document.querySelector("select[name=clase]").addEventListener("change", function
 });
 
 function grabar(){
-
+if(document.getElementById("infra").value!="Infraccion" && document.getElementById("alumsel").value!="Alumno"){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -167,7 +167,7 @@ hr.open("POST","selects/grabar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send((document.getElementById("clase").value)+"\&idalumno="+(document.getElementById("alumsel").value)+"\&infraccion="(document.getElementById("infra").value)+"\&fecha="+(document.getElementById("tiempo").value));
 }
-
+}
 
 
 
