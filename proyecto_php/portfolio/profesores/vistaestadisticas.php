@@ -13,6 +13,11 @@ FROM (
     FROM incidencia
     GROUP BY IdClase
 ) AS conteos";
+include "../login.php";
+$con=(new login)->log($_SESSION['rolnow']);
+$result = $con->query($query);
+$result->data_seek(0);
+$maxin=$result->fetch_assoc('maximo_contador');
 
 
 $query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion, count(inci.IdIncidencia) as cuenta, max() as maximo, prof.Nombre as nombre, prof.Apellidos as apellidos 
@@ -27,8 +32,7 @@ ON prof.IdProfesor LIKE cla.IdTutor
 GROUP BY inci.IdClase
 $filtroextra";
 
-    include "../login.php";
-    $con=(new login)->log($_SESSION['rolnow']);
+    
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
     if($result->num_rows!=0){
