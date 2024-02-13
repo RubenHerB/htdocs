@@ -24,7 +24,7 @@ FROM (
     SELECT COUNT(*) AS contador
     FROM incidencia
     GROUP BY IdClase
-    $prof
+    
 ) AS conteos";
 
 
@@ -48,7 +48,7 @@ ON incibas.IdIncidenciaBase = inci.TipoIncidencia
 
 GROUP BY inci.IdClase
 $filtroextra";
-
+var_dump($query);
     
     $result = $con->query($query);
     if (!$result) die("Fatal Error");
