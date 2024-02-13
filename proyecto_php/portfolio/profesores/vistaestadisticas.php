@@ -4,7 +4,17 @@
 <?php
 session_start();
 $filtroextra=$_POST["filtro"];
-
+$prof="";
+if($_SESSION["rolnow"]==2){
+        $prof="WHERE cla.IdTutor LIKE '".$_SESSION['id']."'";
+    }
+    if($filtroextra!=""){
+        if($prof!=""){
+            $filtroextra = " AND ".$filtroextra;
+        }else{
+            $filtroextra = " WHERE ".$filtroextra;
+        }
+    }
 
 
 $query="SELECT MAX(contador) AS maximo_contador
@@ -18,7 +28,6 @@ $con=(new login)->log($_SESSION['rolnow']);
 $result = $con->query($query);
 $result->data_seek(0);
 $maxin=$result->fetch_assoc('maximo_contador');
-
 
 $query="SELECT cla.Nombre as clase,cla.Year as year,cla.Tipo as tipo , cla.Seccion as dep, count(inci.IdIncidencia) as cuenta,  prof.Nombre as nombre, prof.Apellidos as apellidos 
 FROM incidencia as inci 
