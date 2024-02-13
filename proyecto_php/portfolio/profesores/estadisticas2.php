@@ -35,7 +35,7 @@
 <button type="submit" class="btn btn-primary">Panel de control</button>
 </form>
 <div class="container border border-secondary rounded align-middle" style="margin-top: 40px">
-<h3 style="margin-top: 20px;">Estadisticas Tutor</h3>
+<h3 style="margin-top: 20px;">Estadisticas Tutoria</h3>
 <h5><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos']?></h5>
 
         <div class="d-flex justify-content-between"><div class="dropdown">
@@ -68,7 +68,7 @@
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
         </li>
-        </ul></div><form action="estadisticas.php"><button class="btn btn-primary type="submit">Estadisticas</button></form></div>
+        </ul></div><form action="vista2.php"><button class="btn btn-primary type="submit">Incidencias</button></form></div>
 <div class="table-responsive" id=tabla></div>
 </div>
 </body>
