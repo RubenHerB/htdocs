@@ -65,7 +65,7 @@ $filtroextra";
     <tbody>";
     if($_SESSION['rolnow']==1){
         foreach($result as $row){
-            echo "<tr id=\"".$row['id']."\">";
+            echo "<tr style=\" overflow: auto;\" id=\"".$row['id']."\">";
             foreach($row as $d=>$r){
                 if($d!="Observaciones"){
                 echo "<td>$r</td>";
