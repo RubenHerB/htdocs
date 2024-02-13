@@ -151,7 +151,7 @@ document.querySelector("select[name=clase]").addEventListener("change", function
 });
 
 function grabar(){
-if(document.getElementById("infra").value!="Infraccion" && document.getElementById("alumsel").value!="Alumno"){
+if(document.getElementById("infra").value!="Infraccion" && document.getElementById("alumsel").value!="Alumno" && document.getElementById("infra").value!=""){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
