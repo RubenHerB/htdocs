@@ -65,15 +65,26 @@
         </label>
         </li>
         <hr>
+        <li>
+        <input class="form-check-input" type="checkbox" value="historico" id="historico" >
+        <label class="form-check-label" for="flexCheckDefault">
+            Historico
+        </label>
+        </li>
+        <hr>
+        <li>
         <select class="form-select form-select-sm" id="alumsel" aria-label="Small select example">
             <option value="asig" selected>Clase</option>
             <option value="type">Tipo</option>
         <select>
+        </li>
         <hr>
+        <li>
         <select class="form-select form-select-sm" id="orden" aria-label="Small select example">
             <option value="ASC" selected>↓</option>
             <option value="DES">↑</option>
         <select>
+        </li>
         <hr>
         <li>
         <button class="btn btn-primary type="button" onclick="ajaxtabla()">Filtrar</button>
