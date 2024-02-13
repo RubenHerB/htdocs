@@ -62,7 +62,7 @@
     ?>
 </select>
 <div id="asig">
-<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" disabled>
+<select class="form-select form-select-sm" id="asigselECT" aria-label="Small select example" disabled>
   <option selected>Asignatura</option>
 </select>
 </div>
@@ -123,10 +123,10 @@ document.getElementById("clase").addEventListener("change", (event) => {
     if(document.getElementById("clase").value!="Clase"){
     ajaxasig(document.getElementById("clase").value);
 
-    document.getElementById("asigsel").addEventListener("change", (event) => {
-    console.log(document.getElementById("asigsel").value);
-    if(document.getElementById("asigsel").value!="Asignatura"){
-    ajaxalum(document.getElementById("asigsel").value);
+    document.getElementById("asigselECT").addEventListener("change", (event) => {
+    console.log(document.getElementById("asigselECT").value);
+    if(document.getElementById("asigselECT").value!="Asignatura"){
+    ajaxalum(document.getElementById("asigselECT").value);
 }else{
         document.getElementById("alum").innerHTML="<select class=\"form-select form-select-sm\" id=\"alumsel\" aria-label=\"Small select example\" disabled><option selected>Alumno</option></select>";
     } 
