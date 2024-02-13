@@ -76,12 +76,12 @@
 <br>
   <select class="form-select form-select-sm" name="clase" id="clase" aria-label="Small select example">
   <option selected>Clase</option>
-
+<select>
 <br>
 <br>
 <div class="input-group">
   <span class="input-group-text">Observaciones</span>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+  <textarea is="obs" class="form-control" aria-label="With textarea" max="250">Sin observaciones.</textarea>
 </div>
 <br>
 </form>
