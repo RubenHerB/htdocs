@@ -145,7 +145,7 @@ hr.onreadystatechange = function(){
     }
 };
 $pag="vistaestadisticas.php";
-if(document.getElementById("tipo").value==type){
+if(document.getElementById("tipo").value=="type"){
     $pag="vistaestadisticas2.php";
 }
 hr.open("POST",$pag);
