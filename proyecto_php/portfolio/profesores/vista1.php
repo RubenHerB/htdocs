@@ -238,5 +238,22 @@ hr.send("id="+id);
 ajaxtabla();
 }
 
+
+finction newincidencia(){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("tabla").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","vistainsert.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send();
+}
 </script>
 </html>
