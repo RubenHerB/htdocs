@@ -61,13 +61,16 @@
         }
     ?>
 </select>
-<select class="form-select form-select-sm" id="asig" aria-label="Small select example" disabled>
+<div id="asig">
+<select class="form-select form-select-sm"  aria-label="Small select example" disabled>
   <option selected>Asignatura</option>
 </select>
+</div>
+<div id="alum">
 <select class="form-select form-select-sm" id="alum" aria-label="Small select example" disabled>
   <option selected>Alumno</option>
-
 </select>
+</div>
 </div>
 <br>
 <h6>Fecha</h6>
