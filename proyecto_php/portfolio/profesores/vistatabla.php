@@ -75,8 +75,13 @@ order by id desc
                 echo "<td class=\"overflow-auto\" style=\"max-width:20vw\">$r</td>";
             }
         }
-            echo "<td><button onclick=\"editar(".$row['id'].")\">Editar
-            </button><button onclick=\"borrar(".$row['id'].")\">Borrar
+            echo "<td>
+            <form method=\"post\" action=\"vistaupdate.php\">
+            <input type=\"hidden\" name=\"id\" value=\"".$row['id']."
+            <button type="submit">
+            Editar
+            </button><form>
+            <button onclick=\"borrar(".$row['id'].")\">Borrar
             </button></td></tr>";
     }
     }else{
