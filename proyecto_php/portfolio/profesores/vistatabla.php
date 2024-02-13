@@ -67,7 +67,7 @@ $filtroextra";
         foreach($result as $row){
             echo "<tr id=\"".$row['id']."\">";
             foreach($row as $d=>$r){
-                if($d!=id){
+                if($d!="Observaciones"){
                 echo "<td>$r</td>";
             }else{
                 echo "<td style=\"overflow-x:none\">$r</td>";
