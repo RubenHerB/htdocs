@@ -66,7 +66,7 @@
 
 
 <div id="asig">
-<select class="form-select form-select-sm" id="asigsel" aria-label="Small select example" >
+<select class="form-select form-select-sm" id="asigsel" name="saigsel" aria-label="Small select example" >
   <option selected>Asignatura</option>
   <option value="1">Asignatura</option>
 </select>
