@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{url('/')}}">
-                <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
                 Videoclub
             </a>
         </div>
