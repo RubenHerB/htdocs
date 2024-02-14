@@ -25,7 +25,7 @@
     @include('partials.navbar')
 
 	<div class="container">
-      @yield('content')
+      @yield('contenido')
     </div>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
