@@ -25,7 +25,6 @@
     @include('partials.navbar')
 
 	<div class="container">
-    AAA
       @yield('contenido')
     </div>
 	
