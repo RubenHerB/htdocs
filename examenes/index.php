@@ -125,7 +125,7 @@ var res="";
 ajax(id);
 var resn=0;
 var resnc=0;
-var baseres=window.some_variable = '<?=$respuesta?>';
+var baseres="";
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
