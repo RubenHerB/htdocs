@@ -22,7 +22,7 @@ for($i=0;$i<10;$i++){
         $idd=$id.$j;
         echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label id=\"l".$idd."\" for=\"r".$idd."\">$rr</label><br>";
     }
-    echo "</fieldset><div id=\"b".$id."\"><button onclick=\"comprobar($id)\">Comprobar respuesta</button></div></div>";
+    echo "</fieldset><div id=\"b".$id."\"><button onclick=\"comprobar('$id')\">Comprobar respuesta</button></div></div>";
 
 }
 
