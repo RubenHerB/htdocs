@@ -18,7 +18,7 @@ for($i=0;$i<10;$i++){
     <div><fieldset id="pregunta$id"><legend>$pre</legend></fieldset><button onclick="comprobar($id)">Comprobar respuesta</button>
     _END;
     for($j=0;$j<4;$j++){
-        $rr=$p[$j];
+        $rr=$res[$j];
         $idd=$id.$j;
         echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label for=\"r".$idd.">$rr</label><br>";
     }
