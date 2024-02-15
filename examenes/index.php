@@ -64,10 +64,10 @@ function guardar(){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        
-        document.getElementById("control").innerHTML="<h1>Respuesta grabada correctamente</h1>";
         document.getElementById("control").innerHTML+=this.responseText;
-        // setTimeout(cancelar(),2500);
+        document.getElementById("control").innerHTML="<h1>Respuesta grabada correctamente</h1>";
+        
+        setTimeout(cancelar(),2500);
     }
 };
 hr.open("POST","insert.php");

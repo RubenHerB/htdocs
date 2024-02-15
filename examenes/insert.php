@@ -1,5 +1,5 @@
 <?php
-var_dump($_POST);
+// var_dump($_POST);
 $pregunta=$_POST["pregunta"];
 $respuestac=$_POST["respuestacorrecta"];
 $respuestai1=$_POST["respuestaincorrecta1"];
