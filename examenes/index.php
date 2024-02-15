@@ -98,6 +98,7 @@ hr.send();
 
 function comprobar(id){
 var res="";
+var baseres="";
 var radios = document.getElementsByName('res'+i);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
@@ -114,10 +115,10 @@ var radios = document.getElementsByName('res'+i);
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("content").innerHTML=this.responseText;
+        res=this.responseText;
     }
 };
-hr.open("POST","export.php");
+hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
 }
