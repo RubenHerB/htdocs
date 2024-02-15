@@ -140,7 +140,7 @@ aciertos++;
 }else{
     document.getElementById("l"+id+resn).style.color="red";
     document.getElementById("l"+id+resn).style.textDecoration="line-through";
-for (var i = 0, i < 4; j++) {
+for (var i = 0; i < 4; i++) {
                     if (radios[i].value == baseres) {
                     resnc=j;
                     break;
