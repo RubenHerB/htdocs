@@ -7,8 +7,8 @@
     <style>
         h1,.controlesformdiv{background-color: #ffb921; width:100%;padding:15px}
         .grid{display:grid; grid-template-columns:20% 80%;    justify-items: center;}
-        .control{background-color:yellow;}
-        .content{background-color:light-gray;}
+        .control{background-color:yellow;width : 100%}
+        .content{background-color:light-gray;width : 100%}
     </style>
 </head>
 <body>
