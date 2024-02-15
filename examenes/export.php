@@ -10,6 +10,12 @@ foreach ($result as $r){
 }
 shuffle($p);
 var_dump($p);
+for($i=0;$i<10;$i++){
+    $pe=$p[$i];
+    echo <<<_END
 
+
+    _END;
+}
 
 ?>
