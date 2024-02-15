@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         h1{background-color: #ffb921}
-        .grid{display:grid;}
+        .grid{display:grid; grid-template-columns:30% 70%}
     </style>
 </head>
 <body>
