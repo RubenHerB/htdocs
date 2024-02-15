@@ -101,7 +101,6 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send();
 }
 
-
 function ajax(id){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
@@ -118,6 +117,7 @@ hr.onreadystatechange = function(){
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
+console.log(hr.responseText);
 }
 
 function comprobar(id){
