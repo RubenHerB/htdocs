@@ -129,6 +129,8 @@ hr.send("id="+id);
 }
 
 if(baseres==res){
+document.getElementById("l"+id+resn).style.color="lightgreen";
+}else{
 
 }
 
