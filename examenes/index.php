@@ -102,27 +102,11 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send();
 }
 
-function ajax(id){
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    hr = new XMLHttpRequest();
-    hr.overrideMimeType('text/xml');
-} else if (window.ActiveXObject) { // IE
-    hr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-hr.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        document.getElementById("sol").innerHTML=this.responseText;
-        
-    }
-};
-hr.open("POST","comprobar.php");
-hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+id);
-}
+
 
 function comprobar(id){
 var res="";
-ajax(id);
+
 var resn=0;
 var resnc=0;
 var baseres="";
@@ -138,18 +122,17 @@ if(res !=""){
     c++;
 
 
-// Crear una instancia de XMLHttpRequest
+
 var xhr = new XMLHttpRequest();
 
-// Especificar el método y la URL de la solicitud
+
 xhr.open('GET', 'comprobar.php?id='+id, true);
 
-// Configurar la función de devolución de llamada cuando se complete la solicitud
 xhr.onload = function() {
-  // Verificar si la solicitud fue exitosa (código de estado HTTP 200)
+
   if (xhr.status >= 200 && xhr.status < 300) {
-    // Analizar la respuesta JSON
-    baseres = JSON.parse(xhr.responseText);
+
+    baseres = JSON.parse(xhr.responseText).res;
     
 
 
