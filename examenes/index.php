@@ -100,11 +100,13 @@ hr.send();
 
 function comprobar(id){
 var res="";
+var resn=0;
 var baseres="";
 var radios = document.getElementsByName('res'+i);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
                     res=radios[j].value;
+                    resn=j;
                     break;
                     }
                         }
@@ -118,13 +120,21 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        res=this.responseText;
+        baseres=this.responseText;
     }
 };
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
 }
+
+if(baseres==res){
+
+}
+
+
+
+
 
 }
 </script>
