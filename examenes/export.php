@@ -15,14 +15,14 @@ for($i=0;$i<10;$i++){
     $res=[$p[$i]["Respuesta1"],$p[$i]["Respuesta2"],$p[$i]["Respuesta3"],$p[$i]["Respuesta4"]];
     shuffle($res);
     echo <<<_END
-    <div><fieldset id="pregunta$id"><legend>$pre</legend></fieldset><button onclick="comprobar($id)">Comprobar respuesta</button>
+    <div><fieldset id="pregunta$id"><legend>$pre</legend></fieldset>
     _END;
     for($j=0;$j<4;$j++){
         $rr=$res[$j];
         $idd=$id.$j;
-        echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label for=\"r".$idd.">$rr</label><br>";
+        echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label for=\"r".$idd."\">$rr</label><br>";
     }
-    echo "</div>";
+    echo "<button onclick=\"comprobar($id)\">Comprobar respuesta</button></div>";
 
 }
 
