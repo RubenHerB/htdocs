@@ -34,16 +34,16 @@
     <div id="control" class="control">  
     <button onclick="crear()">Crear Pregunta</button>                            <button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content">
-        Pregunta:
-        <input type="text" id="pregunta"><br>
-        Respuesta correcta:
-        <input type="text" id="respuestac"><br>
-        Respuesta incorrecta 1:
-        <input type="text" id="respuestai1"><br>
-        Respuesta incorrecta 2:
-        <input type="text" id="respuestai2"><br>
-        Respuesta incorrecta 3:
-        <input type="text" id="respuestai3"><br>
+        Pregunta:<br>
+        <input type="text" id="pregunta"><br><br>
+        Respuesta correcta:    <br>
+        <input type="text" id="respuestac"><br><br>
+        Respuesta incorrecta 1:<br>
+        <input type="text" id="respuestai1"><br><br>
+        Respuesta incorrecta 2:<br>
+        <input type="text" id="respuestai2"><br><br>
+        Respuesta incorrecta 3:<br>
+        <input type="text" id="respuestai3">
     </div>
     <div id="controlesform" class="controlesform"></div>
 </div>
