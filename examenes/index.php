@@ -137,6 +137,30 @@ var radios = document.getElementsByName('res'+id);
 if(res !=""){
     c++;
 
+    var hr = new XMLHttpRequest();
+
+
+hr.open('GET', 'comprobar.php', true);
+
+
+hr.onload = function() {
+
+  if (hr.status >= 200 && hr.status < 300) {
+    var baseres = JSON.parse(hr.responseText);
+    console.log(baseres);
+  } else {
+    console.error('La solicitud falló con código de estado ' + hr.status);
+  }
+};
+hr.onerror = function() {
+  console.error('Error de red al realizar la solicitud');
+};
+hr.send();
+
+
+
+
+
 console.log(baseres+"-"+res);
 document.getElementById("b"+id).innerHTML="";
 if(baseres==res){
