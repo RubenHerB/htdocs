@@ -134,7 +134,7 @@ hr.send("id="+id);
 
 
 document.getElementById("b"+id).innerHTML=0;
-if(baseres===res){
+if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
 }else{
@@ -146,7 +146,7 @@ for (var j = 0, length = radios.length; j < length; j++) {
                     break;
                     }                
 }
-document.getElementById("l"+id+resn).style.color="lightgreen";
+document.getElementById("l"+id+resnc).style.color="lightgreen";
 }
 
 if(c==10){
