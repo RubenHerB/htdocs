@@ -11,9 +11,15 @@ foreach ($result as $r){
 shuffle($p);
 var_dump($p);
 for($i=0;$i<10;$i++){
-    $pe=$p[$i];
-    echo <<<_END
+    $id=$p[$i]["IdPregunta"];
+    $id=$p[$i]["Pregunta"];
+    $id=$p[$i]["Respuesta1"];
+    $id=$p[$i]["Respuesta2"];
+    $id=$p[$i]["Respuesta3"];
+    $id=$p[$i]["Respuesta4"];
 
+    echo <<<_END
+        <div class="pregunta" id="pregunta
 
     _END;
 }
