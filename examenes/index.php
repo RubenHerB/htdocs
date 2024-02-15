@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1,.controlesformdiv{background-color: #ffb921; width:100%;padding:15px}
-        .grid{display:grid; grid-template-columns:20% 80%;    justify-items: center;}
-        .control{background-color:yellow;width : 100%}
-        .content{background-color:light-gray;width : 100%}
+        h1,.controlesformdiv{background-color: #ffb921;padding:15px}
+        .grid{display:grid;
+            grid-template-areas: "header header header header header" 
+                         "control content content content content" 
+                       "controlesform controlesform controlesform controlesform controlesform";}
+        .control{background-color:yellow;}
+        .content{background-color:light-gray;}
     </style>
 </head>
 <body>
-    <h1>Generador de formularios</h1>
+    
     <div class="grid">
+    <h1 class="header">Generador de formularios</h1>
     <div id="control" class="control"><button onclick="crear()">Crear Pregunta</button><button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content"></div>
+    <div id="controlesform" class="controlesform"></div>
 </div>
-<div id="controlesform"></div>
+
 </body>
 </html>
