@@ -110,7 +110,7 @@ function ajax(id){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        return this.responseText;
+        sessionStorage.setItem("baseres", this.responseText);
         
     }
 };
@@ -122,9 +122,10 @@ console.log(hr.responseText);
 
 function comprobar(id){
 var res="";
+
 var resn=0;
 var resnc=0;
-var baseres=ajax(id);
+
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
