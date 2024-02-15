@@ -35,12 +35,17 @@
     <br>    
     <br>    
     <br>    
-    <br>    
+    <br>
     <br>    
     <button onclick="crear()">Crear Pregunta</button>                            <button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content"></div>
     <div id="controlesform" class="controlesform"></div>
 </div>
 
+<script>
+function crear(){
+
+}
+</script>
 </body>
 </html>
