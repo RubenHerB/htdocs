@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1{background-color: #ffb921}
-        .grid{display:grid; grid-template-columns:30% 70%}
+        h1,.controlesformdiv{background-color: #ffb921; width:100%;padding:15px}
+        .grid{display:grid; grid-template-columns:20% 80%;    justify-items: center;}
+        .control{background-color:yellow;}
+        .content{background-color:light-gray;}
     </style>
 </head>
 <body>
@@ -15,5 +17,6 @@
     <div id="control" class="control"><button onclick="crear()">Crear Pregunta</button><button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content"></div>
 </div>
+<div id="controlesform"></div>
 </body>
 </html>
