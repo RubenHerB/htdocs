@@ -97,6 +97,7 @@ hr.send();
 }
 
 function comprobar(id){
+    var res="";
 var radios = document.getElementsByName('p'+i);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
