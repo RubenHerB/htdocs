@@ -6,12 +6,18 @@
     <title>Document</title>
     <style>
         h1,.controlesformdiv{background-color: #ffb921;padding:15px}
+        h1{grid-area:header}
+        .controlesform{grid-area:controlesform}
         .grid{display:grid;
             grid-template-areas: "header header header header header" 
                          "control content content content content" 
                        "controlesform controlesform controlesform controlesform controlesform";}
-        .control{background-color:yellow;}
-        .content{background-color:light-gray;}
+        .control{background-color:yellow;
+        grid-area:control;
+        }
+        .content{background-color:light-gray;
+            grid-area:content;
+        }
     </style>
 </head>
 <body>
