@@ -69,7 +69,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistatabla.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("filtro="+filtro());
+hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrecta="+document.getElementById("respuestac").value+"&respuestaincorrecta1="+document.getElementById("respuestai1").value+"&respuestaincorrecta2="+document.getElementById("respuestai2").value+"&respuestaincorrecta3="+document.getElementById("respuestai3").value);
 
 }
 </script>
