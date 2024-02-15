@@ -42,6 +42,7 @@
 </div>
 
 <script>
+    var c=0;
 function crear(){
     document.getElementById("content").innerHTML="Pregunta:<br><input type=\"text\" id=\"pregunta\"><br><br>Respuesta correcta:<br><input type=\"text\" id=\"respuestac\"><br><br>Respuesta incorrecta 1:<br><input type=\"text\" id=\"respuestai1\"><br><br>Respuesta incorrecta 2:<br><input type=\"text\" id=\"respuestai2\"><br><br>Respuesta incorrecta 3:<br><input type=\"text\" id=\"respuestai3\">";
     document.getElementById("controlesform").innerHTML="<div class=\"controlesformdiv\"><button onclick=\"guardar()\">Guardar Pregunta</button>                            <button onclick=\"cancelar()\">Cancelar</button></div>";
@@ -80,6 +81,7 @@ hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrect
 
 
 function generar(){
+    c=0;
    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -106,8 +108,9 @@ var radios = document.getElementsByName('res'+i);
                     break;
                     }
                         }
-
-                        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+if(res !=""){
+    c++;
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
@@ -121,6 +124,8 @@ hr.onreadystatechange = function(){
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
+}
+
 }
 </script>
 </body>
