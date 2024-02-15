@@ -82,7 +82,9 @@ hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrect
 
 
 function generar(){
+    document.getElementById("controlesform").innerHTML="";
     c=0;
+    aciertos=0;
    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -104,7 +106,7 @@ var res="";
 var resn=0;
 var resnc=0;
 var baseres="";
-var radios = document.getElementsByName('res'+i);
+var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
                     res=radios[j].value;
@@ -132,10 +134,10 @@ hr.send("id="+id);
 
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
-document.getElementById("l"+id+resn).style.textDecoration="line-through";
+
 }else{
     document.getElementById("l"+id+resn).style.color="red";
-
+    document.getElementById("l"+id+resn).style.textDecoration="line-through";
 for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].value == baseres) {
                     resnc=j;
@@ -143,7 +145,10 @@ for (var j = 0, length = radios.length; j < length; j++) {
                     }                
 }
 document.getElementById("l"+id+resn).style.color="lightgreen";
+}
 
+if(c==10){
+    document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
 }
 }
 </script>
