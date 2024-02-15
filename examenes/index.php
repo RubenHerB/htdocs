@@ -19,6 +19,7 @@
         grid-area:control;
         text-align:center;
         min-height:500px;
+        vertical-align:middle;
         }
         .content{background-color:lightgray;
             grid-area:content;
@@ -30,15 +31,11 @@
     
     <div class="grid">
     <h1 class="header">Generador de formularios</h1>
-    <div id="control" class="control">
-    <br>
-    <br>    
-    <br>    
-    <br>    
-    <br>
-    <br>    
+    <div id="control" class="control">  
     <button onclick="crear()">Crear Pregunta</button>                            <button onclick="generar()">Generar formulario</button></div>
-    <div id="content" class="content"></div>
+    <div id="content" class="content">
+
+    </div>
     <div id="controlesform" class="controlesform"></div>
 </div>
 
