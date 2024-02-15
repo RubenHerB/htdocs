@@ -8,6 +8,7 @@ foreach ($result as $r){
     $p[$c] = $r;
     $c++;
 }
+shuffle($p);
 var_dump($p);
 
 
