@@ -125,16 +125,18 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         baseres=this.responseText;
+        document.getElementById("controlesform").innerHTML+=baseres;
     }
 };
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
-}
 
+
+document.getElementById("b"+id).innerHTML=0;
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
-
+aciertos++;
 }else{
     document.getElementById("l"+id+resn).style.color="red";
     document.getElementById("l"+id+resn).style.textDecoration="line-through";
@@ -149,6 +151,7 @@ document.getElementById("l"+id+resn).style.color="lightgreen";
 
 if(c==10){
     document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
+}
 }
 }
 </script>
