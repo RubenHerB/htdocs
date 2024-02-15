@@ -39,6 +39,7 @@
     <div id="controlesform" class="controlesform">
     
     </div>
+    <div id="sol"></div>
 </div>
 
 <script>
@@ -110,7 +111,7 @@ function ajax(id){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        return this.responseText;
+        document.getElementById("sol").innerHTML=this.responseText;
         
     }
 };
@@ -124,7 +125,7 @@ var res="";
 ajax(id);
 var resn=0;
 var resnc=0;
-var baseres=ajax(id);
+var baseres=document.getElementById("sol").value;
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
