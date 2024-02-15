@@ -124,8 +124,7 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        baseres=this.responseText;
-        
+        baseres+=this.responseText;
     }
 };
 hr.open("POST","comprobar.php");
