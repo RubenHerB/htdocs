@@ -20,7 +20,7 @@ for($i=0;$i<10;$i++){
     for($j=0;$j<4;$j++){
         $rr=$res[$j];
         $idd=$id.$j;
-        echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label for=\"r".$idd."\">$rr</label><br>";
+        echo "<input type=\"radio\" name=\"res".$id."\" id=\"r".$idd."\" value=\"".$rr."\"><label id=\"l".$idd."\" for=\"r".$idd."\">$rr</label><br>";
     }
     echo "</fieldset><button onclick=\"comprobar($id)\">Comprobar respuesta</button></div>";
 
