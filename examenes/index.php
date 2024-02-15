@@ -43,6 +43,7 @@
 
 <script>
     var c=0;
+    var aciertos=0;
 function crear(){
     document.getElementById("content").innerHTML="Pregunta:<br><input type=\"text\" id=\"pregunta\"><br><br>Respuesta correcta:<br><input type=\"text\" id=\"respuestac\"><br><br>Respuesta incorrecta 1:<br><input type=\"text\" id=\"respuestai1\"><br><br>Respuesta incorrecta 2:<br><input type=\"text\" id=\"respuestai2\"><br><br>Respuesta incorrecta 3:<br><input type=\"text\" id=\"respuestai3\">";
     document.getElementById("controlesform").innerHTML="<div class=\"controlesformdiv\"><button onclick=\"guardar()\">Guardar Pregunta</button>                            <button onclick=\"cancelar()\">Cancelar</button></div>";
@@ -131,6 +132,7 @@ hr.send("id="+id);
 
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
+document.getElementById("l"+id+resn).style.textDecoration="line-through";
 }else{
     document.getElementById("l"+id+resn).style.color="red";
 
@@ -140,10 +142,10 @@ for (var j = 0, length = radios.length; j < length; j++) {
                     break;
                     }                
 }
-
+document.getElementById("l"+id+resn).style.color="lightgreen";
 
 }
-
+}
 </script>
 </body>
 </html>
