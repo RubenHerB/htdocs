@@ -149,6 +149,29 @@ xhr.onload = function() {
     // Analizar la respuesta JSON
     baseres = JSON.parse(xhr.responseText);
     
+
+
+
+    document.getElementById("b"+id).innerHTML="";
+if(baseres==res){
+document.getElementById("l"+id+resn).style.color="lightgreen";
+aciertos++;
+}else{
+    document.getElementById("l"+id+resn).style.color="red";
+    document.getElementById("l"+id+resn).style.textDecoration="line-through";
+for (var i = 0; i < 4; i++) {
+                    if (radios[i].value == baseres) {
+                    resnc=j;
+                    break;
+                    }                
+}
+document.getElementById("l"+id+resnc).style.color="lightgreen";
+}
+
+
+if(c==10){
+    document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
+}
     // Hacer lo que necesites con la variable nombre en JavaScript
     console.log(baseres); // Aquí puedes imprimir el nombre en la consola, por ejemplo
   } else {
@@ -170,25 +193,9 @@ xhr.send();
 
 
 console.log(baseres+"-"+res);
-document.getElementById("b"+id).innerHTML="";
-if(baseres==res){
-document.getElementById("l"+id+resn).style.color="lightgreen";
-aciertos++;
-}else{
-    document.getElementById("l"+id+resn).style.color="red";
-    document.getElementById("l"+id+resn).style.textDecoration="line-through";
-for (var i = 0; i < 4; i++) {
-                    if (radios[i].value == baseres) {
-                    resnc=j;
-                    break;
-                    }                
-}
-document.getElementById("l"+id+resnc).style.color="lightgreen";
-}
 
-if(c==10){
-    document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
-}
+
+
 }
 }
 </script>
