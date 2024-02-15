@@ -97,17 +97,30 @@ hr.send();
 }
 
 function comprobar(id){
-    var res="";
-var radios = document.getElementsByName('p'+i);
+var res="";
+var radios = document.getElementsByName('res'+i);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
-
                     res=radios[j].value;
-
                     break;
                     }
                         }
-                    }
+
+                        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("content").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","export.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+id);
+}
 </script>
 </body>
 </html>
