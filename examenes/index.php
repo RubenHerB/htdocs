@@ -125,7 +125,7 @@ var res="";
 ajax(id);
 var resn=0;
 var resnc=0;
-var baseres="";
+var baseres=";"
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
@@ -137,10 +137,12 @@ var radios = document.getElementsByName('res'+id);
 if(res !=""){
     c++;
 
+
+// Crear una instancia de XMLHttpRequest
 var xhr = new XMLHttpRequest();
 
 // Especificar el método y la URL de la solicitud
-xhr.open('GET', 'comprobar.php', true);
+xhr.open('GET', 'comprobar.php?id='+id, true);
 
 // Configurar la función de devolución de llamada cuando se complete la solicitud
 xhr.onload = function() {
@@ -149,6 +151,7 @@ xhr.onload = function() {
     // Analizar la respuesta JSON
     baseres = JSON.parse(xhr.responseText);
     
+
 
 
 
@@ -168,14 +171,13 @@ for (var i = 0; i < 4; i++) {
 document.getElementById("l"+id+resnc).style.color="lightgreen";
 }
 
-
 if(c==10){
     document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
 }
-    // Hacer lo que necesites con la variable nombre en JavaScript
-    console.log(baseres); // Aquí puedes imprimir el nombre en la consola, por ejemplo
+
+   
   } else {
-    // Manejar errores de la solicitud
+
     console.error('La solicitud falló con código de estado ' + xhr.status);
   }
 };
@@ -190,14 +192,9 @@ xhr.send();
 
 
 
-
-
 console.log(baseres+"-"+res);
 
-
-
-}
-}
+}}
 </script>
 </body>
 </html>
