@@ -80,7 +80,7 @@ hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrect
 }
 }
 
-
+ajax(1);
 function generar(){
     document.getElementById("controlesform").innerHTML="";
     c=0;
@@ -124,8 +124,8 @@ function comprobar(id){
 var res="";
 var resn=0;
 var resnc=0;
-ajax(id);
-var baseres=sessionStorage.getItem("baseres");
+
+var baseres=sessionStorage.getItem("baseres")
 
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
@@ -140,7 +140,7 @@ if(res !=""){
 
 console.log(baseres+"-"+res);
 document.getElementById("b"+id).innerHTML="";
-if(baseres==res){
+if(res==baseres){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
 }else{
