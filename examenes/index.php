@@ -125,7 +125,7 @@ var res="";
 var resn=0;
 var resnc=0;
 ajax(id);
-var baseres=sessionStorage.getItem("baseres")
+var baseres=sessionStorage.getItem("baseres");
 
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
