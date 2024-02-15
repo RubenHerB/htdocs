@@ -101,6 +101,7 @@ hr.send();
 function comprobar(id){
 var res="";
 var resn=0;
+var resnc=0;
 var baseres="";
 var radios = document.getElementsByName('res'+i);
                     for (var j = 0, length = radios.length; j < length; j++) {
@@ -131,14 +132,18 @@ hr.send("id="+id);
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 }else{
+    document.getElementById("l"+id+resn).style.color="red";
 
+for (var j = 0, length = radios.length; j < length; j++) {
+                    if (radios[j].value == baseres) {
+                    resnc=j;
+                    break;
+                    }                
 }
 
 
-
-
-
 }
+
 </script>
 </body>
 </html>
