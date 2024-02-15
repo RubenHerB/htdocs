@@ -132,6 +132,7 @@ xhr.onload = function() {
 
   if (xhr.status >= 200 && xhr.status < 300) {
 
+    // No consegui pasar el json a la variable y que funcionara
     baseres = JSON.parse(xhr.responseText).res;
     
 
