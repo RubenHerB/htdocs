@@ -32,7 +32,7 @@
     <div class="grid">
     <h1 class="header">Generador de formularios</h1>
     <div id="control" class="control">  
-    <button onclick="crear()">Crear Pregunta</button>                            <button onclick="generar()">Generar formulario</button></div>
+    <button onclick="crear()">Crear Pregunta</button><button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content">
         
     </div>
@@ -45,10 +45,13 @@
 function crear(){
     document.getElementById("content").innerHTML="Pregunta:<br><input type=\"text\" id=\"pregunta\"><br><br>Respuesta correcta:<br><input type=\"text\" id=\"respuestac\"><br><br>Respuesta incorrecta 1:<br><input type=\"text\" id=\"respuestai1\"><br><br>Respuesta incorrecta 2:<br><input type=\"text\" id=\"respuestai2\"><br><br>Respuesta incorrecta 3:<br><input type=\"text\" id=\"respuestai3\">";
     document.getElementById("controlesform").innerHTML="<div class=\"controlesformdiv\"><button onclick=\"guardar()\">Guardar Pregunta</button>                            <button onclick=\"cancelar()\">Cancelar</button></div>";
+    document.getElementById("control").innerHTML="";
 }
 function cancelar(){
     document.getElementById("content").innerHTML="";
     document.getElementById("controlesform").innerHTML="";
+    document.getElementById("control").innerHTML="<button onclick=\"crear()\">Crear Pregunta</button><button onclick=\"generar()\">Generar formulario</button>";
+
 }
 </script>
 </body>
