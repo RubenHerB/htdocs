@@ -4,5 +4,5 @@ if ($connection->connect_error) die("Fatal Error");
 $query="SELECT Respuesta1 FROM preguntas where IdPregunta like ".$_POST["id"];
 $result = $connection->query($query);
 $result->data_seek(0);
-echo $result->data_assoc()['Respuesta1'];
+echo $result->fetch_assoc()['Respuesta1'];
 ?>

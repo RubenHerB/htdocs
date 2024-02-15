@@ -95,6 +95,18 @@ hr.open("POST","export.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send();
 }
+
+function comprobar(id){
+var radios = document.getElementsByName('p'+i);
+                    for (var j = 0, length = radios.length; j < length; j++) {
+                    if (radios[j].checked) {
+
+                    res=radios[j].value;
+
+                    break;
+                    }
+                        }
+                    }
 </script>
 </body>
 </html>
