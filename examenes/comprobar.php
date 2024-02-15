@@ -4,6 +4,6 @@ if ($connection->connect_error) die("Fatal Error");
 $query="SELECT Respuesta1 FROM preguntas where IdPregunta like ".$_POST["id"]." LIMIT 1";
 $result = $connection->query($query);
 foreach ($result as $row){
-echo "<input type=\"hidden\" id=\"solucion\" value=\"".$row["Respuesta1"]."\">";
+$respuesta=$row["Respuesta1"];
 }
 ?>
