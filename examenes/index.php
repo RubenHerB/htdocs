@@ -101,11 +101,30 @@ hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send();
 }
 
+
+function ajax(id){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        return this.responseText;
+        
+    }
+};
+hr.open("POST","comprobar.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+id);
+}
+
 function comprobar(id){
 var res="";
 var resn=0;
 var resnc=0;
-var baseres="";
+var baseres=ajax(id);
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
@@ -116,16 +135,9 @@ var radios = document.getElementsByName('res'+id);
                         }
 if(res !=""){
     c++;
-if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    hr = new XMLHttpRequest();
-    hr.overrideMimeType('text/xml');
-} else if (window.ActiveXObject) { // IE
-    hr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-hr.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        baseres=this.responseText;
-        document.getElementById("b"+id).innerHTML="";
+
+console.log(baseres+"-"+res);
+document.getElementById("b"+id).innerHTML="";
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
@@ -145,14 +157,6 @@ if(c==10){
     document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
 }
 }
-    }
-};
-hr.open("POST","comprobar.php");
-hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+id);
-
-console.log(baseres+"-"+res);
-
 }
 </script>
 </body>
