@@ -124,15 +124,8 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        baseres=eval(this.responseText);
-    }
-};
-hr.open("POST","comprobar.php");
-hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+id);
-
-console.log(baseres+"-"+res);
-document.getElementById("b"+id).innerHTML="";
+        baseres=this.responseText;
+        document.getElementById("b"+id).innerHTML="";
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
@@ -152,6 +145,14 @@ if(c==10){
     document.getElementById("controlesform").innerHTML="Aciertos "+aciertos+"/10";
 }
 }
+    }
+};
+hr.open("POST","comprobar.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("id="+id);
+
+console.log(baseres+"-"+res);
+
 }
 </script>
 </body>
