@@ -117,14 +117,15 @@ hr.onreadystatechange = function(){
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
-console.log(hr.responseText);
+
 }
 
 function comprobar(id){
 var res="";
-
 var resn=0;
 var resnc=0;
+ajax(id);
+var baseres=sessionStorage.getItem("baseres")
 
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
