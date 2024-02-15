@@ -105,7 +105,7 @@ function comprobar(id){
 var res="";
 var resn=0;
 var resnc=0;
-var baseres="";
+
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
@@ -124,7 +124,7 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        baseres+=this.responseText;
+       var baseres=String(this.responseText);
     }
 };
 hr.open("POST","comprobar.php");
