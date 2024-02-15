@@ -80,7 +80,7 @@ hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrect
 }
 }
 
-ajax(1);
+
 function generar(){
     document.getElementById("controlesform").innerHTML="";
     c=0;
@@ -110,23 +110,21 @@ function ajax(id){
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        sessionStorage.setItem("baseres", this.responseText);
+        return this.responseText;
         
     }
 };
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
-
 }
 
 function comprobar(id){
 var res="";
+ajax(id);
 var resn=0;
 var resnc=0;
-
-var baseres=sessionStorage.getItem("baseres")
-
+var baseres=ajax(id);
 var radios = document.getElementsByName('res'+id);
                     for (var j = 0, length = radios.length; j < length; j++) {
                     if (radios[j].checked) {
@@ -140,7 +138,7 @@ if(res !=""){
 
 console.log(baseres+"-"+res);
 document.getElementById("b"+id).innerHTML="";
-if(res==baseres){
+if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
 }else{
