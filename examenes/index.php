@@ -125,15 +125,15 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         baseres=this.responseText;
-        console.log(baseres);
+        
     }
 };
 hr.open("POST","comprobar.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("id="+id);
 
-
-document.getElementById("b"+id).innerHTML=0;
+console.log(baseres+"-"+res);
+document.getElementById("b"+id).innerHTML="";
 if(baseres==res){
 document.getElementById("l"+id+resn).style.color="lightgreen";
 aciertos++;
