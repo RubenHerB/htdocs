@@ -55,6 +55,7 @@ function cancelar(){
 }
 
 function guardar(){
+    if(document.getElementById("pregunta").value!="" && document.getElementById("respuestac").value!="" && document.getElementById("respuestai1").value!="" && document.getElementById("respuestai4").value!="" && document.getElementById("respuestai3").value!="" ){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
@@ -64,14 +65,18 @@ function guardar(){
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         document.getElementById("control").innerHTML+=this.responseText;
-        cancelar();
+        document.getElementById("control").innerHTML="<h1>Respuesta grabada correctamente</h1>";
+        setTimeout(cancelar(),2500);
     }
 };
 hr.open("POST","vistatabla.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 hr.send("pregunta="+document.getElementById("pregunta").value+"&respuestacorrecta="+document.getElementById("respuestac").value+"&respuestaincorrecta1="+document.getElementById("respuestai1").value+"&respuestaincorrecta2="+document.getElementById("respuestai2").value+"&respuestaincorrecta3="+document.getElementById("respuestai3").value);
-
+}else{
+    document.getElementById("control").innerHTML="<h1>Rellena todos los campos</h1><br>"+document.getElementById("control").innerHTML;
 }
+}
+
 </script>
 </body>
 </html>
