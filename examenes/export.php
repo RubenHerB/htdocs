@@ -19,8 +19,9 @@ for($i=0;$i<10;$i++){
     _END;
     for($j=0;$j<4;$j++){
         $rr=$p[$j];
+        $idd=$id.$j;
         echo <<<_END
-        <input type="radio" name="res$id" id="$i-r-$j" value="$rr"><label for="$i-r-$j"></label><br>
+        <input type="radio" name="res$id" id="r$idd" value="$rr"><label for="r$idd"></label><br>
         _END;
     }
     echo "</div>";
