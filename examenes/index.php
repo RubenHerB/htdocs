@@ -137,25 +137,33 @@ var radios = document.getElementsByName('res'+id);
 if(res !=""){
     c++;
 
-    var hr = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 
+// Especificar el método y la URL de la solicitud
+xhr.open('GET', 'comprobar.php', true);
 
-hr.open('GET', 'comprobar.php', true);
-
-
-hr.onload = function() {
-
-  if (hr.status >= 200 && hr.status < 300) {
-    var baseres = JSON.parse(hr.responseText);
-    console.log(baseres);
+// Configurar la función de devolución de llamada cuando se complete la solicitud
+xhr.onload = function() {
+  // Verificar si la solicitud fue exitosa (código de estado HTTP 200)
+  if (xhr.status >= 200 && xhr.status < 300) {
+    // Analizar la respuesta JSON
+    baseres = JSON.parse(xhr.responseText);
+    
+    // Hacer lo que necesites con la variable nombre en JavaScript
+    console.log(baseres); // Aquí puedes imprimir el nombre en la consola, por ejemplo
   } else {
-    console.error('La solicitud falló con código de estado ' + hr.status);
+    // Manejar errores de la solicitud
+    console.error('La solicitud falló con código de estado ' + xhr.status);
   }
 };
-hr.onerror = function() {
+
+// Configurar la función de devolución de llamada para manejar errores de red
+xhr.onerror = function() {
   console.error('Error de red al realizar la solicitud');
 };
-hr.send();
+
+// Enviar la solicitud
+xhr.send();
 
 
 
