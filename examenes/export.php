@@ -12,14 +12,11 @@ shuffle($p);
 var_dump($p);
 for($i=0;$i<10;$i++){
     $id=$p[$i]["IdPregunta"];
-    $id=$p[$i]["Pregunta"];
-    $id=$p[$i]["Respuesta1"];
-    $id=$p[$i]["Respuesta2"];
-    $id=$p[$i]["Respuesta3"];
-    $id=$p[$i]["Respuesta4"];
-
+    $pre=$p[$i]["Pregunta"];
+    $res=[$p[$i]["Respuesta1"],$p[$i]["Respuesta2"],$p[$i]["Respuesta3"],$p[$i]["Respuesta4"]];
+    shuffle($res);
     echo <<<_END
-        <div class="pregunta" id="pregunta
+    <div><fieldset id="pregunta$id"><legend>$pregunta</legend></fieldset><button onclick="comprobar($id)">Comprobar respuesta</button></div>
 
     _END;
 }
