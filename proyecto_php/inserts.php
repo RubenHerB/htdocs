@@ -58,5 +58,13 @@ $nombres=[
     ['Adrián', 'González Hernández', 'adriangonzalez', '1988-12-25'],
     ['Marta María', 'Sánchez Gómez', 'martamariasanchez', '1992-11-04']];
 
-    var_dump($nombres);
+    include "portfolio/login.php";
+      $conn=new login();
+      $con=$conn->log(-1);
+      
+    foreach ($nombres as $n) {
+        $query ="";
+        $result = $con->query($query);
+        if (!$result) die("Fatal Error");
+    }
     ?>
