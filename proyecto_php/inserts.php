@@ -59,12 +59,11 @@ $nombres=[
     ['Marta María', 'Sánchez Gómez', 'martamariasanchez', '1992-11-04']];
 
     include "portfolio/login.php";
-      $conn=new login();
-      $con=$conn->log(-1);
-      
+    $connection = new mysqli('localhost', 'root','', 'incidencias');
+    if ($connection->connect_error) die("Fatal Error");
     foreach ($nombres as $n) {
         $query ="";
-        $result = $con->query($query);
+        $result = $connection->query($query);
         if (!$result) die("Fatal Error");
     }
     ?>
