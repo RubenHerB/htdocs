@@ -17,7 +17,7 @@ session_start();
 $day = strtotime($_POST["fecha"]);
 $day = date('Y-m-d H:i:s', $day);   
 $query="INSERT INTO incidencia (IdClase, Fecha, IdProfesor, Observaciones, TipoIncidencia,IdAlumno,Asignatura) VALUES (".$_POST['idc'].", '$day',".$_SESSION['id'].", '".$_POST['observaciones']."', ".$_POST['tipo'].", ".$_POST['idalumno'].", ".$_POST['ida'].")";
-var_dump($query);
+// var_dump($query);
 include "../../login.php";
 $con=(new login)->log($_SESSION['rolnow']);
 $result = $con->query($query);

@@ -39,8 +39,6 @@ $maxin=$result->fetch_assoc()['maximo_contador'];
 $query="SELECT  incibas.Tipo as dep, count(inci.IdIncidencia) as cuenta 
 FROM incidencia as inci 
 
-INNER JOIN clases as cla 
-ON inci.IdClase=cla.IdClase
 
 INNER JOIN profesor as prof 
 ON prof.IdProfesor LIKE cla.IdTutor 
@@ -48,8 +46,7 @@ ON prof.IdProfesor LIKE cla.IdTutor
 INNER JOIN incidenciasbase as incibas 
 ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
 
-INNER JOIN `alumno-clase` as alcl
-ON cla.IdClase = alcl.IdClase
+ 
 
 $filtroextra
 
