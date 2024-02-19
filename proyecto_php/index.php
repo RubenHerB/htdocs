@@ -17,7 +17,7 @@
     $errorusu="";
     $errorpass="";
   if (isset($_POST) && isset($_POST["login"])){
-    var_dump($_POST);
+
     $usu=$_POST["mail"];
     $pass=$_POST["pass"];
     if($usu!="" && $pass!=""){

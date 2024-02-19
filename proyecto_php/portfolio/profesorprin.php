@@ -18,7 +18,7 @@
     session_start();
     if(!isset($_SESSION)){
         header("Location: ../index.php");
-        var_dump($_SESSION["tipo"]);
+        // var_dump($_SESSION["tipo"]);
     }else{
         if($_SESSION["tipo"]!=0){
             header("Location: redirect.php");
@@ -27,7 +27,7 @@
     if (isset($_POST["modo"])){
         $modo=intval($_POST["modo"]);
         $_SESSION["rolnow"]=$modo;
-        var_dump($modo);
+        // var_dump($modo);
         switch($modo){
             case 1:
                 header("Location: profesores/vista1.php");
