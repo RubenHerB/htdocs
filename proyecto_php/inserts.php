@@ -62,7 +62,7 @@ $nombres=[
     $connection = new mysqli('localhost', 'root','', 'incidencias');
     if ($connection->connect_error) die("Fatal Error");
     foreach ($nombres as $n) {
-        $query ="";
+        $query ="INSERT INTO profesor (Nombre,Apellidos,Mail,Contra,Rol,Departamento) VALUES ('".$n[0]."', '".$n[1]."','".$n[2]."@profesor.cifp','".password_hash($n[2], PASSWORD_DEFAULT)."','0','Informatica')";
         $result = $connection->query($query);
         if (!$result) die("Fatal Error");
     }
