@@ -12,10 +12,12 @@ if($_SESSION["rolnow"] ==1){
 }
 if($filtroextra!=""){
     if($prof!=""){
-        $filtroextra = " AND ".$filtroextra;
+        $filtroextra =$prof." AND ".$filtroextra;
     }else{
         $filtroextra = " WHERE ".$filtroextra;
     }
+}else if($prof!=""){
+    $filtroextra = $prof;
 }
 
 $query="SELECT inci.IdIncidencia as id, inci.Fecha as Fecha, incibas.Tipo as Gravedad, al.Nombre as Nombre, al.Apellidos as Apellidos, cla.Nombre as Curso, cla.Year as Yeara, asig.Nombre as Asignatura,incibas.Titulo as Tipo, inci.Observaciones as Observaciones 
@@ -34,10 +36,7 @@ INNER JOIN clases as cla
 ON alc.IdClase = cla.IdClase 
 
 INNER JOIN asignaturas as asig 
-ON inci.Asignatura LIKE asig.IdAsignatura 
-$filtroextra
-order by id desc
-";
+ON inci.Asignatura LIKE asig.IdAsignatura ".$filtroextra." order by id desc";
 
     include "../login.php";
     $con=(new login)->log($_SESSION['rolnow']);

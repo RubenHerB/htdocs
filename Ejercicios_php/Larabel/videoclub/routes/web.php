@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Operaciones;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,8 @@ Route::get('catalog/create', function () {
 Route::get('catalog/edit/{id?}', function ($id=null) {
     return 'Modificar película '.$id    ;
 })->where('id', '[0-9]+');
+
+Route::get('Operaciones/Suma/{a}/{b}', [operaciones::class, 'suma']);
+Route::get('Resta/{a}/{b}', [operaciones::class, 'resta']);
+Route::get('Div/{a}/{b}', [operaciones::class, 'div']);
+Route::get('Mullti/{a}/{b}', [operaciones::class, 'multi']);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <button type="button" onclick="sumar()">Sumar</button>
+    La suma de los 2 numeros es: <span id="num"></span>
+</body>
+<script type="text/javascript">
+    var hr = new XMLHttpRequest();
+    function sumar(){
+   if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("num").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","suma.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("n1="+document.getElementById("n1").value+"&n2="+document.getElementById("n2").value);
+    }
+</script>
+</html>

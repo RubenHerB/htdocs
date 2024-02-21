@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controlers\MoviesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,8 @@ Route::get('/colores/{id}', function($id)
 {
 return view('user.colores', array('n' => $id,'color'=>[1=>'rojo',2=>'verde',3=>'azul',4=>'amarillo']));
 })->where('id', '[1-4]');
+
+Route::get('/Suma/{a}/{b}', [operaciones::class, 'suma']);
+Route::get('/Resta/{a}/{b}', [operaciones::class, 'resta']);
+Route::get('/Div/{a}/{b}', [operaciones::class, 'div']);
+Route::get('/Mullti/{a}/{b}', [operaciones::class, 'multi']);

@@ -50,7 +50,7 @@ ON cla.IdClase = alcl.IdClase
 
 $filtroextra
 
-GROUP BY inci.IdClase
+GROUP BY clase AND Year
 ORDER BY cuenta  ".$_POST['orden'];
 // var_dump($query);
     
@@ -75,9 +75,9 @@ ORDER BY cuenta  ".$_POST['orden'];
         echo "<tr>";
         echo "<td>".$row['clase']." ".$row['year']."º ".$row['tipo']."</td>";
         echo "<td>".$row['dep']."</td>";
-        echo "<td>".$row['cuenta']."</td>";
+        echo "<td>".($row['cuenta']/30)."</td>";
         echo "<td>".$row['nombre']." ".$row['apellidos']."</td>";
-        echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta'])/$maxin)."px\"></div></td>";
+        echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta']/30)/$maxin)."px\"></div></td>";
       }
 
 

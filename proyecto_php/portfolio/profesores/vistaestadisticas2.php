@@ -40,13 +40,19 @@ $query="SELECT  incibas.Tipo as dep, count(inci.IdIncidencia) as cuenta
 FROM incidencia as inci 
 
 
-INNER JOIN profesor as prof 
-ON prof.IdProfesor LIKE cla.IdTutor 
+
 
 INNER JOIN incidenciasbase as incibas 
 ON incibas.IdIncidenciaBase = inci.TipoIncidencia 
 
- 
+INNER JOIN clases as cla 
+ON inci.IdClase = cla.IdClase  
+
+INNER JOIN `alumno-clase` as alcl
+ON cla.IdClase = alcl.IdClase
+
+INNER JOIN profesor as prof 
+ON prof.IdProfesor LIKE cla.IdTutor 
 
 $filtroextra
 
@@ -72,8 +78,8 @@ ORDER BY cuenta  ".$_POST['orden'];
       foreach($result as $row){
         echo "<tr>";
         echo "<td>".$row['dep']."</td>";
-        echo "<td>".$row['cuenta']."</td>";
-        echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta'])/$maxin)."px\"></div></td>";
+        echo "<td>".($row['cuenta']/30)."</td>";
+        echo "<td><div style=\"height:20px;background-color:red;width:".(200*($row['cuenta']/30)/$maxin)."px\"></div></td>";
       }
 
 

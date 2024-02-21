@@ -1,6 +1,5 @@
-<?php 
-// var_dump($_POST);
-session_start(); 
+<?php
+session_start();
     if(!isset($_SESSION)){
         header("Location: ../index.php");
         
