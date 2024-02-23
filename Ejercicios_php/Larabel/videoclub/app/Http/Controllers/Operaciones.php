@@ -8,7 +8,7 @@ class operaciones extends Controller
 {
 public function suma( $a, $b)
 {
-    return view("Suma.php",array("suma"=>($a+$b)));
+    return view('Suma',["suma"=>($a+$b)]);
 }
 
 public function resta(Request $request,  $a, $b)
