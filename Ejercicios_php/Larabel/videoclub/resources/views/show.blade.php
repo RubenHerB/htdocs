@@ -8,9 +8,9 @@
 <h2 style="min-height:45px;margin:5px 0 10px 0">
 {{$pelicula['title']}}
 </h2>
-<p>Año: {{$pelicula['year']}}</p>
-<p>Director: {{$pelicula['director']}}</p>
-<p>{{$pelicula['synopsis']}}</p>
+<p><b>Año:</b> {{$pelicula['year']}}</p>
+<p><b>Director:</b> {{$pelicula['director']}}</p>
+<p><b>Resumen:</b> {{$pelicula['synopsis']}}</p>
 
 			'year' => '1999',
 			'director' => 'David Fincher',
