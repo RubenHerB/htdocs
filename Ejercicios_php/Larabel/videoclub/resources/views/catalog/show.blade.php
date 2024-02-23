@@ -17,9 +17,8 @@ Pelicula actualmente alquilada
 Pelicula disponible
 @endif
 </p>
-<a href="{{ url('catalog/edit/' . $key ) }}" type="button">Editar pelicula</a>
-<a href="{{ url('catalog ) }}" type="button">< Volver al catalogo</a>
-			
+<a href="{{ url('catalog/edit/' . $key ) }}" type="button">Editar pelicula</a>  
+<a href="{{ url('catalog') }}" type="button">< Volver al catalogo</a>
 </div>
 </div>
 @endsection
