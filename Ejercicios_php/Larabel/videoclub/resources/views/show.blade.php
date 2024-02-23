@@ -11,12 +11,14 @@
 <p><b>Año:</b> {{$pelicula['year']}}</p>
 <p><b>Director:</b> {{$pelicula['director']}}</p>
 <p><b>Resumen:</b> {{$pelicula['synopsis']}}</p>
+<p><b>Estado:</b> @if ($pelicula['synopsis'] === true)
+Pelicula actualmente alquilada
+@else
+Pelicula disponible
+@endif
+</p>
 
-			'year' => '1999',
-			'director' => 'David Fincher',
-			'poster' => 'http://ia.media-imdb.com/images/M/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX214_AL_.jpg',
-			'rented' => true,
-			'synopsis'
+			
 </div>
 </div>
 @endsection
