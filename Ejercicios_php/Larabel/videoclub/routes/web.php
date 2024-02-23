@@ -16,6 +16,7 @@ use App\Http\Controllers\CatalogControler;
 
 Route::get('/', [CatalogControler::class, 'getHome']);
 Route::get('catalog', [CatalogControler::class, 'getIndex']);
+Route::get('catalog/show/{id}', [CatalogControler::class, 'getShow']);
 
 Route::get('user/{id}', [CatalogControler::class, 'showProfile']);
 
