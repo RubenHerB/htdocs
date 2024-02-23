@@ -181,7 +181,7 @@ class CatalogControler extends Controller
 
     public function getIndex(){
 
-        return view("catalog",$this->arrayPeliculas);
+        return view("catalog",['arrayPeliculas'=>$this->arrayPeliculas]);
         }
         
 
