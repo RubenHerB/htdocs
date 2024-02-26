@@ -200,8 +200,8 @@ public function getCreate(){
 
 }
 
-public function getEdit(){
-
+public function getEdit($id){
+    return view('catalog.edit',array('key'=>$id,'pelicula'=>$this->arrayPeliculas[$id]));
 }
 
 }
