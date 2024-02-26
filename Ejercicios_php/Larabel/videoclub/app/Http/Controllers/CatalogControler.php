@@ -182,7 +182,6 @@ class CatalogControler extends Controller
     }
 
     public function getIndex(){
-
         return view("catalog.index",['arrayPeliculas'=>$this->arrayPeliculas]);
         }
         
@@ -199,7 +198,8 @@ return view('catalog.show',array('key'=>$id,'pelicula'=>$this->arrayPeliculas[$i
 }
 
 public function getCreate($title, $year, $director, $poster, $rented, $synopsis){
-    return view('catalog.show',array('title' =>$title,'year' =>$year,'director' =>$director,'poster' =>$poster,'rented' =>$rented,'synopsis' =>$synopsis));
+    return view('catalog.create',array('title' =>$title,'year' =>$year,
+    'director' =>$director,'poster' =>$poster,'rented' =>$rented,'synopsis' =>$synopsis));
 }
 
 public function getEdit($id){
