@@ -18,7 +18,7 @@ Route::get('/', [CatalogControler::class, 'getHome']);
 Route::get('catalog', [CatalogControler::class, 'getIndex']);
 Route::get('catalog/show/{id}', [CatalogControler::class, 'getShow']);
 Route::get('catalog/dit/{id}', [CatalogControler::class, 'getEdit']);
-
+Route::get('catalog/create', [CatalogControler::class, 'getCreate']);
 Route::get('user/{id}', [CatalogControler::class, 'showProfile']);
 
 

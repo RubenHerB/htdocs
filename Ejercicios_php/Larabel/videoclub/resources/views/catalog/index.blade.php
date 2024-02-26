@@ -1,9 +1,9 @@
 
 @extends('layouts.master')
 @section('contenido')
-<a href="{{ url('/catalog/create')}}" type="button" class="btn btn-danger">Crear pelicula</a>
+<a href="{{ url('/catalog/create')}}" type="button" class="btn btn-danger">Añadir pelicula</a>
 <br>
-<br>
+<br>    
 <div class="row">
 @foreach( $arrayPeliculas as $key => $pelicula )
 <div class="col-xs-6 col-sm-4 col-md-3 text-center">
