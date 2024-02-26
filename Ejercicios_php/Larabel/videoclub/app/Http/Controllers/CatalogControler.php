@@ -175,7 +175,9 @@ class CatalogControler extends Controller
 
 
 
-    public function getHome(){
+    
+    
+        public function getHome(){
     return redirect()->action('CatalogController@getIndex');
     }
 
