@@ -11,7 +11,7 @@
 <p><b>Año:</b> {{$pelicula['year']}}</p>
 <p><b>Director:</b> {{$pelicula['director']}}</p>
 <p><b>Resumen:</b> {{$pelicula['synopsis']}}</p>
-<p><b>Estado:</b> @if ($pelicula['synopsis'] === true)
+<p><b>Estado:</b> @if ($pelicula['rented'] === true)
 Pelicula actualmente alquilada
 @else
 Pelicula disponible
