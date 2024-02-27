@@ -20,6 +20,6 @@ opacity:0.9;
     </style>
 </head>
 <body>
-<i class="fa badge" style="font-size:24px" value=0>&#xf07a;</i>
+<a href="carrito.php" type="button" style="text-decoration: none; color:black;"><i class="fa badge" style="font-size:24px" value=0>&#xf07a;</i></a>
 </body>
 </html>
