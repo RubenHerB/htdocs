@@ -177,8 +177,10 @@ class DatabaseSeeder extends Seeder
             )
             );
 
+
+
         foreach ($arrayPeliculas as $movie){
-        \App\Models\Movie::create([
+        Movie::create([
         'title' => $movie['title'],
         'year' => $movie['year'],
         'director' => $movie['director'],
