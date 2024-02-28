@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('year',8);
             $table->string('director',64);
             $table->string('poster');
-            $table->boolean('confirmed')->default(false);
+            $table->boolean('rented')->default(false);
+            $table->text('synopsis');
+            $table->timestamp('timestamp');
         });
     }
 
