@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('poster');
             $table->boolean('rented')->default(false);
             $table->text('synopsis');
-            $table->timestamp('timestamp');
+            $table->timestamps();
         });
     }
 
