@@ -24,7 +24,7 @@ class CatalogControler extends Controller
 
     public function getShow($id)
 {
-    $arrayPeliculas= Movie::find($id+1);
+    $arrayPeliculas= Movie::find($id);
 return view('catalog.show',array('key'=>$id,'pelicula'=>$arrayPeliculas));
 }
 
@@ -33,7 +33,7 @@ public function getCreate(){
 }
 
 public function getEdit($id){
-    $arrayPeliculas= Movie::find($id+1);
+    $arrayPeliculas= Movie::find($id);
     return view('catalog.edit',array('key'=>$id,'pelicula'=>$arrayPeliculas));
 }
 
