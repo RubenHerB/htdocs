@@ -4,7 +4,11 @@
 
 <div class="col-sm-8">
 
-  <form action="{{route('catalog.update'),$id}}" method="post">
+
+<?php
+var_dump($pelicula);
+?>
+  <form  method="post">
     @csrf
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Titulo de la pelicula</label>
