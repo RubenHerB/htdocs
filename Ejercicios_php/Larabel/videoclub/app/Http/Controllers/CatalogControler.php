@@ -63,7 +63,6 @@ public function update(Request $request,$id){
     $peli->director =$request->post('director');
     $peli->poster =$request->post('poster');
     $peli->synopsis =$request->post('synopsis');
-
     $peli->update();
     }
     return redirect()->route('catalog.update',$id)->with('success','La pelicula se ha actualizado');
