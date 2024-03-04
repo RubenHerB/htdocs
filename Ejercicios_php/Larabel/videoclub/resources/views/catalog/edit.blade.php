@@ -3,7 +3,7 @@
 <h2>Editar pelicula</h2>
 
 <div class="col-sm-8">
-  <form action="{{route('catalog.update')}}/{{$pelicula['id']}}"  method="post">
+  <form action="{{route('catalog.update', ['id' => $pelicula['id']])}}"  method="post">
     @csrf
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Titulo de la pelicula</label>
