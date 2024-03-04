@@ -17,12 +17,6 @@ class CatalogControler extends Controller
         }
         
 
-
-        function showProfile($id){
-
-        }
-
-
     public function getShow($id)
 {
     $arrayPeliculas= Movie::find($id);
@@ -67,4 +61,10 @@ public function actualizar(Request $request,$id){
     }
     return redirect()->route('catalog.update',$id)->with('success','La pelicula se ha actualizado');
 }
+
+//Siguiente ejercicio
+public function showProfile($id){
+
+}
+
 }
