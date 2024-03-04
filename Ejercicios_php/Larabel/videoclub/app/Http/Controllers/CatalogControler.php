@@ -35,7 +35,7 @@ public function getCreate(){
 
 public function getEdit($id){
     $arrayPeliculas= Movie::find($id);
-    return view('catalog.edit',array('pelicula'=>$arrayPeliculas));
+    return view('catalog.edit',array('pelicula'=>$arrayPeliculas,'id'=>$id));
     
 }
 
@@ -66,6 +66,6 @@ public function update(Request $request,$id){
 
     $peli->update();
     }
-    return redirect()->route('catalog.update')->with('success','La pelicula se ha actualizado');
+    return redirect()->route('catalog.update',$id)->with('success','La pelicula se ha actualizado');
 }
 }
