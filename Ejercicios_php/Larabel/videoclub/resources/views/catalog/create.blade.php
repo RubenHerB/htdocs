@@ -4,7 +4,7 @@
 <h2>Añadir peliculas</h2>
 
 <div class="col-sm-8">
-    <form>
+    <form action="{{route('catalog.store')}}" method="post">
     <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Titulo de la pelicula</label>
   <input type="text" class="form-control" name="titulo">

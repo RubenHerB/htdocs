@@ -4,7 +4,7 @@
 
 <div class="col-sm-8">
     <form>
-    <div class="mb-3">
+    <div class="mb-3" action="{{route('catalog.update')}}" method="post">
   <label for="exampleFormControlInput1" class="form-label">Titulo de la pelicula</label>
   <input type="text" class="form-control" name="titulo" value="{{$pelicula['title']}}">
   <br>
