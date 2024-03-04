@@ -40,7 +40,7 @@ public function getEdit($id){
 
 public function store(Request $request){
     if($request->post('title')!="" && $request->post('year')!="" && $request->post('director')!=""
-    && $request->post('poster')!="" && $request->post('sypnosis')!=""){
+    && $request->post('poster')!="" && $request->post('synop    sis')!=""){
     $peli = new Movie;
     $peli->title =$request->post('title');
     $peli->year =$request->post('year');
@@ -50,6 +50,6 @@ public function store(Request $request){
 
     $peli->save();
     }
-    return redirect()->route('catalog');
+    return redirect()->action([CatalogControler::class, 'getIndex']);
 }
 }
