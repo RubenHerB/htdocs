@@ -35,7 +35,7 @@ public function getCreate(){
 
 public function getEdit($id){
     $arrayPeliculas= Movie::find($id);
-    return view('catalog.edit',array('pelicula'=>$arrayPeliculas,'id'=>$id));
+    return view('catalog.edit',array('pelicula'=>$arrayPeliculas));
     
 }
 
