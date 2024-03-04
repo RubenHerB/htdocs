@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Http\Middleware\VerifyCsrfToken;
 
 class CatalogControler extends Controller
 {
@@ -65,6 +66,7 @@ public function update(Request $request,$id){
 
     $peli->update();
     }
-    return redirect()->route('catalog.update')->with('success','La pelicula se ha actualizado');
+    return redirect()->route('catalog.update')->middleware(VerifyCsrfToken::class)
+    ->with('success','La pelicula se ha actualizado');
 }
 }
