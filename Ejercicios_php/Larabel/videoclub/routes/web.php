@@ -21,6 +21,6 @@ Route::get('catalog/edit/{id}', [CatalogControler::class, 'getEdit']);
 Route::get('catalog/create', [CatalogControler::class, 'getCreate']);
 Route::get('user/{id}', [CatalogControler::class, 'showProfile']);
 Route::post('catalog', [CatalogControler::class, 'store'])->name('catalog.store');
-Route::post('catalog/{id}', [CatalogControler::class, 'store'])->name('catalog.update');
+Route::post('catalog/{id}', [CatalogControler::class, 'update'])->name('catalog.update');
 
 

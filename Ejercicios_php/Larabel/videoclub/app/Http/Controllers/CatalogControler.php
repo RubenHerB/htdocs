@@ -52,4 +52,19 @@ public function store(Request $request){
     }
     return redirect()->route('catalog.store')->with('success','La pelicula se ha grabado');
 }
+
+public function update(Request $request,$id){
+    if($request->post('title')!="" && $request->post('year')!="" && $request->post('director')!=""
+    && $request->post('poster')!="" && $request->post('synopsis')!=""){
+    $peli = Movie::find($id);
+    $peli->title =$request->post('title');
+    $peli->year =$request->post('year');
+    $peli->director =$request->post('director');
+    $peli->poster =$request->post('poster');
+    $peli->synopsis =$request->post('synopsis');
+
+    $peli->update();
+    }
+    return redirect()->route('catalog.update')->with('success','La pelicula se ha actualizado');
+}
 }
