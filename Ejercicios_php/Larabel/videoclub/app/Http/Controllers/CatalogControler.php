@@ -38,7 +38,7 @@ public function getEdit($id){
     
 }
 
-public function grabar($id){
+public function store(){
     $peli = new Movie;
     $peli->title = '';
 
