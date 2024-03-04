@@ -43,22 +43,22 @@ class CatalogControler extends Controller
             $peli->synopsis =$request->post('synopsis');
             $peli->save();
         }
-    return redirect()->route('catalog.store')->with('success','La pelicula se ha grabado');
+        return redirect()->route('catalog.store')->with('success','La pelicula se ha grabado');
     }
 
-public function actualizar(Request $request,$id){
-    if($request->post('title')!="" && $request->post('year')!="" && $request->post('director')!=""
-    && $request->post('poster')!="" && $request->post('synopsis')!=""){
-    $peli = Movie::find($id);
-    $peli->title =$request->post('title');
-    $peli->year =$request->post('year');
-    $peli->director =$request->post('director');
-    $peli->poster =$request->post('poster');
-    $peli->synopsis =$request->post('synopsis');
-    $peli->update();
+    public function actualizar(Request $request,$id){
+        if($request->post('title')!="" && $request->post('year')!="" && $request->post('director')!=""
+        && $request->post('poster')!="" && $request->post('synopsis')!=""){
+            $peli = Movie::find($id);
+            $peli->title =$request->post('title');
+            $peli->year =$request->post('year');
+            $peli->director =$request->post('director');
+            $peli->poster =$request->post('poster');
+            $peli->synopsis =$request->post('synopsis');
+            $peli->update();
+        }
+        return redirect()->route('catalog.update',$id)->with('success','La pelicula se ha actualizado');
     }
-    return redirect()->route('catalog.update',$id)->with('success','La pelicula se ha actualizado');
-}
 
 //Siguiente ejercicio
 public function showProfile($id){
