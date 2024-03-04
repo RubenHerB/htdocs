@@ -38,10 +38,12 @@ public function getEdit($id){
     
 }
 
-public function store(){
+public function store(Request $request){
+    if($request->post('title')!=""){
     $peli = new Movie;
-    $peli->title = $_REQUEST->post('title');
+    $peli->title =$request->post('title');
 
     $peli->save();
+    }
 }
 }
