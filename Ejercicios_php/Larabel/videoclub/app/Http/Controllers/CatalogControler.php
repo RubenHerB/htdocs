@@ -50,6 +50,6 @@ public function store(Request $request){
 
     $peli->save();
     }
-    return redirect()->action([CatalogControler::class, 'getIndex']);
+    return redirect()->route('catalog.store');
 }
 }
