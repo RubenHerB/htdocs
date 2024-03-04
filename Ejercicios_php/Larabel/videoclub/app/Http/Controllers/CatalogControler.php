@@ -39,11 +39,17 @@ public function getEdit($id){
 }
 
 public function store(Request $request){
-    if($request->post('title')!=""){
+    if($request->post('title')!="" && $request->post('year')!="" && $request->post('director')!=""
+    && $request->post('poster')!="" && $request->post('sypnosis')!=""){
     $peli = new Movie;
     $peli->title =$request->post('title');
+    $peli->year =$request->post('year');
+    $peli->director =$request->post('director');
+    $peli->poster =$request->post('poster');
+    $peli->synopsis =$request->post('synopsis');
 
     $peli->save();
     }
+    return redirect()->route('catalog');
 }
 }
