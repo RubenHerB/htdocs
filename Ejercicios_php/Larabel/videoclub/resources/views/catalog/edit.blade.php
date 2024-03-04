@@ -3,8 +3,10 @@
 <h2>Editar pelicula</h2>
 
 <div class="col-sm-8">
-    <form>
-    <div class="mb-3" action="{{route('catalog.update')}}" method="post">
+
+    <form action="{{route('catalog.update')}}" method="post">
+      @csrf
+    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Titulo de la pelicula</label>
   <input type="text" class="form-control" name="titulo" value="{{$pelicula['title']}}">
   <br>
