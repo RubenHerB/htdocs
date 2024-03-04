@@ -40,7 +40,7 @@ public function getEdit($id){
 
 public function store(){
     $peli = new Movie;
-    $peli->title = '';
+    $peli->title = $_REQUEST->post('title');
 
     $peli->save();
 }
