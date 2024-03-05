@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 if (isset($_POST)){
     $filtro="";
     if (isset($_POST['pocos'])){
@@ -20,8 +19,8 @@ if (!$result){
 }
 foreach($result as $row){
     echo "<div class=\"row\">
-    <div class=\"col-md-7\">
-        <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['codArticulo'].".png\" alt=\"\">
+    <div class=\"col-md-2\">
+        <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['codArticulo'].".jpeg\" alt=\"\">
     </div>
     <div class=\"col-md-5\">
     <h3>Project One</h3>
