@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 if (isset($_POST)){
     $filtro="";
     if (isset($_POST['pocos'])){
@@ -13,7 +14,6 @@ if (isset($_POST)){
     if ($connection->connect_error){
         die("Fatal Error");
     }
-$connection=(new login)->log($_SESSION['rolnow']);
 $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
@@ -21,7 +21,7 @@ if (!$result){
 foreach($result as $row){
     echo "<div class=\"row\">
     <div class=\"col-md-7\">
-        <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['id'].".png\" alt=\"\">
+        <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['codArticulo'].".png\" alt=\"\">
     </div>
     <div class=\"col-md-5\">
     <h3>Project One</h3>
