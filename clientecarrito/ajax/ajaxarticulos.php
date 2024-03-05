@@ -48,7 +48,7 @@ foreach($result as $row){
     </div>
   </div>
 </div>
-<hr>";
+<hr style=\"margin-top:10px\">";
 }
 }
 
