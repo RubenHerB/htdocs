@@ -70,10 +70,10 @@ body {
 
 function ajax(direccion,datos){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    let hr = new XMLHttpRequest();
+    hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
-    let hr = new ActiveXObject("Microsoft.XMLHTTP");
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
