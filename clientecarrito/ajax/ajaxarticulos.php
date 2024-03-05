@@ -19,7 +19,7 @@ if (!$result){
 }
 foreach($result as $row){
     echo "<div class=\"row\">
-    <div class=\"col-md-4\">
+    <div class=\"col-md-4\" id=\"pop\">
         <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['codArticulo'].".png\" alt=\"\" style=\"max-height:100px\">
     </div>
     <div class=\"col-md-8\">
