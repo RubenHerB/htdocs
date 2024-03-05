@@ -20,7 +20,9 @@ if (!$result){
 foreach($result as $row){
     echo "<div class=\"row\">
     <div class=\"col-md-4\" id=\"pop\">
+    <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modal".$row['codArticulo']."\">
         <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/".$row['codArticulo'].".png\" alt=\"\" style=\"max-height:100px\">
+        </button>
     </div>
     <div class=\"col-md-8\">
     <h3>".$row['nombre']."</h3>
@@ -29,18 +31,25 @@ foreach($result as $row){
     </div>
   </div>
 
-  <div class=\"modal fade\" id=\"imagemodal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+  <!-- Button trigger modal -->
+
+  Launch demo modal
+
+
+<!-- Modal -->
+<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
   <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-header\">
-        <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-        <h4 class=\"modal-title\" id=\"myModalLabel\">Image preview</h4>
+        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>
+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
       </div>
       <div class=\"modal-body\">
-        <img src=\"\" id=\"imagepreview\" style=\"width: 400px; height: 264px;\" >
+        ...
       </div>
       <div class=\"modal-footer\">
-        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>
       </div>
     </div>
   </div>
