@@ -34,7 +34,7 @@ body {
                                 <li><a class="dropdown-item" href="#!">Todos los productos</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#!">Ultimas unidades</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                                <li><a class="dropdown-item" href="#!">Unidades con mucho stock</a></li>
                             </ul>
                         </li>
                         
@@ -70,10 +70,10 @@ body {
 
 function ajax(direccion,datos){
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    hr = new XMLHttpRequest();
+    let hr = new XMLHttpRequest();
     hr.overrideMimeType('text/xml');
 } else if (window.ActiveXObject) { // IE
-    hr = new ActiveXObject("Microsoft.XMLHTTP");
+    let hr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
@@ -87,6 +87,14 @@ hr.send(datos);
 
 function ajaxtodos(){
   ajax("articulos.php","");
+}
+
+function ajaxultimasunidades(){
+  ajax("articulos.php","pocos=true");
+}
+
+function ajaxmuchasunidades(){
+  ajax("articulos.php","pocos=false");
 }
 
 </script>
