@@ -1,9 +1,8 @@
 <?php
-var_dump($_POST);
 if (isset($_POST)){
     $filtro="";
     if (isset($_POST['pocos'])){
-        if($_POST['pocos']){
+        if($_POST['pocos']==1){
             $filtro=" WHERE cantidad<cantidadMinima";
         }else{
             $filtro=" WHERE NOT cantidad<cantidadMinima";

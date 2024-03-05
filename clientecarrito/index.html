@@ -31,10 +31,10 @@ body {
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalogo</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><button class="dropdown-item" onclick="ajaxtodos">Todos los productos</button></li>
+                                <li><button class="dropdown-item" onclick="ajaxtodos()">Todos los productos</button></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><button class="dropdown-item" onclick="ajaxultimasunidades">Ultimas unidades</button></li>
-                                <li><button class="dropdown-item" onclick="ajaxmuchasunidades">Unidades con mucho stock</button></li>
+                                <li><button class="dropdown-item" onclick="ajaxultimasunidades()">Ultimas unidades</button></li>
+                                <li><button class="dropdown-item" onclick="ajaxmuchasunidades()">Unidades con mucho stock</button></li>
                             </ul>
                         </li>
                         
@@ -90,11 +90,11 @@ function ajaxtodos(){
 }
 
 function ajaxultimasunidades(){
-  ajax("ajaxarticulos.php","pocos=true");
+  ajax("ajaxarticulos.php","pocos=1");
 }
 
 function ajaxmuchasunidades(){
-  ajax("ajaxarticulos.php","pocos=false");
+  ajax("ajaxarticulos.php","pocos=0");
 }
 ajaxtodos();
 </script>
