@@ -133,7 +133,8 @@ function cambio(id){
 
 $(document).ready(function(){
   $('#cant').on('change', function() {
-    cambio($(this).attr('id'));
+    var idElemento = $(this).attr('id');
+    console.log('El ID del elemento es: ' + idElemento);
   });
 });
 actualizar("");
