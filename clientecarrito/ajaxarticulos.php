@@ -17,6 +17,6 @@ $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-echo json_decode($result);
+echo json_encode($result);
 }
 
