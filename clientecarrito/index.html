@@ -31,10 +31,10 @@ body {
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalogo</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><button class="dropdown-item" onclick="ajaxtodos()">Todos los productos</button></li>
+                                <li><button class="dropdown-item" onclick="actualizar()">Todos los productos</button></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><button class="dropdown-item" onclick="ajaxultimasunidades()">Ultimas unidades</button></li>
-                                <li><button class="dropdown-item" onclick="ajaxmuchasunidades()">Unidades con mucho stock</button></li>
+                                <li><button class="dropdown-item" onclick="actualizar("pocos=1")">Ultimas unidades</button></li>
+                                <li><button class="dropdown-item" onclick="actualizar("pocos=0")">Unidades con mucho stock</button></li>
                             </ul>
                         </li>
                         
@@ -70,11 +70,11 @@ body {
 <script>
 
 
-  $.ajax({
+  function actualizar(datos){$.ajax({
     type: "POST",
     dataType: "json",
     url: "ajax/ajaxarticulos.php",
-    data: "",
+    data: datos,
     success: function(data) {
       document.getElementById("content").innerHTML = "";
       data.forEach(function(articulo){
@@ -92,6 +92,10 @@ body {
        console.log("Error");
     }
 });
+};
+actualizar("");
+
+
 
 $("#pop").on("click", function() {
    $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
