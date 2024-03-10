@@ -74,7 +74,7 @@ var respuesta="";
     dataType: "json",
     url: "ajax/ajaxarticulos.php",
     data: "",
-    complete: function(data) {
+    success: function(data) {
       resultado = $.parseJSON(data);
     }
 });
