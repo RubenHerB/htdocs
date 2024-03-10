@@ -68,30 +68,17 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 var respuesta="";
-function ajax(direccion,datos){
+
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: "ajax/"+direccion,
-    data: datos,
+    url: "ajax/ajaxarticulos.php",
+    data: "",
     complete: function(data) {
       resultado = $.parseJSON(data);
     }
 });
-}
 
-function ajaxtodos(){
-  ajax("ajaxarticulos.php","");
-}
-
-function ajaxultimasunidades(){
-  ajax("ajaxarticulos.php","pocos=1");
-}
-
-function ajaxmuchasunidades(){
-  ajax("ajaxarticulos.php","pocos=0");
-}
-ajaxtodos();
 alert(respuesta);
 $("#pop").on("click", function() {
    $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
