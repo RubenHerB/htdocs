@@ -1,7 +1,7 @@
 <?php
 
     
-    $query="SELECT * FROM `articulos`";
+    $query="SELECT * FROM articulos";
     $connection = new mysqli('localhost', 'root','', 'carritocliente');
     if ($connection->connect_error){
         die("Fatal Error");
