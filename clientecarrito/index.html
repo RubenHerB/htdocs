@@ -76,9 +76,17 @@ body {
     url: "ajaxarticulos.php",
     data: "",
     success: function(data) {
-      var respuesta =data;
-      console.log(respuesta);
-      console.log(data);
+      document.getElementById("content").innerHTML = "";
+      data.forEach(function(articulo){
+        document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
+          +articulo['codArticulo']+
+          "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
+            "</h3><a class=\"btn btn-primary\" href=\"#\">View Project</a></div></div><div class=\"modal fade\" id=\"modal"
+            +articulo['codArticulo']+"\" tabindex=\"-1\" aria-labelledby=\"modalLabel"
+            +articulo['codArticulo']+"\" aria-hidden=\"true\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-header\"><h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">"
+            +articulo['nombre']+"</h1><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"
+            +articulo['codArticulo']+".png\" alt=\"\" style=\"height:auto;width:600px\"></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cerrar</button></div></div></div></div><hr style=\"margin-top:10px\">";
+      });
     },
     error: function(data){
        console.log("Error");
