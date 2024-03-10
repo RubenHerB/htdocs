@@ -93,6 +93,7 @@ body {
     success: function(data) {
       document.getElementById("content").innerHTML = "";
       data.forEach(function(articulo){
+        console.log(articulo);
         document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
           +articulo['codArticulo']+
           "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
