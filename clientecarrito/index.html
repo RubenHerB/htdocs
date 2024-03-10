@@ -101,7 +101,7 @@ body {
         document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
           +articulo['codArticulo']+
           "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
-            "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'])?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":"")+"<input name=\"cant\" id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\">Añadir al carrito</button></div></div><div class=\"modal fade\" id=\"modal"
+            "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'])?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":"")+"<h6>Precio "+(parseFloat(articulo['PVP'])*(parseFloat(articulo['IVA'])+1)).toFixed(2)+" €</h6><input name=\"cant\" id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\">Añadir al carrito</button></div></div><div class=\"modal fade\" id=\"modal"
             +articulo['codArticulo']+"\" tabindex=\"-1\" aria-labelledby=\"modalLabel"
             +articulo['codArticulo']+"\" aria-hidden=\"true\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-header\"><h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">"
             +articulo['nombre']+"</h1><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"
@@ -127,9 +127,7 @@ function cerrarcarrito(){
   document.getElementById('carrito').style.visibility="hidden";
 }
 
-function cambio(id){
-  document.getElementById('cantidad'+id).innerHTML=document.getElementById('cantidad'+id).value*(parseFloat(articulos[id]['PVP'])*(parseFloat(articulos[id]['IVA'])+1)).toFixed(2);
-}
+
 actualizar("");
 
 
