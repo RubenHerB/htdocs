@@ -66,7 +66,7 @@ body {
             </div>
         </div>
         <div class="carrito" id="carrito">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close cerrarcarrito" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarcarrito()"></button>
           <hr>
         </div>
 
@@ -109,6 +109,12 @@ function actualizarult(){
 }
 function actualizarmu(){
   actualizar('pocos=0');
+}
+function carrito(){
+  document.getElementById('carrito').style.display="";
+}
+function cerrarcarrito(){
+  document.getElementById('carrito').style.display="";
 }
 actualizar("");
 
