@@ -130,13 +130,13 @@ function cerrarcarrito(){
 function cambio(id){
   document.getElementById('cantidad'+id).innerHTML=document.getElementById('cantidad'+id).value*(parseFloat(articulos[id]['PVP'])*(parseFloat(articulos[id]['IVA'])+1)).toFixed(2);
 }
-
+actualizar("");
 $(document).ready(function(){
   $('input[name="number"]').on('change', function() {
     alert('funciona')
   });
 });
-actualizar("");
+
 
 console.log('articulos');
 console.log(articulos);
