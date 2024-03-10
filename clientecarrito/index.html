@@ -128,7 +128,7 @@ function cerrarcarrito(){
 }
 
 function cambio(id){
-  document.getElementById('cantidad'+id).value
+  document.getElementById('cantidad'+id).innerHTML=document.getElementById('cantidad'+id).value*(parseFloat(articulos[id]['PVP'])*(parseFloat(articulos[id]['IVA'])+1)).toFixed(2);
 }
 
 actualizar("");
