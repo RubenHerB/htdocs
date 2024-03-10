@@ -95,8 +95,8 @@ body {
       data.forEach(function(articulo){
         console.log(articulo);
         if(!art){
-        articulos.push(articulo);
-        art=true;
+        articulos[parseInt(articulo['codArticulo']  )]=articulo;
+        
         }
         document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
           +articulo['codArticulo']+
@@ -107,6 +107,7 @@ body {
             +articulo['nombre']+"</h1><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"
             +articulo['codArticulo']+".png\" alt=\"\" style=\"height:auto;width:600px\"></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cerrar</button></div></div></div></div><hr style=\"margin-top:10px\">";
       });
+      art=true;
     },
     error: function(data){
        console.log("Error");
@@ -131,6 +132,8 @@ function cambio(id){
 }
 
 actualizar("");
+
+console.log('articulos');
 console.log(articulos);
 
 
