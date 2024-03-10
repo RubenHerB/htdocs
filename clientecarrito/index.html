@@ -69,16 +69,15 @@ body {
 <script>
 var respuesta="";
 function ajax(direccion,datos){
-    let hr = new XMLHttpRequest();
-    hr.overrideMimeType('application/json');
-hr.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        respuesta=this.responseText;
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    url: direccion,
+    data: datos,
+    complete: function(data) {
+      resultado = $.parseJSON(data);
     }
-};
-hr.open("POST","ajax/"+direccion);
-hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send(datos);
+});
 }
 
 function ajaxtodos(){
