@@ -72,7 +72,7 @@ function ajax(direccion,datos){
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: direccion,
+    url: "ajax/"+direccion,
     data: datos,
     complete: function(data) {
       resultado = $.parseJSON(data);
