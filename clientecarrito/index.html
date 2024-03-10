@@ -69,15 +69,11 @@ body {
 <script>
 
 function ajax(direccion,datos){
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-    hr = new XMLHttpRequest();
-    hr.overrideMimeType('text/xml');
-} else if (window.ActiveXObject) { // IE
-    hr = new ActiveXObject("Microsoft.XMLHTTP");
-}
+    let hr = new XMLHttpRequest();
+    hr.overrideMimeType('application/json');
 hr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        document.getElementById("content").innerHTML=this.responseText;
+        var respuesta=this.responseText;
     }
 };
 hr.open("POST","ajax/"+direccion);
