@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST)){
+
     
     $query="SELECT * FROM `articulos`";
     $connection = new mysqli('localhost', 'root','', 'carritocliente');
@@ -11,5 +11,5 @@ if (!$result){
     die("Fatal Error");
 }
 echo json_encode($result);
-}
+
 
