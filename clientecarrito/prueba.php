@@ -10,7 +10,8 @@ $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-var_dump($result);
+$rows=$result->fetch_all(MYSQLI_ASSOC);
+var_dump($rows);
 foreach ($result as $row){
     echo '<br>';
     var_dump($row);
