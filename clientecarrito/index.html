@@ -33,8 +33,8 @@ body {
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><button class="dropdown-item" onclick="actualizar()">Todos los productos</button></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><button class="dropdown-item" onclick="actualizar("pocos=1")">Ultimas unidades</button></li>
-                                <li><button class="dropdown-item" onclick="actualizar("pocos=0")">Unidades con mucho stock</button></li>
+                                <li><button class="dropdown-item" onclick="actualizarult()">Ultimas unidades</button></li>
+                                <li><button class="dropdown-item" onclick="actualizarmu()">Unidades con mucho stock</button></li>
                             </ul>
                         </li>
                         
@@ -93,6 +93,12 @@ body {
     }
 });
 };
+function actualizarult(){
+  actualizar('pocos=1');
+}
+function actualizarmu(){
+  actualizar('pocos=0');
+}
 actualizar("");
 
 
