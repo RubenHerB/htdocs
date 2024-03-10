@@ -128,7 +128,7 @@ function cerrarcarrito(){
   document.getElementById('carrito').style.visibility="hidden";
 }
 function añadir(id){
-  carrito[id]+=document.getElementById('cantidad'+id).value;
+  carrito[id]+=parseInt(document.getElementById('cantidad'+id).value);
   console.log(carrito);
 }
 
