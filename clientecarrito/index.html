@@ -51,7 +51,7 @@ body {
                         </li>
                         
                     </ul>
-                    <button class="btn btn-outline-dark" type="button" onclick="carrito()">
+                    <button class="btn btn-outline-dark" type="button" onclick="abrircarrito()">
                             <i class="bi-cart-fill me-1"></i>
                             Carrito
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
@@ -121,7 +121,7 @@ function actualizarult(){
 function actualizarmu(){
   actualizar('pocos=0');
 }
-function carrito(){
+function abrircarrito(){
   document.getElementById('carrito').style.visibility="visible";
 }
 function cerrarcarrito(){
