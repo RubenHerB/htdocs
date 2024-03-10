@@ -78,6 +78,9 @@ var respuesta="";
     success: function(data) {
       respuesta = $.parseJSON(data);
       console.log(respuesta);
+    },
+    error: function(data){
+       alert("Error");
     }
 });
 
