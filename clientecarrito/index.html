@@ -23,7 +23,11 @@ body {
   position: fixed;
   margin-left: 65%;
   background-color: white;
-  
+  visibility:hidden;
+}
+.cerrarcarrito{
+  margin-left: 5px;
+  margin-top: 15px;
 }
     </style>
 </head>
@@ -111,10 +115,10 @@ function actualizarmu(){
   actualizar('pocos=0');
 }
 function carrito(){
-  document.getElementById('carrito').style.display="";
+  document.getElementById('carrito').style.visibility="visible";
 }
 function cerrarcarrito(){
-  document.getElementById('carrito').style.display="";
+  document.getElementById('carrito').style.visibility="hidden";
 }
 actualizar("");
 
