@@ -10,5 +10,8 @@ $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-echo var_dump($result);
-
+var_dump($result);
+foreach ($result as $row){
+    echo '<br>';
+    var_dump($row);
+}
