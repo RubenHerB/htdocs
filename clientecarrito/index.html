@@ -131,6 +131,11 @@ function cambio(id){
   document.getElementById('cantidad'+id).innerHTML=document.getElementById('cantidad'+id).value*(parseFloat(articulos[id]['PVP'])*(parseFloat(articulos[id]['IVA'])+1)).toFixed(2);
 }
 
+$(document).ready(function(){
+  $('#cant').on('change', function() {
+    cambio($(this).attr('id'));
+  });
+});
 actualizar("");
 
 console.log('articulos');
