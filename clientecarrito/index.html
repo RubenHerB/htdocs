@@ -98,7 +98,7 @@ body {
           "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
             "</h3>";
             if(articulo['cantidad']<articulo['cantidadMinima']){
-              document.getElementById("content").innerHTML+="<div class=\"ultimas\">Ultimas unidades de este articulo<div>"
+              document.getElementById("content").innerHTML+="<div class=\"ultimas\">Ultimas unidades de este articulo</div>"
               }
             document.getElementById("content").innerHTML+="<input type=\"numer\" value=\"0\" max-value=\""+articulo['cantidad']+"\"><a class=\"btn btn-primary\" href=\"#\">View Project</a></div></div><div class=\"modal fade\" id=\"modal"
             +articulo['codArticulo']+"\" tabindex=\"-1\" aria-labelledby=\"modalLabel"
