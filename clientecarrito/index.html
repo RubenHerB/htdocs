@@ -120,7 +120,11 @@ function añadir(id){
     anadido=carrito[id];
   }
 if((anadido+anadiendo)<=articulos[id]['cantidad']){
+  if(typeof carrito[id]==='undefined'){
+    carrito[id]=anadiendo;
+  }else{
   carrito[id]+=anadiendo;
+  }
   console.log(carrito);
 }else{
   alert("No hay tantos articulos disponibles")
