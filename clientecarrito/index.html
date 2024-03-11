@@ -109,17 +109,17 @@ body {
 <script>
   const articulos=[]; 
   const carrito=[];
-  if (!sessionStorage.getItem("carrito")) {
-    sessionStorage.setItem("carrito",carrito);
+  if (sessionStorage.getItem("carrito")) {
+    carrito = sessionStorage.getItem("carrito");
 }else{
-  carrito = sessionStorage.getItem("carrito");
+  sessionStorage.setItem("carrito",carrito);
 }
 
 function actualizar_carrito(){
   sessionStorage.setItem("carrito",carrito);
   let total=0;
   for (var key in carrito){
-    let precio=(parseFloat(carrito[key]['PVP'])*(parseFloat(articulo[key]['IVA'])+1)).toFixed(2);
+    let precio=(parseFloat(articulos[key]['PVP'])*(parseFloat(articulos[key]['IVA'])+1)).toFixed(2);
     let cantidad=precio*carrito[key];
     total+=cantidad;
 
