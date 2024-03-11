@@ -174,9 +174,9 @@ function añadir(id){
   }
 if((anadido+anadiendo)<=articulos[id]['cantidad']){
   if(typeof carrito[id]==='undefined'){
-    carrito[id]=anadiendo;
+    carrito[id]=parseInt(anadiendo);
   }else{
-  carrito[id]+=anadiendo;
+  carrito[id]+=parseInt(anadiendo);
   }
   actualizar_carrito();
   console.log(carrito);
