@@ -122,6 +122,7 @@ function actualizar_carrito(){
   for (var key in carrito){
     console.log(parseInt(carrito[key]));
     if (!isNaN(parseInt(carrito[key]))){
+      console.log(articulos);
     let precio=(parseFloat(articulos[key]['PVP'])*(parseFloat(articulos[key]['IVA'])+1)).toFixed(2);
     let cantidad=precio*carrito[key];
     total+=cantidad;
