@@ -110,13 +110,13 @@ body {
   var articulos=[]; 
   var carrito=[];
   if (sessionStorage.getItem("carrito")) {
-    carrito = sessionStorage.getItem("carrito");
+    carrito = JSON.parse(sessionStorage.getItem("carrito"));
 }else{
-  sessionStorage.setItem("carrito",carrito);
+  sessionStorage.setItem("carrito",JSON.stringify(carrito));
 }
 console.log(carrito);
 function actualizar_carrito(){
-  sessionStorage.setItem("carrito",carrito);
+  sessionStorage.setItem("carrito",JSON.stringify(carrito));
   if (carrito!=""){
   let total=0;
   for (var key in carrito){
@@ -185,6 +185,7 @@ if((anadido+anadiendo)<=articulos[id]['cantidad']){
 }
 actualizar(true);
 }
+
 
 
 actualizar(true);
