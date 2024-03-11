@@ -111,6 +111,11 @@ body {
   var carrito=[];
   if (sessionStorage.getItem("carrito")) {
     carrito = JSON.parse(sessionStorage.getItem("carrito"));
+    for (var key in carrito){
+      if (typeof carrito === 'undefined'){
+        carrito.splice(parseInt(carrito[key]),1);
+      }
+    }
 }else{
   sessionStorage.setItem("carrito",JSON.stringify(carrito));
 }
