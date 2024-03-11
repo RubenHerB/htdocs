@@ -20,4 +20,5 @@ if (!$result){
 $rows=$result->fetch_all(MYSQLI_ASSOC);
 echo json_encode($rows);
 }
+//fesfgd
 
