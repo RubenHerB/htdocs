@@ -114,6 +114,9 @@ body {
 }else{
   carrito = sessionStorage.getItem("carrito");
 }
+
+function actualizar_carrito(){
+  sessionStorage.setItem("carrito",carrito);
 }
   function actualizar(mostrar){$.ajax({
     type: "POST",
@@ -165,6 +168,7 @@ if((anadido+anadiendo)<=articulos[id]['cantidad']){
   }else{
   carrito[id]+=anadiendo;
   }
+  actualizar_carrito();
   console.log(carrito);
 }else{
   alert("No hay tantos articulos disponibles")
