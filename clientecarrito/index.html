@@ -83,7 +83,7 @@ body {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const articulos=[];
+  const articulos=[]; 
   const carrito=[];
   function actualizar(datos){$.ajax({
     type: "POST",
@@ -95,8 +95,6 @@ body {
       data.forEach(function(articulo){
         console.log(articulo);
         articulos[parseInt(articulo['codArticulo']  )]=articulo;
-        
-        
         document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
           +articulo['codArticulo']+
           "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
@@ -128,14 +126,10 @@ function cerrarcarrito(){
 function añadir(id){
   carrito[id]+=document.getElementById('cantidad'+id).value;
   console.log(carrito);
+  actualizar("");
 }
 
 actualizar("");
-
-
-
-console.log('articulos');
-console.log(articulos);
 
 
 
