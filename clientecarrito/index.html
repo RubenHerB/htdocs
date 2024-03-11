@@ -117,9 +117,15 @@ body {
 
 function actualizar_carrito(){
   sessionStorage.setItem("carrito",carrito);
-  carrito.forEach(function(cantidad){
-});
-  function actualizar(mostrar){$.ajax({
+  let total=0;
+  for (var key in carrito){
+    let precio=(parseFloat(carrito[key]['PVP'])*(parseFloat(articulo[key]['IVA'])+1)).toFixed(2);
+    let cantidad=precio*carrito[key];
+    total+=cantidad;
+  }
+}
+
+function actualizar(mostrar){$.ajax({
     type: "POST",
     dataType: "json",
     url: "ajax/ajaxarticulos.php",
