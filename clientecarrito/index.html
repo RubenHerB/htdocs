@@ -85,7 +85,6 @@ body {
       document.getElementById("content").innerHTML = "";
       }
       data.forEach(function(articulo){
-        console.log(articulo);
         articulos[parseInt(articulo['codArticulo']  )]=articulo;
         if(mostrar){
         document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
@@ -112,13 +111,15 @@ function cerrarcarrito(){
   document.getElementById('carrito').style.visibility="hidden";
 }
 function añadir(id){
+
   actualizar(false);
+  console.log(articulos);
   let anadiendo=document.getElementById('cantidad'+id).value;
   let anadido=0;
   if(typeof carrito[id]!=='undefined'){
     anadido=carrito[id];
   }
-if((anadido+anadiendo)<=articulos[id][cantidad]){
+if((anadido+anadiendo)<=articulos[id]['cantidad']){
   carrito[id]+=anadiendo;
   console.log(carrito);
 }else{
