@@ -109,6 +109,12 @@ body {
 <script>
   const articulos=[]; 
   const carrito=[];
+  if (!sessionStorage.getItem("carrito")) {
+    sessionStorage.setItem("carrito",carrito);
+}else{
+  carrito = sessionStorage.getItem("carrito");
+}
+}
   function actualizar(mostrar){$.ajax({
     type: "POST",
     dataType: "json",
