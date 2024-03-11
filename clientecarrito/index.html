@@ -91,7 +91,7 @@ body {
             </div>
         </div>
         <div class="carrito" id="carrito">
-          <button type="button" class="btn-close cerrarcarrito" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarcarrito()"></button><div id="total"></div>
+          <button type="button" class="btn-close cerrarcarrito" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarcarrito()"></button><hr><div id="total"></div>
           <hr>
           <div id="carritocontent">
           El carrito esta vacio
@@ -122,7 +122,9 @@ function actualizar_carrito(){
     let precio=(parseFloat(carrito[key]['PVP'])*(parseFloat(articulo[key]['IVA'])+1)).toFixed(2);
     let cantidad=precio*carrito[key];
     total+=cantidad;
+
   }
+  document.getElementById('total').innerHTML="Total: "+total+"€";
 }
 
 function actualizar(mostrar){$.ajax({
