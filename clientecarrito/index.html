@@ -117,7 +117,8 @@ body {
 
 function actualizar_carrito(){
   sessionStorage.setItem("carrito",carrito);
-}
+  carrito.forEach(function(cantidad){
+});
   function actualizar(mostrar){$.ajax({
     type: "POST",
     dataType: "json",
@@ -177,6 +178,7 @@ actualizar(true);
 }
 
 actualizar(true);
+actualizar_carrito();
 
 
 
