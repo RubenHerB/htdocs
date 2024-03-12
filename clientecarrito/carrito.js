@@ -118,6 +118,16 @@ function abrrirregistro(){
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
+function usuariolisto(){
+
+}
+
+function usuariologout(){
+    user=[];
+    resetcarrito();
+    sessionStorage.setItem("user",JSON.stringify(user));
+}
+
 function comprobardni(){
     let dni=document.getElementById('dni').value;
     $.ajax({
@@ -130,6 +140,7 @@ function comprobardni(){
             if(data.length > 0){
             user=data[0];
             console.log(user);
+            sessionStorage.setItem("user",JSON.stringify(user));
             }else{
                 alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
             }
