@@ -127,13 +127,12 @@ function comprobardni(){
         data: "dni="+dni,
         success: function(data) {
             console.log(data);
-            user['dni']=data[0]['dni'];
-            user['nombre']=data[0]['nombre'];
-            user['apellidos']=data[0]['apellidos'];
-            user['direccion']=data[0]['direccion'];
-            user['poblacion']=data[0]['poblacion'];
-            user['correo']=data[0]['correo'];
+            if(data.length > 0){
+            user=data[0];
             console.log(user);
+            }else{
+                alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
+            }
         },
         error: function(data){
             console.log(data);
