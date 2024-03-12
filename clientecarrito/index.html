@@ -173,7 +173,7 @@ function actualizar_carrito(){
     let precio=((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
     let cantidad=precio*carrito[key];
     total+=cantidad;
-    document.getElementById('carritocontent').innerHTML+="<h1>"+articulos[parseInt(key)]+"";
+    document.getElementById('carritocontent').innerHTML+="<h4>"+articulos[parseInt(key)]['nombre']+"</h4><div>"+precio+"€ X "+carrito[key]+" = "+cantidad+"€</div>";
   }
 }
   document.getElementById('total').innerHTML="<hr>Total: "+total+"€";
