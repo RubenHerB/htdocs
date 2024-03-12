@@ -139,10 +139,10 @@ function editarusuario(){
         type: "POST",
         url: "ajax/ajaxedituser.php",
         data: "dni="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
-        context: document.body
-    }).done(function() {
+    success: function() {
             usuariolisto();
-        });
+        }
+    });
     }
 
 
