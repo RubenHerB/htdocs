@@ -115,21 +115,7 @@ body {
   sessionStorage.setItem("carrito",JSON.stringify(carrito));
 }
 console.log(carrito);
-function actualizar_carrito(){
-  sessionStorage.setItem("carrito",JSON.stringify(carrito));
-  if (carrito!=""){
-  let total=0;
-  for (var key in carrito){
-    console.log(parseInt(carrito[key]));
-    if (!isNaN(parseInt(carrito[key]))){
-    let precio=(parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2);
-    let cantidad=precio*carrito[key];
-    total+=cantidad;
-  }
-}
-  document.getElementById('total').innerHTML="<hr>Total: "+total+"€";
-}
-}
+
 
 function actualizar(mostrar){$.ajax({
     type: "POST",
@@ -159,13 +145,37 @@ function actualizar(mostrar){$.ajax({
        console.log("Error");
     }
 });
-};
+}
+
+
+
+
+
 function abrircarrito(){
   document.getElementById('carrito').style.visibility="visible";
 }
 function cerrarcarrito(){
   document.getElementById('carrito').style.visibility="hidden";
 }
+
+function actualizar_carrito(){
+  sessionStorage.setItem("carrito",JSON.stringify(carrito));
+  if (carrito!=""){
+  let total=0;
+  for (var key in carrito){
+    console.log(parseInt(carrito[key]));
+    if (!isNaN(parseInt(carrito[key]))){
+    let precio=(parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2);
+    let cantidad=precio*carrito[key];
+    total+=cantidad;
+  }
+}
+  document.getElementById('total').innerHTML="<hr>Total: "+total+"€";
+}
+}
+
+
+
 function añadir(id){
 
   actualizar(false);
