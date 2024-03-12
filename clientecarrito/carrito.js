@@ -86,6 +86,20 @@ document.getElementById('total').innerHTML="";
 document.getElementById('carritonumero').innerHTML=c;
 }
 
+function quitar(id){
+    carrito[id]-=parseInt(document.getElementById('carrito'+id).value);
+    if(carrito[id]<=0){
+    carrito[id]='undefined';
+    }
+    actualizar_carrito();
+}
+
+function quitartodos(id){
+    carrito[id]='undefined';
+    actualizar_carrito();
+}
+
+
 function resetcarrito(){
 carrito=[];
 console.log(carrito);
