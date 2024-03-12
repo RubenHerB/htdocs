@@ -122,9 +122,31 @@ function abrrirregistro(){
 }
 
 function usuariolisto(){
+
     document.getElementById('modalidentificacion').innerHTML="DNI:<br>"+user['DNI']+"<br>Nombre:<br><input type=\"text\" class=\"form-control\" id=\"nombre\" value=\""+user['nombre']+"\"><br>Apellidos:<br><input type=\"text\" class=\"form-control\" id=\"apellidos\" value=\""+user['apellidos']+"\"><br>Direccion:<br><input type=\"text\" class=\"form-control\" id=\"direccion\" value=\""+user['direccion']+"\"><br>Poblacion:<br><input type=\"text\" class=\"form-control\" id=\"poblacion\" value=\""+user['poblacion']+"\"><br>Correo:<br><input type=\"text\" class=\"form-control\" id=\"correo\" value=\""+user['correo']+"\">";
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"editarusuario()\">Editar</button> O <button type=\"button\" class=\"btn btn-danger\" onclick=\"usuariologout()\">Cerrar sesion</button>";
     document.getElementById('botonidentificacion').innerHTML="<button type=\"button\" class=\"btn btn-outline-none\" aria-current=\"page\" data-bs-toggle=\"modal\" data-bs-target=\"#modalidentificar\" onclick=\"usuariolisto()\">"+user['DNI']+"</button>";
+}
+
+function editarusuario(){
+    user['nombre']=document.getElementById('nombre').value;
+    user['apellidos']=document.getElementById('apellidos').value;
+    user['direccion']=document.getElementById('direccion').value;
+    user['poblacion']=document.getElementById('poblacion').value;
+    user['correo']=document.getElementById('correo').value;
+    user = JSON.parse(sessionStorage.getItem("user"));
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "ajax/ajaxusers.php",
+        data: "dni="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
+        success: function() {
+            usuariolisto();
+        },
+        error: function(){
+            alert("ERROR!");
+        }
+});
 }
 
 function usuariologout(){
@@ -146,6 +168,7 @@ function comprobardni(){
             console.log(data);
             if(data.length > 0){
             user=data[0];
+            user = JSON.parse(sessionStorage.getItem("user"));
             console.log(user);
             usuariolisto();
             }else{
