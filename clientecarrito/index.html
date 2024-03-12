@@ -178,6 +178,8 @@ function actualizar_carrito(){
 }
   document.getElementById('total').innerHTML="<hr>Total: "+total+"€ <button class=\"btn btn-danger\" onclick=\"resetcarrito()\">Quitar todos los articulos</button> <button class=\"btn btn-primary\" onclick=\"comprar()\">Realizar compra</button>";
  
+}else{
+  document.getElementById('carritocontent').innerHTML="El carrito esta vacio";
 }
 document.getElementById('carritonumero').innerHTML=c;
 }
