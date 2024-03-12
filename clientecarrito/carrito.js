@@ -203,10 +203,13 @@ function comprar(){
     $('#modalidentificar').modal('show');
     alert('Introduce tu dni antes de realizar la compra');
     }else{
+        let datasent="";
         for (var key in carrito){
             if (!isNaN(parseInt(carrito[key]))){
+                if(datasent=="")
             }
     }
+}
 }
 
 actualizar(true);
