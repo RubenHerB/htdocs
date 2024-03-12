@@ -133,6 +133,7 @@ function editarusuario(){
     user['direccion']=document.getElementById('direccion').value;
     user['poblacion']=document.getElementById('poblacion').value;
     user['correo']=document.getElementById('correo').value;
+    console.log(user);
     user = JSON.parse(sessionStorage.getItem("user"));
     $.ajax({
         type: "POST",
