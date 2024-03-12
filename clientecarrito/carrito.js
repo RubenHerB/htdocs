@@ -215,11 +215,11 @@ function comprar(){
     }
     $.ajax({
         type: "POST",
-        url: "ajax/ajaxedituser.php",
+        url: "ajax/ajaxcompra.php",
         data: datasent,
         success: function() {
-            alert("Usuario editado con exito");
-            usuariolisto();
+            alert("Comprarealizada con exito");
+            resetcarrito();
         }
     });
 }
