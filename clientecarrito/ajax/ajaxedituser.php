@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST)){
-    $query="UPDATE `usuarios` SET `nombre`='"$_POST['nombre']"',`apellidos`='[value-3]',`direccion`='[value-4]',`poblacion`='[value-5]',`correo`='[value-6]' WHERE 1
+    $query="UPDATE `usuarios` SET `nombre`='".$_POST['nombre']."',`apellidos`='".$_POST['apellidos']."',`direccion`='".$_POST['direccion']."',`poblacion`='".$_POST['poblacion']."',`correo`='".$_POST['correo']."' WHERE DNI = '".$_POST['DNI']."'";
     ";
     $connection = new mysqli('localhost', 'root','', 'carritocliente');
     if ($connection->connect_error){
