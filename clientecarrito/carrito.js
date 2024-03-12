@@ -132,6 +132,7 @@ function identificarse(){
             user['direccion']=data.direccion;
             user['poblacion']=data.poblacion;
             user['correo']=data.correo;
+            console.log(user);
         },
         error: function(){
             alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
