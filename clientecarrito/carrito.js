@@ -134,7 +134,7 @@ function editarusuario(){
     user['poblacion']=document.getElementById('poblacion').value;
     user['correo']=document.getElementById('correo').value;
     console.log(user);
-    user = JSON.parse(sessionStorage.getItem("user"));
+    sessionStorage.setItem("user",JSON.stringify(user));
     $.ajax({
         type: "POST",
         url: "ajax/ajaxedituser.php",
