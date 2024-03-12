@@ -127,6 +127,11 @@ function identificarse(){
         data: dni,
         success: function(data) {
             user['dni']=data.dni;
+            user['nombre']=data.nombre;
+            user['apellidos']=data.apellidos;
+            user['direccion']=data.direccion;
+            user['poblacion']=data.poblacion;
+            user['correo']=data.correo;
         }
 });
 }
