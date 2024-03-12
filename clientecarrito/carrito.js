@@ -203,12 +203,9 @@ function comprar(){
     $('#modalidentificar').modal('show');
     alert('Introduce tu dni antes de realizar la compra');
     }else{
-        let datasent="";
+        let datasent="dni="+user['DNI'];
         for (var key in carrito){
             if (!isNaN(parseInt(carrito[key]))){
-                if(datasent==""){
-                    datasent=key+"="+carrito[key];
-                }else{
                     datasent+="&"+key+"="+carrito[key];
                 }
             }
@@ -223,6 +220,6 @@ function comprar(){
         }
     });
 }
-}
+
 
 actualizar(true);
