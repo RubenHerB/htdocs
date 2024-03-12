@@ -139,7 +139,8 @@ function editarusuario(){
         type: "POST",
         url: "ajax/ajaxedituser.php",
         data: "dni="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
-    success: function() {
+    success: function(result) {
+            alert(result);
             usuariolisto();
         }
     });

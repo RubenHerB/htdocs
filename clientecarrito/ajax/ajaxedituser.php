@@ -8,6 +8,8 @@ if (isset($_POST)){
 $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
+}else{
+    return "Datos cambiados con exito";
 }
 }
 
