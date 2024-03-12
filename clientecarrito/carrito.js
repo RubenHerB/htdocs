@@ -127,12 +127,12 @@ function comprobardni(){
         data: "dni="+dni,
         success: function(data) {
             console.log(data);
-            user['dni']=data.dni;
-            user['nombre']=data.nombre;
-            user['apellidos']=data.apellidos;
-            user['direccion']=data.direccion;
-            user['poblacion']=data.poblacion;
-            user['correo']=data.correo;
+            user['dni']=data[0]['dni'];
+            user['nombre']=data[0]['nombre'];
+            user['apellidos']=data[0]['apellidos'];
+            user['direccion']=data[0]['direccion'];
+            user['poblacion']=data[0]['poblacion'];
+            user['correo']=data[0]['correo'];
             console.log(user);
         },
         error: function(data){
