@@ -123,8 +123,8 @@ function identificarse(){
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "ajax/ajaxarticulos.php",
-        data: dni,
+        url: "ajax/ajaxusers.php",
+        data: "dni="+dni,
         success: function(data) {
             user['dni']=data.dni;
             user['nombre']=data.nombre;
@@ -132,6 +132,9 @@ function identificarse(){
             user['direccion']=data.direccion;
             user['poblacion']=data.poblacion;
             user['correo']=data.correo;
+        },
+        error: function(){
+            alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
         }
 });
 }
