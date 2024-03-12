@@ -140,7 +140,7 @@ function comprobardni(){
             if(data.length > 0){
             user=data[0];
             console.log(user);
-            sessionStorage.setItem("user",JSON.stringify(user));
+            usuariolisto();
             }else{
                 alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
             }
