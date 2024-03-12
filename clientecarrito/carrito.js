@@ -138,14 +138,12 @@ function editarusuario(){
         type: "POST",
         url: "ajax/ajaxedituser.php",
         data: "dni="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
-        success: function() {
+        context: document.body
+    }).done(function() {
             usuariolisto();
-        },
-        error: function(){
-            alert("ERROR!");
-        }
-});
-}
+        });
+    }
+
 
 function usuariologout(){
     user=[];
