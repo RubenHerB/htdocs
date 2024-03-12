@@ -109,13 +109,13 @@ actualizar(true);
 }
 
 function identificar(){
-    documento.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" >";
-    documento.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"comprobardni()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"abrrirregistro()\">Registrarse</button>";
+    document.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" >";
+    document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"comprobardni()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"abrrirregistro()\">Registrarse</button>";
 }
 
 function abrrirregistro(){
-    documento.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" >";
-    documento.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
+    document.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" >";
+    document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
 function comprobardni(){
