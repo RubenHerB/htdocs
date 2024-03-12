@@ -199,10 +199,11 @@ function comprobardni(){
 }
 
 function comprar(){
-    $(window).on('shown.bs.modal', function() { 
-        $('#modalidentificar').modal('show');
-        alert('shown');
-    });
+    if(user==[]){
+    $('#modalidentificar').modal('show');
+    alert('Introduce tu dni antes de realizar la compra');
+    }else{
+    }
 }
 
 actualizar(true);
