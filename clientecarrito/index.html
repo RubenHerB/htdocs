@@ -186,7 +186,7 @@ function añadir(id){
 
   actualizar(false);
   console.log(articulos);
-  let anadiendo=document.getElementById('cantidad'+id).value;
+  let anadiendo=parseInt(document.getElementById('cantidad'+id).value);
   let anadido=0;
   if(typeof carrito[id]!=='undefined'){
     anadido=parseInt(carrito[id]);
