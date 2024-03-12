@@ -114,7 +114,7 @@ function identificar(){
 }
 
 function abrrirregistro(){
-    document.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" ><br>Nombre:<br><input type=\"text\" class=\"form-control\" id=\"nombre\" >";
+    document.getElementById('modalidentificacion').innerHTML="DNI:<br><input type=\"text\" class=\"form-control\" id=\"dni\" ><br>Nombre:<br><input type=\"text\" class=\"form-control\" id=\"nombre\" ><br>Apellidos:<br><input type=\"text\" class=\"form-control\" id=\"apellidos\" ><br>Direccion:<br><input type=\"text\" class=\"form-control\" id=\"direccion\" ><br>Poblacion:<br><input type=\"text\" class=\"form-control\" id=\"poblacion\" ><br>Correo:<br><input type=\"text\" class=\"form-control\" id=\"correo\" >";
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
