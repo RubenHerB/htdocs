@@ -198,5 +198,11 @@ function comprobardni(){
 });
 }
 
+function comprar(){
+    $(window).on('shown.bs.modal', function() { 
+        $('#modalidentificar').modal('show');
+        alert('shown');
+    });
+}
 
 actualizar(true);
