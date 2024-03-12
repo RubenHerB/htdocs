@@ -189,14 +189,11 @@ function añadir(id){
   let anadiendo=document.getElementById('cantidad'+id).value;
   let anadido=0;
   if(typeof carrito[id]!=='undefined'){
-    anadido=carrito[id];
+    anadido=parseInt(carrito[id]);
   }
-if((anadido+anadiendo)<=articulos[id]['cantidad']){
-  if(typeof carrito[id]==='undefined'){
-    carrito[id]=parseInt(anadiendo);
-  }else{
-  carrito[id]+=parseInt(anadiendo);
-  }
+  let total=anadido+anadiendo;
+if(total<=parseInt(articulos[id]['cantidad'])){
+    carrito[id]=total;
   console.log(carrito);
 }else{
   alert("No hay tantos articulos disponibles")
