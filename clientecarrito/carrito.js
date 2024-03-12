@@ -118,7 +118,7 @@ function abrrirregistro(){
     documento.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
-function identificarse(){
+function comprobardni(){
     let dni=document.getElementById('dni').value;
     $.ajax({
         type: "POST",
