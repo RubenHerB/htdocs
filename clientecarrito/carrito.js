@@ -126,6 +126,7 @@ function identificarse(){
         url: "ajax/ajaxarticulos.php",
         data: dni,
         success: function(data) {
+            user['dni']=data.dni;
         }
 });
 }
