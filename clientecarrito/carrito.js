@@ -123,7 +123,7 @@ function abrrirregistro(){
 
 function usuariolisto(){
     document.getElementById('modalidentificacion').innerHTML="DNI:<br>"+user['dni']+"<br>Nombre:<br><input type=\"text\" class=\"form-control\" id=\"nombre\" value=\""+user['nombre']+"\"><br>Apellidos:<br><input type=\"text\" class=\"form-control\" id=\"apellidos\" value=\""+user['apellidos']+"\"><br>Direccion:<br><input type=\"text\" class=\"form-control\" id=\"direccion\" value=\""+user['direccion']+"\"><br>Poblacion:<br><input type=\"text\" class=\"form-control\" id=\"poblacion\" value=\""+user['poblacion']+"\"><br>Correo:<br><input type=\"text\" class=\"form-control\" id=\"correo\" value=\""+user['correo']+"\">";
-    document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"editarusuario()\">Editar</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
+    document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"editarusuario()\">Editar</button> O <button type=\"button\" class=\"btn btn-danger\" onclick=\"usuariologout()\">Cerrar sesion</button>";
 }
 
 function usuariologout(){
@@ -131,6 +131,7 @@ function usuariologout(){
     resetcarrito();
     sessionStorage.setItem("user",JSON.stringify(user));
     identificar();
+    document.getElementById('botonidentificacion').innerHTML="<button type=\"button\" class=\"btn btn-outline-none\" aria-current=\"page\" data-bs-toggle=\"modal\" data-bs-target=\"#modalidentificar\" onclick=\"identificar()\">Identificarse/Registrarse</button>";
 }
 
 function comprobardni(){
