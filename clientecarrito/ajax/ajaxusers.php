@@ -9,7 +9,7 @@ $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-
-echo json_encode($result);
+$rows=$result->fetch_all(MYSQLI_ASSOC);
+echo json_encode($rows);
 }
 

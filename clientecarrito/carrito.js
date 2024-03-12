@@ -126,6 +126,7 @@ function comprobardni(){
         url: "ajax/ajaxusers.php",
         data: "dni="+dni,
         success: function(data) {
+            console.log(data);
             user['dni']=data.dni;
             user['nombre']=data.nombre;
             user['apellidos']=data.apellidos;
@@ -134,7 +135,8 @@ function comprobardni(){
             user['correo']=data.correo;
             console.log(user);
         },
-        error: function(){
+        error: function(data){
+            console.log(data);
             alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
         }
 });
