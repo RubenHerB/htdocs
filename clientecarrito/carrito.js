@@ -129,6 +129,7 @@ function usuariologout(){
     user=[];
     resetcarrito();
     sessionStorage.setItem("user",JSON.stringify(user));
+    identificar();
 }
 
 function comprobardni(){
