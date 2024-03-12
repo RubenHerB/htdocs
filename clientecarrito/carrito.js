@@ -75,6 +75,9 @@ for (var key in carrito){
   let cantidad=precio*carrito[key];
   total+=cantidad;
   document.getElementById('carritocontent').innerHTML+="<h4>"+articulos[parseInt(key)]['nombre']+"</h4><div>"+precio+"€ X "+carrito[key]+" = "+cantidad+"€<input id=\"carrito"+key+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+carrito[key]+"\" > <button class=\"btn btn-primary\" onclick=\"quitar("+key+")\">Quitar del carrito</button> <button class=\"btn btn-primary\" onclick=\"quitartodos("+key+")\">Quitar todos del carrito</button></div>";
+    if(total=0){
+        document.getElementById('total').innerHTML="<hr>Total: "+total+"€ <button class=\"btn btn-danger\" onclick=\"resetcarrito()\">Quitar todos los articulos</button> <button class=\"btn btn-primary\" onclick=\"comprar()\">Realizar compra</button>";
+}
 }
 }
 document.getElementById('total').innerHTML="<hr>Total: "+total+"€ <button class=\"btn btn-danger\" onclick=\"resetcarrito()\">Quitar todos los articulos</button> <button class=\"btn btn-primary\" onclick=\"comprar()\">Realizar compra</button>";
