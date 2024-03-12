@@ -136,7 +136,6 @@ function editarusuario(){
     user = JSON.parse(sessionStorage.getItem("user"));
     $.ajax({
         type: "POST",
-        dataType: "json",
         url: "ajax/ajaxedituser.php",
         data: "dni="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
         success: function() {
