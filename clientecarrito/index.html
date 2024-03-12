@@ -59,7 +59,7 @@ body {
                     <button class="btn btn-outline-dark" type="button" onclick="abrircarrito()">
                             <i class="bi-cart-fill me-1"></i>
                             Carrito
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span id="carritonumero" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     <div class="navbar-nav  mb-2 mb-lg-0 ms-lg-4">
                         <button type="button" class="btn btn-outline-none" aria-current="page" data-bs-toggle="modal" data-bs-target="#modalidentificar" onclick="identificar()">Identificarse/Registrarse</a>
@@ -162,18 +162,22 @@ function cerrarcarrito(){
 
 function actualizar_carrito(){
   sessionStorage.setItem("carrito",JSON.stringify(carrito));
+  let c=0;
   if (carrito!=""){
   let total=0;
   for (var key in carrito){
     console.log(parseInt(carrito[key]));
     if (!isNaN(parseInt(carrito[key]))){
+      c+=parseInt(carrito[key]);
     let precio=((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
     let cantidad=precio*carrito[key];
     total+=cantidad;
   }
 }
   document.getElementById('total').innerHTML="<hr>Total: "+total+"€";
+ 
 }
+document.getElementById('carritonumero').innerHTML=c;
 }
 
 
