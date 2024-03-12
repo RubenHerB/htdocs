@@ -206,9 +206,22 @@ function comprar(){
         let datasent="";
         for (var key in carrito){
             if (!isNaN(parseInt(carrito[key]))){
-                if(datasent=="")
+                if(datasent==""){
+                    datasent=key+"="+carrito[key];
+                }else{
+                    datasent+="&"+key+"="+carrito[key];
+                }
             }
     }
+    $.ajax({
+        type: "POST",
+        url: "ajax/ajaxedituser.php",
+        data: datasent,
+        success: function() {
+            alert("Usuario editado con exito");
+            usuariolisto();
+        }
+    });
 }
 }
 
