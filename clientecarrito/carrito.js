@@ -167,7 +167,7 @@ function comprobardni(){
             console.log(data);
             if(data.length > 0){
             user=data[0];
-            user = JSON.parse(sessionStorage.getItem("user"));
+            sessionStorage.setItem("user",JSON.stringify(user));
             console.log(user);
             usuariolisto();
             }else{
