@@ -176,13 +176,17 @@ function actualizar_carrito(){
     document.getElementById('carritocontent').innerHTML+="<h4>"+articulos[parseInt(key)]['nombre']+"</h4><div>"+precio+"€ X "+carrito[key]+" = "+cantidad+"€</div>";
   }
 }
-  document.getElementById('total').innerHTML="<hr>Total: "+total+"€";
+  document.getElementById('total').innerHTML="<hr>Total: "+total+"€ <button class=\"btn btn-danger\" onclick=\"resetcarrito()\">Quitar todos los articulos</button> <button class=\"btn btn-primary\" onclick=\"comprar()\">Realizar compra</button>";
  
 }
 document.getElementById('carritonumero').innerHTML=c;
 }
 
-
+function resetcarrito(){
+carrito=[];
+console.log(carrito);
+actualizar_carrito();
+}
 
 function añadir(id){
 
