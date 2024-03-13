@@ -224,6 +224,7 @@ function comprobardni(){
 
 function comprar(){
     if(user==[]){
+        identificar();
     $('#modalidentificar').modal('show');
     alert('Introduce tu dni antes de realizar la compra');
     }else{
@@ -251,6 +252,7 @@ function comprar(){
 function historial(){
     console.log(user);
     if(user==[]){
+        identificar();
         $('#modalidentificar').modal('show');
         alert('Introduce tu dni antes de realizar la compra');
         }else{}
