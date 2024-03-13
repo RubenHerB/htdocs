@@ -253,7 +253,7 @@ function historial(){
     if(typeof user['DNI']=='undefined'){
         identificar();
         $('#modalidentificar').modal('show');
-        alert('Introduce tu dni antes de realizar la compra');
+        alert('Introduce tu dni antes de ver el historial');
         }else{
             $.ajax({
                 type: "POST",
@@ -261,9 +261,8 @@ function historial(){
                 data: "dni="+user['DNI'],
                 success: function(result) {
                     console.log(result);
-                    alert("Comprarealizada con exito");
-                    resetcarrito();
-                    actualizar(true);
+                    
+                    
                 }
             });
         }
