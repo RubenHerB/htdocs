@@ -8,8 +8,15 @@ if (isset($_POST)){
 $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
-}else{
-    return "Datos cambiados con exito";
 }
+$query = "SELECT codVenta FROM ventas order by codVenta desc limit 1";
+$result = $connection->query($query);
+if (!$result){
+    die("Fatal Error");
+}
+foreach ($result as $row){
+    $n=$row['codVenta'];
+}
+
 }
 
