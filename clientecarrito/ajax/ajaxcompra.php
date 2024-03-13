@@ -23,13 +23,11 @@ unset($_POST['dni']);
 var_dump($_POST);
 
 foreach ($_POST as $key=>$row){
-    if((int)$row==(double)){
-        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES ('$n', '$key', '$row', '".$_POST["p$key"]."')";
+        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES ('$n', '$key', '$row', '0')";
         $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-    }
 }
 }
 
