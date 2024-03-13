@@ -248,4 +248,13 @@ function comprar(){
 }
 
 
+function historial(){
+    console.log(user);
+    if(user==[]){
+        $('#modalidentificar').modal('show');
+        alert('Introduce tu dni antes de realizar la compra');
+        }else{}
+}
+
+
 actualizar(true);
