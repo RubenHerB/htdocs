@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST)){
-    $query="SELECT * FROM `lineas` as `line` inner join `ventas' as v on v.codVenta = `line'.codVenta where v.DNI='".$_POST['dni']."'";
+    $query="SELECT * FROM `lineas` as `line` inner join ventas as v on v.codVenta = line.codVenta where v.DNI='".$_POST['dni']."'";
     $connection = new mysqli('localhost', 'root','', 'carritocliente');
     if ($connection->connect_error){
         die("Fatal Error");
