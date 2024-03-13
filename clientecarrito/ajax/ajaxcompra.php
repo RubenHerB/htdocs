@@ -20,7 +20,7 @@ foreach ($result as $row){
 $carrito=$_POST;
 unset($carrito['dni']);
  
-return echo json_encode($carrito);
+echo json_encode($carrito);
 
 }
 
