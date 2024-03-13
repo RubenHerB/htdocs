@@ -28,6 +28,19 @@ foreach ($_POST as $key=>$row){
 if (!$result){
     die("Fatal Error");
 }
+$query = "select cantidad from `articulos` where codArticulo like $key";
+$result = $connection->query($query);
+if (!$result){
+    die("Fatal Error");
+}
+foreach ($result as $row){
+    $a=$row['cantidad'];
+}
+$a-=$row;
+$query="UPDATE `articulos` SET `cantidad`= $a WHERE `codArticulo` like $key";
+$result = $connection->query($query);
+if (!$result){
+    die("Fatal Error");
 }
 }
 
