@@ -261,8 +261,11 @@ function historial(){
                 data: "dni="+user['DNI'],
                 success: function(result) {
                     console.log(result);
-                    
-                    
+                    let lineas=result;
+                    let l=0;
+                    lineas.forEach(function(linea){
+
+                    });
                 }
             });
         }
