@@ -250,13 +250,25 @@ function comprar(){
 
 
 function historial(){
-    console.log(user);
     if(typeof user['DNI']=='undefined'){
         identificar();
         $('#modalidentificar').modal('show');
         alert('Introduce tu dni antes de realizar la compra');
-        }else{}
-}
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "ajax/ajaxhistorial.php",
+                data: "dni="+user['DNI'],
+                success: function(result) {
+                    console.log(result);
+                    alert("Comprarealizada con exito");
+                    resetcarrito();
+                    actualizar(true);
+                }
+            });
+        }
+        }
+
 
 
 actualizar(true);
