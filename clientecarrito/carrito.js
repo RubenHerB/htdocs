@@ -209,7 +209,7 @@ function comprar(){
                     datasent+="&"+key+"="+carrito[key]+"&p"+key+"="+((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
                 }
             }
-    
+    console.log(datasent);
     $.ajax({
         type: "POST",
         url: "ajax/ajaxcompra.php",
