@@ -17,6 +17,10 @@ if (!$result){
 foreach ($result as $row){
     $n=$row['codVenta'];
 }
+$carrito=$_POST;
+unset($carrito['dni']);
+ 
+return echo json_encode($carrito);
 
 }
 
