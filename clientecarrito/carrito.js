@@ -263,11 +263,13 @@ function historial(){
                     document.getElementById("content").innerHTML = "";
                     console.log(result);
                     let lineas=result;
-                    let l=0;
+                    let v=0;
                     lineas.forEach(function(linea){
-                        if(l!=linea['CodLinea']){
-
+                        if(v!=linea['codVenta']){
+                            document.getElementById("content").innerHTML +="<h2>"+linea['fecha']+"</h2>";
+                            v=linea['codVenta'];
                         }
+                        document.getElementById("content").innerHTML +="<div>"+linea['cantidad']+" X"+articulos['codArticulo']['nombre']+"</div>";
                     });
                 }
             });
