@@ -223,7 +223,7 @@ function comprobardni(){
 }
 
 function comprar(){
-    if(user==[]){
+    if(typeof user['DNI']=='undefined'){
         identificar();
     $('#modalidentificar').modal('show');
     alert('Introduce tu dni antes de realizar la compra');
@@ -251,7 +251,7 @@ function comprar(){
 
 function historial(){
     console.log(user);
-    if(user==[]){
+    if(typeof user['DNI']=='undefined'){
         identificar();
         $('#modalidentificar').modal('show');
         alert('Introduce tu dni antes de realizar la compra');
