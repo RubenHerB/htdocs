@@ -206,7 +206,7 @@ function comprar(){
         let datasent="dni="+user['DNI'];
         for (var key in carrito){
             if (!isNaN(parseInt(carrito[key]))){
-                    datasent+="&"+key+"="+carrito[key]+"&p"+key+"="+((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
+                    datasent+="&"+key+"=cantidad="+carrito[key]+"&precio"+key+"="+((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
                 }
             }
     
