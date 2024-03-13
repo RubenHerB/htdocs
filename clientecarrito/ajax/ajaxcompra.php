@@ -20,11 +20,11 @@ foreach ($result as $row){
 
 unset($_POST['dni']);
 
-
+echo $_POST
 
 foreach ($_POST as $key=>$row){
-        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES ('$n', '$key', '".$row['cantidad']."', '".$row['precio']."')";
-     }
+        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES ('$n', '$key', '$row', '".$_POST["p$key"]."')";
+    }
 
 }
 
