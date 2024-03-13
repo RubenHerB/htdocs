@@ -260,11 +260,14 @@ function historial(){
                 url: "ajax/ajaxhistorial.php",
                 data: "dni="+user['DNI'],
                 success: function(result) {
+                    document.getElementById("content").innerHTML = "";
                     console.log(result);
                     let lineas=result;
                     let l=0;
                     lineas.forEach(function(linea){
+                        if(l!=linea['CodLinea']){
 
+                        }
                     });
                 }
             });
