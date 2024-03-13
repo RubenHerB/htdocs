@@ -9,7 +9,7 @@ sessionStorage.setItem("carrito",JSON.stringify(carrito));
 
 if (sessionStorage.getItem("user")) {
     user = JSON.parse(sessionStorage.getItem("user"));
-    if(user!=[]){
+    if(typeof user['DNI']!='undefined'){
         usuariolisto();
     }
   }else{
