@@ -20,7 +20,7 @@ foreach ($result as $row){
 $carrito=$_POST;
 unset($carrito['dni']);
  
-echo json_encode($carrito);
-
+foreach ($carrito as $key=>$row){
+    if ($row['codVenta']
 }
 
