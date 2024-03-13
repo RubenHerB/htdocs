@@ -214,10 +214,9 @@ function comprar(){
         type: "POST",
         url: "ajax/ajaxcompra.php",
         data: datasent,
-        success: function(data) {
-            console.log(data);
-            // alert("Comprarealizada con exito");
-            // resetcarrito();
+        success: function() {
+            alert("Comprarealizada con exito");
+            resetcarrito();
         }
     });}
 }

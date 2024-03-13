@@ -22,7 +22,7 @@ unset($_POST['dni']);
  
 foreach ($_POST as $key=>$row){
     if (is_int($key)){
-        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES (NULL, '', '', '', '')";
+        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES ('$n', '$key', '$row', '".$_POST['p'.$key]"')";
     }
 
 }
