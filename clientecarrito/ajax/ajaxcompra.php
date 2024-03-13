@@ -17,10 +17,13 @@ if (!$result){
 foreach ($result as $row){
     $n=$row['codVenta'];
 }
-$carrito=$_POST;
-unset($carrito['dni']);
+
+unset($_POST['dni']);
  
-foreach ($carrito as $key=>$row){
-    if ($row['codVenta']
+foreach ($_POST as $key=>$row){
+    if (is_int($key)){
+        $query = "INSERT INTO `lineas` (`codVenta`, `codArticulo`, `cantidad`, `precio`) VALUES (NULL, '', '', '', '')";
+    }
+
 }
 
