@@ -218,6 +218,7 @@ function comprar(){
             console.log(result);
             alert("Comprarealizada con exito");
             resetcarrito();
+            actualizar(true);
         }
     });}
 }
