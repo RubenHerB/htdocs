@@ -209,7 +209,7 @@ function comprar(){
                     datasent+="&"+key+"="+carrito[key];
                 }
             }
-    }
+    
     $.ajax({
         type: "POST",
         url: "ajax/ajaxcompra.php",
@@ -219,7 +219,7 @@ function comprar(){
             // alert("Comprarealizada con exito");
             // resetcarrito();
         }
-    });
+    });}
 }
 
 
