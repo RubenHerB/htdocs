@@ -139,6 +139,30 @@ function abrrirregistro(){
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
+function registrarusu(){
+    let dni=document.getElementById('dni').value;
+if(dni!=""){
+user['DNI']=dni;
+user['nombre']=document.getElementById('nombre').value;
+    user['apellidos']=document.getElementById('apellidos').value;
+    user['direccion']=document.getElementById('direccion').value;
+    user['poblacion']=document.getElementById('poblacion').value;
+    user['correo']=document.getElementById('correo').value;
+    sessionStorage.setItem("user",JSON.stringify(user));
+    $.ajax({
+        type: "POST",
+        url: "ajax/ajaxcreateuser.php",
+        data: "DNI="+user["DNI"]+"&nombre="+user["nombre"]+"&apellidos="+user["apellidos"]+"&direccion="+user["direccion"]+"&poblacion="+user["poblacion"]+"&correo="+user["correo"],
+    success: function() {
+            alert("Usuario creado con exito");
+            usuariolisto();
+        }
+    });
+}
+}
+
+
+
 function usuariolisto(){
     document.getElementById('modalidentificacion').innerHTML="DNI:<br>"+user['DNI']+"<br>Nombre:<br><input type=\"text\" class=\"form-control\" id=\"nombre\" value=\""+user['nombre']+"\"><br>Apellidos:<br><input type=\"text\" class=\"form-control\" id=\"apellidos\" value=\""+user['apellidos']+"\"><br>Direccion:<br><input type=\"text\" class=\"form-control\" id=\"direccion\" value=\""+user['direccion']+"\"><br>Poblacion:<br><input type=\"text\" class=\"form-control\" id=\"poblacion\" value=\""+user['poblacion']+"\"><br>Correo:<br><input type=\"text\" class=\"form-control\" id=\"correo\" value=\""+user['correo']+"\">";
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"editarusuario()\">Editar</button> O <button type=\"button\" class=\"btn btn-danger\" onclick=\"usuariologout()\">Cerrar sesion</button>";
