@@ -33,8 +33,8 @@ $result = $connection->query($query);
 if (!$result){
     die("Fatal Error");
 }
-foreach ($result as $row){
-    $a=$row['cantidad'];
+foreach ($result as $c){
+    $a=$c['cantidad'];
 }
 $a-=$row;
 $query="UPDATE `articulos` SET `cantidad`= $a WHERE `codArticulo` like $key";
