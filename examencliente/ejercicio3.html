@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CIFP Avilés</h1>
+    <div>
+        <h2>Clica n un alumno para seleccionarlo</h2>
+        <div onclick="select(1)"><h3 id="t1">José Pérez</h3></div>
+        <div onclick="select(2)"><h3 id="t2">Ana García</h3></div>
+        <div onclick="select(3)"><h3 id="t3">Rosa Fernández</h3></div>
+        <div onclick="select(4)"><h3 id="t4">Carlos González</h3></div>
+        <div onclick="select(5)"><h3 id="t5">Luis Crespo</h3></div>
+    </div>
+    <div>
+        <h3>Resultado</h3>
+        <div id="resultado" style="border:1px solid black; min-height: 50px;min-width: 200px;"></div>
+    </div>
+    <button onclick="mostrar()">Mostrar nota</button>
+</body>
+<script type="text/javascript">
+    var alumno=0;
+    function select(id){
+        alumno=id;
+        for(var i=1;i<=5;i++){
+            document.getElementById('t'+i).style.color="black";
+        }
+        document.getElementById('t'+id).style.color="red";
+        console.log(alumno);
+    }
+    function mostrar(){
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    hr = new XMLHttpRequest();
+    hr.overrideMimeType('text/xml');
+} else if (window.ActiveXObject) { // IE
+    hr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+hr.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        document.getElementById("resultado").innerHTML=this.responseText;
+    }
+};
+hr.open("POST","ejercicio1_resultado.php");
+hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+hr.send("queId=alumno"+alumno);
+}
+
+</script>
+</html>

@@ -1,6 +1,7 @@
 var articulos=[]; 
 var carrito=[];
 var user=[];
+var historia=[];
 if (sessionStorage.getItem("carrito")) {
   carrito = JSON.parse(sessionStorage.getItem("carrito"));
 }else{
@@ -24,6 +25,7 @@ function actualizar(mostrar){$.ajax({
   url: "ajax/ajaxarticulos.php",
   data: "",
   success: function(data) {
+    console.log(data);
     if(mostrar){
     document.getElementById("content").innerHTML = "";
     }
@@ -33,7 +35,7 @@ function actualizar(mostrar){$.ajax({
       document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
         +articulo['codArticulo']+
         "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
-          "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'] )?(parseInt(articulo['cantidad'])>0?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":""):"")+"<h6>Precio "+(parseFloat(articulo['PVP'])*(parseFloat(articulo['IVA'])+1)).toFixed(2)+" €</h6>"+(parseInt(articulo['cantidad'])>0?"<input id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\" onclick=\"añadir("+articulo['codArticulo']+")\">Añadir al carrito</button>":"<h5 style=\"color:red\">Articulo agotado</h5>")+"</div></div><div class=\"modal fade\" id=\"modal"
+          "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'] )?(parseInt(articulo['cantidad'])>0?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":""):"")+"<h6>Precio "+(parseFloat(articulo['PVP'])*((parseFloat(articulo['IVA'])/100)+1)).toFixed(2)+" €</h6>"+(parseInt(articulo['cantidad'])>0?"<input id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\" onclick=\"añadir("+articulo['codArticulo']+")\">Añadir al carrito</button>":"<h5 style=\"color:red\">Articulo agotado</h5>")+"</div></div><div class=\"modal fade\" id=\"modal"
           +articulo['codArticulo']+"\" tabindex=\"-1\" aria-labelledby=\"modalLabel"
           +articulo['codArticulo']+"\" aria-hidden=\"true\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-header\"><h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">"
           +articulo['nombre']+"</h1><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"
@@ -71,7 +73,7 @@ for (var key in carrito){
   console.log(parseInt(carrito[key]));
   if (!isNaN(parseInt(carrito[key]))){
     c+=parseInt(carrito[key]);
-  let precio=((parseFloat(articulos[parseInt(key)]['PVP'])*(parseFloat(articulos[parseInt(key)]['IVA'])+1)).toFixed(2));
+  let precio=((parseFloat(articulos[parseInt(key)]['PVP'])*((parseFloat(articulos[parseInt(key)]['IVA'])/100)+1)).toFixed(2));
   let cantidad=precio*carrito[key];
   total+=cantidad;
   document.getElementById('carritocontent').innerHTML+="<h4>"+articulos[parseInt(key)]['nombre']+"</h4><div>"+precio+"€ X "+carrito[key]+" = "+cantidad+"€<input id=\"carrito"+key+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+carrito[key]+"\" > <button class=\"btn btn-primary\" onclick=\"quitar("+key+")\">Quitar del carrito</button> <button class=\"btn btn-primary\" onclick=\"quitartodos("+key+")\">Quitar todos del carrito</button></div>";
@@ -195,6 +197,7 @@ function usuariologout(){
     sessionStorage.setItem("user",JSON.stringify(user));
     identificar();
     document.getElementById('botonidentificacion').innerHTML="<button type=\"button\" class=\"btn btn-outline-none\" aria-current=\"page\" data-bs-toggle=\"modal\" data-bs-target=\"#modalidentificar\" onclick=\"identificar()\">Identificarse/Registrarse</button>";
+    actualizar(true);
 }
 
 function comprobardni(){
@@ -257,25 +260,55 @@ function historial(){
         }else{
             $.ajax({
                 type: "POST",
+                dataType: "json",
                 url: "ajax/ajaxhistorial.php",
                 data: "dni="+user['DNI'],
                 success: function(result) {
+                    console.log(result);
                     document.getElementById("content").innerHTML = "";
                     console.log(result);
-                    let lineas=result;
+                    console.log(historia);
                     let v=0;
-                    lineas.forEach(function(linea){
+                    result.forEach(function(linea){
                         if(v!=linea['codVenta']){
-                            document.getElementById("content").innerHTML +="<h2>"+linea['fecha']+"</h2>";
                             v=linea['codVenta'];
+                            document.getElementById("content").innerHTML +="<hr><h2>"+linea['fecha']+"</h2>";
+                            
                         }
-                        document.getElementById("content").innerHTML +="<div>"+linea['cantidad']+" X"+articulos['codArticulo']['nombre']+"</div>";
+                        document.getElementById("content").innerHTML +="<div>"+linea['cantidad']+" X "+articulos[linea['codArticulo']]['nombre']+
+                        "<input type=\"number\" id=\"h"+linea['CodLinea']+"\" max=\""+linea['cantidad']+"\" min=\"1\" value=\"1\"><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolver("+linea['CodLinea']+")\">Devolver</button><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolverlinea("+linea['CodLinea']+")\">Todos</button></div>";
                     });
                 }
             });
         }
         }
 
+
+function devolverlinea(id){
+    $.ajax({
+        type: "POST",
+        url: "ajax/ajaxdevolverlinea.php",
+        data: "id="+id,
+        success: function(result) {
+            console.log(result);
+            alert("Devolucion realizada con exito");
+            historial();
+        }
+    });
+}
+
+function devolver(id){
+    $.ajax({
+        type: "POST",
+        url: "ajax/ajaxdevolver.php",
+        data: "id="+id+"&cantidad="+document.getElementById('h'+id).value,
+        success: function(result) {
+            console.log(result);
+            alert("Devolucion realizada con exito");
+            historial();
+        }
+    });
+}
 
 
 actualizar(true);

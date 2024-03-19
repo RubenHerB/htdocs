@@ -231,8 +231,7 @@ hr.onreadystatechange = function(){
 };
 hr.open("POST","vistadelete.php");
 hr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
-hr.send("id="+id);
-ajaxtabla();
+hr.send("queId="+id);
 }
 
 </script>
