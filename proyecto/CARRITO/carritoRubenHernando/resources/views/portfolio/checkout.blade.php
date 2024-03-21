@@ -14,7 +14,7 @@
                 </form>
                 </div>
                 <div class="col">
-                <form method="get" action="{{route('clear')}}">
+                <form method="get" action="{{route('comprar')}}">
                     @csrf
                     <input type="submit" name="btn" value="Realizar compra" class="btn btn-primary w-20" />
                 </form>
