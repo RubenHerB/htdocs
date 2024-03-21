@@ -37,7 +37,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html{background: url("/img/llagar.png") no-repeat center center fixed; 
+html{background: url("{{URL('/img/llagar.png')}}") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
