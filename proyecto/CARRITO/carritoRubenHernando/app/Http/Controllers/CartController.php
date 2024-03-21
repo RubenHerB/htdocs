@@ -44,4 +44,15 @@ public function clear(){
     Cart::destroy();
     return redirect()->back()->with("success","Se ha eliminado el contenido del carrito");
 }
+
+
+public function comprar(){
+    if (Auth::check()){
+
+    }else{
+        return redirect()->back()->with("Debes iniciar sesion antes de realizar una compra");
+    }
+}
+
+
 }
