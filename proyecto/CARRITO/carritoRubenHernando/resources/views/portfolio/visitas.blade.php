@@ -24,7 +24,7 @@
     <br>
     <div class="row justify-content-center">
       <div class=" col-lg-8 col-md-9">
-    <img class="img-fluid rounded border border-light" src="../resources/degustacion.jpg" class="imgvisita" alt="Escanciado desde barrica para una degustacion">
+    <img class="img-fluid rounded border border-light" src="{{URL('/img/degustacion.jpg')}}" class="imgvisita" alt="Escanciado desde barrica para una degustacion">
   </div>
     </div>  
     <br>

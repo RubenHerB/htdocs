@@ -1,4 +1,4 @@
-<div class="row footer">
+<div class="row footer ">
 <footer id="footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
 
     <div class="text-center row justify-content-around">
