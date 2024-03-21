@@ -13,8 +13,9 @@ class OrderController extends Controller
     public function grabarCompra(){
         $order=new Order();
         $order->cart=serialize(Cart::content());
-        $order->direccion="desconocida";
+        $order->direccion="N/A";
         $order->nombre=Auth::user()->name();
         $order->idUsuario=Auth::user()->id();
+        $order->id_pago="N/A";
     }
 }
