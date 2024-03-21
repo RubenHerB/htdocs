@@ -18,6 +18,7 @@ Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checko
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
 Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
 Route::post('cart/removeone', [App\Http\Controllers\CartController::class, 'removeOne'])->name('removeone');
+Route::get('cart/comprar', [App\Http\Controllers\CartController::class, 'comprar'])->name('comprar');
 
 
 Auth::routes();
