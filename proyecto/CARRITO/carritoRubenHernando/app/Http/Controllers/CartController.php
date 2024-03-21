@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Cart;
+use Auth;
 
 class CartController extends Controller
 {
@@ -48,9 +49,9 @@ public function clear(){
 
 public function comprar(){
     if (Auth::check()){
-
+        dd(Auth::user()->name);
     }else{
-        return redirect()->back()->with("Debes iniciar sesion antes de realizar una compra");
+        return redirect()->back()->with("deny","Debes iniciar sesion antes de realizar una compra");
     }
 }
 
