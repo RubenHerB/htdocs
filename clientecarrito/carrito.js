@@ -35,7 +35,7 @@ function actualizar(mostrar){$.ajax({
       document.getElementById("content").innerHTML+="<div class=\"row\"><div class=\"col-md-4\" id=\"pop\"><button type=\"button\" class=\"btn\" data-bs-toggle=\"modal\" data-bs-target=\"#modal"
         +articulo['codArticulo']+
         "\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"+articulo['codArticulo']+".png\" alt=\"\" style=\"max-height:100px\"></button></div><div class=\"col-md-8\"><h3>"+articulo['nombre']+
-          "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'] )?(parseInt(articulo['cantidad'])>0?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":""):"")+"<h6>Precio "+(parseFloat(articulo['PVP'])*((parseFloat(articulo['IVA'])/100)+1)).toFixed(2)+" €</h6>"+(parseInt(articulo['cantidad'])>0?"<input id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\" onclick=\"añadir("+articulo['codArticulo']+")\">Añadir al carrito</button>":"<h5 style=\"color:red\">Articulo agotado</h5>")+"</div></div><div class=\"modal fade\" id=\"modal"
+          "</h3>"+(parseInt(articulo['cantidad'])<=parseInt(articulo['cantidadMinima'] )?(parseInt(articulo['cantidad'])>0?"<h5 class=\"ultimas\">Ultimas unidades de este articulo</h5>":""):"")+"<p>Stock: "+articulo['cantidad']+"</p><h6>Precio "+(parseFloat(articulo['PVP'])*((parseFloat(articulo['IVA'])/100)+1)).toFixed(2)+" €</h6>"+(parseInt(articulo['cantidad'])>0?"<input id=\"cantidad"+articulo['codArticulo']+"\" type=\"number\" value=\"1\" min=\"1\" max=\""+articulo['cantidad']+"\" > <button class=\"btn btn-primary\" onclick=\"añadir("+articulo['codArticulo']+")\">Añadir al carrito</button>":"<h5 style=\"color:red\">Articulo agotado</h5>")+"</div></div><div class=\"modal fade\" id=\"modal"
           +articulo['codArticulo']+"\" tabindex=\"-1\" aria-labelledby=\"modalLabel"
           +articulo['codArticulo']+"\" aria-hidden=\"true\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-header\"><h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">"
           +articulo['nombre']+"</h1><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"img/"
@@ -141,15 +141,40 @@ function abrrirregistro(){
     document.getElementById('modalboton').innerHTML="<button type=\"button\" class=\"btn btn-primary\" onclick=\"identificar()\">Identificarte</button> O <button type=\"button\" class=\"btn btn-primary\" onclick=\"registrarusu()\">Registrarse</button>";
 }
 
+function validarmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  function tienenumeros(str) {
+    var matches = str.match(/\d+/g);
+if (matches != null) {
+    return true;
+}else{
+    return false;
+}
+  }
+
+
 function registrarusu(){
-    let dni=document.getElementById('dni').value;
-if(dni!=""){
+    let dni=document.getElementById('dni').value.toUpperCase();
+    if(dni.length==9){
+        var dniaux=separarLetraDni(dni);
+        if(calcularLetraDni(dniaux[0])==dniaux[1]){
+            var correo=document.getElementById('correo').value;
+            if (validarmail(correo)){
+                let nombre=document.getElementById('nombre').value;
+                let ape=document.getElementById('apellidos').value;
+                let direc=document.getElementById('direccion').value;
+                let pobla=document.getElementById('poblacion').value;
+                if(nombre!=""&&ape!=""&&direc!=""&&pobla!=""){
+                    if(!tienenumeros(nombre)&&!tienenumeros(ape)&&!tienenumeros(pobla)){
 user['DNI']=dni;
-user['nombre']=document.getElementById('nombre').value;
-    user['apellidos']=document.getElementById('apellidos').value;
-    user['direccion']=document.getElementById('direccion').value;
-    user['poblacion']=document.getElementById('poblacion').value;
-    user['correo']=document.getElementById('correo').value;
+user['nombre']=nombre
+    user['apellidos']=ape;
+    user['direccion']=direc;
+    user['poblacion']=pobla;
+    user['correo']=correo;
     sessionStorage.setItem("user",JSON.stringify(user));
     $.ajax({
         type: "POST",
@@ -160,8 +185,23 @@ user['nombre']=document.getElementById('nombre').value;
             usuariolisto();
         }
     });
+}else{
+    alert("Porfavor, rellena todos los campos con el formato correcto");
+}
+}else{
+    alert("Porfavor, rellena todos los campos");
+}
+}else{
+    alert("Formato de correo incorrecto");
+}
+}else{
+    alert("El DNI introducido no se corresponde al de un español de pura cepa");
+}
+}else{
+alert("El DNI introducido es demasiado corto");
 }
 }
+
 
 
 
@@ -171,12 +211,35 @@ function usuariolisto(){
     document.getElementById('botonidentificacion').innerHTML="<button type=\"button\" class=\"btn btn-outline-none\" aria-current=\"page\" data-bs-toggle=\"modal\" data-bs-target=\"#modalidentificar\" onclick=\"usuariolisto()\">"+user['DNI']+"</button>";
 }
 
+function calcularLetraDni(nie) {
+    let cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
+    nie = parseInt(nie);
+    let posicion = nie % (cadena.length - 1);
+    return cadena[posicion];
+  }
+
+  function separarLetraDni(dni){
+   
+var regex = new RegExp('([0-9]+)|([a-zA-Z]+)','g');
+var splittedArray = dni.match(regex);
+    return splittedArray;
+  }
+
+
 function editarusuario(){
-    user['nombre']=document.getElementById('nombre').value;
-    user['apellidos']=document.getElementById('apellidos').value;
-    user['direccion']=document.getElementById('direccion').value;
-    user['poblacion']=document.getElementById('poblacion').value;
-    user['correo']=document.getElementById('correo').value;
+    var correo=document.getElementById('correo').value;
+    if (validarmail(correo)){
+        let nombre=document.getElementById('nombre').value;
+        let ape=document.getElementById('apellidos').value;
+        let direc=document.getElementById('direccion').value;
+        let pobla=document.getElementById('poblacion').value;
+        if(nombre!=""&&ape!=""&&direc!=""&&pobla!=""){
+            if(!tienenumeros(nombre) && !tienenumeros(ape) && !tienenumeros(pobla)){
+user['nombre']=nombre
+user['apellidos']=ape;
+user['direccion']=direc;
+user['poblacion']=pobla;
+user['correo']=correo;
     console.log(user);
     sessionStorage.setItem("user",JSON.stringify(user));
     $.ajax({
@@ -188,6 +251,15 @@ function editarusuario(){
             usuariolisto();
         }
     });
+}else{
+    alert("Porfavor, rellena todos los campos con el formato correcto");
+}
+}else{
+    alert("Porfavor, rellena todos los campos");
+}
+}else{
+    alert("Formato de correo incorrecto");
+}
     }
 
 
@@ -200,8 +272,13 @@ function usuariologout(){
     actualizar(true);
 }
 
+
+
 function comprobardni(){
-    let dni=document.getElementById('dni').value;
+    let dni=document.getElementById('dni').value.toUpperCase();
+    if(dni.length==9){
+        var dniaux=separarLetraDni(dni);
+        if(calcularLetraDni(dniaux[0])==dniaux[1]){
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -215,14 +292,20 @@ function comprobardni(){
             console.log(user);
             usuariolisto();
             }else{
-                alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
+                alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo");
             }
         },
         error: function(data){
             console.log(data);
-            alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo")
+            alert("El DNI introducido no corresponde a ninguna cuenta, por favor, comprueba que sea correcto o registralo");
         }
 });
+        }else{
+            alert("El DNI introducido no se corresponde al de un español de pura cepa");
+        }
+}else{
+    alert("El DNI introducido es demasiado corto");
+}
 }
 
 function comprar(){
@@ -251,6 +334,17 @@ function comprar(){
     });}
 }
 
+function difdias(d) {
+    let d1=new Date(d);
+    let d2=new Date();
+    var diff = Math.abs(d1.getTime() - d2.getTime());
+    if( (diff / (1000 * 60 * 60 * 24))>16){
+        return false;
+    }else{
+        return true;
+    }
+  }
+
 
 function historial(){
     if(typeof user['DNI']=='undefined'){
@@ -276,7 +370,7 @@ function historial(){
                             
                         }
                         document.getElementById("content").innerHTML +="<div>"+linea['cantidad']+" X "+articulos[linea['codArticulo']]['nombre']+
-                        "<input type=\"number\" id=\"h"+linea['CodLinea']+"\" max=\""+linea['cantidad']+"\" min=\"1\" value=\"1\"><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolver("+linea['CodLinea']+")\">Devolver</button><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolverlinea("+linea['CodLinea']+")\">Todos</button></div>";
+                        (difdias(linea['fecha'])?"<input type=\"number\" id=\"h"+linea['CodLinea']+"\" max=\""+linea['cantidad']+"\" min=\"1\" value=\"1\"><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolver("+linea['CodLinea']+")\">Devolver</button><button type=\"button\" class=\"btm btn-outline-danger\" onclick=\"devolverlinea("+linea['CodLinea']+")\">Todos</button>":"")+"</div>";
                     });
                 }
             });
