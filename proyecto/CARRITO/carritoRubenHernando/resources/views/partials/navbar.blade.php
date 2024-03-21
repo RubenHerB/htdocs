@@ -15,7 +15,7 @@
               <a class="nav-link" aria-current="page" href="{{URL('/')}}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="portfolio/visitas.html">Visitanos</a>
+              <a class="nav-link" href="{{URL('/visitas')}}">Visitanos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{URL('/productos')}}">Nuestros productos</a>

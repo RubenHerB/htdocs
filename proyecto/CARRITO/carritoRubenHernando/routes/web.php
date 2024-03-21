@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('visitas', function () {
-    return view('home');
+    return view('portfolio.visitas');
 });
 Route::get('productos', [App\Http\Controllers\FrontController::class, 'productos']);
 
