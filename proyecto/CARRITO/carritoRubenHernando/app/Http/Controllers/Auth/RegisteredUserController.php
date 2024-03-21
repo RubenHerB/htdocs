@@ -20,6 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+        Redirect::setIntendedUrl(url()->previous());
         return view('auth.register');
     }
 
@@ -46,6 +47,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->intended();
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 }
