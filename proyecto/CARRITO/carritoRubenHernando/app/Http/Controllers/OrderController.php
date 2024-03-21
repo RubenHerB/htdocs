@@ -22,7 +22,8 @@ class OrderController extends Controller
         $order->id_pago="N/A";
 
         Auth::user()->orders()->save($order);
-        return redirect('/productos');
+        Cart::destroy();
+        return redirect('/productos')->with("success", "Compra realizada");
         }else{
             return redirect()->back()->with("deny","Debes iniciar sesion antes de realizar una compra");
         }
