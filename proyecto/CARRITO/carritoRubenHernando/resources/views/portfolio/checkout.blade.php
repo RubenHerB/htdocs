@@ -6,10 +6,20 @@
         @include('partials.msg')
         <div class="col-md-10">
             @if(Cart::count())
+            <div class="row justify-content-between">
+                <div class="col">
                 <form method="get" action="{{route('clear')}}">
                     @csrf
                     <input type="submit" name="btn" value="Vaciar carrito" class="btn btn-danger w-20" />
                 </form>
+                </div>
+                <div class="col">
+                <form method="get" action="{{route('clear')}}">
+                    @csrf
+                    <input type="submit" name="btn" value="Realizar compra" class="btn btn-primary w-20" />
+                </form>
+                </div>
+            </div>
                 <table class="table table-striped">
                     <thead>
                         <th></th>
