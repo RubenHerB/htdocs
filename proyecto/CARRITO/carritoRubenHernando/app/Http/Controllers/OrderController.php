@@ -17,5 +17,7 @@ class OrderController extends Controller
         $order->nombre=Auth::user()->name();
         $order->idUsuario=Auth::user()->id();
         $order->id_pago="N/A";
+
+        Auth::user()->orders()->save($order);
     }
 }
