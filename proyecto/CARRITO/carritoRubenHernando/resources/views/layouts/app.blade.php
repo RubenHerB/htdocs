@@ -91,11 +91,11 @@ nav{
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
-    <div id="app">
+<body class="bg-transparent">
+    <div id="app" class="bg-transparent">
     @include('partials.navbar')
 
-        <main class="py-4">
+        <main class="py-4 bg-transparent">
             @yield('content')
         </main>
         @include('partials.footer')
