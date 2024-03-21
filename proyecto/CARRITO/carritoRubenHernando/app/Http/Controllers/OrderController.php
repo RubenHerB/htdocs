@@ -10,8 +10,11 @@ use App\Order;
 
 class OrderController extends Controller
 {
-    public function grabarCompra(){
-        $order=new Order();
+        
+    
+    public function comprar(){
+        if (Auth::check()){
+            $order=new Order();
         $order->cart=serialize(Cart::content());
         $order->direccion="N/A";
         $order->nombre=Auth::user()->name();
@@ -19,5 +22,9 @@ class OrderController extends Controller
         $order->id_pago="N/A";
 
         Auth::user()->orders()->save($order);
+        return redirect('/productos');
+        }else{
+            return redirect()->back()->with("deny","Debes iniciar sesion antes de realizar una compra");
+        }
     }
 }
