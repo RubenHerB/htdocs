@@ -6,7 +6,7 @@
         @include('partials.msg')
         <div class="col-md-10">
             @if(Cart::count())
-            <div class="row justify-content-between">
+            <div class="row justify-content-between text-center mb-3">
                 <div class="col">
                 <form method="get" action="{{route('clear')}}">
                     @csrf
