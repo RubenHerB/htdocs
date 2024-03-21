@@ -15,13 +15,13 @@ class OrderController extends Controller
     public function comprar(){
         if (Auth::check()){
             $order=new Order();
-        $order->cart=serialize(Cart::content());
+        $order->carrito=serialize(Cart::content());
         $order->direccion="N/A";
         $order->nombre=Auth::user()->name;
         $order->idUsuario=Auth::user()->id;
         $order->id_pago="N/A";
         
-        $oreder->save();
+        $order->save();
         Cart::destroy();
         return redirect('/productos')->with("success", "Compra realizada");
         }else{
