@@ -24,7 +24,8 @@
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
-            $query="INSERT INTO `usuarios`(`dniUsu`, `usuLogin`, `usuPassword`, `usuEstado`, `usutipo`) VALUES ('$id','$id','','Inactivo','Paciente')";
+            $query="INSERT INTO `usuarios`(`dniUsu`, `usuLogin`, `usuPassword`, `usuEstado`, `usutipo`)
+            VALUES ('$id','$id','','Inactivo','Paciente')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
@@ -40,6 +41,12 @@
                 Se ha grabado con exito el paciente con dni $id
             </h2>
         _END;
+    }elseif($confirm=="incorrecto"){
+        echo <<<_END
+        <h2 style="background-color:lightred; text-align:center; padding:15px">
+            El usuario con dni $id ya esta dado de alta
+        </h2>
+    _END;
     }
 ?>
 <div style="width:20%; text-align:center;margin-left:40%">
