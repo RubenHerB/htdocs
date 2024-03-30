@@ -6,14 +6,12 @@
     <title>Document</title>
     <style>
         .button {
-    padding: 5px 6px;
+    padding: 5px 10vw;
     border: 1px outset buttonborder;
     border-radius: 3px;
     color: buttontext;
     background-color: buttonface;
     text-decoration: none;
-    margin-left:auto;
-    margin-right:auto;
 }
     </style>
 </head>
@@ -22,6 +20,7 @@
         session_start();
     ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%"><?php echo $_SESSION['user']['tipo']; ?></h1>
+<div style="text-align:center;  ">
 <?php 
 switch ($_SESSION['user']['tipo']){
     case "Asistente":
@@ -50,5 +49,6 @@ switch ($_SESSION['user']['tipo']){
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 <input type="submit" value="Cerrar sesion" name="cierre" class="button"/>
 </form>
+</div>
 </body>
 </html>
