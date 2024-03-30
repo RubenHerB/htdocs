@@ -14,8 +14,8 @@
         $id=$_POST["id"];
         $nombre=$_POST["nombre"];
         $apellidos=$_POST["apellidos"];
-        $fecha=$_POST["fecha"];
-        $sexo=$_POST["sexo"];
+        $telef=$_POST["telef"];
+        $mail=$_POST["apellidos"];
 
         include "login.php";
         $conn=new Login();
