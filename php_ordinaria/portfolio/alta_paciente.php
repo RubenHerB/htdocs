@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    session_start();
+
+    $id="";
+    $nombre="";
+    $apellidos="";
+    $fecha="";
+
+    ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
@@ -19,7 +28,7 @@
                     <option value="Masculino">Masculino</option>
                 </select>
             <div style="background-color:green; text-align:center;padding:5px 15px;margin-top:5px">
-                <input type="submit" value="Enviar">
+                <input type="submit" name="altap" value="Enviar">
             </div>
         </form>
     </div>
