@@ -47,7 +47,7 @@
     if($confirm=="correcto"){
         echo <<<_END
             <h2 style="background-color:lightgreen; text-align:center; padding:15px">
-                Se ha grabado con exito el paciente con dni $id
+                Se ha grabado con exito el medico con dni $id
             </h2>
         _END;
     }elseif($confirm=="incorrecto"){
@@ -60,19 +60,19 @@
 ?>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <h3 style="background-color:green; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
+            <h3 style="background-color:green; text-align:center;padding:15px;color:white">Alta de medico</h3>
             
             Nombre: <input type="text" name="nombre"  required><br>
             Apellidos: <input type="text" name="apellidos"  required><br>
-            Apellidos: <input type="text" name="apellidos"  required><br>
-            Apellidos: <input type="text" name="apellidos"  required><br>
-            Apellidos: <input type="text" name="apellidos"  required><br>
+            Especialidad: <input type="text" name="especialidad"  required><br>
+            Telefono: <input type="text" name="telef"  required><br>
+            Email: <input type="text" name="mail"  required><br>
             DNI: <input type="text" name="id"  required><br>
-            Contraseña: <input type="password" name="password"  required>
-            Repetir contraseña: <input type="password" name="password_confirmation" required>
-            Sexo:<select name="sexo">
-                    <option value="Femenino" selected>Femenino</option>
-                    <option value="Masculino">Masculino</option>
+            Contraseña: <input type="password" name="password"  required><br>
+            Repetir contraseña: <input type="password" name="password_confirmation" required><br>
+            Estado:<select name="estado">
+                    <option value="Activo" selected>Activo</option>
+                    <option value="Inactivo">Inactivo</option>
                 </select>
             <div style="background-color:green; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" name="altap" value="Enviar">

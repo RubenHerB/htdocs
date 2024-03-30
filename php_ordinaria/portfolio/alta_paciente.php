@@ -60,7 +60,7 @@
 ?>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <h3 style="background-color:green; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
+            <h3 style="background-color:green; text-align:center;padding:15px;color:white">Alta de paciente</h3>
             Identificacion: <input type="text" name="id"  required><br>
             Nombre: <input type="text" name="nombre"  required><br>
             Apellidos: <input type="text" name="apellidos"  required><br>
