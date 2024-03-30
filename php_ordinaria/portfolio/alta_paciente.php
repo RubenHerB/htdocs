@@ -24,7 +24,7 @@
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
-            $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`) VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
+            $query="INSERT INTO `usuarios`(`dniUsu`, `usuLogin`, `usuPassword`, `usuEstado`, `usutipo`) VALUES ('$id','$id','','Inactivo','Paciente')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 

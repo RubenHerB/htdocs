@@ -53,8 +53,8 @@
                 echo "<p style=\"color:red\">$errorlog</p>";
             }
             ?>
-            Login: <input type="text" name="login" value="<?php echo $login ?>" ><br>
-            Password: <input type="password" name="password" value="<?php echo $password ?>" >
+            Login: <input type="text" name="login" value="<?php echo $login ?>" required><br>
+            Password: <input type="password" name="password" value="<?php echo $password ?>" required>
             <div style="background-color:red; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" value="Enviar">
             </div>
