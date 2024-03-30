@@ -8,7 +8,7 @@
 <body>
     <?php
 
-    $confirm=false;
+    $confirm="";
     session_start();
     if(isset($_POST["altap"])){
         $id=$_POST["id"];
@@ -28,13 +28,13 @@
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
-            $confirm=true;
+            $confirm="correcto";
     }
     ?>
     <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <?php
-    if($confirm){
+    if($confirm=="correcto"){
         echo <<<_END
             <h2 style="background-color:lightgreen; text-align:center; padding:15px">
                 Se ha grabado con exito el paciente con dni $id
