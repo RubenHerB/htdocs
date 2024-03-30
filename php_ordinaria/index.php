@@ -31,9 +31,13 @@
                 $result->data_seek(0);
                 $r=$result->fetch_array(MYSQLI_ASSOC);
                  if(password_verify($password, $r['usuPassword'])){
+                    if($r["usuTipo"]=="Paciente"){
+
+                    }else{
                     session_start();
                     $_SESSION=["user"=>["dni"=>$r["dniUsu"],"tipo"=>$r["usuTipo"]]];
                     header("Location: portfolio/inicio.php");
+                    }
             }else{
                 $errorlog="Contraseña incorrecta";
             }
