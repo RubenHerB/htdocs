@@ -34,6 +34,8 @@
                     session_start();
                     $_SESSION=["user"=>["dni"=>$r["dniUsu"],"tipo"=>$r["usuTipo"]]];
                     header("Location: portfolio/inicio.php");
+            }else{
+                $errorlog="Contraseña incorrecta";
             }
         }
         }
