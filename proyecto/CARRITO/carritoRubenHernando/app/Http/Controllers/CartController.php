@@ -47,13 +47,7 @@ public function clear(){
 }
 
 
-public function comprar(){
-    if (Auth::check()){
-        dd(Auth::user()->name);
-    }else{
-        return redirect()->back()->with("deny","Debes iniciar sesion antes de realizar una compra");
-    }
-}
+
 
 
 }
