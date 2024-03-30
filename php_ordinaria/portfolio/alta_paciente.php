@@ -17,6 +17,7 @@
         $fecha=$_POST["fecha"];
         $sexo=$_POST["sexo"];
 
+        include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
         $query="SELECT dniUsu FROM usuarios WHERE dniUsu LIKE $id";
@@ -51,7 +52,7 @@
         _END;
     }elseif($confirm=="incorrecto"){
         echo <<<_END
-        <h2 style="background-color:lightred; text-align:center; padding:15px">
+        <h2 style="background-color:red; text-align:center; padding:15px">
             El usuario con dni $id ya esta dado de alta
         </h2>
     _END;
