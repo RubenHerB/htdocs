@@ -8,21 +8,22 @@
 <body>
     <?php
     session_start();
-
-    $id="";
-    $nombre="";
-    $apellidos="";
-    $fecha="";
-
+    if(isset($_POST["altap"])){
+        $id=$_POST["id"];
+        $nombre=$_POST["nombre"];
+        $apellidos=$_POST["apellidos"];
+        $fecha=$_POST["fecha"];
+        $sexo=$_POST["sexo"];
+    }
     ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:green; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
-            Identificacion: <input type="text" name="id" value="<?php echo $id ?>" required><br>
-            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" required><br>
-            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" required><br>
-            Fecha nacimiento: <input type="date" name="fecha" value="<?php echo $fecha ?>" max='<?php echo date('Y-m-d'); ?>' required><br>
+            Identificacion: <input type="text" name="id"  required><br>
+            Nombre: <input type="text" name="nombre"  required><br>
+            Apellidos: <input type="text" name="apellidos"  required><br>
+            Fecha nacimiento: <input type="date" name="fecha" max='<?php echo date('Y-m-d'); ?>' required><br>
             Sexo:<select name="sexo">
                     <option value="Femenino" selected>Femenino</option>
                     <option value="Masculino">Masculino</option>
