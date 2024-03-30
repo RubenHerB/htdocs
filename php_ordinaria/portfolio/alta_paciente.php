@@ -15,8 +15,11 @@
                 echo "<p style=\"color:red\">$errorlog</p>";
             }
             ?>
-            Login: <input type="text" name="login" value="<?php echo $login ?>" ><br>
-            Password: <input type="password" name="password" value="<?php echo $password ?>" >
+            Identificacion: <input type="text" name="id" value="<?php echo $id ?>" ><br>
+            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" >
+            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" >
+            Fecha nacimiento: <input type="text" name="fecha" value="<?php echo $fecha ?>" >
+            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" >
             <div style="background-color:green; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" value="Enviar">
             </div>
