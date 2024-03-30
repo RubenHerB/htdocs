@@ -18,6 +18,10 @@
 <body>
     <?php 
         session_start();
+        if(isset($_POST["cierre"])){
+            session_destroy();
+            header("Location: ../index.php");
+        }
     ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%"><?php echo $_SESSION['user']['tipo']; ?></h1>
 <div style="text-align:center;  ">
@@ -33,7 +37,7 @@ switch ($_SESSION['user']['tipo']){
     break;
     case "Medico":
         echo <<<_END
-        <a href="citas_atentidas.php" type="button">Ver citas atendidas</a><br><br>
+        <a href="citas_atentidas.php" class="button">Ver citas atendidas</a><br><br>
         <a href="citas_pendientes.php" class="button">Ver citas pendientes</a><br><br>
         <a href="ver_paciente.php" class="button">Ver pacientes</a><br><br>
     _END;
