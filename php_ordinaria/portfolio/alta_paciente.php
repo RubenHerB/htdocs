@@ -18,7 +18,12 @@
         $sexo=$_POST["sexo"];
 
         $conn=new Login();
-            $con=$conn->log($_SESSION['user']['tipo']);
+        $con=$conn->log($_SESSION['user']['tipo']);
+        $query="SELECT dniUsu FROM usuarios WHERE dniUsu LIKE $id";
+        $result= $con->query($query);
+        if (!$result) die("Fatal Error");
+
+        if($result->num_rows==0){
             $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`)
             VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
             $result= $con->query($query);
@@ -30,7 +35,10 @@
             if (!$result) die("Fatal Error");
 
             $confirm="correcto";
+    }else{
+        $confirm="incorrecto";
     }
+}
     ?>
     <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
