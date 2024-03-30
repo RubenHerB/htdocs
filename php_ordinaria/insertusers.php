@@ -2,7 +2,7 @@
 $connection = new mysqli('localhost', "root", "", 'consultas');
 if ($connection->connect_error) die("Fatal Error");
 
-$query="INSERT INTO tu_tabla (dniUsu, usuLogin, usuPassword, usutipo, usuEstado) VALUES
+$query="INSERT INTO usuarios (dniUsu, usuLogin, usuPassword, usutipo, usuEstado) VALUES
 -- Administradores
 ('111111111', 'admin1', '".password_hash("admin1", PASSWORD_DEFAULT)."', 'Administrador', 'Activo'),
 ('222222222', 'admin2', '".password_hash("admin2", PASSWORD_DEFAULT)."', 'Administrador', 'Activo'),
