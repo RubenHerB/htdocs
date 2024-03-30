@@ -20,6 +20,9 @@
         }else{
             include "portfolio/login.php";
             $conn=new Login();
+            $con=$conn->log();
+            $query="SELECT * FROM usuarios WHERE dniUsu LIKE '".$login."'";
+
         }
         }
     ?>
