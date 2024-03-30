@@ -27,9 +27,15 @@
       
             if($result->num_rows==0){
                 $errorlog="El usuario introducido no esta registrado";
+            }else{
+                $result->data_seek(0);
+                $r=$result->fetch_array(MYSQLI_ASSOC);
+                 if(password_verify($password, $r['usuPassword'])){
+                    session_start();
             }
         }
         }
+    }
     ?>
     <h1 style="background-color:yellow; text-align:center;padding:15px">CENTRO MEDICO ASDI VIRTUAL</h1>
     <div style="width:20%; text-align:center;margin-left:40%">
