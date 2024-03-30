@@ -20,7 +20,7 @@
         include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
-        $query="SELECT dniUsu FROM usuarios WHERE dniUsu LIKE $id";
+        $query="SELECT dniUsu FROM usuarios WHERE dniUsu LIKE '$id'";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
 
