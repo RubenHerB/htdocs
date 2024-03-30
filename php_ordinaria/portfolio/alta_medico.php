@@ -15,7 +15,9 @@
         $nombre=$_POST["nombre"];
         $apellidos=$_POST["apellidos"];
         $telef=$_POST["telef"];
-        $mail=$_POST["apellidos"];
+        $mail=$_POST["mail"];
+        $pass=$_POST["password"];
+        $passconfirm=$_POST["password_confirmation"];
 
         include "login.php";
         $conn=new Login();
