@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1 style="background-color:yellow; text-align:center;padding:15px">CENTRO MEDICO ASDI VIRTUAL</h1>
-    <div>
+    <div style="width:20%; text-align:center;margin-left:40%">
         <form>
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
             Login: <input type="text" name="login" value="<?php echo $login ?>" ><br>
             Password: <input type="password" name="password" value="<?php echo $password ?>" >
-            <div>
+            <div style="background-color:red; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" value="Enviar">
             </div>
         </form>
