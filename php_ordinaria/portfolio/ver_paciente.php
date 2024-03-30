@@ -26,6 +26,19 @@
             <th>Fecha de nacimiento</th>
             <th>Sexo</th>
         </tr>
+        <?php
+        session_start();
+        $extra="";
+        if($_SESSION['user']['tipo']=="Medico"){
+            $extra="AS p INNER JOIN citas AS c ON dniPac=citPaciente WHERE c.citMedico LIKE '".$_SESSION['user']['id']."'";
+        }
+        include "login.php";
+        $conn=new Login();
+        $con=$conn->log($_SESSION['user']['tipo']);
+        $query="SELECT p.* FROM pacientes $extra";
+        $result= $con->query($query);
+        if (!$result) die("Fatal Error");
+        ?>
     </table>
 </body>
 </html>
