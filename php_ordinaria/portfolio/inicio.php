@@ -15,16 +15,16 @@ switch ($_SESSION['user']['tipo']){
     case "Asistente":
         echo <<<_END
         <a href="citas_atentidas.php" type="button">Ver citas atendidas</a><br><br>
-        <a href="neva_cita.php" type="button">Ver citas atendidas</a><br><br>
-        <a href="alta_paciente.php" type="button">Ver citas atendidas</a><br><br>
-        <a href="ver_paciente.php" type="button">Ver citas atendidas</a><br><br>
+        <a href="neva_cita.php" type="button">Nueva cita</a><br><br>
+        <a href="alta_paciente.php" type="button">Alta paciente</a><br><br>
+        <a href="ver_paciente.php" type="button">Ver pacientes</a><br><br>
     _END;
     break;
     case "Medico":
         echo <<<_END
         <a href="citas_atentidas.php" type="button">Ver citas atendidas</a><br><br>
-        <a href="alta_paciente.php" type="button">Ver citas atendidas</a><br><br>
-        <a href="ver_paciente.php" type="button">Ver citas atendidas</a><br><br>
+        <a href="citas_pendientes.php" type="button">Ver citas pendientes</a><br><br>
+        <a href="ver_paciente.php" type="button">Ver pacientes</a><br><br>
     _END;
     break;
     case "Administrador":
