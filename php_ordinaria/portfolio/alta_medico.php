@@ -25,8 +25,8 @@
         $query="SELECT dniUsu FROM usuarios WHERE dniUsu LIKE $id";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
-
         if($result->num_rows==0){
+            if($pass==$passconfirm){
             $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`)
             VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
             $result= $con->query($query);
@@ -38,6 +38,9 @@
             if (!$result) die("Fatal Error");
 
             $confirm="correcto";
+            }else{
+                $confirm="contra";
+            }
     }else{
         $confirm="incorrecto";
     }
@@ -58,6 +61,12 @@
             El usuario con dni $id ya esta dado de alta
         </h2>
     _END;
+    }elseif($confirm=="contra"){
+        echo <<<_END
+        <h2 style="background-color:red; text-align:center; padding:15px">
+            La contraseña no se ha confirmado correctamente
+        </h2>
+        _END;
     }
 ?>
 <div style="width:20%; text-align:center;margin-left:40%">
