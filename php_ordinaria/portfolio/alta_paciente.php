@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    $confirm=false;
+
     $confirm=false;
     session_start();
     if(isset($_POST["altap"])){
@@ -16,6 +16,13 @@
         $apellidos=$_POST["apellidos"];
         $fecha=$_POST["fecha"];
         $sexo=$_POST["sexo"];
+
+        $conn=new Login();
+            $con=$conn->log($_SESSION['user']['tipo']);
+            $query="";
+            $result= $con->query($query);
+            if (!$result) die("Fatal Error");
+            $confirm=true;
     }
     ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
