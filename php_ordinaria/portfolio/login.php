@@ -8,15 +8,15 @@ class Login{
     public function log($user) {
 
         switch ($user){
-            case 1:
+            case "Asistente":
                 $usu="asistente";
                 $pass="asistente";
             break;
-            case 2:
+            case "Medico":
                 $usu="medico";
                 $pass="medico";
             break;
-            case 3:
+            case "Administrador":
                 $usu="adminconsulta";
                 $pass="adminconsulta";
             break;
