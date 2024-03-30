@@ -32,7 +32,7 @@
                 $r=$result->fetch_array(MYSQLI_ASSOC);
                  if(password_verify($password, $r['usuPassword'])){
                     if($r["usuTipo"]=="Paciente"){
-
+                        $errorlog="El usuario seleccionado no ha sido implementado todavia";
                     }else{
                     session_start();
                     $_SESSION=["user"=>["dni"=>$r["dniUsu"],"tipo"=>$r["usuTipo"]]];
