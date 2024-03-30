@@ -14,6 +14,7 @@
         $id=$_POST["id"];
         $nombre=$_POST["nombre"];
         $apellidos=$_POST["apellidos"];
+        $espe=$_POST["especialidad"];
         $telef=$_POST["telef"];
         $mail=$_POST["mail"];
         $pass=$_POST["password"];
@@ -29,7 +30,7 @@
         if($result->num_rows==0){
             if($pass==$passconfirm){
             $query="INSERT INTO `medicos`(`dniMed`, `medNombres`, `medApellidos`, `medEspecialidad`, `medTelefono`, `medCorreo`)
-            VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')";
+            VALUES ('$id','$nombre','$apellidos','$espe','$telef','$mail')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
