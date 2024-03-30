@@ -15,8 +15,8 @@
             $password=$_POST["password"];
             include "portfolio/login.php";
             $conn=new Login();
-        if($login=""){
-
+        if($login="" || $password=""){
+            $errorlog="Rellena todos los campos del formulario para iniciar sesion";
         }
         }
     ?>
