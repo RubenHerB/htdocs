@@ -33,8 +33,10 @@ switch ($_SESSION['user']['tipo']){
         <a href="alta_medico.php" type="button">Alta medico</a><br><br>
         _END;
     break;
-
 }
 ?>
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<input type="submit" value="Cerrar sesion" name="cierre" />
+</form>
 </body>
 </html>
