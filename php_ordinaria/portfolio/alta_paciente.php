@@ -31,6 +31,7 @@
             $confirm=true;
     }
     ?>
+    <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <?php
     if($confirm){
