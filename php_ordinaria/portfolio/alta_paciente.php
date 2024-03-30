@@ -18,7 +18,7 @@
             Identificacion: <input type="text" name="id" value="<?php echo $id ?>" ><br>
             Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" ><br>
             Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" ><br>
-            Fecha nacimiento: <input type="text" name="fecha" value="<?php echo $fecha ?>" ><br>
+            Fecha nacimiento: <input type="date" name="fecha" value="<?php echo $fecha ?>" ><br>
             Sexo:<select name="sexo">
                     <option value="Femenino" selected>Femenino</option>
                     <option value="Masculino">Masculino</option>
