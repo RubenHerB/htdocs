@@ -18,6 +18,7 @@
         $mail=$_POST["mail"];
         $pass=$_POST["password"];
         $passconfirm=$_POST["password_confirmation"];
+        $estado=$_POST["estado"];
 
         include "login.php";
         $conn=new Login();
@@ -27,13 +28,13 @@
         if (!$result) die("Fatal Error");
         if($result->num_rows==0){
             if($pass==$passconfirm){
-            $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`)
-            VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
+            $query="INSERT INTO `medicos`(`dniMed`, `medNombres`, `medApellidos`, `medEspecialidad`, `medTelefono`, `medCorreo`)
+            VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
             $query="INSERT INTO `usuarios`(`dniUsu`, `usuLogin`, `usuPassword`, `usuEstado`, `usutipo`)
-            VALUES ('$id','$id','','Inactivo','Paciente')";
+            VALUES ('$id','$id','$pass','$estado','Medico')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
 
