@@ -28,8 +28,10 @@ switch ($_SESSION['user']['tipo']){
     _END;
     break;
     case "Administrador":
-        $usu="adminconsulta";
-        $pass="adminconsulta";
+        echo <<<_END
+        <a href="alta_paciente.php" type="button">Alta paciente</a><br><br>
+        <a href="alta_medico.php" type="button">Alta medico</a><br><br>
+        _END;
     break;
 
 }
