@@ -6,6 +6,7 @@
     <title>Centro medico</title>
 </head>
 <body>
-    <h1 style="background-color:yellow">CENTRO MEDICO ASDI VIRTUAL</h1>
+    <h1 style="background-color:yellow; text-align:center;padding:15px">CENTRO MEDICO ASDI VIRTUAL</h1>
+    <div></div>
 </body>
 </html>
