@@ -19,9 +19,15 @@
 
         $conn=new Login();
             $con=$conn->log($_SESSION['user']['tipo']);
-            $query="";
+            $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`)
+            VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
             $result= $con->query($query);
             if (!$result) die("Fatal Error");
+
+            $query="INSERT INTO `pacientes`(`dniPac`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`) VALUES ('$id','$nombre','$apellidos','$fecha','$sexo')";
+            $result= $con->query($query);
+            if (!$result) die("Fatal Error");
+
             $confirm=true;
     }
     ?>
@@ -29,9 +35,7 @@
 <?php
     if($confirm){
         echo <<<_END
-            <h2 style="background-color:lightgreen;
-            text-align:center;
-            padding:15px">
+            <h2 style="background-color:lightgreen; text-align:center; padding:15px">
                 Se ha grabado con exito el paciente con dni $id
             </h2>
         _END;
