@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+<a href="inicio.php">← Volver al menu</a>
     <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%">LISTADO DE PACIENTES</h1>
     <table>
         <tr>
@@ -30,14 +31,22 @@
         session_start();
         $extra="";
         if($_SESSION['user']['tipo']=="Medico"){
-            $extra="AS p INNER JOIN citas AS c ON dniPac=citPaciente WHERE c.citMedico LIKE '".$_SESSION['user']['id']."'";
+            $extra="    INNER JOIN citas AS c ON dniPac=citPaciente WHERE c.citMedico LIKE '".$_SESSION['user']['dni']."'";
         }
         include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
-        $query="SELECT p.* FROM pacientes $extra";
+        $query="SELECT * FROM pacientes $extra";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
+
+        foreach($result as $r){
+            echo "<tr>";
+            foreach($r as $t){
+                echo "<td>$t</td>";
+            }
+            echo "</tr>";
+        }
         ?>
     </table>
 </body>
