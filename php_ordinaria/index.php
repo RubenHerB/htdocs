@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-    var_dump($_POST);
         $login="";
         $password="";
         $errorlog="";
@@ -31,11 +30,11 @@
                 $result->data_seek(0);
                 $r=$result->fetch_array(MYSQLI_ASSOC);
                  if(password_verify($password, $r['usuPassword'])){
-                    if($r["usuTipo"]=="Paciente"){
+                    if($r["usutipo"]=="Paciente"){
                         $errorlog="El usuario seleccionado no ha sido implementado todavia";
                     }else{
                     session_start();
-                    $_SESSION=["user"=>["dni"=>$r["dniUsu"],"tipo"=>$r["usuTipo"]]];
+                    $_SESSION=["user"=>["dni"=>$r["dniUsu"],"tipo"=>$r["usutipo"]]];
                     header("Location: portfolio/inicio.php");
                     }
             }else{
