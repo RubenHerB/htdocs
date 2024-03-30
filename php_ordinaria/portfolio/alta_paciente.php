@@ -7,6 +7,8 @@
 </head>
 <body>
     <?php
+    $confirm=false;
+    $confirm=false;
     session_start();
     if(isset($_POST["altap"])){
         $id=$_POST["id"];
@@ -17,6 +19,17 @@
     }
     ?>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
+<?php
+    if($confirm){
+        echo <<<_END
+            <h2 style="background-color:lightgreen;
+            text-align:center;
+            padding:15px">
+                Se ha grabado con exito el paciente con dni $id
+            </h2>
+        _END;
+    }
+?>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:green; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
