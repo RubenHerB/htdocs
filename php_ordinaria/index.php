@@ -12,6 +12,8 @@
         if(isset($_POST["login"])){
             $login=$_POST["login"];
             $password=$_POST["password"];
+            include "portfolio/login.php";
+            $conn=new Login();
         }
     ?>
     <h1 style="background-color:yellow; text-align:center;padding:15px">CENTRO MEDICO ASDI VIRTUAL</h1>
