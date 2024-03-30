@@ -7,10 +7,12 @@
 </head>
 <body>
     <?php
+    var_dump($_POST);
         $login="";
         $password="";
         $errorlog="";
         if(isset($_POST["login"])){
+            var_dump($_POST["login"]);
             $login=$_POST["login"];
             $password=$_POST["password"];
         if($login="" || $password=""){
