@@ -16,10 +16,13 @@
             }
             ?>
             Identificacion: <input type="text" name="id" value="<?php echo $id ?>" ><br>
-            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" >
-            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" >
-            Fecha nacimiento: <input type="text" name="fecha" value="<?php echo $fecha ?>" >
-            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" >
+            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" ><br>
+            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" ><br>
+            Fecha nacimiento: <input type="text" name="fecha" value="<?php echo $fecha ?>" ><br>
+            Sexo:<select name="sexo">
+                    <option value="Femenino" selected>Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
             <div style="background-color:green; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" value="Enviar">
             </div>
