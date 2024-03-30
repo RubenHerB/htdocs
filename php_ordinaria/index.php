@@ -6,9 +6,13 @@
     <title>Centro medico</title>
 </head>
 <body>
+    <?php
+        $login="";
+        $password=";"
+    ?>
     <h1 style="background-color:yellow; text-align:center;padding:15px">CENTRO MEDICO ASDI VIRTUAL</h1>
     <div style="width:20%; text-align:center;margin-left:40%">
-        <form>
+        <form action="<?php echo $_SERVER[PHP_SELF] ?>">
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
             Login: <input type="text" name="login" value="<?php echo $login ?>" ><br>
             Password: <input type="password" name="password" value="<?php echo $password ?>" >
