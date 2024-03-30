@@ -22,7 +22,12 @@
             $conn=new Login();
             $con=$conn->log();
             $query="SELECT * FROM usuarios WHERE dniUsu LIKE '".$login."'";
-
+            $result= $con->query($query);
+            if (!$result) die("Fatal Error");
+      
+            if($result->num_rows==0){
+                $errorlog="El usuario introducido no esta registrado";
+            }
         }
         }
     ?>
