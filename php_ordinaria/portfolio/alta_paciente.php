@@ -15,10 +15,10 @@
                 echo "<p style=\"color:red\">$errorlog</p>";
             }
             ?>
-            Identificacion: <input type="text" name="id" value="<?php echo $id ?>" ><br>
-            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" ><br>
-            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" ><br>
-            Fecha nacimiento: <input type="date" name="fecha" value="<?php echo $fecha ?>" ><br>
+            Identificacion: <input type="text" name="id" value="<?php echo $id ?>" required><br>
+            Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" required><br>
+            Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" required><br>
+            Fecha nacimiento: <input type="date" name="fecha" value="<?php echo $fecha ?>" max='<?php echo date('Y-m-d'); ?>' required><br>
             Sexo:<select name="sexo">
                     <option value="Femenino" selected>Femenino</option>
                     <option value="Masculino">Masculino</option>
