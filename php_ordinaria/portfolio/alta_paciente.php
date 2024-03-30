@@ -10,11 +10,6 @@
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:green; text-align:center;padding:15px;color:white">Inicio Sesion</h3>
-            <?php
-            if($errorlog!=""){
-                echo "<p style=\"color:red\">$errorlog</p>";
-            }
-            ?>
             Identificacion: <input type="text" name="id" value="<?php echo $id ?>" required><br>
             Nombre: <input type="text" name="nombre" value="<?php echo $nombre ?>" required><br>
             Apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos ?>" required><br>
