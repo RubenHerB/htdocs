@@ -13,10 +13,11 @@
         if(isset($_POST["login"])){
             $login=$_POST["login"];
             $password=$_POST["password"];
-            include "portfolio/login.php";
-            $conn=new Login();
         if($login="" || $password=""){
             $errorlog="Rellena todos los campos del formulario para iniciar sesion";
+        }else{
+            include "portfolio/login.php";
+            $conn=new Login();
         }
         }
     ?>
