@@ -15,9 +15,7 @@ if(isset($_POST['citaatendida'])){
         include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
-        $query="INSERT INTO `citas`
-        (`citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `CitObservaciones`)
-        VALUES ('$fecha','$hora','$paciente','$medico','$consultorio','Asignado','')";
+        $query="UPDATE `citas` SET `citEstado`='Atendida', `CitObservaciones`='".$_POST["observaciones"]."' WHERE `idCita`='".$_POST["id"]."'";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
         header("Location: citas_pendientes.php");
