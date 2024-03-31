@@ -10,13 +10,14 @@
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <h3 style="background-color:green; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
-            Identificacion: <input type="text" name="id"  required><br>
-            Nombre: <input type="text" name="nombre"  required><br>
-            Apellidos: <input type="text" name="apellidos"  required><br>
-            Fecha nacimiento: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' required><br>
-            <div style="background-color:green; text-align:center;padding:5px 15px;margin-top:5px">
-                <input type="submit" name="altap" value="Enviar">
+            <h3 style="background-color:red; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
+            Paciente: <select name="paciente" selected>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+            Fecha: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' required><br>
+            <div style="background-color:red; text-align:center;padding:5px 15px;margin-top:5px">
+                <input type="submit" name="nuevac" value="Enviar">
             </div>
         </form>
     </div>
