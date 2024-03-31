@@ -7,11 +7,12 @@
 </head>
 <body>
 <?php
-if
-(isset($_POST['citaatendida'])){
+if(isset($_POST['citaatendida'])){
+if($_POST['observaciones']=="Observaciones"){
 echo "<p style=\"color:red\">Error! La casilla de observaciones no puede estar vacia</p>";
 }else{
     header("Location: citas_pendientes.php");
+}
 }
 ?>
 <div style="width:20%; text-align:center;margin-left:40%">
