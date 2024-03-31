@@ -35,12 +35,14 @@
         <?php
         session_start();
         if($_SESSION['user']['tipo']=="Medico"){
-            $query="SELECT c.citFecha,c.citHora ,p.pacNombre,p.pacApellidos,con.conNombre,c.CitObservaciones FROM citas AS c
+            $query="SELECT c.citFecha,c.citHora ,p.pacNombre,p.pacApellidos,con.conNombre,c.CitObservaciones
+            FROM citas AS c
             inner join pacientes as p on c.citPaciente=m.dniPac
             inner join consultorios as con on c.citConsultorio=m.idConsultorio
             WHERE c.citEstado LIKE 'Atendido' AND c.citMedico LIKE '".$_SESSION['user']['dni']."'";
         }else{
-            $query="SELECT c.citFecha,c.citHora, FROM citas AS c
+            $query="SELECT c.citFecha,c.citHora,p.pacNombre,p.pacApellidos,m.medNombre,m.medApellidos,con.conNombre,c.CitObservaciones
+            FROM citas AS c
             inner join medicos as m on c.citMedico=m.dniMed
             inner join pacientes as p on c.citPaciente=m.dniPac
             inner join consultorios as con on c.citConsultorio=m.idConsultorio
