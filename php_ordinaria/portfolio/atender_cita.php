@@ -18,6 +18,7 @@ if(isset($_POST['citaatendida'])){
         $query="UPDATE `citas` SET `citEstado`='Atendida', `CitObservaciones`='".$_POST["observaciones"]."' WHERE `idCita`='".$_POST["id"]."'";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
+        $_SESSION+=["atendida"=>"Se ha atendido la cita con id ".$_POST["id"]." del paciente ".$_POST["nombrepac"]];
         header("Location: citas_pendientes.php");
     }
 }
