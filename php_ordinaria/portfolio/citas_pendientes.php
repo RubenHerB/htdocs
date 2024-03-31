@@ -35,13 +35,13 @@
         <?php
         session_start();
         if($_SESSION['user']['tipo']=="Medico"){
-            $query="SELECT c.citFecha,c.citHora ,p.pacNombre,p.pacApellidos,con.conNombre,c.CitObservaciones
+            $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombre as nombrep,p.pacApellidos as apep,con.conNombre as nombrec,c.CitObservaciones as observaciones
             FROM citas AS c
             inner join pacientes as p on c.citPaciente=m.dniPac
             inner join consultorios as con on c.citConsultorio=m.idConsultorio
             WHERE c.citEstado LIKE 'Atendido' AND c.citMedico LIKE '".$_SESSION['user']['dni']."'";
         }else{
-            $query="SELECT c.citFecha,c.citHora,p.pacNombre,p.pacApellidos,m.medNombre,m.medApellidos,con.conNombre,c.CitObservaciones
+            $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombre as nombrep,p.pacApellidos as apep,m.medNombre as nombrem, m.medApellidos as apem, con.conNombre as nombrec,c.CitObservaciones as observacione
             FROM citas AS c
             inner join medicos as m on c.citMedico=m.dniMed
             inner join pacientes as p on c.citPaciente=m.dniPac
@@ -55,11 +55,8 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr>";
-            foreach($r as $t){
-                echo "<td>$t</td>";
-            }
-            echo "</tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td></tr>";
+
         }
         ?>
     </table>
