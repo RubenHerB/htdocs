@@ -8,8 +8,21 @@
 <body>
 
 <?php
+$paciente="";
+$fecha="";
+$hora="";
+$medico="";
+$consultorio="";
+if(isset($_POST["nuevac"])){
+    $paciente=$_POST["paciente"];
+    $fecha=$_POST[""];
+    $hora=$_POST[""];
+    $medico=$_POST[""];
+    $consultorio=$_POST[""];
+
 if($fecha==date('Y-m-d')&& $hora<date('H:i')){
     $error="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
+}
 }
 ?>
 <a href="inicio.php">← Volver al menu</a>
@@ -21,8 +34,8 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
                 </select><br>
-            Fecha: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' required><br>
-            Hora: <input type="time" name="hora" required><br>
+            Fecha: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' value="<?php echo $fecha; ?>" required><br>
+            Hora: <input type="time" name="hora" value="<?php echo $hora; ?>" required><br>
             Medico: <select name="medico" required>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
