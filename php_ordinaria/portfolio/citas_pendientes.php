@@ -48,7 +48,7 @@
 
         foreach($result as $r){
             echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td><td>
-            <form action=\"atender_cita.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\"".$r["id"]."\"><input type=\"submit\" name=\"atenderc\" value=\"Atender cita\"></form></td></tr>";
+            <form action=\"atender_cita.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\"".$r["id"]."\"><input type=\"hidden\" name=\"nombrepac\" value=\"".$r["nombrep"]." ".$r["apep"]."\"><input type=\"submit\" name=\"atenderc\" value=\"Atender cita\"></form></td></tr>";
 
         }
         ?>
