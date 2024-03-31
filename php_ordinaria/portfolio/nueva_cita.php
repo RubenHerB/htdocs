@@ -8,6 +8,9 @@
 <body>
 
 <?php
+include "login.php";
+$conn=new Login();
+$con=$conn->log($_SESSION['user']['tipo']);
 $paciente="";
 $fecha="";
 $hora="";
@@ -26,6 +29,9 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
 }else{
 $errorlog="confirmacion";
 
+$query="INSERT INTO `citas`(`idCita`, `citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `CitObservaciones`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]')";
+$result= $con->query($query);
+if (!$result) die("Fatal Error");
 }
 }
 ?>
@@ -50,9 +56,7 @@ $errorlog="confirmacion";
             Paciente: <select name="paciente" required>
                 <?php
                 session_start();
-                    include "login.php";
-                    $conn=new Login();
-                    $con=$conn->log($_SESSION['user']['tipo']);
+                    
                     $query="SELECT dniPac, pacNombres, pacApellidos
                     FROM pacientes order by pacApellidos ASC, pacNombres ";
                     $result= $con->query($query);
