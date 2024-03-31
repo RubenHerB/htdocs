@@ -22,10 +22,12 @@ if(isset($_POST["nuevac"])){
     $consultorio=$_POST["consultorio"];
 
 if($fecha==date('Y-m-d')&& $hora<date('H:i')){
-    $errorlog="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
+    $errorlog="hora";
+}else{
+
 }
 }
-var_dump($_POST);
+
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
