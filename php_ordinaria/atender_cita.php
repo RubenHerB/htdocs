@@ -11,6 +11,15 @@ if(isset($_POST['citaatendida'])){
     if($_POST['observaciones']=="Observaciones"||$_POST['observaciones']==""){
         echo "<p style=\"color:red\">Error! La casilla de observaciones no puede estar vacia</p>";
     }else{
+        session_start();
+        include "login.php";
+        $conn=new Login();
+        $con=$conn->log($_SESSION['user']['tipo']);
+        $query="INSERT INTO `citas`
+        (`citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `CitObservaciones`)
+        VALUES ('$fecha','$hora','$paciente','$medico','$consultorio','Asignado','')";
+        $result= $con->query($query);
+        if (!$result) die("Fatal Error");
         header("Location: citas_pendientes.php");
     }
 }
