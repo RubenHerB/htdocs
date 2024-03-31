@@ -26,6 +26,7 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
 }else{
 $errorlog="confirmacion";
 }
+var_dump("entro");
 }
 var_dump($_POST);
 ?>
