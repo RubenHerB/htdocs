@@ -44,8 +44,8 @@
             $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombres as nombrep,p.pacApellidos as apep,m.medNombres as nombrem, m.medApellidos as apem, con.conNombre as nombrec,c.CitObservaciones as observaciones
             FROM citas AS c
             inner join medicos as m on c.citMedico=m.dniMed
-            inner join pacientes as p on c.citPaciente=m.dniPac
-            inner join consultorios as con on c.citConsultorio=m.idConsultorio
+            inner join pacientes as p on c.citPaciente=p.dniPac
+            inner join consultorios as con on c.citConsultorio=con.idConsultorio
             WHERE c.citEstado LIKE 'Atendido'";
         }
         include "login.php";
@@ -55,7 +55,7 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']=="Medico"?("</td><td>".$r["nombrem"]." ".$r["apem"]):"")."</td><td>".$r["nombrec"]."</td><td colspan=\"3\">".$r["observaciones"]."</td></tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']!="Medico"?("</td><td>".$r["nombrem"]." ".$r["apem"]):"")."</td><td>".$r["nombrec"]."</td><td colspan=\"3\">".$r["observaciones"]."</td></tr>";
 
         }
         ?>
