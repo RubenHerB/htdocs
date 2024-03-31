@@ -38,7 +38,13 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
             Paciente: <select name="paciente" required>
                 <?php
-
+                    include "login.php";
+                    $conn=new Login();
+                    $con=$conn->log($_SESSION['user']['tipo']);
+                    $query="SELECT dniPac, pacNombres, pacApellidos
+                    FROM pacientes order by pacNombre ASC AND pacApellidos ASC";
+                    $result= $con->query($query);
+                    if (!$result) die("Fatal Error");
                 ?>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
