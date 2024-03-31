@@ -13,20 +13,26 @@ $fecha="";
 $hora="";
 $medico="";
 $consultorio="";
+$errorlog="";
 if(isset($_POST["nuevac"])){
     $paciente=$_POST["paciente"];
-    $fecha=$_POST[""];
-    $hora=$_POST[""];
-    $medico=$_POST[""];
-    $consultorio=$_POST[""];
+    $fecha=$_POST["fecha"];
+    $hora=$_POST["hora"];
+    $medico=$_POST["medico"];
+    $consultorio=$_POST["consultorio"];
 
 if($fecha==date('Y-m-d')&& $hora<date('H:i')){
-    $error="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
+    $errorlog="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
 }
 }
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
+<?php
+            if($errorlog!=""){
+                echo "<p style=\"color:red\">$errorlog</p>";
+            }
+            ?>
 <div style="width:20%; text-align:center;margin-left:40%">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
