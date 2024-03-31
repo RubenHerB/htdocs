@@ -43,7 +43,7 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
                     $conn=new Login();
                     $con=$conn->log($_SESSION['user']['tipo']);
                     $query="SELECT dniPac, pacNombres, pacApellidos
-                    FROM pacientes order by pacNombre ASC AND order by pacApellidos ASC";
+                    FROM pacientes order by pacApellidos ASC, pacNombres ";
                     $result= $con->query($query);
                     if (!$result) die("Fatal Error");
                     foreach ($result as $row){
@@ -56,8 +56,17 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
             Fecha: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' value="<?php echo $fecha; ?>" required><br>
             Hora: <input type="time" name="hora" value="<?php echo $hora; ?>" required><br>
             Medico: <select name="medico" required>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
+                <?php
+            $query="SELECT dniPac, pacNombres, pacApellidos
+                    FROM pacientes order by pacApellidos ASC, pacNombres ";
+                    $result= $con->query($query);
+                    if (!$result) die("Fatal Error");
+                    foreach ($result as $row){
+                        echo "<option value=\"".$row["dniPac"]."\" ".
+                        ($row["dniPac"]==$paciente?"required":"").">".
+                        $row["pacNombres"]." ".$row["pacApellidos"]."</option>";
+                    }
+                    ?>
                 </select><br>
             Consultorio: <select name="consultorio" required>
                     <option value="Femenino">Femenino</option>
