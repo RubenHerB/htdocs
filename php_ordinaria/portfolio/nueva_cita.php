@@ -42,7 +42,7 @@ var_dump($_POST);
                 $medico="";
                 $consultorio="";
                 $errorlog="";
-                unset($_POST);
+                unset($_POST["nuevac"]);
             }
             ?>
 <div style="width:20%; text-align:center;margin-left:40%">
