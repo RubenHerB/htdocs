@@ -16,7 +16,7 @@
                     <option value="Masculino">Masculino</option>
                 </select><br>
             Fecha: <input type="date" name="fecha" min='<?php echo date('Y-m-d'); ?>' required><br>
-            Hora: <input type="time" name="hora" min='<?php echo date('Y-m-d'); ?>' required><br>
+            Hora: <input type="time" name="hora" required><br>
             Medico: <select name="medico" required>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
