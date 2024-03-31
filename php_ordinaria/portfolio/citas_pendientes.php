@@ -21,11 +21,14 @@
     <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%">LISTADO DE PACIENTES</h1>
     <table>
         <tr>
-            <th><Fieldset:d></Fieldset:d>echa</th>
+            <th>Fecha</th>
             <th>Hora</th>
             <th>Apellidos</th>
             <th>Paciente</th>
-            <th>Medico</th>
+            <?php
+            echo "<th>Medico</th>";
+
+            ?>
             <th>Consultorio</th>
             <th>Observaciones</th>
         </tr>
