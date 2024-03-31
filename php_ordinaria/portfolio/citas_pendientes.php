@@ -8,11 +8,10 @@
         table{
             border-collapse: collapse;
             border: 1px solid black;
-            padding:10px;
             margin-left:auto;
             margin-right:auto;
         }
-        td,th{border: 1px solid black; padding 10px}
+        td,th{border: 1px solid black; padding 15px}
         th{background-color:lightgreen}
     </style>
 </head>
@@ -26,6 +25,7 @@
             <th>Paciente</th>
             <th>Consultorio</th>
             <th>Observaciones</th>
+            <th>Atender</th>
         </tr>
         <?php
         session_start();
@@ -41,7 +41,8 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td><td></td></tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td><td>
+            <form action=\"atender_cita.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\"".$r["id"]."\"><input type=\"submit\" name=\"atenderc\" value=\"Atender cita\"></form></td></tr>";
 
         }
         ?>
