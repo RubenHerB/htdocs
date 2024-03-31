@@ -20,11 +20,9 @@
     <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%">LISTADO DE PACIENTES</h1>
     <?php
     session_start();
-    var_dump($_SESSION);
     if(isset($_SESSION["atendida"])){
         echo "<p style=\"color:green\">".$_SESSION["atendida"]."</p>";
         unset($_SESSION["atendida"]);
-        var_dump($_SESSION);
     }
     ?>
     <table>
