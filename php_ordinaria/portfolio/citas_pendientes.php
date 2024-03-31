@@ -55,7 +55,7 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td></tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']=="Medico"?("</td><td>".$r["nombrep"]." ".$r["apep"]):"")."</td></tr>";
 
         }
         ?>
