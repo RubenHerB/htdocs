@@ -37,6 +37,9 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
             Paciente: <select name="paciente" required>
+                <?php
+
+                ?>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
                 </select><br>
