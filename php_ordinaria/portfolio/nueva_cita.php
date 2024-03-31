@@ -8,6 +8,7 @@
 <body>
 
 <?php
+session_start();
 include "login.php";
 $conn=new Login();
 $con=$conn->log($_SESSION['user']['tipo']);
@@ -24,24 +25,30 @@ if(isset($_POST["nuevac"])){
     $medico=$_POST["medico"];
     $consultorio=$_POST["consultorio"];
     unset($_POST["nuevac"]);
-if($fecha==date('Y-m-d')&& $hora<date('H:i')){
-    $errorlog="hora";
-}else{
-$errorlog="confirmacion";
+    if($fecha==date('Y-m-d')&& $hora<date('H:i')){
+        $errorlog="hora";
+    }else{
+        $errorlog="confirmacion";
 
-$query="INSERT INTO `citas`(`idCita`, `citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `CitObservaciones`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]')";
-$result= $con->query($query);
-if (!$result) die("Fatal Error");
-}
+        $query="INSERT INTO `citas`
+        (`citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `CitObservaciones`)
+        VALUES ('$fecha','$hora','$paciente','$medico','$consultorio','Asignado','')";
+        $result= $con->query($query);
+        if (!$result) die("Fatal Error");
+    }
 }
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <?php
             if($errorlog=="hora"){
-                echo "<p style=\"color:red\">La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.</p>";
+                echo "<p style=\"color:red\">
+                La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.
+                </p>";
             }elseif($errorlog=="confirmacion"){
-                echo "<p style=\"color:green\">Se ha creado una cita para el paciente con DNI $paciente en $consultorio, para el $fecha a las $hora</p>";
+                echo "<p style=\"color:green\">
+                Se ha creado una cita para el paciente con DNI $paciente en $consultorio, para el $fecha a las $hora
+                </p>";
                 $paciente="";
                 $fecha="";
                 $hora="";
@@ -54,9 +61,7 @@ if (!$result) die("Fatal Error");
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">ASIGNAR CITA</h3>
             Paciente: <select name="paciente" required>
-                <?php
-                session_start();
-                    
+                <?php                    
                     $query="SELECT dniPac, pacNombres, pacApellidos
                     FROM pacientes order by pacApellidos ASC, pacNombres ";
                     $result= $con->query($query);
