@@ -25,6 +25,7 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
     $errorlog="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
 }
 }
+var_dump($_POST);
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
@@ -69,8 +70,16 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
                     ?>
                 </select><br>
             Consultorio: <select name="consultorio" required>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
+            <?php
+            $query="SELECT * FROM consultorios order by conNombre ASC";
+                    $result= $con->query($query);
+                    if (!$result) die("Fatal Error");
+                    foreach ($result as $row){
+                        echo "<option value=\"".$row["idConsultorio"]."\" ".
+                        ($row["idConsultorio"]==$consultorio?"selected":"").">".
+                        $row["conNombre"]."</option>";
+                    }
+                    ?>
                 </select>
             <div style="background-color:red; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" name="nuevac" value="Enviar">
