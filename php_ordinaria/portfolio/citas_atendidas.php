@@ -25,6 +25,7 @@
             <th>Hora</th>
             <th>Paciente</th>
             <?php
+            session_start();
             if($_SESSION['user']['tipo']!="Medico"){
             echo "<th>Medico</th>";
             }
@@ -33,7 +34,6 @@
             <th colspan="3">Observaciones</th>
         </tr>
         <?php
-        session_start();
         if($_SESSION['user']['tipo']=="Medico"){
             $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombre as nombrep,p.pacApellidos as apep,con.conNombre as nombrec,c.CitObservaciones as observaciones
             FROM citas AS c
@@ -55,7 +55,7 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']=="Medico"?("</td><td>".$r["nombrem"]." ".$r["apem"]):"")."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td></tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']=="Medico"?("</td><td>".$r["nombrem"]." ".$r["apem"]):"")."</td><td>".$r["nombrec"]."</td><td colspan=\"3\">".$r["observaciones"]."</td></tr>";
 
         }
         ?>
