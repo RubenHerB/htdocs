@@ -19,9 +19,12 @@
 <a href="inicio.php">← Volver al menu</a>
     <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%">LISTADO DE PACIENTES</h1>
     <?php
-    var_dump($_POST);
-    if(isset($_POST['citaatendida'])){
-        echo "<p style=\"color:green\">Se ha atendido la cita</p>";
+    session_start();
+    var_dump($_SESSION);
+    if(isset($_SESSION["atendida"])){
+        echo "<p style=\"color:green\">".$_SESSION["atendida"]."</p>";
+        unset($_SESSION["atendida"]);
+        var_dump($_SESSION);
     }
     ?>
     <table>
@@ -34,7 +37,7 @@
             <th>Atender</th>
         </tr>
         <?php
-        session_start();
+        
         $query="SELECT c.idCita as id, c.citFecha as fecha,c.citHora as hora,p.pacNombres as nombrep,p.pacApellidos as apep,con.conNombre as nombrec,c.CitObservaciones as observaciones
         FROM citas AS c
         inner join pacientes as p on c.citPaciente=p.dniPac
