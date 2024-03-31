@@ -48,7 +48,7 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
                     if (!$result) die("Fatal Error");
                     foreach ($result as $row){
                         echo "<option value=\"".$row["dniPac"]."\" ".
-                        ($row["dniPac"]==$paciente?"required":"").">".
+                        ($row["dniPac"]==$paciente?"selected":"").">".
                         $row["pacNombres"]." ".$row["pacApellidos"]."</option>";
                     }
                 ?>
@@ -57,14 +57,14 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
             Hora: <input type="time" name="hora" value="<?php echo $hora; ?>" required><br>
             Medico: <select name="medico" required>
                 <?php
-            $query="SELECT dniPac, pacNombres, pacApellidos
-                    FROM pacientes order by pacApellidos ASC, pacNombres ";
+            $query="SELECT dniMed, medNombres, medApellidos, especialidad
+                    FROM medicos order by especialidad ASC,medApellidos, medNombres ";
                     $result= $con->query($query);
                     if (!$result) die("Fatal Error");
                     foreach ($result as $row){
-                        echo "<option value=\"".$row["dniPac"]."\" ".
-                        ($row["dniPac"]==$paciente?"required":"").">".
-                        $row["pacNombres"]." ".$row["pacApellidos"]."</option>";
+                        echo "<option value=\"".$row["dniMed"]."\" ".
+                        ($row["dniMed"]==$medico?"selected":"").">".
+                        $row["medNombres"]." ".$row["medApellidos"]."</option>";
                     }
                     ?>
                 </select><br>
