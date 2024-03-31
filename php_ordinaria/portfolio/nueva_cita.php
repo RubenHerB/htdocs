@@ -8,7 +8,9 @@
 <body>
 
 <?php
-var_dump($_POST);
+if($fecha==date('Y-m-d')&& $hora<date('H:i')){
+    $error="La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.";
+}
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
