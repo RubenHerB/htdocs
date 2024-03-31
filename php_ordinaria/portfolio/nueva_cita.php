@@ -45,6 +45,10 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
                     FROM pacientes order by pacNombre ASC AND pacApellidos ASC";
                     $result= $con->query($query);
                     if (!$result) die("Fatal Error");
+                    foreach ($result as $row){
+                        echo "<option value=\"".$row["dniPac"]."\" ".
+                        ($row["dniPac"]==$paciente?"required":"")."></option>";
+                    }
                 ?>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
