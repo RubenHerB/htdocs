@@ -7,7 +7,8 @@
 </head>
 <body>
 <?php
-if(isset($_POST['citaatendida'])){
+if
+(isset($_POST['citaatendida'])){
 echo "<p style=\"color:red\">Error! La casilla de observaciones no puede estar vacia</p>";
 }else{
     header("Location: citas_pendientes.php");
@@ -18,7 +19,8 @@ echo "<p style=\"color:red\">Error! La casilla de observaciones no puede estar v
             <h3 style="background-color:red; text-align:center;padding:15px;color:white">ATENDER CITA</h3>
             Paciente: <?php echo $_POST["nombrepac"];?><br>
             <input type="hidden" name="id" value="<?php echo $_POST["id"];?>">
-            Observaciones: 
+            <input type="hidden" name="nombrepac" value="<?php echo $_POST["nombrepac"];?>">
+            Observaciones: <textarea name="observaciones" rows="10" cols="50">Observaciones</textarea>
             <div style="background-color:red; text-align:center;padding:5px 15px;margin-top:5px">
                 <input type="submit" name="citaatendida" value="Enviar">
             </div>
