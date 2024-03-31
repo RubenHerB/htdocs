@@ -36,7 +36,7 @@
         include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
-        $query="SELECT p.* FROM pacientes AS p $extra";
+        $query="SELECT p.* FROM pacientes AS p   $extra";
         $result= $con->query($query);
         if (!$result) die("Fatal Error");
 
