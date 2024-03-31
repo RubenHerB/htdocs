@@ -24,7 +24,7 @@ if(isset($_POST["nuevac"])){
 if($fecha==date('Y-m-d')&& $hora<date('H:i')){
     $errorlog="hora";
 }else{
-
+$errorlog="confirmacion";
 }
 }
 
@@ -32,8 +32,10 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
 <?php
-            if($errorlog!=""){
-                echo "<p style=\"color:red\">$errorlog</p>";
+            if($errorlog=="hora"){
+                echo "<p style=\"color:red\">La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.</p>";
+            }elseif($errorlog=="confirmacion"){
+
             }
             ?>
 <div style="width:20%; text-align:center;margin-left:40%">
