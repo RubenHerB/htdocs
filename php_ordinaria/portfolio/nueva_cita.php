@@ -20,7 +20,7 @@ if(isset($_POST["nuevac"])){
     $hora=$_POST["hora"];
     $medico=$_POST["medico"];
     $consultorio=$_POST["consultorio"];
-
+    unset($_POST["nuevac"]);
 if($fecha==date('Y-m-d')&& $hora<date('H:i')){
     $errorlog="hora";
 }else{
@@ -42,7 +42,6 @@ var_dump($_POST);
                 $medico="";
                 $consultorio="";
                 $errorlog="";
-                unset($_POST["nuevac"]);
             }
             ?>
 <div style="width:20%; text-align:center;margin-left:40%">
