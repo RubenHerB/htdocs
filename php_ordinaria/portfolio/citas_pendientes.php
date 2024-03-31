@@ -19,6 +19,7 @@
 <a href="inicio.php">← Volver al menu</a>
     <h1 style="background-color:yellow; text-align:center;padding:15px; width:30%; margin-left:35%">LISTADO DE PACIENTES</h1>
     <?php
+    var_dump($_POST);
     if(isset($_POST['citaatendida'])){
         echo "<p style=\"color:green\">Se ha atendido la cita</p>";
     }
