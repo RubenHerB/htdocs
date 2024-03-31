@@ -27,7 +27,7 @@ if($fecha==date('Y-m-d')&& $hora<date('H:i')){
 $errorlog="confirmacion";
 }
 }
-
+var_dump($_POST);
 ?>
 <a href="inicio.php">← Volver al menu</a>
 <h1 style="background-color:yellow; text-align:center;padding:15px">ASDI VIRTUAL</h1>
@@ -42,6 +42,7 @@ $errorlog="confirmacion";
                 $medico="";
                 $consultorio="";
                 $errorlog="";
+                unset($_POST);
             }
             ?>
 <div style="width:20%; text-align:center;margin-left:40%">
