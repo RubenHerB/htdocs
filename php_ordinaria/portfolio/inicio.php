@@ -29,7 +29,7 @@
 switch ($_SESSION['user']['tipo']){
     case "Asistente":
         echo <<<_END
-        <a href="citas_atentidas.php" class="button">Ver citas atendidas</a><br><br>
+        <a href="citas_atendidas.php" class="button">Ver citas atendidas</a><br><br>
         <a href="nueva_cita.php" class="button">Nueva cita</a><br><br>
         <a href="alta_paciente.php" class="button">Alta paciente</a><br><br>
         <a href="ver_paciente.php" class="button">Ver pacientes</a><br><br>
@@ -37,7 +37,7 @@ switch ($_SESSION['user']['tipo']){
     break;
     case "Medico":
         echo <<<_END
-        <a href="citas_atentidas.php" class="button">Ver citas atendidas</a><br><br>
+        <a href="citas_atendidas.php" class="button">Ver citas atendidas</a><br><br>
         <a href="citas_pendientes.php" class="button">Ver citas pendientes</a><br><br>
         <a href="ver_paciente.php" class="button">Ver pacientes</a><br><br>
     _END;
