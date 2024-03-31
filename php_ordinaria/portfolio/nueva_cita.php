@@ -35,7 +35,13 @@ $errorlog="confirmacion";
             if($errorlog=="hora"){
                 echo "<p style=\"color:red\">La hora y fecha seleccionadas ya han pasado, por favor, selecciona una hora o una fecha diferente.</p>";
             }elseif($errorlog=="confirmacion"){
-
+                echo "<p style=\"color:green\">Se ha creado una cita para el paciente con DNI $paciente en $consultorio, para el $fecha a las $hora</p>";
+                $paciente="";
+                $fecha="";
+                $hora="";
+                $medico="";
+                $consultorio="";
+                $errorlog="";
             }
             ?>
 <div style="width:20%; text-align:center;margin-left:40%">
