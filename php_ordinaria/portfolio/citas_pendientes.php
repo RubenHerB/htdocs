@@ -36,7 +36,7 @@
         <?php
         session_start();
         if($_SESSION['user']['tipo']=="Medico"){
-            $query="SELECT c.citFecha,c.citHora, FROM citas AS p
+            $query="SELECT c.citFecha,c.citHora , FROM citas AS p
             inner join pacientes as p on c.citPaciente=m.dniPac
             inner join consultorios as con on c.citConsultorio=m.idConsultorio
             WHERE c.citMedico LIKE '".$_SESSION['user']['dni']."'";
