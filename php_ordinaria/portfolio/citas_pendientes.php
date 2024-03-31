@@ -24,30 +24,16 @@
             <th>Fecha</th>
             <th>Hora</th>
             <th>Paciente</th>
-            <?php
-            session_start();
-            if($_SESSION['user']['tipo']!="Medico"){
-            echo "<th>Medico</th>";
-            }
-            ?>
             <th>Consultorio</th>
             <th>Observaciones</th>
         </tr>
         <?php
-        if($_SESSION['user']['tipo']=="Medico"){
-            $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombres as nombrep,p.pacApellidos as apep,con.conNombre as nombrec,c.CitObservaciones as observaciones
-            FROM citas AS c
-            inner join pacientes as p on c.citPaciente=p.dniPac
-            inner join consultorios as con on c.citConsultorio=con.idConsultorio
-            WHERE c.citEstado LIKE 'Atendido' AND c.citMedico LIKE '".$_SESSION['user']['dni']."'";
-        }else{
-            $query="SELECT c.citFecha as fecha,c.citHora as hora,p.pacNombres as nombrep,p.pacApellidos as apep,m.medNombres as nombrem, m.medApellidos as apem, con.conNombre as nombrec,c.CitObservaciones as observaciones
-            FROM citas AS c
-            inner join medicos as m on c.citMedico=m.dniMed
-            inner join pacientes as p on c.citPaciente=p.dniPac
-            inner join consultorios as con on c.citConsultorio=con.idConsultorio
-            WHERE c.citEstado LIKE 'Atendido'";
-        }
+        session_start();
+        $query="SELECT c.idCita as id, c.citFecha as fecha,c.citHora as hora,p.pacNombres as nombrep,p.pacApellidos as apep,con.conNombre as nombrec,c.CitObservaciones as observaciones
+        FROM citas AS c
+        inner join pacientes as p on c.citPaciente=p.dniPac
+        inner join consultorios as con on c.citConsultorio=con.idConsultorio
+        WHERE c.citEstado LIKE 'Asignado' AND c.citMedico LIKE '".$_SESSION['user']['dni']."'";
         include "login.php";
         $conn=new Login();
         $con=$conn->log($_SESSION['user']['tipo']);
@@ -55,7 +41,7 @@
         if (!$result) die("Fatal Error");
 
         foreach($result as $r){
-            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"].($_SESSION['user']['tipo']!="Medico"?("</td><td>".$r["nombrem"]." ".$r["apem"]):"")."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td></tr>";
+            echo "<tr><td>".$r["fecha"]."</td><td>".$r["hora"]."</td><td>".$r["nombrep"]." ".$r["apep"]."</td><td>".$r["nombrec"]."</td><td>".$r["observaciones"]."</td><td></td></tr>";
 
         }
         ?>
